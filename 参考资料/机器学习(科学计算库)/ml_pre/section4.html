@@ -1,0 +1,812 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>模型评估 | 机器学习（常用科学计算库的使用）基础定位、目标</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../ml_pre/section5.html" />
+    
+    
+    <link rel="prev" href="../ml_pre/section3.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.6"
+        data-chapter-title="模型评估"
+        data-filepath="ml_pre/section4.md"
+        data-basepath=".."
+        data-revision="Sun Mar 17 2019 13:49:16 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        机器学习（常用科学计算库的使用）基础定位、目标
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="ml_pre/index.html">
+            
+                
+                    <a href="../ml_pre/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        机器学习概述
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="ml_pre/section0.html">
+            
+                
+                    <a href="../ml_pre/section0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        人工智能概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="ml_pre/section1.html">
+            
+                
+                    <a href="../ml_pre/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        人工智能发展历程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="ml_pre/section2.html">
+            
+                
+                    <a href="../ml_pre/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        人工智能主要分支
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ml_pre/机器学习工作流程.html">
+            
+                
+                    <a href="../ml_pre/机器学习工作流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        机器学习工作流程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="ml_pre/section3.html">
+            
+                
+                    <a href="../ml_pre/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        机器学习算法分类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="ml_pre/section4.html">
+            
+                
+                    <a href="../ml_pre/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        模型评估
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="ml_pre/section5.html">
+            
+                
+                    <a href="../ml_pre/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Azure机器学习模型搭建实验
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="ml_pre/section6.html">
+            
+                
+                    <a href="../ml_pre/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        深度学习简介【了解】
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="env/index.html">
+            
+                
+                    <a href="../env/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        机器学习基础环境安装与使用
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="env/section1.html">
+            
+                
+                    <a href="../env/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        库的安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="env/section2.html">
+            
+                
+                    <a href="../env/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        jupyter notebook使用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="Matplotlib/index.html">
+            
+                
+                    <a href="../Matplotlib/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Matplotlib
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="Matplotlib/section1.html">
+            
+                
+                    <a href="../Matplotlib/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Matplotlib之HelloWorld
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Matplotlib/section2.html">
+            
+                
+                    <a href="../Matplotlib/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        折线图(plot)与基础绘图功能
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Matplotlib/section3.html">
+            
+                
+                    <a href="../Matplotlib/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        常见图形绘制
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="Numpy/index.html">
+            
+                
+                    <a href="../Numpy/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Numpy
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="Numpy/section1.html">
+            
+                
+                    <a href="../Numpy/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Numpy的优势
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="Numpy/section2.html">
+            
+                
+                    <a href="../Numpy/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        N维数组-ndarray
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="Numpy/section3.html">
+            
+                
+                    <a href="../Numpy/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        基本操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="Numpy/section4.html">
+            
+                
+                    <a href="../Numpy/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        ndarray运算
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="Numpy/section5.html">
+            
+                
+                    <a href="../Numpy/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        数学：矩阵
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="Numpy/section6.html">
+            
+                
+                    <a href="../Numpy/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        数组间的运算
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="Pandas/index.html">
+            
+                
+                    <a href="../Pandas/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Pandas
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="Pandas/section1.html">
+            
+                
+                    <a href="../Pandas/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Pandas介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Pandas/section2.html">
+            
+                
+                    <a href="../Pandas/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        基本数据操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Pandas/section3.html">
+            
+                
+                    <a href="../Pandas/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        DataFrame运算
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Pandas/section4.html">
+            
+                
+                    <a href="../Pandas/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Pandas画图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Pandas/section5.html">
+            
+                
+                    <a href="../Pandas/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        文件读取与存储
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="Pandas/section6.html">
+            
+                
+                    <a href="../Pandas/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        高级处理-缺失值处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="Pandas/section7.html">
+            
+                
+                    <a href="../Pandas/section7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        高级处理-数据离散化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="Pandas/section8.html">
+            
+                
+                    <a href="../Pandas/section8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        高级处理-合并
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="Pandas/section9.html">
+            
+                
+                    <a href="../Pandas/section9.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        高级处理-交叉表与透视表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="Pandas/section10.html">
+            
+                
+                    <a href="../Pandas/section10.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.10.</b>
+                        
+                        高级处理-分组与聚合
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="Pandas/section11.html">
+            
+                
+                    <a href="../Pandas/section11.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.11.</b>
+                        
+                        案例
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >机器学习（常用科学计算库的使用）基础定位、目标</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6A21;&#x578B;&#x8BC4;&#x4F30;">&#x6A21;&#x578B;&#x8BC4;&#x4F30;</h1>
+<p>&#x6A21;&#x578B;&#x8BC4;&#x4F30;&#x662F;&#x6A21;&#x578B;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E0D;&#x53EF;&#x6216;&#x7F3A;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x5B83;&#x6709;&#x52A9;&#x4E8E;&#x53D1;&#x73B0;&#x8868;&#x8FBE;&#x6570;&#x636E;&#x7684;&#x6700;&#x4F73;&#x6A21;&#x578B;&#x548C;&#x6240;&#x9009;&#x6A21;&#x578B;&#x5C06;&#x6765;&#x5DE5;&#x4F5C;&#x7684;&#x6027;&#x80FD;&#x5982;&#x4F55;&#x3002;<strong>&#x6309;&#x7167;&#x6570;&#x636E;&#x96C6;&#x7684;&#x76EE;&#x6807;&#x503C;&#x4E0D;&#x540C;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x6A21;&#x578B;&#x8BC4;&#x4F30;&#x5206;&#x4E3A;&#x5206;&#x7C7B;&#x6A21;&#x578B;&#x8BC4;&#x4F30;&#x548C;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x8BC4;&#x4F30;&#x3002;</strong></p>
+<h3 id="1-&#x5206;&#x7C7B;&#x6A21;&#x578B;&#x8BC4;&#x4F30;">1 &#x5206;&#x7C7B;&#x6A21;&#x578B;&#x8BC4;&#x4F30;</h3>
+<ul>
+<li>&#x51C6;&#x786E;&#x7387;<ul>
+<li>&#x9884;&#x6D4B;&#x6B63;&#x786E;&#x7684;&#x6570;&#x5360;&#x6837;&#x672C;&#x603B;&#x6570;&#x7684;&#x6BD4;&#x4F8B;&#x3002;</li>
+</ul>
+</li>
+<li>&#x7CBE;&#x786E;&#x7387;<ul>
+<li>&#x6B63;&#x786E;&#x9884;&#x6D4B;&#x4E3A;&#x6B63;&#x5360;<strong>&#x5168;&#x90E8;&#x9884;&#x6D4B;&#x4E3A;&#x6B63;</strong>&#x7684;&#x6BD4;&#x4F8B;</li>
+</ul>
+</li>
+<li>&#x53EC;&#x56DE;&#x7387;<ul>
+<li>&#x6B63;&#x786E;&#x9884;&#x6D4B;&#x4E3A;&#x6B63;&#x5360;<strong>&#x5168;&#x90E8;&#x6B63;&#x6837;&#x672C;</strong>&#x7684;&#x6BD4;&#x4F8B;</li>
+</ul>
+</li>
+<li>F1-score<ul>
+<li>&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x8BC4;&#x4F30;&#x6A21;&#x578B;&#x7684;&#x7A33;&#x5065;&#x6027;</li>
+</ul>
+</li>
+<li>AUC&#x6307;&#x6807;<ul>
+<li>&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x8BC4;&#x4F30;&#x6837;&#x672C;&#x4E0D;&#x5747;&#x8861;&#x7684;&#x60C5;&#x51B5;</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x8BC4;&#x4F30;">2 &#x56DE;&#x5F52;&#x6A21;&#x578B;&#x8BC4;&#x4F30;</h3>
+<p><img src="../images/&#x6A21;&#x578B;&#x8BC4;&#x4F30;-&#x56DE;&#x5F52;1.png" alt="image-20190218152834380"></p>
+<ul>
+<li><h5 id="&#x5747;&#x65B9;&#x6839;&#x8BEF;&#x5DEE;&#xFF08;root-mean-squared-error&#xFF0C;rmse&#xFF09;">&#x5747;&#x65B9;&#x6839;&#x8BEF;&#x5DEE;&#xFF08;Root Mean Squared Error&#xFF0C;RMSE&#xFF09;</h5>
+<ul>
+<li><p>RMSE&#x662F;&#x4E00;&#x4E2A;&#x8861;&#x91CF;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x8BEF;&#x5DEE;&#x7387;&#x7684;&#x5E38;&#x7528;&#x516C;&#x5F0F;&#x3002; &#x7136;&#x800C;&#xFF0C;&#x5B83;&#x4EC5;&#x80FD;&#x6BD4;&#x8F83;&#x8BEF;&#x5DEE;&#x662F;&#x76F8;&#x540C;&#x5355;&#x4F4D;&#x7684;&#x6A21;&#x578B;&#x3002;</p>
+<p><img src="../images/image-20190312193846308.png" alt="image-20190312193846308"></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h5 id="&#x76F8;&#x5BF9;&#x5E73;&#x65B9;&#x8BEF;&#x5DEE;&#xFF08;relative-squared-error&#xFF0C;rse&#xFF09;">&#x76F8;&#x5BF9;&#x5E73;&#x65B9;&#x8BEF;&#x5DEE;&#xFF08;Relative Squared Error&#xFF0C;RSE&#xFF09;</h5>
+<ul>
+<li><p>&#x4E0E;RMSE&#x4E0D;&#x540C;&#xFF0C;RSE&#x53EF;&#x4EE5;&#x6BD4;&#x8F83;&#x8BEF;&#x5DEE;&#x662F;&#x4E0D;&#x540C;&#x5355;&#x4F4D;&#x7684;&#x6A21;&#x578B;&#x3002;</p>
+<p><img src="../images/image-20190312194839069.png" alt="image-20190312194839069"></p>
+</li>
+</ul>
+</li>
+<li><h5 id="&#x5E73;&#x5747;&#x7EDD;&#x5BF9;&#x8BEF;&#x5DEE;&#xFF08;mean-absolute-error&#xFF0C;mae">&#x5E73;&#x5747;&#x7EDD;&#x5BF9;&#x8BEF;&#x5DEE;&#xFF08;Mean Absolute Error&#xFF0C;MAE)</h5>
+<ul>
+<li><p>MAE&#x4E0E;&#x539F;&#x59CB;&#x6570;&#x636E;&#x5355;&#x4F4D;&#x76F8;&#x540C;&#xFF0C; &#x5B83;&#x4EC5;&#x80FD;&#x6BD4;&#x8F83;&#x8BEF;&#x5DEE;&#x662F;&#x76F8;&#x540C;&#x5355;&#x4F4D;&#x7684;&#x6A21;&#x578B;&#x3002;&#x91CF;&#x7EA7;&#x8FD1;&#x4F3C;&#x4E0E;RMSE&#xFF0C;&#x4F46;&#x662F;&#x8BEF;&#x5DEE;&#x503C;&#x76F8;&#x5BF9;&#x5C0F;&#x4E00;&#x4E9B;&#x3002;</p>
+<p><img src="../images/image-20190312194923850.png" alt="image-20190312194923850"></p>
+</li>
+</ul>
+</li>
+<li><h5 id="&#x76F8;&#x5BF9;&#x7EDD;&#x5BF9;&#x8BEF;&#x5DEE;&#xFF08;relative-absolute-error&#xFF0C;rae">&#x76F8;&#x5BF9;&#x7EDD;&#x5BF9;&#x8BEF;&#x5DEE;&#xFF08;Relative Absolute Error&#xFF0C;RAE)</h5>
+<ul>
+<li><p>&#x4E0E;RSE&#x4E0D;&#x540C;&#xFF0C;RAE&#x53EF;&#x4EE5;&#x6BD4;&#x8F83;&#x8BEF;&#x5DEE;&#x662F;&#x4E0D;&#x540C;&#x5355;&#x4F4D;&#x7684;&#x6A21;&#x578B;&#x3002;</p>
+<p><img src="../images/image-20190312195006252.png" alt="image-20190312195006252"></p>
+</li>
+</ul>
+</li>
+<li><h5 id="&#x51B3;&#x5B9A;&#x7CFB;&#x6570;-coefficient-of-determination">&#x51B3;&#x5B9A;&#x7CFB;&#x6570; (Coefficient of Determination)</h5>
+<ul>
+<li><p>&#x51B3;&#x5B9A;&#x7CFB;&#x6570; (<strong>R<sup>2</sup></strong>)&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x6C47;&#x603B;&#x4E86;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x7684;&#x89E3;&#x91CA;&#x5EA6;&#xFF0C;&#x7531;&#x5E73;&#x65B9;&#x548C;&#x672F;&#x8BED;&#x8BA1;&#x7B97;&#x800C;&#x5F97;&#x3002;</p>
+<p><img src="../images/image-20190312202620606.png" alt="image-20190312202620606"></p>
+</li>
+<li><p>R<sup>2</sup>&#x63CF;&#x8FF0;&#x4E86;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x6240;&#x89E3;&#x91CA;&#x7684;&#x56E0;&#x53D8;&#x91CF;&#x65B9;&#x5DEE;&#x5728;&#x603B;&#x65B9;&#x5DEE;&#x4E2D;&#x7684;&#x6BD4;&#x4F8B;&#x3002;R<sup>2</sup>&#x5F88;&#x5927;&#xFF0C;&#x5373;&#x81EA;&#x53D8;&#x91CF;&#x548C;&#x56E0;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x7EBF;&#x6027;&#x5173;&#x7CFB;&#xFF0C;&#x5982;&#x679C;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x662F;&#x201C;&#x5B8C;&#x7F8E;&#x7684;&#x201D;&#xFF0C;SSE&#x4E3A;&#x96F6;&#xFF0C;&#x5219;R<sup>2</sup>&#x4E3A;1&#x3002;R<sup>2</sup>&#x5C0F;&#xFF0C;&#x5219;&#x81EA;&#x53D8;&#x91CF;&#x548C;&#x56E0;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x7EBF;&#x6027;&#x5173;&#x7CFB;&#x7684;&#x8BC1;&#x636E;&#x4E0D;&#x4EE4;&#x4EBA;&#x4FE1;&#x670D;&#x3002;&#x5982;&#x679C;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x5B8C;&#x5168;&#x5931;&#x8D25;&#xFF0C;SSE&#x7B49;&#x4E8E;SST&#xFF0C;&#x6CA1;&#x6709;&#x65B9;&#x5DEE;&#x53EF;&#x88AB;&#x56DE;&#x5F52;&#x89E3;&#x91CA;&#xFF0C;&#x5219;R<sup>2</sup>&#x4E3A;&#x96F6;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-&#x62DF;&#x5408;">3 &#x62DF;&#x5408;</h3>
+<p>&#x6A21;&#x578B;&#x8BC4;&#x4F30;&#x7528;&#x4E8E;&#x8BC4;&#x4EF7;&#x8BAD;&#x7EC3;&#x597D;&#x7684;&#x7684;&#x6A21;&#x578B;&#x7684;&#x8868;&#x73B0;&#x6548;&#x679C;&#xFF0C;&#x5176;&#x8868;&#x73B0;&#x6548;&#x679C;&#x5927;&#x81F4;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;&#x8FC7;&#x62DF;&#x5408;&#x3001;&#x6B20;&#x62DF;&#x5408;&#x3002;</p>
+<p>&#x5728;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230;&#x5982;&#x4E0B;&#x95EE;&#x9898;&#xFF1A;</p>
+<h5 id="&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x8BAD;&#x7EC3;&#x7684;&#x5F88;&#x597D;&#x554A;&#xFF0C;&#x8BEF;&#x5DEE;&#x4E5F;&#x4E0D;&#x5927;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x6D4B;&#x8BD5;&#x96C6;&#x4E0A;&#x9762;&#x6709;&#x95EE;&#x9898;&#x5462;&#xFF1F;">&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x8BAD;&#x7EC3;&#x7684;&#x5F88;&#x597D;&#x554A;&#xFF0C;&#x8BEF;&#x5DEE;&#x4E5F;&#x4E0D;&#x5927;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x6D4B;&#x8BD5;&#x96C6;&#x4E0A;&#x9762;&#x6709;&#x95EE;&#x9898;&#x5462;&#xFF1F;</h5>
+<p>&#x5F53;&#x7B97;&#x6CD5;&#x5728;&#x67D0;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x5F53;&#x4E2D;&#x51FA;&#x73B0;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x80FD;&#x5C31;&#x51FA;&#x73B0;&#x4E86;&#x62DF;&#x5408;&#x95EE;&#x9898;&#x3002;</p>
+<h4 id="31-&#x6B20;&#x62DF;&#x5408;">3.1 &#x6B20;&#x62DF;&#x5408;</h4>
+<p><img src="../images/image-20190312213119759.png" alt="image-20190312213119759"></p>
+<p>&#x56E0;&#x4E3A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5230;&#x7684;&#x5929;&#x9E45;&#x7279;&#x5F81;&#x592A;&#x5C11;&#x4E86;&#xFF0C;&#x5BFC;&#x81F4;&#x533A;&#x5206;&#x6807;&#x51C6;&#x592A;&#x7C97;&#x7CD9;&#xFF0C;&#x4E0D;&#x80FD;&#x51C6;&#x786E;&#x8BC6;&#x522B;&#x51FA;&#x5929;&#x9E45;&#x3002;</p>
+<h4 id="32-&#x8FC7;&#x62DF;&#x5408;">3.2 &#x8FC7;&#x62DF;&#x5408;</h4>
+<p><img src="../images/&#x8FC7;&#x62DF;&#x5408;.png" alt="&#xE8;&#xBF;&#x87;&#xE6;&#x8B;&#x9F;&#xE5;&#x90;&#x88;"></p>
+<p>&#x673A;&#x5668;&#x5DF2;&#x7ECF;&#x57FA;&#x672C;&#x80FD;&#x533A;&#x522B;&#x5929;&#x9E45;&#x548C;&#x5176;&#x4ED6;&#x52A8;&#x7269;&#x4E86;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5F88;&#x4E0D;&#x5DE7;&#x5DF2;&#x6709;&#x7684;&#x5929;&#x9E45;&#x56FE;&#x7247;&#x5168;&#x662F;&#x767D;&#x5929;&#x9E45;&#x7684;&#xFF0C;&#x4E8E;&#x662F;&#x673A;&#x5668;&#x7ECF;&#x8FC7;&#x5B66;&#x4E60;&#x540E;&#xFF0C;&#x4F1A;&#x8BA4;&#x4E3A;&#x5929;&#x9E45;&#x7684;&#x7FBD;&#x6BDB;&#x90FD;&#x662F;&#x767D;&#x7684;&#xFF0C;&#x4EE5;&#x540E;&#x770B;&#x5230;&#x7FBD;&#x6BDB;&#x662F;&#x9ED1;&#x7684;&#x5929;&#x9E45;&#x5C31;&#x4F1A;&#x8BA4;&#x4E3A;&#x90A3;&#x4E0D;&#x662F;&#x5929;&#x9E45;&#x3002;</p>
+<p><strong>&#x8FC7;&#x62DF;&#x5408;</strong>&#xFF08;over-fitting&#xFF09;&#xFF1A;&#x6240;&#x5EFA;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#x6216;&#x8005;&#x662F;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#x5728;&#x8BAD;&#x7EC3;&#x6837;&#x672C;&#x4E2D;&#x8868;&#x73B0;&#x5F97;&#x8FC7;&#x4E8E;&#x4F18;&#x8D8A;&#xFF0C;&#x5BFC;&#x81F4;&#x5728;&#x9A8C;&#x8BC1;&#x6570;&#x636E;&#x96C6;&#x4EE5;&#x53CA;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x8868;&#x73B0;&#x4E0D;&#x4F73;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../ml_pre/section3.html" class="navigation navigation-prev " aria-label="Previous page: 机器学习算法分类"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../ml_pre/section5.html" class="navigation navigation-next " aria-label="Next page: Azure机器学习模型搭建实验"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"katex":{},"expandable-chapters-small":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

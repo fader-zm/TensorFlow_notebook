@@ -1,0 +1,938 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>文件读取与存储 | 机器学习（常用科学计算库的使用）基础定位、目标</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../Pandas/section6.html" />
+    
+    
+    <link rel="prev" href="../Pandas/section4.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="5.5"
+        data-chapter-title="文件读取与存储"
+        data-filepath="Pandas/section5.md"
+        data-basepath=".."
+        data-revision="Sun Mar 17 2019 13:49:16 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        机器学习（常用科学计算库的使用）基础定位、目标
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="ml_pre/index.html">
+            
+                
+                    <a href="../ml_pre/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        机器学习概述
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="ml_pre/section0.html">
+            
+                
+                    <a href="../ml_pre/section0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        人工智能概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="ml_pre/section1.html">
+            
+                
+                    <a href="../ml_pre/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        人工智能发展历程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="ml_pre/section2.html">
+            
+                
+                    <a href="../ml_pre/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        人工智能主要分支
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ml_pre/机器学习工作流程.html">
+            
+                
+                    <a href="../ml_pre/机器学习工作流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        机器学习工作流程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="ml_pre/section3.html">
+            
+                
+                    <a href="../ml_pre/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        机器学习算法分类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="ml_pre/section4.html">
+            
+                
+                    <a href="../ml_pre/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        模型评估
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="ml_pre/section5.html">
+            
+                
+                    <a href="../ml_pre/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Azure机器学习模型搭建实验
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="ml_pre/section6.html">
+            
+                
+                    <a href="../ml_pre/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        深度学习简介【了解】
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="env/index.html">
+            
+                
+                    <a href="../env/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        机器学习基础环境安装与使用
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="env/section1.html">
+            
+                
+                    <a href="../env/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        库的安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="env/section2.html">
+            
+                
+                    <a href="../env/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        jupyter notebook使用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="Matplotlib/index.html">
+            
+                
+                    <a href="../Matplotlib/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Matplotlib
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="Matplotlib/section1.html">
+            
+                
+                    <a href="../Matplotlib/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Matplotlib之HelloWorld
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Matplotlib/section2.html">
+            
+                
+                    <a href="../Matplotlib/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        折线图(plot)与基础绘图功能
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Matplotlib/section3.html">
+            
+                
+                    <a href="../Matplotlib/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        常见图形绘制
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="Numpy/index.html">
+            
+                
+                    <a href="../Numpy/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Numpy
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="Numpy/section1.html">
+            
+                
+                    <a href="../Numpy/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Numpy的优势
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="Numpy/section2.html">
+            
+                
+                    <a href="../Numpy/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        N维数组-ndarray
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="Numpy/section3.html">
+            
+                
+                    <a href="../Numpy/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        基本操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="Numpy/section4.html">
+            
+                
+                    <a href="../Numpy/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        ndarray运算
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="Numpy/section5.html">
+            
+                
+                    <a href="../Numpy/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        数学：矩阵
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="Numpy/section6.html">
+            
+                
+                    <a href="../Numpy/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        数组间的运算
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="Pandas/index.html">
+            
+                
+                    <a href="../Pandas/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Pandas
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="Pandas/section1.html">
+            
+                
+                    <a href="../Pandas/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Pandas介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Pandas/section2.html">
+            
+                
+                    <a href="../Pandas/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        基本数据操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Pandas/section3.html">
+            
+                
+                    <a href="../Pandas/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        DataFrame运算
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="Pandas/section4.html">
+            
+                
+                    <a href="../Pandas/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Pandas画图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.5" data-path="Pandas/section5.html">
+            
+                
+                    <a href="../Pandas/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        文件读取与存储
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="Pandas/section6.html">
+            
+                
+                    <a href="../Pandas/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        高级处理-缺失值处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="Pandas/section7.html">
+            
+                
+                    <a href="../Pandas/section7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        高级处理-数据离散化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="Pandas/section8.html">
+            
+                
+                    <a href="../Pandas/section8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        高级处理-合并
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="Pandas/section9.html">
+            
+                
+                    <a href="../Pandas/section9.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        高级处理-交叉表与透视表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="Pandas/section10.html">
+            
+                
+                    <a href="../Pandas/section10.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.10.</b>
+                        
+                        高级处理-分组与聚合
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="Pandas/section11.html">
+            
+                
+                    <a href="../Pandas/section11.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.11.</b>
+                        
+                        案例
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >机器学习（常用科学计算库的使用）基础定位、目标</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="55-&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x4E0E;&#x5B58;&#x50A8;">5.5 &#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x4E0E;&#x5B58;&#x50A8;</h1>
+<h2 id="&#x5B66;&#x4E60;&#x76EE;&#x6807;">&#x5B66;&#x4E60;&#x76EE;&#x6807;</h2>
+<ul>
+<li>&#x76EE;&#x6807; <ul>
+<li>&#x4E86;&#x89E3;Pandas&#x7684;&#x51E0;&#x79CD;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x5B58;&#x50A8;&#x64CD;&#x4F5C;</li>
+<li>&#x5E94;&#x7528;CSV&#x65B9;&#x5F0F;&#x548C;HDF&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x53D6;&#x548C;&#x5B58;&#x50A8;</li>
+</ul>
+</li>
+<li>&#x5E94;&#x7528;<ul>
+<li>&#x5B9E;&#x73B0;&#x80A1;&#x7968;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x53D6;&#x5B58;&#x50A8;</li>
+</ul>
+</li>
+</ul>
+<p>&#x6211;&#x4EEC;&#x7684;&#x6570;&#x636E;&#x5927;&#x90E8;&#x5206;&#x5B58;&#x5728;&#x4E8E;&#x6587;&#x4EF6;&#x5F53;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;pandas&#x4F1A;&#x652F;&#x6301;&#x590D;&#x6742;&#x7684;IO&#x64CD;&#x4F5C;&#xFF0C;pandas&#x7684;API&#x652F;&#x6301;&#x4F17;&#x591A;&#x7684;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#xFF0C;&#x5982;CSV&#x3001;SQL&#x3001;XLS&#x3001;JSON&#x3001;HDF5&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#xFF1A;&#x6700;&#x5E38;&#x7528;&#x7684;HDF5&#x548C;CSV&#x6587;&#x4EF6;</p>
+</blockquote>
+<p><img src="../images/&#x8BFB;&#x53D6;&#x5B58;&#x50A8;.png" alt="&#x8BFB;&#x53D6;&#x5B58;&#x50A8;"></p>
+<h2 id="551-csv">5.5.1 CSV</h2>
+<h3 id="5511-readcsv">5.5.1.1 read_csv</h3>
+<ul>
+<li>pandas.read_csv(filepath_or_buffer, sep =&apos;,&apos; )<ul>
+<li>filepath_or_buffer:&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</li>
+<li>usecols:&#x6307;&#x5B9A;&#x8BFB;&#x53D6;&#x7684;&#x5217;&#x540D;&#xFF0C;&#x5217;&#x8868;&#x5F62;&#x5F0F;</li>
+</ul>
+</li>
+</ul>
+<p>&#x8BFB;&#x53D6;&#x4E4B;&#x524D;&#x7684;&#x80A1;&#x7968;&#x7684;&#x6570;&#x636E;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x8BFB;&#x53D6;&#x6587;&#x4EF6;,&#x5E76;&#x4E14;&#x6307;&#x5B9A;&#x53EA;&#x83B7;&#x53D6;&apos;open&apos;, &apos;close&apos;&#x6307;&#x6807;</span>
+data = pd.read_csv(<span class="hljs-string">&quot;./data/stock_day.csv&quot;</span>, usecols=[<span class="hljs-string">&apos;open&apos;</span>, <span class="hljs-string">&apos;close&apos;</span>])
+
+            open    high    close
+<span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">27</span>    <span class="hljs-number">23.53</span>    <span class="hljs-number">25.88</span>    <span class="hljs-number">24.16</span>
+<span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">26</span>    <span class="hljs-number">22.80</span>    <span class="hljs-number">23.78</span>    <span class="hljs-number">23.53</span>
+<span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">23</span>    <span class="hljs-number">22.88</span>    <span class="hljs-number">23.37</span>    <span class="hljs-number">22.82</span>
+<span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">22</span>    <span class="hljs-number">22.25</span>    <span class="hljs-number">22.76</span>    <span class="hljs-number">22.28</span>
+<span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">14</span>    <span class="hljs-number">21.49</span>    <span class="hljs-number">21.99</span>    <span class="hljs-number">21.92</span>
+</code></pre>
+<h3 id="5512-tocsv">5.5.1.2 to_csv</h3>
+<ul>
+<li>DataFrame.to_csv(path_or_buf=None, sep=&apos;, &#x2019;, columns=None, header=True, index=True, mode=&apos;w&apos;, encoding=None)<ul>
+<li>path_or_buf :string or file handle, default None</li>
+<li>sep :character, default &#x2018;,&#x2019;</li>
+<li>columns :sequence, optional</li>
+<li>mode:&apos;w&apos;&#xFF1A;&#x91CD;&#x5199;, &apos;a&apos; &#x8FFD;&#x52A0;</li>
+<li>index:&#x662F;&#x5426;&#x5199;&#x8FDB;&#x884C;&#x7D22;&#x5F15;</li>
+<li>header :boolean or list of string, default True,&#x662F;&#x5426;&#x5199;&#x8FDB;&#x5217;&#x7D22;&#x5F15;&#x503C;</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x6848;&#x4F8B;">&#x6848;&#x4F8B;</h4>
+<ul>
+<li>&#x4FDD;&#x5B58;&apos;open&apos;&#x5217;&#x7684;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x9009;&#x53D6;10&#x884C;&#x6570;&#x636E;&#x4FDD;&#x5B58;,&#x4FBF;&#x4E8E;&#x89C2;&#x5BDF;&#x6570;&#x636E;</span>
+data[:<span class="hljs-number">10</span>].to_csv(<span class="hljs-string">&quot;./data/test.csv&quot;</span>, columns=[<span class="hljs-string">&apos;open&apos;</span>])
+</code></pre>
+<ul>
+<li>&#x8BFB;&#x53D6;&#xFF0C;&#x67E5;&#x770B;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-python">pd.read_csv(<span class="hljs-string">&quot;./data/test.csv&quot;</span>)
+
+     Unnamed: <span class="hljs-number">0</span>    open
+<span class="hljs-number">0</span>    <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">27</span>    <span class="hljs-number">23.53</span>
+<span class="hljs-number">1</span>    <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">26</span>    <span class="hljs-number">22.80</span>
+<span class="hljs-number">2</span>    <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">23</span>    <span class="hljs-number">22.88</span>
+<span class="hljs-number">3</span>    <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">22</span>    <span class="hljs-number">22.25</span>
+<span class="hljs-number">4</span>    <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">14</span>    <span class="hljs-number">21.49</span>
+<span class="hljs-number">5</span>    <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">13</span>    <span class="hljs-number">21.40</span>
+<span class="hljs-number">6</span>    <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">12</span>    <span class="hljs-number">20.70</span>
+<span class="hljs-number">7</span>    <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">09</span>    <span class="hljs-number">21.20</span>
+<span class="hljs-number">8</span>    <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">08</span>    <span class="hljs-number">21.79</span>
+<span class="hljs-number">9</span>    <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">07</span>    <span class="hljs-number">22.69</span>
+</code></pre>
+<p>&#x4F1A;&#x53D1;&#x73B0;&#x5C06;&#x7D22;&#x5F15;&#x5B58;&#x5165;&#x5230;&#x6587;&#x4EF6;&#x5F53;&#x4E2D;&#xFF0C;&#x53D8;&#x6210;&#x5355;&#x72EC;&#x7684;&#x4E00;&#x5217;&#x6570;&#x636E;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5220;&#x9664;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;index&#x53C2;&#x6570;,&#x5220;&#x9664;&#x539F;&#x6765;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x91CD;&#x65B0;&#x4FDD;&#x5B58;&#x4E00;&#x6B21;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># index:&#x5B58;&#x50A8;&#x4E0D;&#x4F1A;&#x8BB2;&#x7D22;&#x5F15;&#x503C;&#x53D8;&#x6210;&#x4E00;&#x5217;&#x6570;&#x636E;</span>
+data[:<span class="hljs-number">10</span>].to_csv(<span class="hljs-string">&quot;./data/test.csv&quot;</span>, columns=[<span class="hljs-string">&apos;open&apos;</span>], index=<span class="hljs-keyword">False</span>)
+</code></pre>
+<h2 id="552-hdf5">5.5.2 HDF5</h2>
+<h3 id="5521-readhdf&#x4E0E;tohdf">5.5.2.1 read_hdf&#x4E0E;to_hdf</h3>
+<p><strong>HDF5&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x53D6;&#x548C;&#x5B58;&#x50A8;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x952E;&#xFF0C;&#x503C;&#x4E3A;&#x8981;&#x5B58;&#x50A8;&#x7684;DataFrame</strong></p>
+<ul>
+<li><p>pandas.read_hdf(path_or_buf&#xFF0C;key =None&#xFF0C;** kwargs)</p>
+<p>&#x4ECE;h5&#x6587;&#x4EF6;&#x5F53;&#x4E2D;&#x8BFB;&#x53D6;&#x6570;&#x636E;</p>
+<ul>
+<li>path_or_buffer:&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</li>
+<li>key:&#x8BFB;&#x53D6;&#x7684;&#x952E;</li>
+<li>return:Theselected object</li>
+</ul>
+</li>
+<li><p>DataFrame.to_hdf(path_or_buf, <em>key</em>, <em>*\</em>kwargs*)</p>
+</li>
+</ul>
+<h4 id="&#x6848;&#x4F8B;">&#x6848;&#x4F8B;</h4>
+<ul>
+<li>&#x8BFB;&#x53D6;&#x6587;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-python">day_eps_ttm = pd.read_hdf(<span class="hljs-string">&quot;./data/stock_data/day/day_eps_ttm.h5&quot;</span>)
+</code></pre>
+<p>&#x5982;&#x679C;&#x8BFB;&#x53D6;&#x7684;&#x65F6;&#x5019;&#x51FA;&#x73B0;&#x4EE5;&#x4E0B;&#x9519;&#x8BEF;</p>
+<p><img src="../images/readh5.png" alt="readh5"></p>
+<p>&#x9700;&#x8981;&#x5B89;&#x88C5;&#x5B89;&#x88C5;tables&#x6A21;&#x5757;&#x907F;&#x514D;&#x4E0D;&#x80FD;&#x8BFB;&#x53D6;HDF5&#x6587;&#x4EF6;</p>
+<pre><code class="lang-python">pip install tables
+</code></pre>
+<p><img src="../images/tables.png" alt="tables"></p>
+<ul>
+<li>&#x5B58;&#x50A8;&#x6587;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-python">day_eps_ttm.to_hdf(<span class="hljs-string">&quot;./data/test.h5&quot;</span>, key=<span class="hljs-string">&quot;day_eps_ttm&quot;</span>)
+</code></pre>
+<p>&#x518D;&#x6B21;&#x8BFB;&#x53D6;&#x7684;&#x65F6;&#x5019;, &#x9700;&#x8981;&#x6307;&#x5B9A;&#x952E;&#x7684;&#x540D;&#x5B57;</p>
+<pre><code class="lang-python">new_eps = pd.read_hdf(<span class="hljs-string">&quot;./data/test.h5&quot;</span>, key=<span class="hljs-string">&quot;day_eps_ttm&quot;</span>)
+</code></pre>
+<h2 id="552-json">5.5.2 JSON</h2>
+<p>JSON&#x662F;&#x6211;&#x4EEC;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x683C;&#x5F0F;&#xFF0C;&#x524D;&#x9762;&#x5728;&#x524D;&#x540E;&#x7AEF;&#x7684;&#x4EA4;&#x4E92;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#xFF0C;&#x4E5F;&#x4F1A;&#x5728;&#x5B58;&#x50A8;&#x7684;&#x65F6;&#x5019;&#x9009;&#x62E9;&#x8FD9;&#x79CD;&#x683C;&#x5F0F;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x77E5;&#x9053;Pandas&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x8BFB;&#x53D6;&#x548C;&#x5B58;&#x50A8;JSON&#x683C;&#x5F0F;&#x3002;</p>
+<h3 id="5521-readjson">5.5.2.1 read_json</h3>
+<ul>
+<li><p>pandas.read_json(path_or_buf=None, orient=None, typ=&apos;frame&apos;, lines=False)</p>
+<ul>
+<li>&#x5C06;JSON&#x683C;&#x5F0F;&#x51C6;&#x6362;&#x6210;&#x9ED8;&#x8BA4;&#x7684;Pandas DataFrame&#x683C;&#x5F0F;</li>
+<li>orient : string,Indication of expected JSON string format. <ul>
+<li>&apos;split&apos; : dict like {index -&gt; [index], columns -&gt; [columns], data -&gt; [values]}<ul>
+<li>split &#x5C06;&#x7D22;&#x5F15;&#x603B;&#x7ED3;&#x5230;&#x7D22;&#x5F15;&#xFF0C;&#x5217;&#x540D;&#x5230;&#x5217;&#x540D;&#xFF0C;&#x6570;&#x636E;&#x5230;&#x6570;&#x636E;&#x3002;&#x5C06;&#x4E09;&#x90E8;&#x5206;&#x90FD;&#x5206;&#x5F00;&#x4E86;</li>
+</ul>
+</li>
+<li><strong>&apos;records&apos; : list like [{column -&gt; value}, ... , {column -&gt; value}]</strong><ul>
+<li>records &#x4EE5;<code>columns&#xFF1A;values</code>&#x7684;&#x5F62;&#x5F0F;&#x8F93;&#x51FA;</li>
+</ul>
+</li>
+<li>&apos;index&apos; : dict like {index -&gt; {column -&gt; value}}<ul>
+<li>index &#x4EE5;<code>index&#xFF1A;{columns&#xFF1A;values}...</code>&#x7684;&#x5F62;&#x5F0F;&#x8F93;&#x51FA;</li>
+</ul>
+</li>
+<li><strong>&apos;columns&apos; : dict like {column -&gt; {index -&gt; value}}</strong>,&#x9ED8;&#x8BA4;&#x8BE5;&#x683C;&#x5F0F;<ul>
+<li>colums &#x4EE5;<code>columns:{index:values}</code>&#x7684;&#x5F62;&#x5F0F;&#x8F93;&#x51FA;</li>
+</ul>
+</li>
+<li>&apos;values&apos; : just the values array<ul>
+<li>values &#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x503C;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>lines : boolean, default False<ul>
+<li>&#x6309;&#x7167;&#x6BCF;&#x884C;&#x8BFB;&#x53D6;json&#x5BF9;&#x8C61;</li>
+</ul>
+</li>
+<li>typ : default &#x2018;frame&#x2019;&#xFF0C; &#x6307;&#x5B9A;&#x8F6C;&#x6362;&#x6210;&#x7684;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;series&#x6216;&#x8005;dataframe</li>
+</ul>
+<h4 id="&#x6848;&#x4F8B;">&#x6848;&#x4F8B;</h4>
+</li>
+<li><p>&#x6570;&#x636E;&#x4ECB;&#x7ECD;</p>
+</li>
+</ul>
+<p>&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x65B0;&#x95FB;&#x6807;&#x9898;&#x8BBD;&#x523A;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;json&#x3002;<code>is_sarcastic</code>&#xFF1A;1&#x8BBD;&#x523A;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x4E3A;0&#xFF1B;<code>headline</code>&#xFF1A;&#x65B0;&#x95FB;&#x62A5;&#x9053;&#x7684;&#x6807;&#x9898;&#xFF1B;<code>article_link</code>&#xFF1A;&#x94FE;&#x63A5;&#x5230;&#x539F;&#x59CB;&#x65B0;&#x95FB;&#x6587;&#x7AE0;&#x3002;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-jso">{&quot;article_link&quot;: &quot;https://www.huffingtonpost.com/entry/versace-black-code_us_5861fbefe4b0de3a08f600d5&quot;, &quot;headline&quot;: &quot;former versace store clerk sues over secret &apos;black code&apos; for minority shoppers&quot;, &quot;is_sarcastic&quot;: 0}
+{&quot;article_link&quot;: &quot;https://www.huffingtonpost.com/entry/roseanne-revival-review_us_5ab3a497e4b054d118e04365&quot;, &quot;headline&quot;: &quot;the &apos;roseanne&apos; revival catches up to our thorny political mood, for better and worse&quot;, &quot;is_sarcastic&quot;: 0}
+</code></pre>
+<ul>
+<li>&#x8BFB;&#x53D6;</li>
+</ul>
+<p>orient&#x6307;&#x5B9A;&#x5B58;&#x50A8;&#x7684;json&#x683C;&#x5F0F;&#xFF0C;lines&#x6307;&#x5B9A;&#x6309;&#x7167;&#x884C;&#x53BB;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x6837;&#x672C;</p>
+<pre><code class="lang-python">json_read = pd.read_json(<span class="hljs-string">&quot;./data/Sarcasm_Headlines_Dataset.json&quot;</span>, orient=<span class="hljs-string">&quot;records&quot;</span>, lines=<span class="hljs-keyword">True</span>)
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<p><img src="../images/&#x65B0;&#x95FB;&#x6807;&#x9898;&#x8BBD;&#x523A;&#x8BFB;&#x53D6;.png" alt=""></p>
+<h3 id="5522-tojson">5.5.2.2 to_json</h3>
+<ul>
+<li>DataFrame.to_json(<em>path_or_buf=None</em>, <em>orient=None</em>, <em>lines=False</em>)<ul>
+<li>&#x5C06;Pandas &#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x4E3A;json&#x683C;&#x5F0F;</li>
+<li><em>path_or_buf=None</em>&#xFF1A;&#x6587;&#x4EF6;&#x5730;&#x5740;</li>
+<li>orient:&#x5B58;&#x50A8;&#x7684;json&#x5F62;&#x5F0F;&#xFF0C;{&#x2018;split&#x2019;,&#x2019;records&#x2019;,&#x2019;index&#x2019;,&#x2019;columns&#x2019;,&#x2019;values&#x2019;}</li>
+<li>lines:&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x4E3A;&#x4E00;&#x884C;</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x6848;&#x4F8B;">&#x6848;&#x4F8B;</h4>
+<ul>
+<li>&#x5B58;&#x50A8;&#x6587;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-python">json_read.to_json(<span class="hljs-string">&quot;./data/test.json&quot;</span>, orient=<span class="hljs-string">&apos;records&apos;</span>)
+</code></pre>
+<p>&#x7ED3;&#x679C;</p>
+<pre><code>[{&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/versace-black-code_us_5861fbefe4b0de3a08f600d5&quot;,&quot;headline&quot;:&quot;former versace store clerk sues over secret &apos;black code&apos; for minority shoppers&quot;,&quot;is_sarcastic&quot;:0},{&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/roseanne-revival-review_us_5ab3a497e4b054d118e04365&quot;,&quot;headline&quot;:&quot;the &apos;roseanne&apos; revival catches up to our thorny political mood, for better and worse&quot;,&quot;is_sarcastic&quot;:0},{&quot;article_link&quot;:&quot;https:\/\/local.theonion.com\/mom-starting-to-fear-son-s-web-series-closest-thing-she-1819576697&quot;,&quot;headline&quot;:&quot;mom starting to fear son&apos;s web series closest thing she will have to grandchild&quot;,&quot;is_sarcastic&quot;:1},{&quot;article_link&quot;:&quot;https:\/\/politics.theonion.com\/boehner-just-wants-wife-to-listen-not-come-up-with-alt-1819574302&quot;,&quot;headline&quot;:&quot;boehner just wants wife to listen, not come up with alternative debt-reduction ideas&quot;,&quot;is_sarcastic&quot;:1},{&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/jk-rowling-wishes-snape-happy-birthday_us_569117c4e4b0cad15e64fdcb&quot;,&quot;headline&quot;:&quot;j.k. rowling wishes snape happy birthday in the most magical way&quot;,&quot;is_sarcastic&quot;:0},{&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/advancing-the-worlds-women_b_6810038.html&quot;,&quot;headline&quot;:&quot;advancing the world&apos;s women&quot;,&quot;is_sarcastic&quot;:0},....]
+</code></pre><ul>
+<li>&#x4FEE;&#x6539;lines&#x53C2;&#x6570;&#x4E3A;True</li>
+</ul>
+<pre><code class="lang-python">json_read.to_json(<span class="hljs-string">&quot;./data/test.json&quot;</span>, orient=<span class="hljs-string">&apos;records&apos;</span>, lines=<span class="hljs-keyword">True</span>)
+</code></pre>
+<p>&#x7ED3;&#x679C;</p>
+<pre><code>{&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/versace-black-code_us_5861fbefe4b0de3a08f600d5&quot;,&quot;headline&quot;:&quot;former versace store clerk sues over secret &apos;black code&apos; for minority shoppers&quot;,&quot;is_sarcastic&quot;:0}
+{&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/roseanne-revival-review_us_5ab3a497e4b054d118e04365&quot;,&quot;headline&quot;:&quot;the &apos;roseanne&apos; revival catches up to our thorny political mood, for better and worse&quot;,&quot;is_sarcastic&quot;:0}
+{&quot;article_link&quot;:&quot;https:\/\/local.theonion.com\/mom-starting-to-fear-son-s-web-series-closest-thing-she-1819576697&quot;,&quot;headline&quot;:&quot;mom starting to fear son&apos;s web series closest thing she will have to grandchild&quot;,&quot;is_sarcastic&quot;:1}
+{&quot;article_link&quot;:&quot;https:\/\/politics.theonion.com\/boehner-just-wants-wife-to-listen-not-come-up-with-alt-1819574302&quot;,&quot;headline&quot;:&quot;boehner just wants wife to listen, not come up with alternative debt-reduction ideas&quot;,&quot;is_sarcastic&quot;:1}
+{&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/jk-rowling-wishes-snape-happy-birthday_us_569117c4e4b0cad15e64fdcb&quot;,&quot;headline&quot;:&quot;j.k. rowling wishes snape happy birthday in the most magical way&quot;,&quot;is_sarcastic&quot;:0}...
+</code></pre><h2 id="553-&#x62D3;&#x5C55;">5.5.3 &#x62D3;&#x5C55;</h2>
+<p><strong>&#x4F18;&#x5148;&#x9009;&#x62E9;&#x4F7F;&#x7528;HDF5&#x6587;&#x4EF6;&#x5B58;&#x50A8;</strong></p>
+<ul>
+<li>HDF5&#x5728;&#x5B58;&#x50A8;&#x7684;&#x65F6;&#x5019;&#x652F;&#x6301;&#x538B;&#x7F29;&#xFF0C;<strong>&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x662F;blosc&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x901F;&#x5EA6;&#x6700;&#x5FEB;</strong>&#x7684;&#x4E5F;&#x662F;pandas&#x9ED8;&#x8BA4;&#x652F;&#x6301;&#x7684;</li>
+<li>&#x4F7F;&#x7528;&#x538B;&#x7F29;&#x53EF;&#x4EE5;<strong>&#x63D0;&#x78C1;&#x76D8;&#x5229;&#x7528;&#x7387;&#xFF0C;&#x8282;&#x7701;&#x7A7A;&#x95F4;</strong></li>
+<li>HDF5&#x8FD8;&#x662F;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x8FC1;&#x79FB;&#x5230;hadoop &#x4E0A;&#x9762;</li>
+</ul>
+<h2 id="554-&#x603B;&#x7ED3;">5.5.4 &#x603B;&#x7ED3;</h2>
+<ul>
+<li>pandas&#x7684;CSV&#x3001;HDF5&#x3001;JSON&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x53D6;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Pandas/section4.html" class="navigation navigation-prev " aria-label="Previous page: Pandas画图"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Pandas/section6.html" class="navigation navigation-next " aria-label="Next page: 高级处理-缺失值处理"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"katex":{},"expandable-chapters-small":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
