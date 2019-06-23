@@ -1,0 +1,9 @@
+data/
+*.csv
+*.json
+*.data
+*.h5
+*.xlsx
+*.png
+*.pkl
+
