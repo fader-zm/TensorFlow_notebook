@@ -1,0 +1,1730 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>推荐算法 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04_ 推荐系统评估.html" />
+    
+    
+    <link rel="prev" href="02_推荐系统架构设计.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01_推荐系统简介.html">
+            
+                <a href="01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02_推荐系统架构设计.html">
+            
+                <a href="02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="03_推荐算法.html">
+            
+                <a href="03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="04_ 推荐系统评估.html">
+            
+                <a href="04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="05_ 推荐系统冷启动问题.html">
+            
+                <a href="05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../推荐系统实战1/README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                <a href="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                <a href="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../推荐系统实战1/05_离线推荐处理.html">
+            
+                <a href="../推荐系统实战1/05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../推荐系统实战1/06_实时推荐.html">
+            
+                <a href="../推荐系统实战1/06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../推荐系统实战2/chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../推荐系统实战2/chapter1.html">
+            
+                <a href="../推荐系统实战2/chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../推荐系统实战2/chapter2.html">
+            
+                <a href="../推荐系统实战2/chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../推荐系统实战2/chapter3.html">
+            
+                <a href="../推荐系统实战2/chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../推荐系统实战2/chapter4.html">
+            
+                <a href="../推荐系统实战2/chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../推荐系统实战2/chapter5.html">
+            
+                <a href="../推荐系统实战2/chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../推荐系统实战2/chapter6.html">
+            
+                <a href="../推荐系统实战2/chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../推荐系统实战2/chapter7.html">
+            
+                <a href="../推荐系统实战2/chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../推荐系统实战2/chapter8.html">
+            
+                <a href="../推荐系统实战2/chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../推荐系统实战2/chapter9.html">
+            
+                <a href="../推荐系统实战2/chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../推荐系统实战2/chapter10.html">
+            
+                <a href="../推荐系统实战2/chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../推荐系统实战2/chapter11.html">
+            
+                <a href="../推荐系统实战2/chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >推荐算法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x63A8;&#x8350;&#x7B97;&#x6CD5;">&#x63A8;&#x8350;&#x7B97;&#x6CD5;</h2>
+<ul>
+<li>&#x63A8;&#x8350;&#x6A21;&#x578B;&#x6784;&#x5EFA;&#x6D41;&#x7A0B;</li>
+<li>&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#x6982;&#x8FF0;</li>
+<li>&#x57FA;&#x4E8E;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x7684;&#x63A8;&#x8350;&#x7B97;&#x6CD5;</li>
+<li>&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x5B9E;&#x73B0;</li>
+</ul>
+<h3 id="&#x4E00;-&#x63A8;&#x8350;&#x6A21;&#x578B;&#x6784;&#x5EFA;&#x6D41;&#x7A0B;">&#x4E00; &#x63A8;&#x8350;&#x6A21;&#x578B;&#x6784;&#x5EFA;&#x6D41;&#x7A0B;</h3>
+<p>Data(&#x6570;&#x636E;)-&gt;Features(&#x7279;&#x5F81;)-&gt;ML Algorithm(&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7B97;&#x6CD5;)-&gt;Prediction Output(&#x9884;&#x6D4B;&#x8F93;&#x51FA;)</p>
+<ul>
+<li>&#x6570;&#x636E;&#x6E05;&#x6D17;/&#x6570;&#x636E;&#x5904;&#x7406;</li>
+</ul>
+<p><img src="img/algorithm1.png" alt=""></p>
+<ul>
+<li>&#x6570;&#x636E;&#x6765;&#x6E90;<ul>
+<li>&#x663E;&#x6027;&#x6570;&#x636E;<ul>
+<li>Rating &#x6253;&#x5206;</li>
+<li>Comments &#x8BC4;&#x8BBA;/&#x8BC4;&#x4EF7;</li>
+</ul>
+</li>
+<li>&#x9690;&#x5F62;&#x6570;&#x636E;<ul>
+<li>&#x202F;Order history &#x5386;&#x53F2;&#x8BA2;&#x5355;</li>
+<li>&#x202F;Cart events    &#x52A0;&#x8D2D;&#x7269;&#x8F66;</li>
+<li>&#x202F;Page views    &#x9875;&#x9762;&#x6D4F;&#x89C8;</li>
+<li>&#x202F;Click-thru      &#x70B9;&#x51FB;</li>
+<li>&#x202F;Search log     &#x641C;&#x7D22;&#x8BB0;&#x5F55;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x6570;&#x636E;&#x91CF;/&#x6570;&#x636E;&#x80FD;&#x5426;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;</li>
+<li>&#x7279;&#x5F81;&#x5DE5;&#x7A0B;</li>
+</ul>
+<p><img src="img/algorithm2.png" alt=""></p>
+<ul>
+<li>&#x4ECE;&#x6570;&#x636E;&#x4E2D;&#x7B5B;&#x9009;&#x7279;&#x5F81;<ul>
+<li>&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x7684;&#x5546;&#x54C1;&#xFF0C;&#x53EF;&#x80FD;&#x88AB;&#x62E5;&#x6709;&#x7C7B;&#x4F3C;&#x54C1;&#x5473;&#x6216;&#x9700;&#x6C42;&#x7684;&#x7528;&#x6237;&#x8D2D;&#x4E70;</li>
+<li>&#x4F7F;&#x7528;&#x7528;&#x6237;&#x884C;&#x4E3A;&#x6570;&#x636E;&#x63CF;&#x8FF0;&#x5546;&#x54C1;</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/algorithm3.png" alt=""></p>
+<ul>
+<li><p>&#x7528;&#x6570;&#x636E;&#x8868;&#x793A;&#x7279;&#x5F81;</p>
+<ul>
+<li><p>&#x5C06;&#x6240;&#x6709;&#x7528;&#x6237;&#x884C;&#x4E3A;&#x5408;&#x5E76;&#x5728;&#x4E00;&#x8D77; &#xFF0C;&#x5F62;&#x6210;&#x4E00;&#x4E2A;user-item &#x77E9;&#x9635;</p>
+<p><img src="img/algorithm4.png" alt="1545452707102"></p>
+</li>
+</ul>
+</li>
+<li><p>&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x7B97;&#x6CD5;</p>
+</li>
+</ul>
+<p><img src="img/algorithm5.png" alt=""></p>
+<ul>
+<li><p>&#x4EA7;&#x751F;&#x63A8;&#x8350;&#x7ED3;&#x679C;</p>
+<p><img src="img/algorithm6.png" alt=""></p>
+</li>
+</ul>
+<h3 id="&#x4E8C;-&#x6700;&#x7ECF;&#x5178;&#x7684;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#xFF1A;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#xFF08;collaborative-filtering&#xFF09;">&#x4E8C; &#x6700;&#x7ECF;&#x5178;&#x7684;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#xFF1A;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#xFF08;Collaborative Filtering&#xFF09;</h3>
+<p>&#x7B97;&#x6CD5;&#x601D;&#x60F3;&#xFF1A;<strong>&#x7269;&#x4EE5;&#x7C7B;&#x805A;&#xFF0C;&#x4EBA;&#x4EE5;&#x7FA4;&#x5206;</strong></p>
+<p>&#x57FA;&#x672C;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#x57FA;&#x4E8E;&#x4EE5;&#x4E0B;&#x5047;&#x8BBE;&#xFF1A;</p>
+<ul>
+<li>&#x201C;&#x8DDF;&#x4F60;&#x559C;&#x597D;<strong>&#x76F8;&#x4F3C;&#x7684;&#x4EBA;</strong>&#x559C;&#x6B22;&#x7684;&#x4E1C;&#x897F;&#x4F60;&#x4E5F;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x559C;&#x6B22;&#x201D; &#xFF1A;&#x57FA;&#x4E8E;&#x7528;&#x6237;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#xFF08;User-based CF&#xFF09;</li>
+<li>&#x201C;&#x8DDF;&#x4F60;&#x559C;&#x6B22;&#x7684;&#x4E1C;&#x897F;<strong>&#x76F8;&#x4F3C;&#x7684;&#x4E1C;&#x897F;</strong>&#x4F60;&#x4E5F;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x559C;&#x6B22; &#x201D;&#xFF1A;&#x57FA;&#x4E8E;&#x7269;&#x54C1;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#xFF08;Item-based CF&#xFF09;</li>
+</ul>
+<p>&#x5B9E;&#x73B0;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ol>
+<li><p><strong>&#x627E;&#x51FA;&#x6700;&#x76F8;&#x4F3C;&#x7684;&#x4EBA;&#x6216;&#x7269;&#x54C1;&#xFF1A;TOP-N&#x76F8;&#x4F3C;&#x7684;&#x4EBA;&#x6216;&#x7269;&#x54C1;</strong></p>
+<p>&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x4E24;&#x4E24;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x6765;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x5373;&#x53EF;&#x627E;&#x51FA;TOP-N&#x76F8;&#x4F3C;&#x7684;&#x4EBA;&#x6216;&#x7269;&#x54C1;</p>
+</li>
+<li><p><strong>&#x6839;&#x636E;&#x76F8;&#x4F3C;&#x7684;&#x4EBA;&#x6216;&#x7269;&#x54C1;&#x4EA7;&#x751F;&#x63A8;&#x8350;&#x7ED3;&#x679C;</strong></p>
+<p>&#x5229;&#x7528;TOP-N&#x7ED3;&#x679C;&#x751F;&#x6210;&#x521D;&#x59CB;&#x63A8;&#x8350;&#x7ED3;&#x679C;&#xFF0C;&#x7136;&#x540E;&#x8FC7;&#x6EE4;&#x6389;&#x7528;&#x6237;&#x5DF2;&#x7ECF;&#x6709;&#x8FC7;&#x8BB0;&#x5F55;&#x7684;&#x7269;&#x54C1;&#x6216;&#x660E;&#x786E;&#x8868;&#x793A;&#x4E0D;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x7269;&#x54C1;</p>
+</li>
+</ol>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x6570;&#x636E;&#x96C6;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x5BF9;&#x7269;&#x54C1;&#x7684;&#x8D2D;&#x4E70;&#x8BB0;&#x5F55;&#x8868;&#xFF1A;&#x6253;&#x52FE;&#x8868;&#x793A;&#x7528;&#x6237;&#x5BF9;&#x7269;&#x54C1;&#x7684;&#x6709;&#x8D2D;&#x4E70;&#x8BB0;&#x5F55;</p>
+<ul>
+<li><p>&#x5173;&#x4E8E;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#x8FD9;&#x91CC;&#x5148;&#x7528;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x601D;&#x60F3;&#xFF1A;&#x5982;&#x6709;&#x4E24;&#x4E2A;&#x540C;&#x5B66;X&#x548C;Y&#xFF0C;X&#x540C;&#x5B66;&#x7231;&#x597D;[&#x8DB3;&#x7403;&#x3001;&#x7BEE;&#x7403;&#x3001;&#x4E52;&#x4E53;&#x7403;]&#xFF0C;Y&#x540C;&#x5B66;&#x7231;&#x597D;[&#x7F51;&#x7403;&#x3001;&#x8DB3;&#x7403;&#x3001;&#x7BEE;&#x7403;&#x3001;&#x7FBD;&#x6BDB;&#x7403;]&#xFF0C;&#x53EF;&#x89C1;&#x4ED6;&#x4EEC;&#x7684;&#x5171;&#x540C;&#x7231;&#x597D;&#x6709;2&#x4E2A;&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x4EEC;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x53EF;&#x4EE5;&#x7528;&#xFF1A;2/3 * 2/4 = 1/3 &#x2248; 0.33 &#x6765;&#x8868;&#x793A;&#x3002;</p>
+<p>User-Based CF</p>
+<p><img src="img/%E5%9F%BA%E4%BA%8E%E7%94%A8%E6%88%B7%E7%9A%84%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E6%8E%A8%E8%8D%901.png" alt=""></p>
+<p>Item-Based CF</p>
+<p><img src="img/%E5%9F%BA%E4%BA%8E%E7%89%A9%E5%93%81%E7%9A%84%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E6%8E%A8%E8%8D%901.png" alt=""></p>
+</li>
+</ul>
+<p>  &#x901A;&#x8FC7;&#x524D;&#x9762;&#x4E24;&#x4E2A;demo&#xFF0C;&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x5BF9;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#x7684;&#x8BBE;&#x8BA1;&#x4E0E;&#x5B9E;&#x73B0;&#x6709;&#x4E86;&#x6BD4;&#x8F83;&#x6E05;&#x6670;&#x7684;&#x8BA4;&#x8BC6;&#x3002;</p>
+<h3 id="&#x4E09;-&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;similarity-calculation">&#x4E09; &#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;(Similarity Calculation)</h3>
+<p><img src="img/similarity_calc1.png" alt=""></p>
+<ul>
+<li><p>&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;</p>
+<ul>
+<li>&#x6570;&#x636E;&#x5206;&#x7C7B;<ul>
+<li>&#x5B9E;&#x6570;&#x503C;(&#x7269;&#x54C1;&#x8BC4;&#x5206;&#x60C5;&#x51B5;)</li>
+<li>&#x5E03;&#x5C14;&#x503C;(&#x7528;&#x6237;&#x7684;&#x884C;&#x4E3A; &#x662F;&#x5426;&#x70B9;&#x51FB; &#x662F;&#x5426;&#x6536;&#x85CF;)</li>
+</ul>
+</li>
+<li>&#x6B27;&#x6C0F;&#x8DDD;&#x79BB;, &#x662F;&#x4E00;&#x4E2A;&#x6B27;&#x5F0F;&#x7A7A;&#x95F4;&#x4E0B;&#x5EA6;&#x91CF;&#x8DDD;&#x79BB;&#x7684;&#x65B9;&#x6CD5;. &#x4E24;&#x4E2A;&#x7269;&#x4F53;, &#x90FD;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7A7A;&#x95F4;&#x4E0B;&#x8868;&#x793A;&#x4E3A;&#x4E24;&#x4E2A;&#x70B9;, &#x5047;&#x5982;&#x53EB;&#x505A;p,q, &#x5206;&#x522B;&#x90FD;&#x662F;n&#x4E2A;&#x5750;&#x6807;, &#x90A3;&#x4E48;&#x6B27;&#x5F0F;&#x8DDD;&#x79BB;&#x5C31;&#x662F;&#x8861;&#x91CF;&#x8FD9;&#x4E24;&#x4E2A;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;. &#x6B27;&#x6C0F;&#x8DDD;&#x79BB;&#x4E0D;&#x9002;&#x7528;&#x4E8E;&#x5E03;&#x5C14;&#x5411;&#x91CF;&#x4E4B;&#x95F4;</li>
+</ul>
+<p><img src="img/od.png" alt="1546159024305"></p>
+<p>&#x200B;    &#x6B27;&#x6C0F;&#x8DDD;&#x79BB;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x8D1F;&#x6570;, &#x6700;&#x5927;&#x503C;&#x6B63;&#x65E0;&#x7A77;, &#x901A;&#x5E38;&#x8BA1;&#x7B97;&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x7ED3;&#x679C;&#x5E0C;&#x671B;&#x662F;[-1,1]&#x6216;[0,1]&#x4E4B;&#x95F4;,&#x4E00;&#x822C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;</p>
+<p>&#x200B;    &#x5982;&#x4E0B;&#x8F6C;&#x5316;&#x516C;&#x5F0F;:<img src="img/od2.png" alt=""></p>
+<p>&#x200B;    </p>
+</li>
+<li><p>&#x6770;&#x5361;&#x5FB7;&#x76F8;&#x4F3C;&#x5EA6;&amp;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&amp;&#x76AE;&#x5C14;&#x900A;&#x76F8;&#x5173;&#x7CFB;&#x6570;</p>
+<ul>
+<li>&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;<ul>
+<li>&#x5EA6;&#x91CF;&#x7684;&#x662F;&#x4E24;&#x4E2A;&#x5411;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x5939;&#x89D2;, &#x7528;&#x5939;&#x89D2;&#x7684;&#x4F59;&#x5F26;&#x503C;&#x6765;&#x5EA6;&#x91CF;&#x76F8;&#x4F3C;&#x7684;&#x60C5;&#x51B5;</li>
+<li>&#x4E24;&#x4E2A;&#x5411;&#x91CF;&#x7684;&#x5939;&#x89D2;&#x4E3A;0&#x662F;,&#x4F59;&#x5F26;&#x503C;&#x4E3A;1, &#x5F53;&#x5939;&#x89D2;&#x4E3A;90&#x5EA6;&#x662F;&#x4F59;&#x5F26;&#x503C;&#x4E3A;0,&#x4E3A;180&#x5EA6;&#x662F;&#x4F59;&#x5F26;&#x503C;&#x4E3A;-1</li>
+<li>&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x5728;&#x5EA6;&#x91CF;&#x6587;&#x672C;&#x76F8;&#x4F3C;&#x5EA6;, &#x7528;&#x6237;&#x76F8;&#x4F3C;&#x5EA6; &#x7269;&#x54C1;&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x65F6;&#x5019;&#x8F83;&#x4E3A;&#x5E38;&#x7528;</li>
+<li>&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x7279;&#x70B9;, &#x4E0E;&#x5411;&#x91CF;&#x957F;&#x5EA6;&#x65E0;&#x5173;,&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#x8981;&#x5BF9;&#x5411;&#x91CF;&#x957F;&#x5EA6;&#x5F52;&#x4E00;&#x5316;, &#x4E24;&#x4E2A;&#x5411;&#x91CF;&#x53EA;&#x8981;&#x65B9;&#x5411;&#x4E00;&#x81F4;,&#x65E0;&#x8BBA;&#x7A0B;&#x5EA6;&#x5F3A;&#x5F31;, &#x90FD;&#x53EF;&#x4EE5;&#x89C6;&#x4E3A;&apos;&#x76F8;&#x4F3C;&apos;</li>
+</ul>
+</li>
+<li>&#x76AE;&#x5C14;&#x900A;&#x76F8;&#x5173;&#x7CFB;&#x6570;Pearson<ul>
+<li>&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;, &#x4E0D;&#x8FC7;&#x5148;&#x5BF9;&#x5411;&#x91CF;&#x505A;&#x4E86;&#x4E2D;&#x5FC3;&#x5316;, &#x5411;&#x91CF;a b &#x5404;&#x81EA;&#x51CF;&#x53BB;&#x5411;&#x91CF;&#x7684;&#x5747;&#x503C;&#x540E;, &#x518D;&#x8BA1;&#x7B97;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;</li>
+<li>&#x76AE;&#x5C14;&#x900A;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x5728;-1,1&#x4E4B;&#x95F4; -1&#x8868;&#x793A;&#x8D1F;&#x76F8;&#x5173;, 1&#x8868;&#x793A;&#x6B63;&#x76F8;&#x5173;</li>
+<li>&#x5EA6;&#x91CF;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x4E0D;&#x662F;&#x540C;&#x589E;&#x540C;&#x51CF;</li>
+<li>&#x76AE;&#x5C14;&#x900A;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#x5EA6;&#x91CF;&#x7684;&#x662F;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x53D8;&#x5316;&#x8D8B;&#x52BF;&#x662F;&#x5426;&#x4E00;&#x81F4;, <strong>&#x4E0D;&#x9002;&#x5408;&#x8BA1;&#x7B97;&#x5E03;&#x5C14;&#x503C;&#x5411;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x5173;&#x5EA6;</strong></li>
+</ul>
+</li>
+<li>&#x6770;&#x5361;&#x5FB7;&#x76F8;&#x4F3C;&#x5EA6; Jaccard<ul>
+<li>&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x4EA4;&#x96C6;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x5728;&#x5E76;&#x96C6;&#x4E2D;&#x6240;&#x5360;&#x7684;&#x6BD4;&#x4F8B;, &#x975E;&#x5E38;&#x9002;&#x7528;&#x4E8E;&#x5E03;&#x5C14;&#x5411;&#x91CF;&#x8868;&#x793A;</li>
+<li>&#x5206;&#x5B50;&#x662F;&#x4E24;&#x4E2A;&#x5E03;&#x5C14;&#x5411;&#x91CF;&#x505A;&#x70B9;&#x79EF;&#x8BA1;&#x7B97;, &#x5F97;&#x5230;&#x7684;&#x5C31;&#x662F;&#x4EA4;&#x96C6;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;</li>
+<li>&#x5206;&#x6BCD;&#x662F;&#x4E24;&#x4E2A;&#x5E03;&#x5C14;&#x5411;&#x91CF;&#x505A;&#x6216;&#x8FD0;&#x7B97;, &#x518D;&#x6C42;&#x5143;&#x7D20;&#x548C;</li>
+</ul>
+</li>
+<li>&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x9002;&#x5408;&#x7528;&#x6237;&#x8BC4;&#x5206;&#x6570;&#x636E;(&#x5B9E;&#x6570;&#x503C;), &#x6770;&#x5361;&#x5FB7;&#x76F8;&#x4F3C;&#x5EA6;&#x9002;&#x7528;&#x4E8E;&#x9690;&#x5F0F;&#x53CD;&#x9988;&#x6570;&#x636E;(0,1&#x5E03;&#x5C14;&#x503C;)(&#x662F;&#x5426;&#x6536;&#x85CF;,&#x662F;&#x5426;&#x70B9;&#x51FB;,&#x662F;&#x5426;&#x52A0;&#x8D2D;&#x7269;&#x8F66;)</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/similarity_calc2.png" alt=""></p>
+<ul>
+<li><p>&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;</p>
+<p><img src="img/similarity_calc5.png" alt=""></p>
+</li>
+<li><p>&#x76AE;&#x5C14;&#x900A;&#x76F8;&#x5173;&#x7CFB;&#x6570;</p>
+</li>
+</ul>
+<p><img src="img/similarity_calc3.png" alt=""></p>
+<p><img src="img/similarity_calc4.png" alt=""></p>
+<ul>
+<li>&#x8BA1;&#x7B97;&#x51FA;&#x7528;&#x6237;1&#x548C;&#x5176;&#x5B83;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;</li>
+</ul>
+<p><img src="img/similarity_calc6.png" alt=""></p>
+<ul>
+<li>&#x6309;&#x7167;&#x76F8;&#x4F3C;&#x5EA6;&#x5927;&#x5C0F;&#x6392;&#x5E8F;, K&#x8FD1;&#x90BB; &#x5982;K&#x53D6;4: </li>
+</ul>
+<p><img src="img/similarity_calc7.png" alt=""></p>
+<ul>
+<li>&#x53D6;&#x51FA;&#x8FD1;&#x90BB;&#x7528;&#x6237;&#x7684;&#x8D2D;&#x7269;&#x6E05;&#x5355;</li>
+</ul>
+<p><img src="img/similarity_calc8.png" alt=""></p>
+<ul>
+<li>&#x53BB;&#x9664;&#x7528;&#x6237;1&#x5DF2;&#x7ECF;&#x8D2D;&#x4E70;&#x8FC7;&#x7684;&#x5546;&#x54C1;</li>
+</ul>
+<p><img src="img/similarity_calc9.png" alt=""></p>
+<ul>
+<li>&#x5728;&#x5269;&#x4F59;&#x7684;&#x7269;&#x54C1;&#x4E2D;&#x6839;&#x636E;&#x8BC4;&#x5206;&#x6392;&#x5E8F;</li>
+</ul>
+<p><img src="img/similarity_calc10.png" alt=""></p>
+<ul>
+<li>&#x7269;&#x54C1;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;<ul>
+<li>&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x5BF9;&#x7EDD;&#x5BF9;&#x503C;&#x5927;&#x5C0F;&#x4E0D;&#x654F;&#x611F;&#x5E26;&#x6765;&#x7684;&#x95EE;&#x9898;<ul>
+<li>&#x7528;&#x6237;A&#x5BF9;&#x4E24;&#x90E8;&#x7535;&#x5F71;&#x8BC4;&#x5206;&#x5206;&#x522B;&#x662F;1&#x5206;&#x548C;2&#x5206;, &#x7528;&#x6237;B&#x5BF9;&#x540C;&#x6837;&#x8FD9;&#x4E24;&#x90E8;&#x7535;&#x5F71;&#x8FDB;&#x884C;&#x8BC4;&#x5206;&#x662F;4&#x5206;,5&#x5206; &#x7528;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;,&#x4E24;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x8FBE;&#x5230;0.98    </li>
+<li>&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x6539;&#x8FDB;&#x7684;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;, &#x5148;&#x8BA1;&#x7B97;&#x5411;&#x91CF;&#x6BCF;&#x4E2A;&#x7EF4;&#x5EA6;&#x4E0A;&#x7684;&#x5747;&#x503C;, &#x7136;&#x540E;&#x6BCF;&#x4E2A;&#x5411;&#x91CF;&#x5728;&#x5404;&#x4E2A;&#x7EF4;&#x5EA6;&#x4E0A;&#x90FD;&#x51CF;&#x53BB;&#x5747;&#x503C;&#x540E;,&#x5728;&#x8BA1;&#x7B97;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;, &#x7528;&#x8C03;&#x6574;&#x7684;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#x5F97;&#x5230;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x662F;-0.1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/similarity_calc11.png" alt=""></p>
+<ul>
+<li>&#x7269;&#x54C1;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#x6848;&#x4F8B;</li>
+</ul>
+<p><img src="img/similarity_calc12.png" alt=""></p>
+<ul>
+<li>&#x627E;&#x51FA;&#x7269;&#x54C1;1&#x7684;&#x76F8;&#x4F3C;&#x5546;&#x54C1;</li>
+</ul>
+<p><img src="img/similarity_calc13.png" alt=""></p>
+<ul>
+<li>&#x9009;&#x62E9;&#x6700;&#x8FD1;&#x4F3C;&#x7684;&#x7269;&#x54C1;</li>
+</ul>
+<p><img src="img/similarity_calc14.png" alt=""></p>
+<ul>
+<li>&#x57FA;&#x4E8E;&#x7528;&#x6237;&#x4E0E;&#x7269;&#x54C1;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x6BD4;&#x8F83;</li>
+</ul>
+<p><img src="img/similarity_calc15.png" alt=""><img src="img/similarity_calc16.png" alt=""></p>
+<h3 id="&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#xFF1A;">&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#xFF1A;</h3>
+<ul>
+<li><p>&#x6784;&#x5EFA;&#x6570;&#x636E;&#x96C6;&#xFF1A;</p>
+<pre><code class="lang-python">users = [<span class="hljs-string">&quot;User1&quot;</span>, <span class="hljs-string">&quot;User2&quot;</span>, <span class="hljs-string">&quot;User3&quot;</span>, <span class="hljs-string">&quot;User4&quot;</span>, <span class="hljs-string">&quot;User5&quot;</span>]
+items = [<span class="hljs-string">&quot;Item A&quot;</span>, <span class="hljs-string">&quot;Item B&quot;</span>, <span class="hljs-string">&quot;Item C&quot;</span>, <span class="hljs-string">&quot;Item D&quot;</span>, <span class="hljs-string">&quot;Item E&quot;</span>]
+<span class="hljs-comment"># &#x6784;&#x5EFA;&#x6570;&#x636E;&#x96C6;</span>
+datasets = [
+    [<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-keyword">None</span>,<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-keyword">None</span>],
+    [<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-keyword">None</span>,<span class="hljs-keyword">None</span>,<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-string">&quot;buy&quot;</span>],
+    [<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-keyword">None</span>,<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-keyword">None</span>,<span class="hljs-keyword">None</span>],
+    [<span class="hljs-keyword">None</span>,<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-keyword">None</span>,<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-string">&quot;buy&quot;</span>],
+    [<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-string">&quot;buy&quot;</span>,<span class="hljs-keyword">None</span>,<span class="hljs-string">&quot;buy&quot;</span>],
+]
+</code></pre>
+</li>
+<li><p>&#x8BA1;&#x7B97;&#x65F6;&#x6211;&#x4EEC;&#x6570;&#x636E;&#x901A;&#x5E38;&#x90FD;&#x9700;&#x8981;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x6216;&#x8005;&#x7F16;&#x7801;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x4FBF;&#x4E8E;&#x6211;&#x4EEC;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#x5904;&#x7406;&#xFF0C;&#x6BD4;&#x5982;&#x8FD9;&#x91CC;&#x662F;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x60C5;&#x5F62;&#xFF0C;&#x6211;&#x4EEC;&#x7528;1&#x3001;0&#x5206;&#x522B;&#x6765;&#x8868;&#x793A;&#x7528;&#x6237;&#x7684;&#x662F;&#x5426;&#x8D2D;&#x4E70;&#x8FC7;&#x8BE5;&#x7269;&#x54C1;&#xFF0C;&#x5219;&#x6211;&#x4EEC;&#x7684;&#x6570;&#x636E;&#x96C6;&#x5176;&#x5B9E;&#x5E94;&#x8BE5;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-python">users = [<span class="hljs-string">&quot;User1&quot;</span>, <span class="hljs-string">&quot;User2&quot;</span>, <span class="hljs-string">&quot;User3&quot;</span>, <span class="hljs-string">&quot;User4&quot;</span>, <span class="hljs-string">&quot;User5&quot;</span>]
+items = [<span class="hljs-string">&quot;Item A&quot;</span>, <span class="hljs-string">&quot;Item B&quot;</span>, <span class="hljs-string">&quot;Item C&quot;</span>, <span class="hljs-string">&quot;Item D&quot;</span>, <span class="hljs-string">&quot;Item E&quot;</span>]
+<span class="hljs-comment"># &#x7528;&#x6237;&#x8D2D;&#x4E70;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#x96C6;</span>
+datasets = [
+    [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],
+    [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],
+]
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+
+df = pd.DataFrame(datasets,
+                  columns=items,
+                  index=users)
+print(df)
+</code></pre>
+</li>
+<li><p>&#x6709;&#x4E86;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x4E0D;&#x8FC7;&#x5BF9;&#x4E8E;&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x8BA1;&#x7B97;&#x5176;&#x5B9E;&#x662F;&#x6709;&#x5F88;&#x591A;&#x4E13;&#x95E8;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x3001;&#x76AE;&#x5C14;&#x900A;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#x3001;&#x6770;&#x5361;&#x5FB7;&#x76F8;&#x4F3C;&#x5EA6;&#x7B49;&#x7B49;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x6770;&#x5361;&#x5FB7;&#x76F8;&#x4F3C;&#x7CFB;&#x6570;[0,1]</p>
+<p><strong>&#x76F4;&#x63A5;&#x8BA1;&#x7B97;&#x67D0;&#x4E24;&#x9879;&#x7684;&#x6770;&#x5361;&#x5FB7;&#x76F8;&#x4F3C;&#x7CFB;&#x6570;</strong></p>
+</li>
+</ul>
+<pre><code class="lang-python">  <span class="hljs-keyword">from</span> sklearn.metrics <span class="hljs-keyword">import</span> jaccard_similarity_score
+  <span class="hljs-comment"># &#x8BA1;&#x7B97;Item A &#x548C;Item B&#x7684;&#x76F8;&#x4F3C;&#x5EA6;</span>
+  print(jaccard_similarity_score(df[<span class="hljs-string">&quot;Item A&quot;</span>], df[<span class="hljs-string">&quot;Item B&quot;</span>]))
+
+
+  <span class="hljs-comment"># &#x8BA1;&#x7B97;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x4E24;&#x4E24;&#x7684;&#x6770;&#x5361;&#x5FB7;&#x76F8;&#x4F3C;&#x7CFB;&#x6570;</span>
+  <span class="hljs-keyword">from</span> sklearn.metrics.pairwise <span class="hljs-keyword">import</span> pairwise_distances
+  <span class="hljs-comment"># &#x8BA1;&#x7B97;&#x7528;&#x6237;&#x95F4;&#x76F8;&#x4F3C;&#x5EA6;</span>
+  user_similar = <span class="hljs-number">1</span> - pairwise_distances(df, metric=<span class="hljs-string">&quot;jaccard&quot;</span>)
+  user_similar = pd.DataFrame(user_similar, columns=users, index=users)
+  print(<span class="hljs-string">&quot;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x7684;&#x4E24;&#x4E24;&#x76F8;&#x4F3C;&#x5EA6;&#xFF1A;&quot;</span>)
+  print(user_similar)
+
+  <span class="hljs-comment"># &#x8BA1;&#x7B97;&#x7269;&#x54C1;&#x95F4;&#x76F8;&#x4F3C;&#x5EA6;</span>
+  item_similar = <span class="hljs-number">1</span> - pairwise_distances(df.T, metric=<span class="hljs-string">&quot;jaccard&quot;</span>)
+  item_similar = pd.DataFrame(item_similar, columns=items, index=items)
+  print(<span class="hljs-string">&quot;&#x7269;&#x54C1;&#x4E4B;&#x95F4;&#x7684;&#x4E24;&#x4E24;&#x76F8;&#x4F3C;&#x5EA6;&#xFF1A;&quot;</span>)
+  print(item_similar)
+</code></pre>
+<p>  &#x6709;&#x4E86;&#x4E24;&#x4E24;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x53EF;&#x4EE5;&#x7B5B;&#x9009;TOP-N&#x76F8;&#x4F3C;&#x7ED3;&#x679C;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x63A8;&#x8350;&#x4E86;</p>
+<ul>
+<li><p>User-Based CF</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> pprint <span class="hljs-keyword">import</span> pprint
+
+users = [<span class="hljs-string">&quot;User1&quot;</span>, <span class="hljs-string">&quot;User2&quot;</span>, <span class="hljs-string">&quot;User3&quot;</span>, <span class="hljs-string">&quot;User4&quot;</span>, <span class="hljs-string">&quot;User5&quot;</span>]
+items = [<span class="hljs-string">&quot;Item A&quot;</span>, <span class="hljs-string">&quot;Item B&quot;</span>, <span class="hljs-string">&quot;Item C&quot;</span>, <span class="hljs-string">&quot;Item D&quot;</span>, <span class="hljs-string">&quot;Item E&quot;</span>]
+<span class="hljs-comment"># &#x7528;&#x6237;&#x8D2D;&#x4E70;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#x96C6;</span>
+datasets = [
+    [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],
+    [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],
+]
+
+df = pd.DataFrame(datasets,
+                  columns=items,
+                  index=users)
+
+<span class="hljs-comment"># &#x8BA1;&#x7B97;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x4E24;&#x4E24;&#x7684;&#x6770;&#x5361;&#x5FB7;&#x76F8;&#x4F3C;&#x7CFB;&#x6570;</span>
+<span class="hljs-keyword">from</span> sklearn.metrics.pairwise <span class="hljs-keyword">import</span> pairwise_distances
+<span class="hljs-comment"># &#x8BA1;&#x7B97;&#x7528;&#x6237;&#x95F4;&#x76F8;&#x4F3C;&#x5EA6;</span>
+user_similar = <span class="hljs-number">1</span> - pairwise_distances(df, metric=<span class="hljs-string">&quot;jaccard&quot;</span>)
+user_similar = pd.DataFrame(user_similar, columns=users, index=users)
+print(<span class="hljs-string">&quot;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x7684;&#x4E24;&#x4E24;&#x76F8;&#x4F3C;&#x5EA6;&#xFF1A;&quot;</span>)
+print(user_similar)
+
+topN_users = {}
+<span class="hljs-comment"># &#x904D;&#x5386;&#x6BCF;&#x4E00;&#x884C;&#x6570;&#x636E;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> user_similar.index:
+    <span class="hljs-comment"># &#x53D6;&#x51FA;&#x6BCF;&#x4E00;&#x5217;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x5220;&#x9664;&#x81EA;&#x8EAB;&#xFF0C;&#x7136;&#x540E;&#x6392;&#x5E8F;&#x6570;&#x636E;</span>
+    _df = user_similar.loc[i].drop([i])
+    _df_sorted = _df.sort_values(ascending=<span class="hljs-keyword">False</span>)
+
+    top2 = list(_df_sorted.index[:<span class="hljs-number">2</span>])
+    topN_users[i] = top2
+
+print(<span class="hljs-string">&quot;Top2&#x76F8;&#x4F3C;&#x7528;&#x6237;&#xFF1A;&quot;</span>)
+pprint(topN_users)
+
+rs_results = {}
+<span class="hljs-comment"># &#x6784;&#x5EFA;&#x63A8;&#x8350;&#x7ED3;&#x679C;</span>
+<span class="hljs-keyword">for</span> user, sim_users <span class="hljs-keyword">in</span> topN_users.items():
+    rs_result = set()    <span class="hljs-comment"># &#x5B58;&#x50A8;&#x63A8;&#x8350;&#x7ED3;&#x679C;</span>
+    <span class="hljs-keyword">for</span> sim_user <span class="hljs-keyword">in</span> sim_users:
+        <span class="hljs-comment"># &#x6784;&#x5EFA;&#x521D;&#x59CB;&#x7684;&#x63A8;&#x8350;&#x7ED3;&#x679C;</span>
+        rs_result = rs_result.union(set(df.ix[sim_user].replace(<span class="hljs-number">0</span>,np.nan).dropna().index))
+    <span class="hljs-comment"># &#x8FC7;&#x6EE4;&#x6389;&#x5DF2;&#x7ECF;&#x8D2D;&#x4E70;&#x8FC7;&#x7684;&#x7269;&#x54C1;</span>
+    rs_result -= set(df.ix[user].replace(<span class="hljs-number">0</span>,np.nan).dropna().index)
+    rs_results[user] = rs_result
+print(<span class="hljs-string">&quot;&#x6700;&#x7EC8;&#x63A8;&#x8350;&#x7ED3;&#x679C;&#xFF1A;&quot;</span>)
+pprint(rs_results)
+</code></pre>
+</li>
+<li><p>Item-Based CF</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> pprint <span class="hljs-keyword">import</span> pprint
+
+users = [<span class="hljs-string">&quot;User1&quot;</span>, <span class="hljs-string">&quot;User2&quot;</span>, <span class="hljs-string">&quot;User3&quot;</span>, <span class="hljs-string">&quot;User4&quot;</span>, <span class="hljs-string">&quot;User5&quot;</span>]
+items = [<span class="hljs-string">&quot;Item A&quot;</span>, <span class="hljs-string">&quot;Item B&quot;</span>, <span class="hljs-string">&quot;Item C&quot;</span>, <span class="hljs-string">&quot;Item D&quot;</span>, <span class="hljs-string">&quot;Item E&quot;</span>]
+<span class="hljs-comment"># &#x7528;&#x6237;&#x8D2D;&#x4E70;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#x96C6;</span>
+datasets = [
+    [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],
+    [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],
+]
+
+df = pd.DataFrame(datasets,
+                  columns=items,
+                  index=users)
+
+<span class="hljs-comment"># &#x8BA1;&#x7B97;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x4E24;&#x4E24;&#x7684;&#x6770;&#x5361;&#x5FB7;&#x76F8;&#x4F3C;&#x7CFB;&#x6570;</span>
+<span class="hljs-keyword">from</span> sklearn.metrics.pairwise <span class="hljs-keyword">import</span> pairwise_distances
+<span class="hljs-comment"># &#x8BA1;&#x7B97;&#x7269;&#x54C1;&#x95F4;&#x76F8;&#x4F3C;&#x5EA6;</span>
+item_similar = <span class="hljs-number">1</span> - pairwise_distances(df.T, metric=<span class="hljs-string">&quot;jaccard&quot;</span>)
+item_similar = pd.DataFrame(item_similar, columns=items, index=items)
+print(<span class="hljs-string">&quot;&#x7269;&#x54C1;&#x4E4B;&#x95F4;&#x7684;&#x4E24;&#x4E24;&#x76F8;&#x4F3C;&#x5EA6;&#xFF1A;&quot;</span>)
+print(item_similar)
+
+topN_items = {}
+<span class="hljs-comment"># &#x904D;&#x5386;&#x6BCF;&#x4E00;&#x884C;&#x6570;&#x636E;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> item_similar.index:
+    <span class="hljs-comment"># &#x53D6;&#x51FA;&#x6BCF;&#x4E00;&#x5217;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x5220;&#x9664;&#x81EA;&#x8EAB;&#xFF0C;&#x7136;&#x540E;&#x6392;&#x5E8F;&#x6570;&#x636E;</span>
+    _df = item_similar.loc[i].drop([i])
+    _df_sorted = _df.sort_values(ascending=<span class="hljs-keyword">False</span>)
+
+    top2 = list(_df_sorted.index[:<span class="hljs-number">2</span>])
+    topN_items[i] = top2
+
+print(<span class="hljs-string">&quot;Top2&#x76F8;&#x4F3C;&#x7269;&#x54C1;&#xFF1A;&quot;</span>)
+pprint(topN_items)
+
+rs_results = {}
+<span class="hljs-comment"># &#x6784;&#x5EFA;&#x63A8;&#x8350;&#x7ED3;&#x679C;</span>
+<span class="hljs-keyword">for</span> user <span class="hljs-keyword">in</span> df.index:    <span class="hljs-comment"># &#x904D;&#x5386;&#x6240;&#x6709;&#x7528;&#x6237;</span>
+    rs_result = set()
+    <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> df.ix[user].replace(<span class="hljs-number">0</span>,np.nan).dropna().index:   <span class="hljs-comment"># &#x53D6;&#x51FA;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x5F53;&#x524D;&#x5DF2;&#x8D2D;&#x7269;&#x54C1;&#x5217;&#x8868;</span>
+        <span class="hljs-comment"># &#x6839;&#x636E;&#x6BCF;&#x4E2A;&#x7269;&#x54C1;&#x627E;&#x51FA;&#x6700;&#x76F8;&#x4F3C;&#x7684;TOP-N&#x7269;&#x54C1;&#xFF0C;&#x6784;&#x5EFA;&#x521D;&#x59CB;&#x63A8;&#x8350;&#x7ED3;&#x679C;</span>
+        rs_result = rs_result.union(topN_items[item])
+    <span class="hljs-comment"># &#x8FC7;&#x6EE4;&#x6389;&#x7528;&#x6237;&#x5DF2;&#x8D2D;&#x7684;&#x7269;&#x54C1;</span>
+    rs_result -= set(df.ix[user].replace(<span class="hljs-number">0</span>,np.nan).dropna().index)
+    <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5230;&#x7ED3;&#x679C;&#x4E2D;</span>
+    rs_results[user] = rs_result
+
+print(<span class="hljs-string">&quot;&#x6700;&#x7EC8;&#x63A8;&#x8350;&#x7ED3;&#x679C;&#xFF1A;&quot;</span>)
+pprint(rs_results)
+</code></pre>
+</li>
+</ul>
+<p><strong>&#x5173;&#x4E8E;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x96C6;</strong></p>
+<p>&#x5728;&#x524D;&#x9762;&#x7684;demo&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x662F;&#x4F7F;&#x7528;&#x7528;&#x6237;&#x5BF9;&#x7269;&#x54C1;&#x7684;&#x4E00;&#x4E2A;&#x8D2D;&#x4E70;&#x8BB0;&#x5F55;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x6BD4;&#x5982;&#x6D4F;&#x89C8;&#x70B9;&#x51FB;&#x8BB0;&#x5F55;&#x3001;&#x6536;&#x542C;&#x8BB0;&#x5F55;&#x7B49;&#x7B49;&#x3002;&#x8FD9;&#x6837;&#x6570;&#x636E;&#x6211;&#x4EEC;&#x9884;&#x6D4B;&#x7684;&#x7ED3;&#x679C;&#x5176;&#x5B9E;&#x76F8;&#x5F53;&#x4E8E;&#x662F;&#x5728;&#x9884;&#x6D4B;&#x7528;&#x6237;&#x662F;&#x5426;&#x5BF9;&#x67D0;&#x7269;&#x54C1;&#x611F;&#x5174;&#x8DA3;&#xFF0C;&#x5BF9;&#x4E8E;&#x559C;&#x597D;&#x7A0B;&#x5EA6;&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x7684;&#x9884;&#x6D4B;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#x5728;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#x4E2D;&#x5176;&#x5B9E;&#x4F1A;&#x66F4;&#x591A;&#x7684;&#x5229;&#x7528;&#x7528;&#x6237;&#x5BF9;&#x7269;&#x54C1;&#x7684;&#x201C;&#x8BC4;&#x5206;&#x201D;&#x6570;&#x636E;&#x6765;&#x8FDB;&#x884C;&#x9884;&#x6D4B;&#xFF0C;&#x901A;&#x8FC7;&#x8BC4;&#x5206;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9884;&#x6D4B;&#x7528;&#x6237;&#x5BF9;&#x4E8E;&#x4ED6;&#x6CA1;&#x6709;&#x8BC4;&#x5206;&#x8FC7;&#x7684;&#x7269;&#x54C1;&#x7684;&#x8BC4;&#x5206;&#x3002;&#x5176;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x548C;&#x601D;&#x60F3;&#x548C;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x53EA;&#x662F;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x96C6;&#x662F;&#x7528;&#x6237;-&#x7269;&#x54C1;&#x7684;&#x8BC4;&#x5206;&#x6570;&#x636E;&#x3002;</p>
+<p><strong>&#x5173;&#x4E8E;&#x7528;&#x6237;-&#x7269;&#x54C1;&#x8BC4;&#x5206;&#x77E9;&#x9635;</strong></p>
+<p>&#x7528;&#x6237;-&#x7269;&#x54C1;&#x7684;&#x8BC4;&#x5206;&#x77E9;&#x9635;&#xFF0C;&#x6839;&#x636E;&#x8BC4;&#x5206;&#x77E9;&#x9635;&#x7684;&#x7A00;&#x758F;&#x7A0B;&#x5EA6;&#x4F1A;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;</p>
+<ul>
+<li><p>&#x7A20;&#x5BC6;&#x8BC4;&#x5206;&#x77E9;&#x9635;</p>
+<p><img src="img/%E7%A8%A0%E5%AF%86%E8%AF%84%E5%88%86%E6%95%B0%E6%8D%AE%E9%9B%86.png" alt=""></p>
+</li>
+<li><p>&#x7A00;&#x758F;&#x8BC4;&#x5206;&#x77E9;&#x9635;</p>
+<p><img src="img/%E7%A8%80%E7%96%8F%E8%AF%84%E5%88%86%E6%95%B0%E6%8D%AE%E9%9B%86.png" alt=""></p>
+</li>
+</ul>
+<p>&#x8FD9;&#x91CC;&#x5148;&#x4ECB;&#x7ECD;&#x7A20;&#x5BC6;&#x8BC4;&#x5206;&#x77E9;&#x9635;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x7A00;&#x758F;&#x77E9;&#x9635;&#x7684;&#x5904;&#x7406;&#x76F8;&#x5BF9;&#x4F1A;&#x590D;&#x6742;&#x4E00;&#x4E9B;&#xFF0C;&#x6211;&#x4EEC;&#x5230;&#x540E;&#x9762;&#x518D;&#x6765;&#x4ECB;&#x7ECD;&#x3002;</p>
+<h4 id="&#x4F7F;&#x7528;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#x5BF9;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x8BC4;&#x5206;&#x9884;&#x6D4B;">&#x4F7F;&#x7528;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#x5BF9;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x8BC4;&#x5206;&#x9884;&#x6D4B;</h4>
+<ul>
+<li><p>&#x6570;&#x636E;&#x96C6;&#xFF1A;<img src="img/%E7%A8%A0%E5%AF%86%E8%AF%84%E5%88%86%E6%95%B0%E6%8D%AE%E9%9B%86.png" alt=""></p>
+<p><strong>&#x76EE;&#x7684;&#xFF1A;&#x9884;&#x6D4B;&#x7528;&#x6237;1&#x5BF9;&#x7269;&#x54C1;E&#x7684;&#x8BC4;&#x5206;</strong></p>
+</li>
+<li><p>&#x6784;&#x5EFA;&#x6570;&#x636E;&#x96C6;&#xFF1A;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x6784;&#x5EFA;&#x8BC4;&#x5206;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5BF9;&#x4E8E;&#x7F3A;&#x5931;&#x7684;&#x90E8;&#x5206;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4FDD;&#x7559;&#x4E3A;None&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;0&#x90A3;&#x4E48;&#x4F1A;&#x88AB;&#x5F53;&#x4F5C;&#x8BC4;&#x5206;&#x503C;&#x4E3A;0&#x53BB;&#x5BF9;&#x5F85;</p>
+<pre><code class="lang-python">users = [<span class="hljs-string">&quot;User1&quot;</span>, <span class="hljs-string">&quot;User2&quot;</span>, <span class="hljs-string">&quot;User3&quot;</span>, <span class="hljs-string">&quot;User4&quot;</span>, <span class="hljs-string">&quot;User5&quot;</span>]
+items = [<span class="hljs-string">&quot;Item A&quot;</span>, <span class="hljs-string">&quot;Item B&quot;</span>, <span class="hljs-string">&quot;Item C&quot;</span>, <span class="hljs-string">&quot;Item D&quot;</span>, <span class="hljs-string">&quot;Item E&quot;</span>]
+<span class="hljs-comment"># &#x7528;&#x6237;&#x8D2D;&#x4E70;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#x96C6;</span>
+datasets = [
+    [<span class="hljs-number">5</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-keyword">None</span>],
+    [<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>],
+    [<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>],
+    [<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>],
+    [<span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>],
+]
+</code></pre>
+</li>
+<li><p>&#x8BA1;&#x7B97;&#x76F8;&#x4F3C;&#x5EA6;&#xFF1A;&#x5BF9;&#x4E8E;&#x8BC4;&#x5206;&#x6570;&#x636E;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x76AE;&#x5C14;&#x900A;&#x76F8;&#x5173;&#x7CFB;&#x6570;[-1,1]&#x6765;&#x8BA1;&#x7B97;&#xFF0C;-1&#x8868;&#x793A;&#x5F3A;&#x8D1F;&#x76F8;&#x5173;&#xFF0C;+1&#x8868;&#x793A;&#x5F3A;&#x6B63;&#x76F8;&#x5173;</p>
+<p><strong>pandas&#x4E2D;corr&#x65B9;&#x6CD5;&#x53EF;&#x76F4;&#x63A5;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x76AE;&#x5C14;&#x900A;&#x76F8;&#x5173;&#x7CFB;&#x6570;</strong></p>
+<pre><code class="lang-python">df = pd.DataFrame(datasets,
+                  columns=items,
+                  index=users)
+
+print(<span class="hljs-string">&quot;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x7684;&#x4E24;&#x4E24;&#x76F8;&#x4F3C;&#x5EA6;&#xFF1A;&quot;</span>)
+<span class="hljs-comment"># &#x76F4;&#x63A5;&#x8BA1;&#x7B97;&#x76AE;&#x5C14;&#x900A;&#x76F8;&#x5173;&#x7CFB;&#x6570;</span>
+<span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x662F;&#x6309;&#x5217;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x8BA1;&#x7B97;&#x7528;&#x6237;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#xFF0C;&#x5F53;&#x524D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x8F6C;&#x7F6E;</span>
+user_similar = df.T.corr()
+print(user_similar.round(<span class="hljs-number">4</span>))
+
+print(<span class="hljs-string">&quot;&#x7269;&#x54C1;&#x4E4B;&#x95F4;&#x7684;&#x4E24;&#x4E24;&#x76F8;&#x4F3C;&#x5EA6;&#xFF1A;&quot;</span>)
+item_similar = df.corr()
+print(item_similar.round(<span class="hljs-number">4</span>))
+</code></pre>
+<pre><code># &#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;
+&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x7684;&#x4E24;&#x4E24;&#x76F8;&#x4F3C;&#x5EA6;&#xFF1A;
+        User1   User2   User3   User4   User5
+User1  1.0000  0.8528  0.7071  0.0000 -0.7921
+User2  0.8528  1.0000  0.4677  0.4900 -0.9001
+User3  0.7071  0.4677  1.0000 -0.1612 -0.4666
+User4  0.0000  0.4900 -0.1612  1.0000 -0.6415
+User5 -0.7921 -0.9001 -0.4666 -0.6415  1.0000
+&#x7269;&#x54C1;&#x4E4B;&#x95F4;&#x7684;&#x4E24;&#x4E24;&#x76F8;&#x4F3C;&#x5EA6;&#xFF1A;
+        Item A  Item B  Item C  Item D  Item E
+Item A  1.0000 -0.4767 -0.1231  0.5322  0.9695
+Item B -0.4767  1.0000  0.6455 -0.3101 -0.4781
+Item C -0.1231  0.6455  1.0000 -0.7206 -0.4276
+Item D  0.5322 -0.3101 -0.7206  1.0000  0.5817
+Item E  0.9695 -0.4781 -0.4276  0.5817  1.0000
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E0E;&#x7528;&#x6237;1&#x6700;&#x76F8;&#x4F3C;&#x7684;&#x662F;&#x7528;&#x6237;2&#x548C;&#x7528;&#x6237;3&#xFF1B;&#x4E0E;&#x7269;&#x54C1;A&#x6700;&#x76F8;&#x4F3C;&#x7684;&#x7269;&#x54C1;&#x5206;&#x522B;&#x662F;&#x7269;&#x54C1;E&#x548C;&#x7269;&#x54C1;D&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>&#x6211;&#x4EEC;&#x5728;&#x9884;&#x6D4B;&#x8BC4;&#x5206;&#x65F6;&#xFF0C;&#x5F80;&#x5F80;&#x662F;&#x901A;&#x8FC7;&#x4E0E;&#x5176;&#x6709;&#x6B63;&#x76F8;&#x5173;&#x7684;&#x7528;&#x6237;&#x6216;&#x7269;&#x54C1;&#x8FDB;&#x884C;&#x9884;&#x6D4B;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x6B63;&#x76F8;&#x5173;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x65E0;&#x6CD5;&#x505A;&#x51FA;&#x9884;&#x6D4B;&#x3002;&#x8FD9;&#x4E00;&#x70B9;&#x5C24;&#x5176;&#x662F;&#x5728;&#x7A00;&#x758F;&#x8BC4;&#x5206;&#x77E9;&#x9635;&#x4E2D;&#x5C24;&#x4E3A;&#x5E38;&#x89C1;&#xFF0C;&#x56E0;&#x4E3A;&#x7A00;&#x758F;&#x8BC4;&#x5206;&#x77E9;&#x9635;&#x4E2D;&#x5F88;&#x96BE;&#x5F97;&#x51FA;&#x6B63;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#x3002;</p>
+</li>
+<li><p><strong>&#x8BC4;&#x5206;&#x9884;&#x6D4B;&#xFF1A;</strong></p>
+<p><strong>User-Based CF &#x8BC4;&#x5206;&#x9884;&#x6D4B;&#xFF1A;&#x4F7F;&#x7528;&#x7528;&#x6237;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x8FDB;&#x884C;&#x9884;&#x6D4B;</strong></p>
+<p>&#x5173;&#x4E8E;&#x8BC4;&#x5206;&#x9884;&#x6D4B;&#x7684;&#x65B9;&#x6CD5;&#x4E5F;&#x6709;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x4E00;&#x79CD;&#x6548;&#x679C;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x8BE5;&#x65B9;&#x6848;&#x8003;&#x8651;&#x4E86;&#x7528;&#x6237;&#x672C;&#x8EAB;&#x7684;&#x8BC4;&#x5206;&#x8BC4;&#x5206;&#x4EE5;&#x53CA;&#x8FD1;&#x90BB;&#x7528;&#x6237;&#x7684;&#x52A0;&#x6743;&#x5E73;&#x5747;&#x76F8;&#x4F3C;&#x5EA6;&#x6253;&#x5206;&#x6765;&#x8FDB;&#x884C;&#x9884;&#x6D4B;&#xFF1A;</p>
+<p><img src="img/user1.png" alt=""></p>
+<p>&#x6211;&#x4EEC;&#x8981;&#x9884;&#x6D4B;&#x7528;&#x6237;1&#x5BF9;&#x7269;&#x54C1;E&#x7684;&#x8BC4;&#x5206;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E0E;&#x7528;&#x6237;1&#x6700;&#x8FD1;&#x90BB;&#x7684;&#x7528;&#x6237;2&#x548C;&#x7528;&#x6237;3&#x8FDB;&#x884C;&#x9884;&#x6D4B;&#xFF0C;&#x8BA1;&#x7B97;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="img/user2.png" alt=""></p>
+<p>&#x6700;&#x7EC8;&#x9884;&#x6D4B;&#x51FA;&#x7528;&#x6237;1&#x5BF9;&#x7269;&#x54C1;5&#x7684;&#x8BC4;&#x5206;&#x4E3A;3.91</p>
+<p><strong>Item-Based CF &#x8BC4;&#x5206;&#x9884;&#x6D4B;&#xFF1A;&#x4F7F;&#x7528;&#x7269;&#x54C1;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x8FDB;&#x884C;&#x9884;&#x6D4B;</strong></p>
+<p>&#x8FD9;&#x91CC;&#x5229;&#x7528;&#x7269;&#x54C1;&#x76F8;&#x4F3C;&#x5EA6;&#x9884;&#x6D4B;&#x7684;&#x8BA1;&#x7B97;&#x540C;&#x4E0A;&#xFF0C;&#x540C;&#x6837;&#x8003;&#x8651;&#x4E86;&#x7528;&#x6237;&#x81EA;&#x8EAB;&#x7684;&#x5E73;&#x5747;&#x6253;&#x5206;&#x56E0;&#x7D20;&#xFF0C;&#x7ED3;&#x5408;&#x9884;&#x6D4B;&#x7269;&#x54C1;&#x4E0E;&#x76F8;&#x4F3C;&#x7269;&#x54C1;&#x7684;&#x52A0;&#x6743;&#x5E73;&#x5747;&#x76F8;&#x4F3C;&#x5EA6;&#x6253;&#x5206;&#x8FDB;&#x884C;&#x6765;&#x8FDB;&#x884C;&#x9884;&#x6D4B;</p>
+<p><img src="img/user3.png" alt=""></p>
+<p>&#x6211;&#x4EEC;&#x8981;&#x9884;&#x6D4B;&#x7528;&#x6237;1&#x5BF9;&#x7269;&#x54C1;E&#x7684;&#x8BC4;&#x5206;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E0E;&#x7269;&#x54C1;E&#x6700;&#x8FD1;&#x90BB;&#x7684;&#x7269;&#x54C1;A&#x548C;&#x7269;&#x54C1;D&#x8FDB;&#x884C;&#x9884;&#x6D4B;&#xFF0C;&#x8BA1;&#x7B97;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="img/user4.png" alt=""></p>
+<p>&#x5BF9;&#x6BD4;&#x53EF;&#x89C1;&#xFF0C;User-Based CF&#x9884;&#x6D4B;&#x8BC4;&#x5206;&#x548C;Item-Based CF&#x7684;&#x8BC4;&#x5206;&#x7ED3;&#x679C;&#x4E5F;&#x662F;&#x5B58;&#x5728;&#x5DEE;&#x5F02;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x4E25;&#x683C;&#x610F;&#x4E49;&#x4E0A;&#x4ED6;&#x4EEC;&#x5176;&#x5B9E;&#x5E94;&#x5F53;&#x5C5E;&#x4E8E;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#xFF0C;&#x5404;&#x81EA;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x9886;&#x57DF;&#x4E0D;&#x540C;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x90FD;&#x4F1A;&#x6BD4;&#x53E6;&#x4E00;&#x79CD;&#x7684;&#x6548;&#x679C;&#x66F4;&#x4F73;&#xFF0C;&#x4F46;&#x5177;&#x4F53;&#x54EA;&#x4E00;&#x79CD;&#x66F4;&#x4F73;&#xFF0C;&#x5FC5;&#x987B;&#x7ECF;&#x8FC7;&#x5408;&#x7406;&#x7684;&#x6548;&#x679C;&#x8BC4;&#x4F30;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x5B9E;&#x73B0;&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x65F6;&#x8FD9;&#x4E24;&#x79CD;&#x7B97;&#x6CD5;&#x5F80;&#x5F80;&#x90FD;&#x662F;&#x9700;&#x8981;&#x53BB;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x4EA7;&#x751F;&#x7684;&#x63A8;&#x8350;&#x6548;&#x679C;&#x8FDB;&#x884C;&#x8BC4;&#x4F30;&#x5206;&#x6790;&#x9009;&#x51FA;&#x66F4;&#x4F18;&#x65B9;&#x6848;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x57FA;&#x4E8E;&#x6A21;&#x578B;&#x7684;&#x65B9;&#x6CD5;">&#x57FA;&#x4E8E;&#x6A21;&#x578B;&#x7684;&#x65B9;&#x6CD5;</h3>
+<ul>
+<li><p>&#x601D;&#x60F3;</p>
+<ul>
+<li>&#x901A;&#x8FC7;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x4E2D;&#x627E;&#x51FA;&#x6A21;&#x5F0F;&#xFF0C;&#x5E76;&#x5C06;&#x7528;&#x6237;&#x4E0E;&#x7269;&#x54C1;&#x95F4;&#x7684;&#x4E92;&#x52A8;&#x65B9;&#x5F0F;&#x6A21;&#x5F0F;&#x5316;</li>
+<li>&#x57FA;&#x4E8E;&#x6A21;&#x578B;&#x7684;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x65B9;&#x5F0F;&#x662F;&#x6784;&#x5EFA;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x66F4;&#x9AD8;&#x7EA7;&#x7684;&#x7B97;&#x6CD5;</li>
+</ul>
+</li>
+<li><p>&#x8FD1;&#x90BB;&#x6A21;&#x578B;&#x7684;&#x95EE;&#x9898;</p>
+<ul>
+<li>&#x7269;&#x54C1;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x76F8;&#x5173;&#x6027;, &#x4FE1;&#x606F;&#x91CF;&#x5E76;&#x4E0D;&#x968F;&#x7740;&#x5411;&#x91CF;&#x7EF4;&#x5EA6;&#x589E;&#x52A0;&#x800C;&#x7EBF;&#x6027;&#x589E;&#x52A0;</li>
+<li>&#x77E9;&#x9635;&#x5143;&#x7D20;&#x7A00;&#x758F;, &#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4E0D;&#x7A33;&#x5B9A;,&#x589E;&#x51CF;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x7EF4;&#x5EA6;, &#x5BFC;&#x81F4;&#x8FD1;&#x90BB;&#x7ED3;&#x679C;&#x5DEE;&#x5F02;&#x5F88;&#x5927;&#x7684;&#x60C5;&#x51B5;&#x5B58;&#x5728;</li>
+</ul>
+</li>
+<li><p>&#x7B97;&#x6CD5;&#x5206;&#x7C7B;</p>
+<ul>
+<li>&#x57FA;&#x4E8E;&#x56FE;&#x7684;&#x6A21;&#x578B;</li>
+<li><strong>&#x57FA;&#x4E8E;&#x77E9;&#x9635;&#x5206;&#x89E3;&#x7684;&#x65B9;&#x6CD5;</strong></li>
+</ul>
+</li>
+<li><p>&#x57FA;&#x4E8E;&#x56FE;&#x7684;&#x6A21;&#x578B;</p>
+<ul>
+<li>&#x57FA;&#x4E8E;&#x90BB;&#x57DF;&#x7684;&#x6A21;&#x578B;&#x770B;&#x505A;&#x57FA;&#x4E8E;&#x56FE;&#x7684;&#x6A21;&#x578B;&#x7684;&#x7B80;&#x5355;&#x5F62;&#x5F0F;</li>
+</ul>
+<p><img src="img/graph1.png" alt=""></p>
+<ul>
+<li>&#x539F;&#x7406;<ul>
+<li>&#x5C06;&#x7528;&#x6237;&#x7684;&#x884C;&#x4E3A;&#x6570;&#x636E;&#x8868;&#x793A;&#x4E3A;&#x4E8C;&#x5206;&#x56FE;</li>
+<li>&#x57FA;&#x4E8E;&#x4E8C;&#x5206;&#x56FE;&#x4E3A;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x63A8;&#x8350;</li>
+<li>&#x6839;&#x636E;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x8DEF;&#x5F84;&#x6570;&#x3001;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#x548C;&#x7ECF;&#x8FC7;&#x7684;&#x9876;&#x70B9;&#x6570;&#x6765;&#x8BC4;&#x4EF7;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x76F8;&#x5173;&#x6027;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x57FA;&#x4E8E;&#x77E9;&#x9635;&#x5206;&#x89E3;&#x7684;&#x6A21;&#x578B;</p>
+<ul>
+<li><p>&#x539F;&#x7406;</p>
+<ul>
+<li><p>&#x6839;&#x636E;&#x7528;&#x6237;&#x4E0E;&#x7269;&#x54C1;&#x7684;&#x6F5C;&#x5728;&#x8868;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x9884;&#x6D4B;&#x7528;&#x6237;&#x5BF9;&#x672A;&#x8BC4;&#x5206;&#x7684;&#x7269;&#x54C1;&#x7684;&#x559C;&#x7231;&#x7A0B;&#x5EA6;</p>
+</li>
+<li><p>&#x628A;&#x539F;&#x6765;&#x7684;&#x5927;&#x77E9;&#x9635;, &#x8FD1;&#x4F3C;&#x5206;&#x89E3;&#x6210;&#x4E24;&#x4E2A;&#x5C0F;&#x77E9;&#x9635;&#x7684;&#x4E58;&#x79EF;, &#x5728;&#x5B9E;&#x9645;&#x63A8;&#x8350;&#x8BA1;&#x7B97;&#x65F6;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x5927;&#x77E9;&#x9635;, &#x800C;&#x662F;&#x4F7F;&#x7528;&#x5206;&#x89E3;&#x5F97;&#x5230;&#x7684;&#x4E24;&#x4E2A;&#x5C0F;&#x77E9;&#x9635;  </p>
+</li>
+<li><p>&#x7528;&#x6237;-&#x7269;&#x54C1;&#x8BC4;&#x5206;&#x77E9;&#x9635;A&#x662F;M X N&#x7EF4;, &#x5373;&#x4E00;&#x5171;&#x6709;M&#x4E2A;&#x7528;&#x6237;, n&#x4E2A;&#x7269;&#x54C1; &#x6211;&#x4EEC;&#x9009;&#x4E00;&#x4E2A;&#x5F88;&#x5C0F;&#x7684;&#x6570; K (K&lt;&lt; M, K&lt;&lt;N)</p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x5F97;&#x5230;&#x4E24;&#x4E2A;&#x77E9;&#x9635;U V  U&#x662F;M <em> K&#x77E9;&#x9635; , &#x77E9;&#x9635;V&#x662F; N </em> K</p>
+<p>&#x7C7B;&#x4F3C;&#x8FD9;&#x6837;&#x7684;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;&#x77E9;&#x9635;&#x5206;&#x89E3;</p>
+</li>
+</ul>
+</li>
+<li><p>&#x57FA;&#x4E8E;&#x77E9;&#x9635;&#x5206;&#x89E3;&#x7684;&#x65B9;&#x6CD5;</p>
+<ul>
+<li>ALS&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;<ul>
+<li>ALS-WR(&#x52A0;&#x6743;&#x6B63;&#x5219;&#x5316;&#x4EA4;&#x66FF;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;): alternating-least-squares with weighted-&#x3BB; &#x2013;regularization</li>
+<li>&#x5C06;&#x7528;&#x6237;(user)&#x5BF9;&#x5546;&#x54C1;(item)&#x7684;&#x8BC4;&#x5206;&#x77E9;&#x9635;&#x5206;&#x89E3;&#x4E3A;&#x4E24;&#x4E2A;&#x77E9;&#x9635;&#xFF1A;&#x4E00;&#x4E2A;&#x662F;&#x7528;&#x6237;&#x5BF9;&#x5546;&#x54C1;&#x9690;&#x542B;&#x7279;&#x5F81;&#x7684;&#x504F;&#x597D;&#x77E9;&#x9635;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x662F;&#x5546;&#x54C1;&#x6240;&#x5305;&#x542B;&#x7684;&#x9690;&#x542B;&#x7279;&#x5F81;&#x7684;&#x77E9;&#x9635;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x77E9;&#x9635;&#x5206;&#x89E3;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8BC4;&#x5206;&#x7F3A;&#x5931;&#x9879;&#x5F97;&#x5230;&#x4E86;&#x586B;&#x5145;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;&#x8FD9;&#x4E2A;&#x586B;&#x5145;&#x7684;&#x8BC4;&#x5206;&#x6765;&#x7ED9;&#x7528;&#x6237;&#x505A;&#x5546;&#x54C1;&#x63A8;&#x8350;&#x4E86;&#x3002;</li>
+</ul>
+</li>
+<li>SVD&#x5947;&#x5F02;&#x503C;&#x5206;&#x89E3;&#x77E9;&#x9635;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ALS&#x65B9;&#x6CD5;</p>
+<p><img src="img/als1.png" alt=""></p>
+<ul>
+<li>ALS&#x7684;&#x77E9;&#x9635;&#x5206;&#x89E3;&#x7B97;&#x6CD5;&#x5E38;&#x5E94;&#x7528;&#x4E8E;&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5C06;&#x7528;&#x6237;(user)&#x5BF9;&#x5546;&#x54C1;(item)&#x7684;&#x8BC4;&#x5206;&#x77E9;&#x9635;&#xFF0C;&#x5206;&#x89E3;&#x4E3A;&#x7528;&#x6237;&#x5BF9;&#x5546;&#x54C1;&#x9690;&#x542B;&#x7279;&#x5F81;&#x7684;&#x504F;&#x597D;&#x77E9;&#x9635;&#xFF0C;&#x548C;&#x5546;&#x54C1;&#x5728;&#x9690;&#x542B;&#x7279;&#x5F81;&#x4E0A;&#x7684;&#x6620;&#x5C04;&#x77E9;&#x9635;&#x3002;</li>
+<li>&#x4E0E;&#x4F20;&#x7EDF;&#x7684;&#x77E9;&#x9635;&#x5206;&#x89E3;SVD&#x65B9;&#x6CD5;&#x6765;&#x5206;&#x89E3;&#x77E9;&#x9635;R(R&#x2208;&#x211D;m&#xD7;n)&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;ALS(alternating least squares)&#x5E0C;&#x671B;&#x627E;&#x5230;&#x4E24;&#x4E2A;&#x4F4E;&#x7EF4;&#x77E9;&#x9635;&#xFF0C;&#x4EE5; R&#x303; =XY &#x6765;&#x903C;&#x8FD1;&#x77E9;&#x9635;R&#xFF0C;&#x5176;&#x4E2D; &#xFF0C;X&#x2208;&#x211D;m&#xD7;d&#xFF0C;Y&#x2208;&#x211D;d&#xD7;n&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x5C06;&#x95EE;&#x9898;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x7531;O(m<em>n)&#x8F6C;&#x6362;&#x4E3A;O((m+n)</em>d)&#x3002;</li>
+<li>&#x8BA1;&#x7B97;X&#x548C;Y&#x8FC7;&#x7A0B;&#xFF1A;&#x9996;&#x5148;&#x7528;&#x4E00;&#x4E2A;&#x5C0F;&#x4E8E;1&#x7684;&#x968F;&#x673A;&#x6570;&#x521D;&#x59CB;&#x5316;Y&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x516C;&#x5F0F;&#x6C42;X&#xFF0C;&#x6B64;&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x521D;&#x59CB;&#x7684;XY&#x77E9;&#x9635;&#x4E86;&#xFF0C;&#x6839;&#x636E;&#x5E73;&#x65B9;&#x5DEE;&#x548C;&#x5F97;&#x5230;&#x7684;X&#xFF0C;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x5E76;&#x8986;&#x76D6;Y&#xFF0C;&#x8BA1;&#x7B97;&#x5DEE;&#x5E73;&#x65B9;&#x548C;&#xFF0C;&#x53CD;&#x590D;&#x8FDB;&#x884C;&#x4EE5;&#x4E0A;&#x4E24;&#x6B65;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x76F4;&#x5230;&#x5DEE;&#x5E73;&#x65B9;&#x548C;&#x5C0F;&#x4E8E;&#x4E00;&#x4E2A;&#x9884;&#x8BBE;&#x7684;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#x5219;&#x505C;&#x6B62;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02_推荐系统架构设计.html" class="navigation navigation-prev " aria-label="Previous page: 推荐系统架构设计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04_ 推荐系统评估.html" class="navigation navigation-next " aria-label="Next page: 推荐系统评估">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"推荐算法","level":"1.2.3","depth":2,"next":{"title":"推荐系统评估","level":"1.2.4","depth":2,"path":"推荐介绍/04_ 推荐系统评估.md","ref":"推荐介绍/04_ 推荐系统评估.md","articles":[]},"previous":{"title":"推荐系统架构设计","level":"1.2.2","depth":2,"path":"推荐介绍/02_推荐系统架构设计.md","ref":"推荐介绍/02_推荐系统架构设计.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐介绍/03_推荐算法.md","mtime":"2019-04-24T13:45:03.108Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

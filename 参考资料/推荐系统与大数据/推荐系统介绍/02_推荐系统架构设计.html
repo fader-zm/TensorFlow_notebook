@@ -1,0 +1,1306 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>推荐系统架构设计 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03_推荐算法.html" />
+    
+    
+    <link rel="prev" href="01_推荐系统简介.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01_推荐系统简介.html">
+            
+                <a href="01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="02_推荐系统架构设计.html">
+            
+                <a href="02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="03_推荐算法.html">
+            
+                <a href="03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="04_ 推荐系统评估.html">
+            
+                <a href="04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="05_ 推荐系统冷启动问题.html">
+            
+                <a href="05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../推荐系统实战1/README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                <a href="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                <a href="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../推荐系统实战1/05_离线推荐处理.html">
+            
+                <a href="../推荐系统实战1/05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../推荐系统实战1/06_实时推荐.html">
+            
+                <a href="../推荐系统实战1/06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../推荐系统实战2/chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../推荐系统实战2/chapter1.html">
+            
+                <a href="../推荐系统实战2/chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../推荐系统实战2/chapter2.html">
+            
+                <a href="../推荐系统实战2/chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../推荐系统实战2/chapter3.html">
+            
+                <a href="../推荐系统实战2/chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../推荐系统实战2/chapter4.html">
+            
+                <a href="../推荐系统实战2/chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../推荐系统实战2/chapter5.html">
+            
+                <a href="../推荐系统实战2/chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../推荐系统实战2/chapter6.html">
+            
+                <a href="../推荐系统实战2/chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../推荐系统实战2/chapter7.html">
+            
+                <a href="../推荐系统实战2/chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../推荐系统实战2/chapter8.html">
+            
+                <a href="../推荐系统实战2/chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../推荐系统实战2/chapter9.html">
+            
+                <a href="../推荐系统实战2/chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../推荐系统实战2/chapter10.html">
+            
+                <a href="../推荐系统实战2/chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../推荐系统实战2/chapter11.html">
+            
+                <a href="../推荐系统实战2/chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >推荐系统架构设计</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4E8C;-&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;">&#x4E8C; &#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;</h2>
+<h3 id="21-&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x8981;&#x7D20;">2.1 &#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x8981;&#x7D20;</h3>
+<ul>
+<li>UI &#x548C; UE(&#x524D;&#x7AEF;&#x754C;&#x9762;)</li>
+<li>&#x6570;&#x636E; (Lambda&#x67B6;&#x6784;)</li>
+<li>&#x4E1A;&#x52A1;&#x77E5;&#x8BC6;</li>
+<li>&#x7B97;&#x6CD5;</li>
+</ul>
+<h3 id="22-&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x67B6;&#x6784;">2.2 &#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x67B6;&#x6784;</h3>
+<ul>
+<li><p>&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x6574;&#x4F53;&#x67B6;&#x6784;</p>
+<p><img src="img/%E6%8E%A8%E8%8D%90%E6%B5%81%E7%A8%8B.png" alt=""></p>
+</li>
+<li><p>&#x5927;&#x6570;&#x636E;Lambda&#x67B6;&#x6784;</p>
+<ul>
+<li><p>&#x7531;Twitter&#x5DE5;&#x7A0B;&#x5E08;Nathan Marz(storm&#x9879;&#x76EE;&#x53D1;&#x8D77;&#x4EBA;)&#x63D0;&#x51FA;</p>
+</li>
+<li><p>Lambda&#x7CFB;&#x7EDF;&#x67B6;&#x6784;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7ED3;&#x5408;&#x5B9E;&#x65F6;&#x6570;&#x636E;&#x548C;Hadoop&#x9884;&#x5148;&#x8BA1;&#x7B97;&#x7684;&#x6570;&#x636E;&#x73AF;&#x5883;&#x548C;&#x6DF7;&#x5408;&#x5E73;&#x53F0;, &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5B9E;&#x65F6;&#x7684;&#x6570;&#x636E;&#x89C6;&#x56FE;</p>
+</li>
+<li><p>&#x5206;&#x5C42;&#x67B6;&#x6784;</p>
+<ul>
+<li>&#x6279;&#x5904;&#x7406;&#x5C42;<ul>
+<li>&#x6570;&#x636E;&#x4E0D;&#x53EF;&#x53D8;, &#x53EF;&#x8FDB;&#x884C;&#x4EFB;&#x4F55;&#x8BA1;&#x7B97;, &#x53EF;&#x6C34;&#x5E73;&#x6269;&#x5C55;</li>
+<li>&#x9AD8;&#x5EF6;&#x8FDF;  &#x51E0;&#x5206;&#x949F;~&#x51E0;&#x5C0F;&#x65F6;(&#x8BA1;&#x7B97;&#x91CF;&#x548C;&#x6570;&#x636E;&#x91CF;&#x4E0D;&#x540C;)</li>
+<li>&#x65E5;&#x5FD7;&#x6536;&#x96C6; Flume</li>
+<li>&#x5206;&#x5E03;&#x5F0F;&#x5B58;&#x50A8; Hadoop</li>
+<li>&#x5206;&#x5E03;&#x5F0F;&#x8BA1;&#x7B97; Hadoop MapReduce &amp; spark</li>
+<li>&#x89C6;&#x56FE;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;<ul>
+<li>nosql(HBase/Cassandra)</li>
+<li>Redis/memcache</li>
+<li>MySQL</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5B9E;&#x65F6;&#x5904;&#x7406;&#x5C42;<ul>
+<li>&#x6D41;&#x5F0F;&#x5904;&#x7406;, &#x6301;&#x7EED;&#x8BA1;&#x7B97;</li>
+<li>&#x5B58;&#x50A8;&#x548C;&#x5206;&#x6790;&#x67D0;&#x4E2A;&#x7A97;&#x53E3;&#x671F;&#x5185;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x6700;&#x7EC8;&#x6B63;&#x786E;&#x6027;(Eventual accuracy)</li>
+<li>&#x5B9E;&#x65F6;&#x6570;&#x636E;&#x6536;&#x96C6; flume &amp; kafka</li>
+<li>&#x5B9E;&#x65F6;&#x6570;&#x636E;&#x5206;&#x6790;  spark streaming/storm/flink</li>
+</ul>
+</li>
+<li>&#x670D;&#x52A1;&#x5C42;<ul>
+<li>&#x652F;&#x6301;&#x968F;&#x673A;&#x8BFB;</li>
+<li>&#x9700;&#x8981;&#x5728;&#x975E;&#x5E38;&#x77ED;&#x7684;&#x65F6;&#x95F4;&#x5185;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</li>
+<li>&#x8BFB;&#x53D6;&#x6279;&#x5904;&#x7406;&#x5C42;&#x548C;&#x5B9E;&#x65F6;&#x5904;&#x7406;&#x5C42;&#x7ED3;&#x679C;&#x5E76;&#x5BF9;&#x5176;&#x5F52;&#x5E76;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Lambda&#x67B6;&#x6784;&#x56FE;</p>
+<p><img src="img/lambda3.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#x67B6;&#x6784;</p>
+<ul>
+<li>&#x53EC;&#x56DE;&#x9636;&#x6BB5;(&#x6D77;&#x9009;)<ul>
+<li>&#x53EC;&#x56DE;&#x51B3;&#x5B9A;&#x4E86;&#x6700;&#x7EC8;&#x63A8;&#x8350;&#x7ED3;&#x679C;&#x7684;&#x5929;&#x82B1;&#x677F;</li>
+<li>&#x5E38;&#x7528;&#x7B97;&#x6CD5;:<ul>
+<li>&#x534F;&#x540C;&#x8FC7;&#x6EE4;(&#x57FA;&#x4E8E;&#x7528;&#x6237; &#x57FA;&#x4E8E;&#x7269;&#x54C1;&#x7684;)</li>
+<li>&#x57FA;&#x4E8E;&#x5185;&#x5BB9; (&#x6839;&#x636E;&#x7528;&#x6237;&#x884C;&#x4E3A;&#x603B;&#x7ED3;&#x51FA;&#x81EA;&#x5DF1;&#x7684;&#x504F;&#x597D; &#x6839;&#x636E;&#x504F;&#x597D; &#x901A;&#x8FC7;&#x6587;&#x672C;&#x6316;&#x6398;&#x6280;&#x672F;&#x627E;&#x5230;&#x5185;&#x5BB9;&#x4E0A;&#x76F8;&#x4F3C;&#x7684;&#x5546;&#x54C1;)</li>
+<li>&#x57FA;&#x4E8E;&#x9690;&#x8BED;&#x4E49;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x6392;&#x5E8F;&#x9636;&#x6BB5;<ul>
+<li>&#x53EC;&#x56DE;&#x51B3;&#x5B9A;&#x4E86;&#x6700;&#x7EC8;&#x63A8;&#x8350;&#x7ED3;&#x679C;&#x7684;&#x5929;&#x82B1;&#x677F;, &#x6392;&#x5E8F;&#x903C;&#x8FD1;&#x8FD9;&#x4E2A;&#x6781;&#x9650;, &#x51B3;&#x5B9A;&#x4E86;&#x6700;&#x7EC8;&#x7684;&#x63A8;&#x8350;&#x6548;&#x679C;</li>
+<li>CTR&#x9884;&#x4F30; (&#x70B9;&#x51FB;&#x7387;&#x9884;&#x4F30; &#x4F7F;&#x7528;LR&#x7B97;&#x6CD5;)  &#x4F30;&#x8BA1;&#x7528;&#x6237;&#x662F;&#x5426;&#x4F1A;&#x70B9;&#x51FB;&#x67D0;&#x4E2A;&#x5546;&#x54C1; &#x9700;&#x8981;&#x7528;&#x6237;&#x7684;&#x70B9;&#x51FB;&#x6570;&#x636E;</li>
+</ul>
+</li>
+<li>&#x7B56;&#x7565;&#x8C03;&#x6574;</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/recommend7.jpeg" alt=""></p>
+<ul>
+<li><p>&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x7684;&#x6574;&#x4F53;&#x67B6;&#x6784;</p>
+<p><img src="img/rs%E5%9F%BA%E7%A1%80%E4%B8%9A%E5%8A%A1%E6%9E%B6%E6%9E%84.png" alt=""></p>
+<p><img src="img/rs%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.png" alt=""></p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01_推荐系统简介.html" class="navigation navigation-prev " aria-label="Previous page: 推荐系统简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03_推荐算法.html" class="navigation navigation-next " aria-label="Next page: 推荐算法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"推荐系统架构设计","level":"1.2.2","depth":2,"next":{"title":"推荐算法","level":"1.2.3","depth":2,"path":"推荐介绍/03_推荐算法.md","ref":"推荐介绍/03_推荐算法.md","articles":[]},"previous":{"title":"推荐系统简介","level":"1.2.1","depth":2,"path":"推荐介绍/01_推荐系统简介.md","ref":"推荐介绍/01_推荐系统简介.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐介绍/02_推荐系统架构设计.md","mtime":"2019-04-24T13:16:54.617Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

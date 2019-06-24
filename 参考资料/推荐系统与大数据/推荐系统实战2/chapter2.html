@@ -1,0 +1,1730 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>美多业务数据导入 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter3.html" />
+    
+    
+    <link rel="prev" href="chapter1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../推荐介绍/01_推荐系统简介.html">
+            
+                <a href="../推荐介绍/01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../推荐介绍/02_推荐系统架构设计.html">
+            
+                <a href="../推荐介绍/02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../推荐介绍/03_推荐算法.html">
+            
+                <a href="../推荐介绍/03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../推荐介绍/04_ 推荐系统评估.html">
+            
+                <a href="../推荐介绍/04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                <a href="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../推荐系统实战1/README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                <a href="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                <a href="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../推荐系统实战1/05_离线推荐处理.html">
+            
+                <a href="../推荐系统实战1/05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../推荐系统实战1/06_实时推荐.html">
+            
+                <a href="../推荐系统实战1/06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >美多业务数据导入</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4E8C;-&#x7F8E;&#x591A;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x5BFC;&#x5165;">&#x4E8C; &#x7F8E;&#x591A;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x5BFC;&#x5165;</h2>
+<h3 id="21-&#x5BFC;&#x5165;&#x6570;&#x636E;&#x5230;hdfs">2.1 &#x5BFC;&#x5165;&#x6570;&#x636E;&#x5230;HDFS</h3>
+<ul>
+<li>&#x5EFA;&#x7ACB;hdfs&#x76EE;&#x5F55;:</li>
+</ul>
+<pre><code class="lang-shell">hadoop fs -mkdir /project2-meiduo-rs
+</code></pre>
+<ul>
+<li>&#x5EFA;&#x7ACB;&#x4EE5;&#x4E0B;sh&#x6587;&#x4EF6;mysqlToHDFS.sh&#xFF0C;&#x53EF;&#x5C06;mysql&#x4E2D;&#x6570;&#x636E;&#x5E93;meiduo_mall&#x91CC;&#x6307;&#x5B9A;&#x8868;&#x5168;&#x90E8;&#x5BFC;&#x5165;hdfs&#x4E2D;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-shell">#!/bin/bash
+
+array=(tb_goods tb_goods_category tb_goods_specification tb_sku tb_sku_specification tb_specification_option)
+
+for table_name in ${array[@]};
+do
+    sqoop import \
+        --connect jdbc:mysql://localhost/meiduo_mall \
+        --username root \
+        --password root \
+        --table $table_name \
+        --m 5 \
+        --target-dir /project2-meiduo-rs/meiduo_mall/$table_name
+done
+</code></pre>
+<ul>
+<li>&#x6267;&#x884C;&#x811A;&#x672C;:</li>
+</ul>
+<pre><code class="lang-shell">chmod +x mysqlToHDFS.sh
+source mysqlToHDFS.sh
+</code></pre>
+<ul>
+<li>&#x67E5;&#x770B;&#x5BFC;&#x5165;&#x6570;&#x636E;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">hadoop fs -ls /project2-meiduo-rs/meiduo_mall
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/root/bigdata/hadoop-2.9.1/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/root/bigdata/apache-hive-2.3.4-bin/lib/log4j-slf4j-impl-2.6.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+Found 6 items
+drwxr-xr-x   - root supergroup          0 2018-12-19 17:30 /project2-meiduo-rs/meiduo_mall/tb_goods
+drwxr-xr-x   - root supergroup          0 2018-12-19 17:30 /project2-meiduo-rs/meiduo_mall/tb_goods_category
+drwxr-xr-x   - root supergroup          0 2018-12-19 17:30 /project2-meiduo-rs/meiduo_mall/tb_goods_specification
+drwxr-xr-x   - root supergroup          0 2018-12-19 17:30 /project2-meiduo-rs/meiduo_mall/tb_sku
+drwxr-xr-x   - root supergroup          0 2018-12-19 17:31 /project2-meiduo-rs/meiduo_mall/tb_sku_specification
+drwxr-xr-x   - root supergroup          0 2018-12-19 17:31 /project2-meiduo-rs/meiduo_mall/tb_specification_option
+</code></pre>
+<ul>
+<li>&#x4F7F;&#x7528;spark&#x8BFB;&#x53D6;&#x6570;&#x636E;</li>
+</ul>
+<p>&#x6CE8;&#x610F;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5BFC;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x6BCF;&#x5217;&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x662F;&#x7528;&#x9017;&#x53F7;&#x5206;&#x9694;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5982;&#x540C;csv&#x6587;&#x4EF6;&#x4E00;&#x6837;&#x8FDB;&#x884C;&#x8BFB;&#x53D6;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-comment"># &#x914D;&#x7F6E;spark driver&#x548C;pyspark&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x6240;&#x4F7F;&#x7528;&#x7684;python&#x89E3;&#x91CA;&#x5668;&#x8DEF;&#x5F84;</span>
+PYSPARK_PYTHON = <span class="hljs-string">&quot;/home/hadoop/miniconda3/envs/datapy365spark23/bin/python&quot;</span>
+JAVA_HOME=<span class="hljs-string">&apos;/home/hadoop/app/jdk1.8.0_191&apos;</span>
+<span class="hljs-comment"># &#x5F53;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x7248;&#x672C;&#x65F6;&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x51FA;&#x9519;</span>
+os.environ[<span class="hljs-string">&quot;PYSPARK_PYTHON&quot;</span>] = PYSPARK_PYTHON
+os.environ[<span class="hljs-string">&quot;PYSPARK_DRIVER_PYTHON&quot;</span>] = PYSPARK_PYTHON
+os.environ[<span class="hljs-string">&apos;JAVA_HOME&apos;</span>]=JAVA_HOME
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># spark&#x914D;&#x7F6E;&#x4FE1;&#x606F;</span>
+<span class="hljs-keyword">from</span> pyspark <span class="hljs-keyword">import</span> SparkConf
+<span class="hljs-keyword">from</span> pyspark.sql <span class="hljs-keyword">import</span> SparkSession
+
+SPARK_APP_NAME = <span class="hljs-string">&quot;TransferMySQLToHDFS&quot;</span>
+SPARK_URL = <span class="hljs-string">&quot;spark://192.168.199.188:7077&quot;</span>
+
+conf = SparkConf()    <span class="hljs-comment"># &#x521B;&#x5EFA;spark config&#x5BF9;&#x8C61;</span>
+config = (
+    (<span class="hljs-string">&quot;spark.app.name&quot;</span>, SPARK_APP_NAME),    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x542F;&#x52A8;&#x7684;spark&#x7684;app&#x540D;&#x79F0;&#xFF0C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#xFF0C;&#x5C06;&#x968F;&#x673A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x540D;&#x79F0;</span>
+    (<span class="hljs-string">&quot;spark.executor.memory&quot;</span>, <span class="hljs-string">&quot;2g&quot;</span>),    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8BE5;app&#x542F;&#x52A8;&#x65F6;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x7528;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;1g</span>
+    (<span class="hljs-string">&quot;spark.master&quot;</span>, SPARK_URL),    <span class="hljs-comment"># spark master&#x7684;&#x5730;&#x5740;</span>
+    (<span class="hljs-string">&quot;spark.executor.cores&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>),    <span class="hljs-comment"># &#x8BBE;&#x7F6E;spark executor&#x4F7F;&#x7528;&#x7684;CPU&#x6838;&#x5FC3;&#x6570;</span>
+)
+
+conf.setAll(config)
+
+<span class="hljs-comment"># &#x5229;&#x7528;config&#x5BF9;&#x8C61;&#xFF0C;&#x521B;&#x5EFA;spark session</span>
+spark = SparkSession.builder.config(conf=conf).getOrCreate()
+</code></pre>
+<ul>
+<li>&#x901A;&#x8FC7;spark&#x8BFB;&#x53D6;hdfs&#x4E0A;&#x7684;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python">ret = spark.read.csv(<span class="hljs-string">&quot;hdfs://hadoop000:8020/project2-meiduo-rs/meiduo_mall/tb_goods&quot;</span>)
+ret
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;:</li>
+</ul>
+<pre><code class="lang-shell">DataFrame[_c0: string, _c1: string, _c2: string, _c3: string, _c4: string, _c5: string, _c6: string, _c7: string, _c8: string, _c9: string, _c10: string]
+</code></pre>
+<ul>
+<li>&#x5C55;&#x793A;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python">ret.show()
+ret.select(<span class="hljs-string">&quot;_c3&quot;</span>, <span class="hljs-string">&quot;_c10&quot;</span>).show(<span class="hljs-number">100</span>)
+</code></pre>
+<ul>
+<li>&#x7EC8;&#x7AEF;&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+--------------------+--------------------+--------------------+--------------------+----+----+----+----+----+----+--------------------+
+|                 _c0|                 _c1|                 _c2|                 _c3| _c4| _c5| _c6| _c7| _c8| _c9|                _c10|
++--------------------+--------------------+--------------------+--------------------+----+----+----+----+----+----+--------------------+
+|                   1|2018-04-11 16:01:...|2018-04-25 12:09:...|Apple MacBook Pro...|   1|   1|   1|   4|  45| 157|&lt;h1 style=&quot;text-a...|
+|&lt;p&gt;&#x5B83;&#x7EA4;&#x8584;&#x5982;&#x5203;&#xFF0C;&#x8F7B;&#x76C8;&#x5982;&#x7FBD;&#xFF0C;&#x5374;&#x53C8;&#x6BD4;...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|                null|                null|                null|null|null|null|null|null|null|                null|
+|       &lt;p&gt;&amp;nbsp;&lt;/p&gt;|       &lt;h2&gt;&#x5305;&#x88C5;&#x6E05;&#x5355;&lt;/h2&gt;|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;MacBook Air &#x7535;&#x6E90;...|&lt;p&gt;&amp;nbsp;&lt;strong&gt;...|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;1&#x3001;Mac &#x7535;&#x8111;&#x6574;&#x673A;&#x53CA;&#x6240;&#x542B;&#x9644;...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&#x5982;&#x56E0;&#x8D28;&#x91CF;&#x95EE;&#x9898;&#x6216;&#x6545;&#x969C;&#xFF0C;&#x51ED;&#x5382;&#x5546;&#x7EF4;&#x4FEE;&#x4E2D;&#x5FC3;...|                null|                null|                null|null|null|null|null|null|null|                null|
+|(&#x6CE8;:&#x5982;&#x5382;&#x5BB6;&#x5728;&#x5546;&#x54C1;&#x4ECB;&#x7ECD;&#x4E2D;&#x6709;&#x552E;&#x540E;&#x4FDD;&#x969C;&#x7684;&#x8BF4;&#x660E;|&#x5219;&#x6B64;&#x5546;&#x54C1;&#x6309;&#x7167;&#x5382;&#x5BB6;&#x8BF4;&#x660E;&#x6267;&#x884C;&#x552E;&#x540E;&#x4FDD;&#x969C;&#x670D;...|                null|                null|null|null|null|null|null|null|                null|
+|              &lt;br /&gt;|                null|                null|                null|null|null|null|null|null|null|                null|
+|&#x54C1;&#x724C;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#xFF1A;&lt;a href=&quot;h...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&#x552E;&#x540E;&#x670D;&#x52A1;&#x7535;&#x8BDD;&#xFF1A;4006668800...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;&lt;strong&gt;&#x6B63;&#x54C1;&#x884C;&#x8D27;&lt;/...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;&#x4EAC;&#x4E1C;&#x5546;&#x57CE;&#x5411;&#x60A8;&#x4FDD;&#x8BC1;&#x6240;&#x552E;&#x5546;&#x54C1;&#x5747;&#x4E3A;...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;&lt;strong&gt;&#x5168;&#x56FD;&#x8054;&#x4FDD;&lt;/...|                null|                null|                null|null|null|null|null|null|null|                null|
+|&lt;p&gt;&#x51ED;&#x8D28;&#x4FDD;&#x8BC1;&#x4E66;&#x53CA;&#x4EAC;&#x4E1C;&#x5546;&#x57CE;&#x53D1;&#x7968;&#xFF0C;&#x53EF;...|                null|                null|                null|null|null|null|null|null|null|                null|
++--------------------+--------------------+--------------------+--------------------+----+----+----+----+----+----+--------------------+
+only showing top 20 rows
+
++--------------------+--------------------+
+|                 _c3|                _c10|
++--------------------+--------------------+
+|Apple MacBook Pro...|&lt;h1 style=&quot;text-a...|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+| Apple iPhone 8 Plus|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|  &#x534E;&#x4E3A; HUAWEI P10 Plus|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|                null|                null|
+|&#x3010;&#x6B21;&#x65E5;&#x8FBE;&#x3011;&#x6CF0;&#x706B;&#x8584;&#x5FEB;&#x5145;&#x7535;&#x5B9D;&#x624B;&#x673A;&#x58F3;&#x65E0;&#x7EBF;...|                null|
+|GoPro hero7&#x8FD0;&#x52A8;&#x76F8;&#x673A;&#x6C34;&#x4E0B;...|                null|
+|&#x5DDD;&#x5B87; USB3.0&#x9AD8;&#x901F;&#x591A;&#x529F;&#x80FD;&#x5408;&#x4E00;T...|                null|
+|&#x817E;&#x8BAF;&#x542C;&#x542C; 9420  &#x667A;&#x80FD;&#x97F3;&#x7BB1;/&#x97F3;...|                null|
+|&#x82F9;&#x679C;XS Max&#x65E0;&#x7EBF;&#x5145;&#x7535;&#x5668;iPho...|                null|
+|behringer &#x767E;&#x7075;&#x8FBE;X32&#x6570;...|                null|
+|ESCASE &#x8363;&#x8000;&#x7545;&#x73A9;8c&#x624B;&#x673A;&#x58F3; ...|                null|
+|FDY FW3C 5C &#x84DD;&#x7259;&#x65E0;&#x7EBF;W...|                null|
+|&#x6469;&#x6258;&#x7F57;&#x62C9;&#xFF08;Motorola&#xFF09; &#x5A01;&#x6CF0;...|                null|
+|&#x6C83;&#x4E01;&#xFF08;WODING&#xFF09; &#x4E9A;&#x9A6C;&#x900A; Am...|                null|
+|&#x79D1;&#x51CC;&#xFF08;keling&#xFF09; F8&#x5168;&#x6CE2;&#x6BB5;&#x6536;...|                null|
+|&#x79D1;&#x5A01;&#x76DB;&#xFF08;kevsen&#xFF09; Q3&#x5BF9;&#x8BB2;&#x673A;...|                null|
+|&#x5C0F;&#x7C73;&#xFF08;MI&#xFF09; &#x5C0F;&#x7C73;&#x624B;&#x73AF;3&#x4EE3;nfc&#x7248;...|                null|
+|&#x6469;&#x6258;&#x7F57;&#x62C9;&#xFF08;Motorola&#xFF09; MA...|                null|
+|C&amp;C &#x513F;&#x7AE5;&#x76F8;&#x673A;&#x6570;&#x7801;&#x5361;&#x901A;&#x7167;&#x76F8;&#x673A;&#x73A9;&#x5177;...|                null|
+|&#x5168;&#x666F;&#x770B;&#x623F;&#x5A5A;&#x793C;&#x65C5;&#x884C;&#xFF01;&#x7406;&#x5149; THETA...|                null|
+|&#x6B27;&#x5174; KLG5.0 &#x5BF9;&#x8BB2;&#x673A; &#x5F85;&#x673A;1...|                null|
+|&#x5F95;&#x5361;&#xFF08;Leica&#xFF09;C-LUX&#x65B0;&#x6B3E;&#x6570;...|                null|
+|&#x7231;&#x56FD;&#x8005;&#xFF08;aigo&#xFF09;DPF81/83...|                null|
+|&#x5F95;&#x5361;Leica&#x6570;&#x7801;&#x76F8;&#x673A;V-LUX ...|                null|
+|&#x4F73;&#x80FD;&#xFF08;Canon&#xFF09;PowerSho...|                null|
+|&#x98DA;&#x738B;&#xFF08;SSK&#xFF09;SCRM331&#x4E8C;&#x5408;&#x4E00;...|                null|
+|&#x4F73;&#x80FD;&#xFF08;Canon&#xFF09;&#x5C0F;&#x578B;&#x6570;&#x7801;&#x76F8;&#x673A; 2...|                null|
+|&#x83B1;&#x5F69;(RICH)E006&#x513F;&#x7AE5;&#x793C;&#x7269;&#x7167;...|                null|
+|&#x7231;&#x56FD;&#x8005;&#xFF08;aigo&#xFF09;DPF81/83...|                null|
+|&#x9707;&#x8361;&#x6CE2;&#xFF08;ZDB&#xFF09;&#x5168;&#x683C;&#x5F0F;10&#x5BF8;&#x6570;&#x7801;&#x76F8;...|                null|
+|&#x677E;&#x4E0B;&#xFF08;Panasonic&#xFF09;ZS11...|                null|
+|&#x7EFF;&#x5DE8;&#x80FD;&#xFF08;llano&#xFF09; TF/SD&#x8BFB;...|                null|
+|&#x7EFF;&#x8054; &#x591A;&#x529F;&#x80FD;&#x4E8C;&#x5408;&#x4E00;&#x8BFB;&#x5361;&#x5668;USB3....|                null|
+|&#x4E50;&#x4ED5;&#x6CF0; type-c&#x591A;&#x529F;&#x80FD;&#x5408;&#x4E00;&#x8BFB;&#x5361;...|                null|
+|&#x5C3C;&#x5EB7;&#xFF08;Nikon&#xFF09;COOLPIX ...|                null|
+|&#x98DA;&#x738B;&#xFF08;SSK&#xFF09;SCRM060 &#x7075;&#x52A8;...|                null|
+|BSN type-c tf&#x5361;&#x8BFB;&#x5361;&#x5668;...|                null|
+|OCG &#x82F9;&#x679C;6s/7/8plus&#x9AD8;...|                null|
+|&#x7EFF;&#x8054; USB3.0&#x8BFB;&#x5361;&#x5668;&#x591A;&#x529F;&#x80FD;&#x5408;&#x4E00;...|                null|
+|&#x95EA;&#x8FEA;&#x5185;&#x5B58;&#x5361;&#x50A8;&#x5B58;&#x5361;SD&#x5361;EOSM6E...|                null|
+|&#x58A8;&#x4E00;&#xFF08;MOYi&#xFF09; &#x82F9;&#x679C;&#x624B;&#x673A;&#x8BFB;&#x5361;&#x5668; ...|                null|
+|&#x7EFF;&#x5DE8;&#x80FD;&#xFF08;llano&#xFF09; &#x591A;&#x529F;&#x80FD;&#x5408;&#x4E00;&#x624B;...|                null|
+|Type-C&#x8BFB;&#x5361;&#x5668; &#x950C;&#x5408;&#x91D1;type...|                null|
+|&#x6CA3;&#x6807;&#xFF08;FB&#xFF09; &#x5B58;&#x50A8;&#x5361;SD&#x5361; TF&#x5361;...|                null|
+|&#x5DDD;&#x5B87; 3.0USB&#x8BFB;&#x5361;&#x5668;TF/SD...|                null|
++--------------------+--------------------+
+only showing top 100 rows
+</code></pre>
+<ul>
+<li>&#x7ECF;&#x8FC7;&#x89C2;&#x5BDF;&#x53D1;&#x73B0; &#x7ED3;&#x679C;&#x4E2D;&#x6709;&#x5F88;&#x591A;null&#x503C;  &#x4F46;&#x5BF9;&#x6BD4;mysql&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x663E;&#x793A;&#x53D1;&#x73B0;&#x662F;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x6709;&#x95EE;&#x9898;</li>
+</ul>
+<p><img src="../img/1545630559725.png" alt="1545630559725"></p>
+<p><img src="../img/1545630651922.png" alt="1545630651922"></p>
+<p>&#x5B9E;&#x9645;&#x662F;&#x6570;&#x636E;&#x6362;&#x884C;&#x7684;&#x95EE;&#x9898; </p>
+<h3 id="22-&#x5BFC;&#x5165;&#x6570;&#x636E;&#x5230;hive">2.2 &#x5BFC;&#x5165;&#x6570;&#x636E;&#x5230;Hive</h3>
+<ul>
+<li>&#x4F7F;&#x7528;sqoop &#x5C06;mysql&#x6570;&#x636E;&#x5BFC;&#x5165;hive</li>
+</ul>
+<pre><code class="lang-shell">#!/bin/bash
+
+array=(tb_goods tb_goods_category tb_goods_specification tb_sku tb_sku_specification tb_specification_option)
+
+for table_name in ${array[@]};
+do
+        sqoop import \
+                --connect jdbc:mysql://localhost/meiduo_mall \
+                --username root \
+                --password root \
+                --table $table_name \
+                --m 5 \
+                --hive-import \ #&#x5BFC;&#x5165;&#x5230;hive
+                --create-hive-table  \ #&#x521B;&#x5EFA;hive&#x8868;
+                --hive-drop-import-delims \ # &#x53BB;&#x6389;&#x591A;&#x4F59;&#x7684; &#x5236;&#x8868;&#x7B26;&#x6362;&#x884C;&#x7B26;
+                --warehouse-dir /user/hive/warehouse \ # &#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x4E0D;&#x9700;&#x8981;&#x6307;&#x5B9A;
+                --hive-table $table_name 
+done
+</code></pre>
+<ul>
+<li><p><code>--hive-import</code>&#x5C31;&#x662F;&#x6307;&#x660E;&#x5F80;hive&#x91CC;&#x9762;&#x5BFC;&#x5165;</p>
+<p><code>--warehouse-dir</code>&#x6307;&#x660E;hdfs&#x4E0A;hive&#x6570;&#x636E;&#x5E93;&#x7684;&#x8DEF;&#x5F84;</p>
+<p>&#x91CD;&#x70B9;&#x6CE8;&#x610F;<code>--hive-drop-import-delims</code>&#x9009;&#x9879;&#xFF0C;&#x4F1A;&#x628A;&#x5982;&quot;\n \r&quot;&#x7B49;&#x5B57;&#x7B26;&#x81EA;&#x52A8;&#x5904;&#x7406;&#x6389;&#xFF0C;&#x907F;&#x514D;&#x51FA;&#x73B0;&#x6570;&#x636E;&#x4E0E;&#x5B57;&#x6BB5;&#x4E0D;&#x5BF9;&#x5E94;&#x7684;&#x95EE;&#x9898;</p>
+<p>&#x52A0;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;<code>chmod +x mysqlToHive.sh</code></p>
+<p>&#x6267;&#x884C;<code>source mysqlToHive.sh</code></p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x7ED3;&#x679C;</p>
+</li>
+</ul>
+<pre><code class="lang-shell">hadoop fs -ls /user/hive/warehouse
+</code></pre>
+<ul>
+<li>&#x7EC8;&#x7AEF;&#x663E;&#x793A;</li>
+</ul>
+<pre><code class="lang-shell">SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/root/bigdata/hadoop-2.9.1/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/root/bigdata/apache-hive-2.3.4-bin/lib/log4j-slf4j-impl-2.6.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+Found 6 items
+drwxr-xr-x   - root supergroup          0 2018-12-20 11:09 /user/hive/warehouse/tb_goods
+drwxr-xr-x   - root supergroup          0 2018-12-20 11:10 /user/hive/warehouse/tb_goods_category
+drwxr-xr-x   - root supergroup          0 2018-12-20 11:10 /user/hive/warehouse/tb_goods_specification
+drwxr-xr-x   - root supergroup          0 2018-12-20 11:10 /user/hive/warehouse/tb_sku
+drwxr-xr-x   - root supergroup          0 2018-12-20 11:11 /user/hive/warehouse/tb_sku_specification
+drwxr-xr-x   - root supergroup          0 2018-12-20 11:12 /user/hive/warehouse/tb_specification_option
+</code></pre>
+<ul>
+<li>Spark&#x6574;&#x5408;Hive</li>
+</ul>
+<p>Spark SQL&#x662F;&#x517C;&#x5BB9;Hive SQL&#x7684;&#xFF0C;&#x4F46;&#x4E3A;&#x4E86;Spark&#x80FD;&#x8BBF;&#x95EE;Hive&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4FE1;&#x606F;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x4E00;&#x5B9A;&#x7684;&#x914D;&#x7F6E;&#xFF1A;</p>
+<p>1.&#x5C06;Hive&#x7684;hive-site.xml&#x590D;&#x5236;&#x5230;Spark&#x7684;conf&#x914D;&#x7F6E;&#x76EE;&#x5F55;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-shell">cp /home/hadoop/app/hive-1.1.0-cdh5.7.0/conf/hive-site.xml /home/hadoop/app/spark-2.3.0-bin-2.6.0-cdh5.7.0/conf/
+</code></pre>
+<p>2.&#x5728;spark/conf/spark-env.sh&#x4E0B;&#xFF0C;&#x65B0;&#x589E;&#xFF1A;</p>
+<pre><code class="lang-shell">export HIVE_HOME=/home/hadoop/app/hive-1.1.0-cdh5.7.0/
+export SPARK_CLASSPATH=$HIVE_HOME/lib/mysql-connector-java-5.1.36.jar:$SPARK_CLASSPATH
+</code></pre>
+<ul>
+<li><p>pyspark&#x4E2D;&#x4ECE;Hive&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x52A0;&#x8F7D;</p>
+<ul>
+<li><p>&#x6CE8;&#x610F;&#x914D;&#x7F6E;&#xFF1A;</p>
+<ul>
+<li><p>&#x914D;&#x7F6E;&#x4E2D;&#x52A0;&#x5165;(&quot;hive.metastore.uris&quot;, &quot;thrift://localhost:9083&quot;)&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x544A;&#x8BC9;spark&#x4F7F;&#x7528;hive&#x5DF2;&#x6709;&#x7684;metastore&#xFF0C;&#x5426;&#x5219;spark&#x4F1A;&#x5C1D;&#x8BD5;&#x81EA;&#x5DF1;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x65B0;&#x7684;metastore</p>
+</li>
+<li><p>&#x521B;&#x5EFA;SparkSession&#x65F6;&#xFF0C;&#x8C03;&#x7528;enableHiveSupport&#x65B9;&#x6CD5;&#x5F00;&#x542F;&#x5BF9;Hive&#x7684;&#x64CD;&#x4F5C;&#x63A5;&#x53E3;</p>
+</li>
+<li><p>&#x5728;&#x8BBF;&#x95EE;hive&#x7684;&#x5143;&#x6570;&#x636E;&#x4E4B;&#x524D; &#x9700;&#x8981;&#x6253;&#x5F00;hive&#x7684;&#x5143;&#x6570;&#x636E;&#x670D;&#x52A1;</p>
+<pre><code class="lang-shell">hive --service metastore&amp;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># spark&#x914D;&#x7F6E;&#x4FE1;&#x606F;</span>
+<span class="hljs-comment"># &#x6CE8;&#x610F;&#xFF1A;&#x6DFB;&#x52A0;</span>
+<span class="hljs-keyword">from</span> pyspark <span class="hljs-keyword">import</span> SparkConf
+<span class="hljs-keyword">from</span> pyspark.sql <span class="hljs-keyword">import</span> SparkSession
+
+SPARK_APP_NAME = <span class="hljs-string">&quot;transMeiDuoData&quot;</span>
+SPARK_URL = <span class="hljs-string">&quot;spark://192.168.199.188:7077&quot;</span>
+
+conf = SparkConf()    <span class="hljs-comment"># &#x521B;&#x5EFA;spark config&#x5BF9;&#x8C61;</span>
+config = (
+    (<span class="hljs-string">&quot;spark.app.name&quot;</span>, SPARK_APP_NAME),    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x542F;&#x52A8;&#x7684;spark&#x7684;app&#x540D;&#x79F0;&#xFF0C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#xFF0C;&#x5C06;&#x968F;&#x673A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x540D;&#x79F0;</span>
+    (<span class="hljs-string">&quot;spark.executor.memory&quot;</span>, <span class="hljs-string">&quot;2g&quot;</span>),    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8BE5;app&#x542F;&#x52A8;&#x65F6;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x7528;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;1g</span>
+    (<span class="hljs-string">&quot;spark.master&quot;</span>, SPARK_URL),    <span class="hljs-comment"># spark master&#x7684;&#x5730;&#x5740;</span>
+    (<span class="hljs-string">&quot;spark.executor.cores&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>),    <span class="hljs-comment"># &#x8BBE;&#x7F6E;spark executor&#x4F7F;&#x7528;&#x7684;CPU&#x6838;&#x5FC3;&#x6570;</span>
+    (<span class="hljs-string">&quot;hive.metastore.uris&quot;</span>, <span class="hljs-string">&quot;thrift://localhost:9083&quot;</span>),    <span class="hljs-comment"># &#x914D;&#x7F6E;hive&#x5143;&#x6570;&#x636E;&#x7684;&#x8BBF;&#x95EE;&#xFF0C;&#x5426;&#x5219;spark&#x65E0;&#x6CD5;&#x83B7;&#x53D6;hive&#x4E2D;&#x5DF2;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;</span>
+)
+<span class="hljs-comment"># &#x67E5;&#x770B;&#x66F4;&#x8BE6;&#x7EC6;&#x914D;&#x7F6E;&#x53CA;&#x8BF4;&#x660E;&#xFF1A;https://spark.apache.org/docs/latest/configuration.html</span>
+
+conf.setAll(config)
+
+<span class="hljs-comment"># &#x5229;&#x7528;config&#x5BF9;&#x8C61;&#xFF0C;&#x521B;&#x5EFA;spark session</span>
+spark = SparkSession.builder.config(conf=conf).enableHiveSupport().getOrCreate()
+</code></pre>
+<ul>
+<li>spark&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5E93;</li>
+</ul>
+<pre><code class="lang-python">spark.catalog.listDatabases()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">[Database(name=&apos;default&apos;, description=&apos;Default Hive database&apos;, locationUri=&apos;hdfs://0.0.0.0:9000/user/hive/warehouse&apos;)]
+</code></pre>
+<ul>
+<li>spark&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x8868;</li>
+</ul>
+<pre><code class="lang-python">spark.catalog.listTables(<span class="hljs-string">&quot;default&quot;</span>)
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">[Table(name=&apos;tb_goods&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:09:54&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_goods_category&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:10:11&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_goods_specification&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:10:30&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_sku&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:10:54&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_sku_specification&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:11:28&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_specification_option&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:12:04&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False)]
+</code></pre>
+<ul>
+<li>spark&#x5217;&#x51FA;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from tb_goods&quot;</span>).show()  <span class="hljs-comment"># DataFrame</span>
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+---+--------------------+--------------------+--------------------+-----+--------+--------+------------+------------+------------+--------------------+--------------------+--------------------+
+| id|         create_time|         update_time|                name|sales|comments|brand_id|category1_id|category2_id|category3_id|         desc_detail|           desc_pack|        desc_service|
++---+--------------------+--------------------+--------------------+-----+--------+--------+------------+------------+------------+--------------------+--------------------+--------------------+
+|  1|2018-04-11 16:01:...|2018-04-25 12:09:...|Apple MacBook Pro...|    1|       1|       1|           4|          45|         157|&lt;h1 style=&quot;text-a...|&lt;h2&gt;&#x5305;&#x88C5;&#x6E05;&#x5355;&lt;/h2&gt;&lt;p&gt;M...|&lt;p&gt;&amp;nbsp;&lt;strong&gt;...|
+|  2|2018-04-14 02:09:...|2018-04-25 11:51:...| Apple iPhone 8 Plus|    3|       1|       1|           1|          38|         115|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|&lt;h3&gt;&#x5305;&#x88C5;&#x6E05;&#x5355;&lt;/h3&gt;&lt;p&gt;&#x91C7;...|&lt;p&gt;&amp;nbsp;&lt;strong&gt;...|
+|  3|2018-04-14 03:03:...|2018-04-25 11:51:...|  &#x534E;&#x4E3A; HUAWEI P10 Plus|    1|       8|       2|           1|          38|         115|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|&lt;h3&gt;&#x5305;&#x88C5;&#x6E05;&#x5355;&lt;/h3&gt;&lt;p&gt;&#x624B;...|&lt;p&gt;&amp;nbsp;&lt;strong&gt;...|
+|  4|2018-11-01 10:43:...|2018-11-01 10:43:...|&#x3010;&#x6B21;&#x65E5;&#x8FBE;&#x3011;&#x6CF0;&#x706B;&#x8584;&#x5FEB;&#x5145;&#x7535;&#x5B9D;&#x624B;&#x673A;&#x58F3;&#x65E0;&#x7EBF;...|    0|       0|       1|           1|          39|         126|                    |                    |                    |
+|  5|2018-11-01 10:43:...|2018-11-01 10:43:...|GoPro hero7&#x8FD0;&#x52A8;&#x76F8;&#x673A;&#x6C34;&#x4E0B;...|    0|       0|       1|           2|          40|         132|                    |                    |                    |
+|  6|2018-11-01 10:43:...|2018-11-01 10:43:...|&#x5DDD;&#x5B87; USB3.0&#x9AD8;&#x901F;&#x591A;&#x529F;&#x80FD;&#x5408;&#x4E00;T...|    0|       0|       1|           3|          41|         140|                    |                    |                    |
+|  7|2018-11-01 10:43:...|2018-11-01 10:43:...|&#x817E;&#x8BAF;&#x542C;&#x542C; 9420  &#x667A;&#x80FD;&#x97F3;&#x7BB1;/&#x97F3;...|    0|       0|       1|           3|          42|         143|                    |                    |                    |
+|  8|2018-11-01 10:44:...|2018-11-01 10:44:...|&#x82F9;&#x679C;XS Max&#x65E0;&#x7EBF;&#x5145;&#x7535;&#x5668;iPho...|    0|       0|       1|           1|          39|         123|                    |                    |                    |
+|  9|2018-11-01 10:44:...|2018-11-01 10:44:...|behringer &#x767E;&#x7075;&#x8FBE;X32&#x6570;...|    0|       0|       1|           3|          42|         146|                    |                    |                    |
+| 10|2018-11-01 10:44:...|2018-11-01 10:44:...|ESCASE &#x8363;&#x8000;&#x7545;&#x73A9;8c&#x624B;&#x673A;&#x58F3; ...|    0|       0|       1|           1|          39|         119|                    |                    |                    |
+| 11|2018-11-01 10:44:...|2018-11-01 10:44:...|FDY FW3C 5C &#x84DD;&#x7259;&#x65E0;&#x7EBF;W...|    0|       0|       1|           3|          42|         143|                    |                    |                    |
+| 12|2018-11-01 10:44:...|2018-11-01 10:44:...|&#x6469;&#x6258;&#x7F57;&#x62C9;&#xFF08;Motorola&#xFF09; &#x5A01;&#x6CF0;...|    0|       0|       1|           1|          38|         118|                    |                    |                    |
+| 13|2018-11-01 10:44:...|2018-11-01 10:44:...|&#x6C83;&#x4E01;&#xFF08;WODING&#xFF09; &#x4E9A;&#x9A6C;&#x900A; Am...|    0|       0|       1|           3|          42|         143|                    |                    |                    |
+| 14|2018-11-01 10:44:...|2018-11-01 10:44:...|&#x79D1;&#x51CC;&#xFF08;keling&#xFF09; F8&#x5168;&#x6CE2;&#x6BB5;&#x6536;...|    0|       0|       1|           3|          42|         144|                    |                    |                    |
+| 15|2018-11-01 10:44:...|2018-11-01 10:44:...|&#x79D1;&#x5A01;&#x76DB;&#xFF08;kevsen&#xFF09; Q3&#x5BF9;&#x8BB2;&#x673A;...|    0|       0|       1|           1|          38|         118|                    |                    |                    |
+| 16|2018-11-01 10:44:...|2018-11-01 10:44:...|&#x5C0F;&#x7C73;&#xFF08;MI&#xFF09; &#x5C0F;&#x7C73;&#x624B;&#x73AF;3&#x4EE3;nfc&#x7248;...|    0|       0|       1|           3|          43|         147|                    |                    |                    |
+| 17|2018-11-01 10:44:...|2018-11-01 10:44:...|&#x6469;&#x6258;&#x7F57;&#x62C9;&#xFF08;Motorola&#xFF09; MA...|    0|       0|       1|           1|          38|         118|                    |                    |                    |
+| 18|2018-11-01 10:44:...|2018-11-01 10:44:...|C&amp;C &#x513F;&#x7AE5;&#x76F8;&#x673A;&#x6570;&#x7801;&#x5361;&#x901A;&#x7167;&#x76F8;&#x673A;&#x73A9;&#x5177;...|    0|       0|       1|           2|          40|         128|                    |                    |                    |
+| 19|2018-11-01 10:44:...|2018-11-01 10:44:...|&#x5168;&#x666F;&#x770B;&#x623F;&#x5A5A;&#x793C;&#x65C5;&#x884C;&#xFF01;&#x7406;&#x5149; THETA...|    0|       0|       1|           2|          40|         128|                    |                    |                    |
+| 20|2018-11-01 10:44:...|2018-11-01 10:44:...|&#x6B27;&#x5174; KLG5.0 &#x5BF9;&#x8BB2;&#x673A; &#x5F85;&#x673A;1...|    0|       0|       1|           1|          38|         118|                    |                    |                    |
++---+--------------------+--------------------+--------------------+-----+--------+--------+------------+------------+------------+--------------------+--------------------+--------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>spark&#x67E5;&#x8BE2;hive&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from tb_goods&quot;</span>).select(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;desc_detail&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+--------------------+--------------------+
+|                name|         desc_detail|
++--------------------+--------------------+
+|Apple MacBook Pro...|&lt;h1 style=&quot;text-a...|
+| Apple iPhone 8 Plus|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|
+|  &#x534E;&#x4E3A; HUAWEI P10 Plus|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|
+|&#x3010;&#x6B21;&#x65E5;&#x8FBE;&#x3011;&#x6CF0;&#x706B;&#x8584;&#x5FEB;&#x5145;&#x7535;&#x5B9D;&#x624B;&#x673A;&#x58F3;&#x65E0;&#x7EBF;...|                    |
+|GoPro hero7&#x8FD0;&#x52A8;&#x76F8;&#x673A;&#x6C34;&#x4E0B;...|                    |
+|&#x5DDD;&#x5B87; USB3.0&#x9AD8;&#x901F;&#x591A;&#x529F;&#x80FD;&#x5408;&#x4E00;T...|                    |
+|&#x817E;&#x8BAF;&#x542C;&#x542C; 9420  &#x667A;&#x80FD;&#x97F3;&#x7BB1;/&#x97F3;...|                    |
+|&#x82F9;&#x679C;XS Max&#x65E0;&#x7EBF;&#x5145;&#x7535;&#x5668;iPho...|                    |
+|behringer &#x767E;&#x7075;&#x8FBE;X32&#x6570;...|                    |
+|ESCASE &#x8363;&#x8000;&#x7545;&#x73A9;8c&#x624B;&#x673A;&#x58F3; ...|                    |
+|FDY FW3C 5C &#x84DD;&#x7259;&#x65E0;&#x7EBF;W...|                    |
+|&#x6469;&#x6258;&#x7F57;&#x62C9;&#xFF08;Motorola&#xFF09; &#x5A01;&#x6CF0;...|                    |
+|&#x6C83;&#x4E01;&#xFF08;WODING&#xFF09; &#x4E9A;&#x9A6C;&#x900A; Am...|                    |
+|&#x79D1;&#x51CC;&#xFF08;keling&#xFF09; F8&#x5168;&#x6CE2;&#x6BB5;&#x6536;...|                    |
+|&#x79D1;&#x5A01;&#x76DB;&#xFF08;kevsen&#xFF09; Q3&#x5BF9;&#x8BB2;&#x673A;...|                    |
+|&#x5C0F;&#x7C73;&#xFF08;MI&#xFF09; &#x5C0F;&#x7C73;&#x624B;&#x73AF;3&#x4EE3;nfc&#x7248;...|                    |
+|&#x6469;&#x6258;&#x7F57;&#x62C9;&#xFF08;Motorola&#xFF09; MA...|                    |
+|C&amp;C &#x513F;&#x7AE5;&#x76F8;&#x673A;&#x6570;&#x7801;&#x5361;&#x901A;&#x7167;&#x76F8;&#x673A;&#x73A9;&#x5177;...|                    |
+|&#x5168;&#x666F;&#x770B;&#x623F;&#x5A5A;&#x793C;&#x65C5;&#x884C;&#xFF01;&#x7406;&#x5149; THETA...|                    |
+|&#x6B27;&#x5174; KLG5.0 &#x5BF9;&#x8BB2;&#x673A; &#x5F85;&#x673A;1...|                    |
++--------------------+--------------------+
+only showing top 20 rows
+</code></pre>
+<h3 id="23-spark&#x76F4;&#x63A5;&#x8BBF;&#x95EE;mysql&#x6570;&#x636E;&#x5E93;">2.3 Spark&#x76F4;&#x63A5;&#x8BBF;&#x95EE;MySQL&#x6570;&#x636E;&#x5E93;</h3>
+<ul>
+<li>spark&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;MySQL&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x5E93;&#x538B;&#x529B;&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x6570;&#x636E;&#x91CF;&#x8F83;&#x5927;&#x65F6;&#xFF0C;&#x4E0D;&#x63A8;&#x8350;&#x8FD9;&#x6837;&#x5904;&#x7406;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-comment"># &#x914D;&#x7F6E;spark driver&#x548C;pyspark&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x6240;&#x4F7F;&#x7528;&#x7684;python&#x89E3;&#x91CA;&#x5668;&#x8DEF;&#x5F84;</span>
+PYSPARK_PYTHON = <span class="hljs-string">&quot;/home/hadoop/miniconda3/bin/python3&quot;</span>
+JAVA_HOME=<span class="hljs-string">&apos;/home/hadoop/app/jdk1.8.0_181&apos;</span>
+<span class="hljs-comment"># &#x5F53;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x7248;&#x672C;&#x65F6;&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x51FA;&#x9519;</span>
+os.environ[<span class="hljs-string">&quot;PYSPARK_PYTHON&quot;</span>] = PYSPARK_PYTHON
+os.environ[<span class="hljs-string">&quot;PYSPARK_DRIVER_PYTHON&quot;</span>] = PYSPARK_PYTHON
+os.environ[<span class="hljs-string">&apos;JAVA_HOME&apos;</span>]=JAVA_HOME
+
+<span class="hljs-comment"># &#x628A;mysql-connector-java-5.1.36.jar&#x653E;&#x5165;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;</span>
+<span class="hljs-comment"># &#x5982;&#x679C;&#x662F;&#x4F7F;&#x7528;spark&#x76F4;&#x8FDE;MySQL&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;mysql&#x94FE;&#x63A5;&#x7684;jar&#x5305;&#xFF0C;&#x8FD9;&#x91CC;&#x9884;&#x5148;&#x4E0B;&#x8F7D;&#x5E76;&#x653E;&#x5728;&#x4E86;&#x6307;&#x5B9A;&#x76EE;&#x5F55;</span>
+os.environ[<span class="hljs-string">&quot;PYSPARK_SUBMIT_ARGS&quot;</span>] = <span class="hljs-string">&quot;--jars /home/hadoop/app/hive-1.1.0-cdh5.7.0/lib/mysql-connector-java-5.1.36.jar pyspark-shell&quot;</span>
+</code></pre>
+<ul>
+<li>&#x76F4;&#x8FDE;&#x8BBF;&#x95EE;mysql&#x8BFB;&#x53D6;&#x6570;&#x636E;<ul>
+<li>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x7ECF;&#x8FC7;hdfs&#xFF0C;&#x800C;&#x662F;&#x76F4;&#x63A5;&#x5728;MySQL&#x6570;&#x636E;&#x5E93;&#x4E0A;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x6570;&#x636E;&#x91CF;&#x8F83;&#x5927;&#xFF0C;&#x540E;&#x7EED;&#x64CD;&#x4F5C;&#x4F1A;&#x5BF9;MySQL&#x4EA7;&#x751F;&#x8F83;&#x5927;&#x538B;&#x529B;&#xFF0C;&#x4F7F;&#x7528;&#x65F6;&#x4E00;&#x5B9A;&#x8981;&#x6CE8;&#x610F;&#x5BF9;mysql&#x6570;&#x636E;&#x5E26;&#x6765;&#x7684;&#x5F71;&#x54CD;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-python">ret = spark.read.format(<span class="hljs-string">&quot;jdbc&quot;</span>).options(url=<span class="hljs-string">&quot;jdbc:mysql://localhost/meiduo_mall&quot;</span>,
+                                       driver=<span class="hljs-string">&quot;com.mysql.jdbc.Driver&quot;</span>,
+                                       dbtable=<span class="hljs-string">&quot;tb_goods&quot;</span>,
+                                        user=<span class="hljs-string">&quot;root&quot;</span>,
+                                       password=<span class="hljs-string">&quot;root&quot;</span>).load()
+
+ret
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">DataFrame[id: int, create_time: timestamp, update_time: timestamp, name: string, sales: int, comments: int, brand_id: int, category1_id: int, category2_id: int, category3_id: int, desc_detail: string, desc_pack: string, desc_service: string]
+</code></pre>
+<pre><code class="lang-python">ret.show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+---+--------------------+--------------------+--------------------+-----+--------+--------+------------+------------+------------+--------------------+--------------------+--------------------+
+| id|         create_time|         update_time|                name|sales|comments|brand_id|category1_id|category2_id|category3_id|         desc_detail|           desc_pack|        desc_service|
++---+--------------------+--------------------+--------------------+-----+--------+--------+------------+------------+------------+--------------------+--------------------+--------------------+
+|  1|2018-04-11 16:01:...|2018-04-25 12:09:...|Apple MacBook Pro...|    1|       1|       1|           4|          45|         157|&lt;h1 style=&quot;text-a...|&lt;h2&gt;&#x5305;&#x88C5;&#x6E05;&#x5355;&lt;/h2&gt;
+
+...|&lt;p&gt;&amp;nbsp;&lt;strong&gt;...|
+|  2|2018-04-14 02:09:...|2018-04-25 11:51:...| Apple iPhone 8 Plus|    3|       1|       1|           1|          38|         115|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|&lt;h3&gt;&#x5305;&#x88C5;&#x6E05;&#x5355;&lt;/h3&gt;
+
+...|&lt;p&gt;&amp;nbsp;&lt;strong&gt;...|
+|  3|2018-04-14 03:03:...|2018-04-25 11:51:...|  &#x534E;&#x4E3A; HUAWEI P10 Plus|    1|       8|       2|           1|          38|         115|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|&lt;h3&gt;&#x5305;&#x88C5;&#x6E05;&#x5355;&lt;/h3&gt;
+
+...|&lt;p&gt;&amp;nbsp;&lt;strong&gt;...|
+|  4| 2018-11-01 10:43:14| 2018-11-01 10:43:14|&#x3010;&#x6B21;&#x65E5;&#x8FBE;&#x3011;&#x6CF0;&#x706B;&#x8584;&#x5FEB;&#x5145;&#x7535;&#x5B9D;&#x624B;&#x673A;&#x58F3;&#x65E0;&#x7EBF;...|    0|       0|       1|           1|          39|         126|                    |                    |                    |
+|  5| 2018-11-01 10:43:25| 2018-11-01 10:43:25|GoPro hero7&#x8FD0;&#x52A8;&#x76F8;&#x673A;&#x6C34;&#x4E0B;...|    0|       0|       1|           2|          40|         132|                    |                    |                    |
+|  6| 2018-11-01 10:43:58| 2018-11-01 10:43:58|&#x5DDD;&#x5B87; USB3.0&#x9AD8;&#x901F;&#x591A;&#x529F;&#x80FD;&#x5408;&#x4E00;T...|    0|       0|       1|           3|          41|         140|                    |                    |                    |
+|  7| 2018-11-01 10:43:59| 2018-11-01 10:43:59|&#x817E;&#x8BAF;&#x542C;&#x542C; 9420  &#x667A;&#x80FD;&#x97F3;&#x7BB1;/&#x97F3;...|    0|       0|       1|           3|          42|         143|                    |                    |                    |
+|  8| 2018-11-01 10:44:00| 2018-11-01 10:44:00|&#x82F9;&#x679C;XS Max&#x65E0;&#x7EBF;&#x5145;&#x7535;&#x5668;iPho...|    0|       0|       1|           1|          39|         123|                    |                    |                    |
+|  9| 2018-11-01 10:44:05| 2018-11-01 10:44:05|behringer &#x767E;&#x7075;&#x8FBE;X32&#x6570;...|    0|       0|       1|           3|          42|         146|                    |                    |                    |
+| 10| 2018-11-01 10:44:13| 2018-11-01 10:44:13|ESCASE &#x8363;&#x8000;&#x7545;&#x73A9;8c&#x624B;&#x673A;&#x58F3; ...|    0|       0|       1|           1|          39|         119|                    |                    |                    |
+| 11| 2018-11-01 10:44:11| 2018-11-01 10:44:11|FDY FW3C 5C &#x84DD;&#x7259;&#x65E0;&#x7EBF;W...|    0|       0|       1|           3|          42|         143|                    |                    |                    |
+| 12| 2018-11-01 10:44:12| 2018-11-01 10:44:12|&#x6469;&#x6258;&#x7F57;&#x62C9;&#xFF08;Motorola&#xFF09; &#x5A01;&#x6CF0;...|    0|       0|       1|           1|          38|         118|                    |                    |                    |
+| 13| 2018-11-01 10:44:14| 2018-11-01 10:44:14|&#x6C83;&#x4E01;&#xFF08;WODING&#xFF09; &#x4E9A;&#x9A6C;&#x900A; Am...|    0|       0|       1|           3|          42|         143|                    |                    |                    |
+| 14| 2018-11-01 10:44:16| 2018-11-01 10:44:16|&#x79D1;&#x51CC;&#xFF08;keling&#xFF09; F8&#x5168;&#x6CE2;&#x6BB5;&#x6536;...|    0|       0|       1|           3|          42|         144|                    |                    |                    |
+| 15| 2018-11-01 10:44:25| 2018-11-01 10:44:25|&#x79D1;&#x5A01;&#x76DB;&#xFF08;kevsen&#xFF09; Q3&#x5BF9;&#x8BB2;&#x673A;...|    0|       0|       1|           1|          38|         118|                    |                    |                    |
+| 16| 2018-11-01 10:44:24| 2018-11-01 10:44:24|&#x5C0F;&#x7C73;&#xFF08;MI&#xFF09; &#x5C0F;&#x7C73;&#x624B;&#x73AF;3&#x4EE3;nfc&#x7248;...|    0|       0|       1|           3|          43|         147|                    |                    |                    |
+| 17| 2018-11-01 10:44:25| 2018-11-01 10:44:25|&#x6469;&#x6258;&#x7F57;&#x62C9;&#xFF08;Motorola&#xFF09; MA...|    0|       0|       1|           1|          38|         118|                    |                    |                    |
+| 18| 2018-11-01 10:44:29| 2018-11-01 10:44:29|C&amp;C &#x513F;&#x7AE5;&#x76F8;&#x673A;&#x6570;&#x7801;&#x5361;&#x901A;&#x7167;&#x76F8;&#x673A;&#x73A9;&#x5177;...|    0|       0|       1|           2|          40|         128|                    |                    |                    |
+| 19| 2018-11-01 10:44:30| 2018-11-01 10:44:30|&#x5168;&#x666F;&#x770B;&#x623F;&#x5A5A;&#x793C;&#x65C5;&#x884C;&#xFF01;&#x7406;&#x5149; THETA...|    0|       0|       1|           2|          40|         128|                    |                    |                    |
+| 20| 2018-11-01 10:44:29| 2018-11-01 10:44:29|&#x6B27;&#x5174; KLG5.0 &#x5BF9;&#x8BB2;&#x673A; &#x5F85;&#x673A;1...|    0|       0|       1|           1|          38|         118|                    |                    |                    |
++---+--------------------+--------------------+--------------------+-----+--------+--------+------------+------------+------------+--------------------+--------------------+--------------------+
+only showing top 20 rows
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter1.html" class="navigation navigation-prev " aria-label="Previous page: 美多商城推荐系统介绍">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter3.html" class="navigation navigation-next " aria-label="Next page: 商品数据处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"美多业务数据导入","level":"1.8.2","depth":2,"next":{"title":"商品数据处理","level":"1.8.3","depth":2,"path":"推荐系统实战2/chapter3.md","ref":"推荐系统实战2/chapter3.md","articles":[]},"previous":{"title":"美多商城推荐系统介绍","level":"1.8.1","depth":2,"path":"推荐系统实战2/chapter1.md","ref":"推荐系统实战2/chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐系统实战2/chapter2.md","mtime":"2019-04-04T02:39:40.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

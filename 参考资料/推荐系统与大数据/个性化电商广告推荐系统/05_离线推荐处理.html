@@ -1,0 +1,1488 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>离线推荐缓存处理 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06_实时推荐.html" />
+    
+    
+    <link rel="prev" href="04_逻辑回归实现CTR预估.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../推荐介绍/01_推荐系统简介.html">
+            
+                <a href="../推荐介绍/01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../推荐介绍/02_推荐系统架构设计.html">
+            
+                <a href="../推荐介绍/02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../推荐介绍/03_推荐算法.html">
+            
+                <a href="../推荐介绍/03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../推荐介绍/04_ 推荐系统评估.html">
+            
+                <a href="../推荐介绍/04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                <a href="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="03_CTR预估数据准备.html">
+            
+                <a href="03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="04_逻辑回归实现CTR预估.html">
+            
+                <a href="04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.5" data-path="05_离线推荐处理.html">
+            
+                <a href="05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="06_实时推荐.html">
+            
+                <a href="06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../推荐系统实战2/chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../推荐系统实战2/chapter1.html">
+            
+                <a href="../推荐系统实战2/chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../推荐系统实战2/chapter2.html">
+            
+                <a href="../推荐系统实战2/chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../推荐系统实战2/chapter3.html">
+            
+                <a href="../推荐系统实战2/chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../推荐系统实战2/chapter4.html">
+            
+                <a href="../推荐系统实战2/chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../推荐系统实战2/chapter5.html">
+            
+                <a href="../推荐系统实战2/chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../推荐系统实战2/chapter6.html">
+            
+                <a href="../推荐系统实战2/chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../推荐系统实战2/chapter7.html">
+            
+                <a href="../推荐系统实战2/chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../推荐系统实战2/chapter8.html">
+            
+                <a href="../推荐系统实战2/chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../推荐系统实战2/chapter9.html">
+            
+                <a href="../推荐系统实战2/chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../推荐系统实战2/chapter10.html">
+            
+                <a href="../推荐系统实战2/chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../推荐系统实战2/chapter11.html">
+            
+                <a href="../推荐系统实战2/chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >离线推荐缓存处理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x5341;-&#x79BB;&#x7EBF;&#x63A8;&#x8350;&#x6570;&#x636E;&#x7F13;&#x5B58;">&#x5341; &#x79BB;&#x7EBF;&#x63A8;&#x8350;&#x6570;&#x636E;&#x7F13;&#x5B58;</h2>
+<h3 id="101&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x7F13;&#x5B58;&#x4E4B;&#x79BB;&#x7EBF;&#x53EC;&#x56DE;&#x96C6;">10.1&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x7F13;&#x5B58;&#x4E4B;&#x79BB;&#x7EBF;&#x53EC;&#x56DE;&#x96C6;</h3>
+<ul>
+<li><p>&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x662F;&#x5229;&#x7528;&#x6211;&#x4EEC;&#x524D;&#x9762;&#x8BAD;&#x7EC3;&#x7684;ALS&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x53EC;&#x56DE;&#xFF0C;&#x4F46;&#x662F;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;ALS&#x6A21;&#x578B;&#x53EC;&#x56DE;&#x7684;&#x662F;&#x7528;&#x6237;&#x6700;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x7C7B;&#x522B;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x662F;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x5E7F;&#x544A;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x6839;&#x636E;&#x53EC;&#x56DE;&#x7684;&#x7C7B;&#x522B;&#x5339;&#x914D;&#x51FA;&#x5BF9;&#x5E94;&#x7684;&#x5E7F;&#x544A;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9664;&#x4E86;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x8BAD;&#x7EC3;&#x7684;ALS&#x6A21;&#x578B;&#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x5E7F;&#x544A;&#x548C;&#x7C7B;&#x522B;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x3002;</p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4ECE;HDFS&#x4E2D;&#x52A0;&#x8F7D;&#x5E7F;&#x544A;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x6570;&#x636E;&#xFF0C;&#x8FD4;&#x56DE;spark dafaframe&#x5BF9;&#x8C61;</span>
+df = spark.read.csv(<span class="hljs-string">&quot;hdfs://localhost:8020/csv/ad_feature.csv&quot;</span>, header=<span class="hljs-keyword">True</span>)
+
+<span class="hljs-comment"># &#x6CE8;&#x610F;&#xFF1A;&#x7531;&#x4E8E;&#x672C;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x5B58;&#x5728;NULL&#x5B57;&#x6837;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;schema&#xFF0C;&#x53EA;&#x80FD;&#x5148;&#x5C06;NULL&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x5904;&#x7406;&#x6389;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</span>
+
+<span class="hljs-keyword">from</span> pyspark.sql.types <span class="hljs-keyword">import</span> StructType, StructField, IntegerType, FloatType
+
+<span class="hljs-comment"># &#x66FF;&#x6362;&#x6389;NULL&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x66FF;&#x6362;&#x6389;</span>
+df = df.replace(<span class="hljs-string">&quot;NULL&quot;</span>, <span class="hljs-string">&quot;-1&quot;</span>)
+
+<span class="hljs-comment"># &#x66F4;&#x6539;df&#x8868;&#x7ED3;&#x6784;&#xFF1A;&#x66F4;&#x6539;&#x5217;&#x7C7B;&#x578B;&#x548C;&#x5217;&#x540D;&#x79F0;</span>
+ad_feature_df = df.\
+    withColumn(<span class="hljs-string">&quot;adgroup_id&quot;</span>, df.adgroup_id.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;adgroup_id&quot;</span>, <span class="hljs-string">&quot;adgroupId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;cate_id&quot;</span>, df.cate_id.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;cate_id&quot;</span>, <span class="hljs-string">&quot;cateId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;campaign_id&quot;</span>, df.campaign_id.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;campaign_id&quot;</span>, <span class="hljs-string">&quot;campaignId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;customer&quot;</span>, df.customer.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;customer&quot;</span>, <span class="hljs-string">&quot;customerId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;brand&quot;</span>, df.brand.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;brand&quot;</span>, <span class="hljs-string">&quot;brandId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;price&quot;</span>, df.price.cast(FloatType()))
+
+<span class="hljs-comment"># &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;adgroupId&#x3001;&#x548C;cateId</span>
+_ = ad_feature_df.select(<span class="hljs-string">&quot;adgroupId&quot;</span>, <span class="hljs-string">&quot;cateId&quot;</span>)
+<span class="hljs-comment"># &#x7531;&#x4E8E;&#x8FD9;&#x91CC;&#x6570;&#x636E;&#x96C6;&#x5176;&#x5B9E;&#x5F88;&#x5C11;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x518D;&#x76F4;&#x63A5;&#x8F6C;&#x6210;Pandas dataframe&#x6765;&#x5904;&#x7406;&#xFF0C;&#x628A;&#x6570;&#x636E;&#x8F7D;&#x5165;&#x5185;&#x5B58;</span>
+pdf = _.toPandas()
+
+
+<span class="hljs-comment"># &#x624B;&#x52A8;&#x91CA;&#x653E;&#x4E00;&#x4E9B;&#x5185;&#x5B58;</span>
+<span class="hljs-keyword">del</span> df
+<span class="hljs-keyword">del</span> ad_feature_df
+<span class="hljs-keyword">del</span> _
+<span class="hljs-keyword">import</span> gc
+gc.collect()
+</code></pre>
+<ul>
+<li>&#x6839;&#x636E;&#x6307;&#x5B9A;&#x7684;&#x7C7B;&#x522B;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x5E7F;&#x544A;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+pdf.where(pdf.cateId==<span class="hljs-number">11156</span>).dropna().adgroupId
+
+np.random.choice(pdf.where(pdf.cateId==<span class="hljs-number">11156</span>).dropna().adgroupId.astype(np.int64), <span class="hljs-number">200</span>)
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>313       138953.0
+314       467512.0
+1661      140008.0
+1666      238772.0
+1669      237471.0
+1670      238761.0
+            ...   
+843456    352273.0
+846728    818681.0
+846729    838953.0
+846810    845337.0
+Name: adgroupId, Length: 731, dtype: float64
+</code></pre><ul>
+<li>&#x5229;&#x7528;ALS&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x7C7B;&#x522B;&#x7684;&#x53EC;&#x56DE;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x52A0;&#x8F7D;als&#x6A21;&#x578B;&#xFF0C;&#x6CE8;&#x610F;&#x5FC5;&#x987B;&#x5148;&#x6709;spark&#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;&#xFF0C;&#x5373;sparkContext&#xFF0C;&#x4F46;&#x8FD9;&#x91CC;sparkSession&#x521B;&#x5EFA;&#x540E;&#xFF0C;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x4E86;sparkContext</span>
+
+<span class="hljs-keyword">from</span> pyspark.ml.recommendation <span class="hljs-keyword">import</span> ALSModel
+<span class="hljs-comment"># &#x4ECE;hdfs&#x52A0;&#x8F7D;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;&#x6A21;&#x578B;</span>
+als_model = ALSModel.load(<span class="hljs-string">&quot;hdfs://localhost:8020/models/userCateRatingALSModel.obj&quot;</span>)
+<span class="hljs-comment"># &#x8FD4;&#x56DE;&#x6A21;&#x578B;&#x4E2D;&#x5173;&#x4E8E;&#x7528;&#x6237;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;   df:   id   features</span>
+als_model.userFactors
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>DataFrame[id: int, features: array&lt;float&gt;]
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+cateId_df = pd.DataFrame(pdf.cateId.unique(),columns=[<span class="hljs-string">&quot;cateId&quot;</span>])
+cateId_df
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>    cateId
+0    1
+1    2
+2    3
+3    4
+4    5
+5    6
+6    7
+...    ...
+6766    12948
+6767    12955
+6768    12960
+6769 rows &#xD7; 1 columns
+</code></pre><pre><code class="lang-python">cateId_df.insert(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;userId&quot;</span>, np.array([<span class="hljs-number">8</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">6769</span>)]))
+cateId_df
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code> userId cateId
+0    8    1
+1    8    2
+2    8    3
+3    8    4
+4    8    5
+...    ...    ...
+6766    8    12948
+6767    8    12955
+6768    8    12960
+6769 rows &#xD7; 2 columns
+</code></pre><ul>
+<li>&#x4F20;&#x5165; userid&#x3001;cataId&#x7684;df&#xFF0C;&#x5BF9;&#x5E94;&#x9884;&#x6D4B;&#x503C;&#x8FDB;&#x884C;&#x6392;&#x5E8F;</li>
+</ul>
+<pre><code class="lang-python">als_model.transform(spark.createDataFrame(cateId_df)).sort(<span class="hljs-string">&quot;prediction&quot;</span>, ascending=<span class="hljs-keyword">False</span>).na.drop().show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>+------+------+----------+
+|userId|cateId|prediction|
++------+------+----------+
+|     8|  7214|  9.917084|
+|     8|   877|  7.479664|
+|     8|  7266| 7.4762917|
+|     8| 10856| 7.3395424|
+|     8|  4766|  7.149538|
+|     8|  7282| 6.6835284|
+|     8|  7270| 6.2145095|
+|     8|   201| 6.0623236|
+|     8|  4267| 5.9155636|
+|     8|  7267|  5.838009|
+|     8|  5392| 5.6882005|
+|     8|  6261| 5.6804466|
+|     8|  6306| 5.2992325|
+|     8| 11050|  5.245261|
+|     8|  8655| 5.1701374|
+|     8|  4610|  5.139578|
+|     8|   932|   5.12694|
+|     8| 12276| 5.0776596|
+|     8|  8071|  4.979195|
+|     8|  6580| 4.8523283|
++------+------+----------+
+only showing top 20 rows
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+
+<span class="hljs-keyword">import</span> redis
+
+<span class="hljs-comment"># &#x5B58;&#x50A8;&#x7528;&#x6237;&#x53EC;&#x56DE;&#xFF0C;&#x4F7F;&#x7528;redis&#x7B2C;9&#x53F7;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;sets&#x7C7B;&#x578B;</span>
+client = redis.StrictRedis(host=<span class="hljs-string">&quot;192.168.199.188&quot;</span>, port=<span class="hljs-number">6379</span>, db=<span class="hljs-number">9</span>)
+
+<span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> als_model.userFactors.select(<span class="hljs-string">&quot;id&quot;</span>).collect():
+
+    userId = r.id
+
+    cateId_df = pd.DataFrame(pdf.cateId.unique(),columns=[<span class="hljs-string">&quot;cateId&quot;</span>])
+    cateId_df.insert(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;userId&quot;</span>, np.array([userId <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">6769</span>)]))
+    ret = set()
+
+    <span class="hljs-comment"># &#x5229;&#x7528;&#x6A21;&#x578B;&#xFF0C;&#x4F20;&#x5165;datasets(userId, cateId)&#xFF0C;&#x8FD9;&#x91CC;&#x63A7;&#x5236;&#x4E86;userId&#x4E00;&#x6837;&#xFF0C;&#x6240;&#x4EE5;&#x76F8;&#x5F53;&#x4E8E;&#x662F;&#x5728;&#x6C42;&#x67D0;&#x7528;&#x6237;&#x5BF9;&#x6240;&#x6709;&#x5206;&#x7C7B;&#x7684;&#x5174;&#x8DA3;&#x7A0B;&#x5EA6;</span>
+    cateId_list = als_model.transform(spark.createDataFrame(cateId_df)).sort(<span class="hljs-string">&quot;prediction&quot;</span>, ascending=<span class="hljs-keyword">False</span>).na.drop()
+    <span class="hljs-comment"># &#x4ECE;&#x524D;20&#x4E2A;&#x5206;&#x7C7B;&#x4E2D;&#x9009;&#x51FA;500&#x4E2A;&#x8FDB;&#x884C;&#x53EC;&#x56DE;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> cateId_list.head(<span class="hljs-number">20</span>):
+        need = <span class="hljs-number">500</span> - len(ret)    <span class="hljs-comment"># &#x5982;&#x679C;&#x4E0D;&#x8DB3;500&#x4E2A;&#xFF0C;&#x90A3;&#x4E48;&#x968F;&#x673A;&#x9009;&#x51FA;need&#x4E2A;&#x5E7F;&#x544A;</span>
+        ret = ret.union(np.random.choice(pdf.where(pdf.cateId==i.cateId).adgroupId.dropna().astype(np.int64), need))
+        <span class="hljs-keyword">if</span> len(ret) &gt;= <span class="hljs-number">500</span>:    <span class="hljs-comment"># &#x5982;&#x679C;&#x8FBE;&#x5230;500&#x4E2A;&#x5219;&#x9000;&#x51FA;</span>
+            <span class="hljs-keyword">break</span>
+    client.sadd(userId, *ret)
+
+<span class="hljs-comment"># &#x5982;&#x679C;redis&#x6240;&#x5728;&#x673A;&#x5668;&#xFF0C;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#xFF0C;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+</code></pre>
+<h3 id="102-&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x7F13;&#x5B58;&#x4E4B;&#x79BB;&#x7EBF;&#x7279;&#x5F81;">10.2 &#x79BB;&#x7EBF;&#x6570;&#x636E;&#x7F13;&#x5B58;&#x4E4B;&#x79BB;&#x7EBF;&#x7279;&#x5F81;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &quot;pid&quot;, &#x5E7F;&#x544A;&#x8D44;&#x6E90;&#x4F4D;&#xFF0C;&#x5C5E;&#x4E8E;&#x573A;&#x666F;&#x7279;&#x5F81;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6BCF;&#x4E00;&#x79CD;&#x5E7F;&#x544A;&#x901A;&#x5E38;&#x662F;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x5728;&#x591A;&#x79CD;&#x8D44;&#x6E90;&#x5916;&#x4E0B;&#x7684;</span>
+<span class="hljs-comment"># &#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x5BF9;&#x4E8E;pid&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x7531;&#x5E7F;&#x544A;&#x7CFB;&#x7EDF;&#x53D1;&#x8D77;&#x63A8;&#x8350;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x5411;&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x660E;&#x786E;&#x8981;&#x63A8;&#x8350;&#x7684;&#x7528;&#x6237;&#x662F;&#x8C01;&#xFF0C;&#x4EE5;&#x53CA;&#x5BF9;&#x5E94;&#x7684;&#x8D44;&#x6E90;&#x4F4D;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x6709;&#x54EA;&#x4E9B;</span>
+<span class="hljs-comment"># &#x8FD9;&#x6837;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x8D44;&#x6E90;&#x4F4D;&#xFF0C;&#x90A3;&#x4E48;&#x6BCF;&#x4E2A;&#x8D44;&#x6E90;&#x4F4D;&#x90FD;&#x4F1A;&#x5BF9;&#x5E94;&#x76F8;&#x5E94;&#x7684;&#x4E00;&#x4E2A;&#x63A8;&#x8350;&#x5217;&#x8868;</span>
+
+<span class="hljs-comment"># &#x9700;&#x8981;&#x8FDB;&#x884C;&#x7F13;&#x5B58;&#x7684;&#x7279;&#x5F81;&#x503C;</span>
+
+feature_cols_from_ad = [
+    <span class="hljs-string">&quot;price&quot;</span>    <span class="hljs-comment"># &#x6765;&#x81EA;&#x5E7F;&#x544A;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x4E2D;</span>
+]
+
+<span class="hljs-comment"># &#x7528;&#x6237;&#x7279;&#x5F81;</span>
+feature_cols_from_user = [
+    <span class="hljs-string">&quot;cms_group_id&quot;</span>,
+    <span class="hljs-string">&quot;final_gender_code&quot;</span>,
+    <span class="hljs-string">&quot;age_level&quot;</span>,
+    <span class="hljs-string">&quot;shopping_level&quot;</span>,
+    <span class="hljs-string">&quot;occupation&quot;</span>,
+    <span class="hljs-string">&quot;pvalue_level&quot;</span>,
+    <span class="hljs-string">&quot;new_user_class_level&quot;</span>
+]
+</code></pre>
+<ul>
+<li>&#x4ECE;HDFS&#x4E2D;&#x52A0;&#x8F7D;&#x5E7F;&#x544A;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python">_ad_feature_df = spark.read.csv(<span class="hljs-string">&quot;hdfs://localhost:9000/datasets/ad_feature.csv&quot;</span>, header=<span class="hljs-keyword">True</span>)
+
+<span class="hljs-comment"># &#x66F4;&#x6539;&#x8868;&#x7ED3;&#x6784;&#xFF0C;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</span>
+<span class="hljs-keyword">from</span> pyspark.sql.types <span class="hljs-keyword">import</span> StructType, StructField, IntegerType, FloatType
+
+<span class="hljs-comment"># &#x66FF;&#x6362;&#x6389;NULL&#x5B57;&#x7B26;&#x4E32;</span>
+_ad_feature_df = _ad_feature_df.replace(<span class="hljs-string">&quot;NULL&quot;</span>, <span class="hljs-string">&quot;-1&quot;</span>)
+
+<span class="hljs-comment"># &#x66F4;&#x6539;df&#x8868;&#x7ED3;&#x6784;&#xFF1A;&#x66F4;&#x6539;&#x5217;&#x7C7B;&#x578B;&#x548C;&#x5217;&#x540D;&#x79F0;</span>
+ad_feature_df = _ad_feature_df.\
+    withColumn(<span class="hljs-string">&quot;adgroup_id&quot;</span>, _ad_feature_df.adgroup_id.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;adgroup_id&quot;</span>, <span class="hljs-string">&quot;adgroupId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;cate_id&quot;</span>, _ad_feature_df.cate_id.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;cate_id&quot;</span>, <span class="hljs-string">&quot;cateId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;campaign_id&quot;</span>, _ad_feature_df.campaign_id.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;campaign_id&quot;</span>, <span class="hljs-string">&quot;campaignId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;customer&quot;</span>, _ad_feature_df.customer.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;customer&quot;</span>, <span class="hljs-string">&quot;customerId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;brand&quot;</span>, _ad_feature_df.brand.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;brand&quot;</span>, <span class="hljs-string">&quot;brandId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;price&quot;</span>, _ad_feature_df.price.cast(FloatType()))
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foreachPartition</span><span class="hljs-params">(partition)</span>:</span>
+
+    <span class="hljs-keyword">import</span> redis
+    <span class="hljs-keyword">import</span> json
+    client = redis.StrictRedis(host=<span class="hljs-string">&quot;192.168.199.88&quot;</span>, port=<span class="hljs-number">6379</span>, db=<span class="hljs-number">10</span>)
+
+    <span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> partition:
+        data = {
+            <span class="hljs-string">&quot;price&quot;</span>: r.price
+        }
+        <span class="hljs-comment"># &#x8F6C;&#x6210;json&#x5B57;&#x7B26;&#x4E32;&#x518D;&#x4FDD;&#x5B58;&#xFF0C;&#x80FD;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x518D;&#x6B21;&#x5012;&#x51FA;&#x6765;&#x65F6;&#xFF0C;&#x80FD;&#x6709;&#x6548;&#x7684;&#x8F6C;&#x6362;&#x6210;python&#x7C7B;&#x578B;</span>
+        client.hset(<span class="hljs-string">&quot;ad_features&quot;</span>, r.adgroupId, json.dumps(data))
+
+ad_feature_df.foreachPartition(foreachPartition)
+</code></pre>
+<ul>
+<li>&#x4ECE;HDFS&#x52A0;&#x8F7D;&#x7528;&#x6237;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.sql.types <span class="hljs-keyword">import</span> StructType, StructField, StringType, IntegerType, LongType, FloatType
+
+<span class="hljs-comment"># &#x6784;&#x5EFA;&#x8868;&#x7ED3;&#x6784;schema&#x5BF9;&#x8C61;</span>
+schema = StructType([
+    StructField(<span class="hljs-string">&quot;userId&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;cms_segid&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;cms_group_id&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;final_gender_code&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;age_level&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;pvalue_level&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;shopping_level&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;occupation&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;new_user_class_level&quot;</span>, IntegerType())
+])
+<span class="hljs-comment"># &#x5229;&#x7528;schema&#x4ECE;hdfs&#x52A0;&#x8F7D;</span>
+user_profile_df = spark.read.csv(<span class="hljs-string">&quot;hdfs://localhost:8020/csv/user_profile.csv&quot;</span>, header=<span class="hljs-keyword">True</span>, schema=schema)
+user_profile_df
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>DataFrame[userId: int, cms_segid: int, cms_group_id: int, final_gender_code: int, age_level: int, pvalue_level: int, shopping_level: int, occupation: int, new_user_class_level: int]
+</code></pre><pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foreachPartition2</span><span class="hljs-params">(partition)</span>:</span>
+
+    <span class="hljs-keyword">import</span> redis
+    <span class="hljs-keyword">import</span> json
+    client = redis.StrictRedis(host=<span class="hljs-string">&quot;192.168.199.8&quot;</span>, port=<span class="hljs-number">6379</span>, db=<span class="hljs-number">10</span>)
+
+    <span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> partition:
+        data = {
+            <span class="hljs-string">&quot;cms_group_id&quot;</span>: r.cms_group_id,
+            <span class="hljs-string">&quot;final_gender_code&quot;</span>: r.final_gender_code,
+            <span class="hljs-string">&quot;age_level&quot;</span>: r.age_level,
+            <span class="hljs-string">&quot;shopping_level&quot;</span>: r.shopping_level,
+            <span class="hljs-string">&quot;occupation&quot;</span>: r.occupation,
+            <span class="hljs-string">&quot;pvalue_level&quot;</span>: r.pvalue_level,
+            <span class="hljs-string">&quot;new_user_class_level&quot;</span>: r.new_user_class_level
+        }
+        <span class="hljs-comment"># &#x8F6C;&#x6210;json&#x5B57;&#x7B26;&#x4E32;&#x518D;&#x4FDD;&#x5B58;&#xFF0C;&#x80FD;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x518D;&#x6B21;&#x5012;&#x51FA;&#x6765;&#x65F6;&#xFF0C;&#x80FD;&#x6709;&#x6548;&#x7684;&#x8F6C;&#x6362;&#x6210;python&#x7C7B;&#x578B;</span>
+        client.hset(<span class="hljs-string">&quot;user_features&quot;</span>, r.userId, json.dumps(data))
+
+user_profile_df.foreachPartition(foreachPartition2)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04_逻辑回归实现CTR预估.html" class="navigation navigation-prev " aria-label="Previous page: 逻辑回归实现CTR预估">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06_实时推荐.html" class="navigation navigation-next " aria-label="Next page: 推荐业务完成">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"离线推荐缓存处理","level":"1.6.5","depth":2,"next":{"title":"推荐业务完成","level":"1.6.6","depth":2,"path":"推荐系统实战1/06_实时推荐.md","ref":"推荐系统实战1/06_实时推荐.md","articles":[]},"previous":{"title":"逻辑回归实现CTR预估","level":"1.6.4","depth":2,"path":"推荐系统实战1/04_逻辑回归实现CTR预估.md","ref":"推荐系统实战1/04_逻辑回归实现CTR预估.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐系统实战1/05_离线推荐处理.md","mtime":"2019-04-02T06:32:57.476Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

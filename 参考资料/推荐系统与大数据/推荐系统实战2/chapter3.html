@@ -1,0 +1,1986 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>商品数据处理 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter4.html" />
+    
+    
+    <link rel="prev" href="chapter2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../推荐介绍/01_推荐系统简介.html">
+            
+                <a href="../推荐介绍/01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../推荐介绍/02_推荐系统架构设计.html">
+            
+                <a href="../推荐介绍/02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../推荐介绍/03_推荐算法.html">
+            
+                <a href="../推荐介绍/03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../推荐介绍/04_ 推荐系统评估.html">
+            
+                <a href="../推荐介绍/04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                <a href="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../推荐系统实战1/README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                <a href="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                <a href="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../推荐系统实战1/05_离线推荐处理.html">
+            
+                <a href="../推荐系统实战1/05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../推荐系统实战1/06_实时推荐.html">
+            
+                <a href="../推荐系统实战1/06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >商品数据处理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4E09;-&#x5546;&#x54C1;&#x6570;&#x636E;&#x5904;&#x7406;">&#x4E09; &#x5546;&#x54C1;&#x6570;&#x636E;&#x5904;&#x7406;</h2>
+<h3 id="31-&#x6570;&#x636E;&#x5904;&#x7406;&#x76EE;&#x6807;">3.1 &#x6570;&#x636E;&#x5904;&#x7406;&#x76EE;&#x6807;</h3>
+<ul>
+<li>&#x5904;&#x7406;&#x76EE;&#x6807;: &#x5C06;&#x8981;&#x7528;&#x6765;&#x63D0;&#x53D6;&#x5173;&#x952E;&#x8BCD;(&#x6807;&#x7B7E;)&#x7684;&#x6570;&#x636E;&#x5168;&#x90E8;&#x6574;&#x5408;&#x5230;&#x4E00;&#x5F20;&#x8868;&#x4E2D;, &#x5C06;&#x7535;&#x5546;&#x4EA7;&#x54C1;&#x7684;&#x6240;&#x6709;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#x7EC4;&#x5408;&#x6210;&#x4E00;&#x4E2A;&#x6587;&#x672C;</li>
+<li>&#x6570;&#x636E;&#x6574;&#x5408;&#x76EE;&#x7684;: &#x5BF9;&#x7535;&#x5546;&#x7C7B;&#x578B;&#x7684;&#x4EA7;&#x54C1;&#x8FDB;&#x884C;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;&#xFF0C;&#x5982;TF&#xB7;IDF&#x3001;TextRank&#x7B49;&#x7B49;&#xFF0C;&#x53C8;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x5206;&#x8BCD;</li>
+</ul>
+<h3 id="32-&#x67E5;&#x770B;&#x5F53;&#x524D;&#x5546;&#x54C1;&#x5143;&#x6570;&#x636E;&#x8868;">3.2 &#x67E5;&#x770B;&#x5F53;&#x524D;&#x5546;&#x54C1;&#x5143;&#x6570;&#x636E;&#x8868;</h3>
+<ul>
+<li>&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;</li>
+</ul>
+<pre><code class="lang-python">spark.catalog.listTables(<span class="hljs-string">&quot;default&quot;</span>)
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">[Table(name=&apos;hive_sku_detail&apos;, database=&apos;default&apos;, description=None, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;sku_detail&apos;, database=&apos;default&apos;, description=None, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_goods&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:09:54&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_goods_category&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:10:11&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_goods_specification&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:10:30&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_sku&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:10:54&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_sku_specification&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:11:28&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False),
+ Table(name=&apos;tb_specification_option&apos;, database=&apos;default&apos;, description=&apos;Imported by sqoop on 2018/11/20 11:12:04&apos;, tableType=&apos;MANAGED&apos;, isTemporary=False)]
+</code></pre>
+<ul>
+<li>&#x67E5;&#x770B;&#x8868;&#x4E2D;&#x7684;&#x4FE1;&#x606F;</li>
+</ul>
+<pre><code class="lang-python">print(<span class="hljs-string">&quot;tb_goods&#x8868;&#xFF1A;&quot;</span>)
+spark.sql(<span class="hljs-string">&quot;select count(*) tb_goods from tb_goods&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">tb_goods&#x8868;&#xFF1A;
++--------+
+|tb_goods|
++--------+
+|  326160|
++--------+
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_goods&#x8868;&#x4E2D;&#x7684;&#x5185;&#x5BB9;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from tb_goods&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+---+--------------------+--------------------+--------------------+-----+--------+--------+------------+------------+------------+--------------------+--------------------+--------------------+
+| id|         create_time|         update_time|                name|sales|comments|brand_id|category1_id|category2_id|category3_id|         desc_detail|           desc_pack|        desc_service|
++---+--------------------+--------------------+--------------------+-----+--------+--------+------------+------------+------------+--------------------+--------------------+--------------------+
+|  1|2018-04-11 16:01:...|2018-04-25 12:09:...|Apple MacBook Pro...|    1|       1|       1|           4|          45|         157|&lt;h1 style=&quot;text-a...|&lt;h2&gt;&#x5305;&#x88C5;&#x6E05;&#x5355;&lt;/h2&gt;&lt;p&gt;M...|&lt;p&gt;&amp;nbsp;&lt;strong&gt;...|
+|  2|2018-04-14 02:09:...|2018-04-25 11:51:...| Apple iPhone 8 Plus|    3|       1|       1|           1|          38|         115|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|&lt;h3&gt;&#x5305;&#x88C5;&#x6E05;&#x5355;&lt;/h3&gt;&lt;p&gt;&#x91C7;...|&lt;p&gt;&amp;nbsp;&lt;strong&gt;...|
+|  3|2018-04-14 03:03:...|2018-04-25 11:51:...|  &#x534E;&#x4E3A; HUAWEI P10 Plus|    1|       8|       2|           1|          38|         115|&lt;p&gt;&lt;img alt=&quot;&quot; sr...|&lt;h3&gt;&#x5305;&#x88C5;&#x6E05;&#x5355;&lt;/h3&gt;&lt;p&gt;&#x624B;...|&lt;p&gt;&amp;nbsp;&lt;strong&gt;...|
+|  4|2018-11-01 10:43:...|2018-11-01 10:43:...|&#x3010;&#x6B21;&#x65E5;&#x8FBE;&#x3011;&#x6CF0;&#x706B;&#x8584;&#x5FEB;&#x5145;&#x7535;&#x5B9D;&#x624B;&#x673A;&#x58F3;&#x65E0;&#x7EBF;...|    0|       0|       1|           1|          39|         126|                    |                    |                    |
+|  5|2018-11-01 10:43:...|2018-11-01 10:43:...|GoPro hero7&#x8FD0;&#x52A8;&#x76F8;&#x673A;&#x6C34;&#x4E0B;...|    0|       0|       1|           2|          40|         132|                    |                    |   
++---+--------------------+--------------------+--------------------+-----+--------+--------+------------+------------+------------+--------------------+--------------------+--------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_goods_category&#x8868;</li>
+</ul>
+<pre><code class="lang-python">print(<span class="hljs-string">&quot;tb_goods_category&#x8868;&#xFF1A;&quot;</span>)
+spark.sql(<span class="hljs-string">&quot;select count(*) tb_goods_category from tb_goods_category&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x8868;&#x4E2D;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-shell">tb_goods_category&#x8868;&#xFF1A;
++-----------------+
+|tb_goods_category|
++-----------------+
+|              544|
++-----------------+
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_goods_category&#x8868;&#x4E2D;&#x5185;&#x5BB9;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from tb_goods_category&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x8868;&#x4E2D;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python">+---+--------------------+--------------------+----+---------+
+| id|         create_time|         update_time|name|parent_id|
++---+--------------------+--------------------+----+---------+
+|  <span class="hljs-number">1</span>|<span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-09</span> <span class="hljs-number">08</span>:<span class="hljs-number">03</span>:...|<span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-09</span> <span class="hljs-number">08</span>:<span class="hljs-number">03</span>:...|  &#x624B;&#x673A;|     null|
+|  <span class="hljs-number">2</span>|<span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-09</span> <span class="hljs-number">08</span>:<span class="hljs-number">04</span>:...|<span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-09</span> <span class="hljs-number">08</span>:<span class="hljs-number">04</span>:...|  &#x76F8;&#x673A;|     null|
+|  <span class="hljs-number">3</span>|<span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-09</span> <span class="hljs-number">08</span>:<span class="hljs-number">04</span>:...|<span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-09</span> <span class="hljs-number">08</span>:<span class="hljs-number">04</span>:...|  &#x6570;&#x7801;|     null|
+|  <span class="hljs-number">4</span>|<span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-09</span> <span class="hljs-number">08</span>:<span class="hljs-number">05</span>:...|<span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-09</span> <span class="hljs-number">08</span>:<span class="hljs-number">05</span>:...|  &#x7535;&#x8111;|     null|
+|  <span class="hljs-number">5</span>|<span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-09</span> <span class="hljs-number">08</span>:<span class="hljs-number">05</span>:...|<span class="hljs-number">2018</span><span class="hljs-number">-04</span><span class="hljs-number">-09</span> <span class="hljs-number">08</span>:<span class="hljs-number">05</span>:...|  &#x529E;&#x516C;|     null|
++---+--------------------+--------------------+----+---------+
+only showing top <span class="hljs-number">20</span> rows
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_goods_specification&#x8868;&#x6570;&#x636E;&#x6570;&#x91CF;</li>
+</ul>
+<pre><code class="lang-python">print(<span class="hljs-string">&quot;tb_goods_specification&#x8868;&#xFF1A;&quot;</span>)
+spark.sql(<span class="hljs-string">&quot;select count(*) tb_goods_specification from tb_goods_specification&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">tb_goods_specification&#x8868;&#xFF1A;
++----------------------+
+|tb_goods_specification|
++----------------------+
+|                368959|
++----------------------+
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_goods_specification&#x8868;&#x4E2D;&#x5185;&#x5BB9;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from tb_goods_specification&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+---+--------------------+--------------------+----+--------+
+| id|         create_time|         update_time|name|goods_id|
++---+--------------------+--------------------+----+--------+
+|  1|2018-04-11 17:20:...|2018-04-11 17:20:...|&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;|       1|
+|  2|2018-04-11 17:21:...|2018-04-11 17:21:...|  &#x989C;&#x8272;|       1|
+|  3|2018-04-11 17:22:...|2018-04-11 17:22:...|  &#x7248;&#x672C;|       1|
+|  4|2018-04-14 02:10:...|2018-04-14 02:10:...|  &#x989C;&#x8272;|       2|
+|  5|2018-04-14 02:10:...|2018-04-14 02:10:...|  &#x5185;&#x5B58;|       2|
++---+--------------------+--------------------+----+--------+
+only showing top 5 rows
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_sku_specification&#x8868;&#x6570;&#x636E;&#x6570;&#x91CF;</li>
+</ul>
+<pre><code class="lang-python">print(<span class="hljs-string">&quot;tb_sku_specification&#x8868;&#xFF1A;&quot;</span>)
+spark.sql(<span class="hljs-string">&quot;select count(*) tb_sku_specification from tb_sku_specification&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">tb_sku_specification&#x8868;&#xFF1A;
++--------------------+
+|tb_sku_specification|
++--------------------+
+|             2616364|
++--------------------+
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_sku_specification&#x8868;&#x7684;&#x8BE6;&#x7EC6;&#x5185;&#x5BB9;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from tb_sku_specification&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+---+--------------------+--------------------+---------+------+-------+
+| id|         create_time|         update_time|option_id|sku_id|spec_id|
++---+--------------------+--------------------+---------+------+-------+
+|  1|2018-04-11 17:53:...|2018-04-11 17:53:...|        1|     1|      1|
+|  2|2018-04-11 17:56:...|2018-04-11 17:56:...|        4|     1|      2|
+|  3|2018-04-11 17:56:...|2018-04-11 17:56:...|        7|     1|      3|
+|  4|2018-04-12 07:11:...|2018-04-12 07:11:...|        1|     2|      1|
+|  5|2018-04-12 07:11:...|2018-04-12 07:11:...|        3|     2|      2|
++---+--------------------+--------------------+---------+------+-------+
+only showing top 5 rows
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_sku&#x8868;&#x6570;&#x636E;&#x6570;&#x91CF;</li>
+</ul>
+<pre><code class="lang-python">print(<span class="hljs-string">&quot;tb_sku&#x8868;&#xFF1A;&quot;</span>)
+spark.sql(<span class="hljs-string">&quot;select count(*) tb_sku from tb_sku&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">tb_sku&#x8868;&#xFF1A;
++------+
+|tb_sku|
++------+
+|326173|
++------+
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_sku&#x8868;&#x7684;&#x8BE6;&#x7EC6;&#x5185;&#x5BB9;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from tb_sku&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+---+--------------------+--------------------+--------------------+--------------------+-------+----------+------------+-----+-----+--------+-----------+-----------+--------+--------------------+
+| id|         create_time|         update_time|                name|             caption|  price|cost_price|market_price|stock|sales|comments|is_launched|category_id|goods_id|   default_image_url|
++---+--------------------+--------------------+--------------------+--------------------+-------+----------+------------+-----+-----+--------+-----------+-----------+--------+--------------------+
+|  1|2018-04-11 17:28:...|2018-04-25 11:09:...|Apple MacBook Pro...|&#x3010;&#x5168;&#x65B0;2017&#x6B3E;&#x3011;MacBook ...|11388.0|   10350.0|     13388.0|    5|    5|       1|       true|        157|       1|http://image.meid...|
+|  2|2018-04-12 06:53:...|2018-04-23 11:44:...|Apple MacBook Pro...|&#x3010;&#x5168;&#x65B0;2017&#x6B3E;&#x3011;MacBook ...|11398.0|   10388.0|     13398.0|    0|    1|       0|       true|        157|       1|http://image.meid...|
+|  3|2018-04-14 02:14:...|2018-04-14 17:26:...|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6499.0|    6300.0|      6598.0|   10|    0|       0|       true|        115|       2|http://image.meid...|
+|  4|2018-04-14 02:20:...|2018-04-14 17:27:...|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      8088.0|    8|    2|       0|       true|        115|       2|http://image.meid...|
+|  5|2018-04-14 02:45:...|2018-04-14 17:27:...|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6688.0|    6588.0|      6788.0|   10|    0|       0|       true|        115|       2|http://image.meid...|
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_specification_option&#x8868;&#x7684;&#x6570;&#x636E;&#x6570;&#x91CF;</li>
+</ul>
+<pre><code class="lang-python">print(<span class="hljs-string">&quot;tb_specification_option&#x8868;&#xFF1A;&quot;</span>)
+spark.sql(<span class="hljs-string">&quot;select count(*) tb_specification_option from tb_specification_option&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">tb_specification_option&#x8868;&#xFF1A;
++-----------------------+
+|tb_specification_option|
++-----------------------+
+|                2616353|
++-----------------------+
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;tb_specification_option&#x8868;&#x7684;&#x8BE6;&#x7EC6;&#x5185;&#x5BB9;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from tb_specification_option&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+---+--------------------+--------------------+--------------------+-------+
+| id|         create_time|         update_time|               value|spec_id|
++---+--------------------+--------------------+--------------------+-------+
+|  1|2018-04-11 17:22:...|2018-04-11 17:22:...|              13.3&#x82F1;&#x5BF8;|      1|
+|  2|2018-04-11 17:24:...|2018-04-11 17:24:...|              15.4&#x82F1;&#x5BF8;|      1|
+|  3|2018-04-11 17:24:...|2018-04-11 17:24:...|                 &#x6DF1;&#x7070;&#x8272;|      2|
+|  4|2018-04-11 17:24:...|2018-04-11 17:24:...|                  &#x94F6;&#x8272;|      2|
+|  5|2018-04-11 17:25:...|2018-04-11 17:25:...| core i5/8G&#x5185;&#x5B58;/256G&#x5B58;&#x50A8;|      3|
+|  6|2018-04-11 17:25:...|2018-04-11 17:25:...| core i5/8G&#x5185;&#x5B58;/128G&#x5B58;&#x50A8;|      3|
+|  7|2018-04-11 17:25:...|2018-04-12 07:12:...| core i5/8G&#x5185;&#x5B58;/512G&#x5B58;&#x50A8;|      3|
+|  8|2018-04-14 02:11:...|2018-04-14 02:11:...|                  &#x91D1;&#x8272;|      4|
+|  9|2018-04-14 02:11:...|2018-04-14 02:11:...|                 &#x6DF1;&#x7A7A;&#x7070;|      4|
+| 10|2018-04-14 02:11:...|2018-04-14 02:11:...|                  &#x94F6;&#x8272;|      4|
++---+--------------------+--------------------+--------------------+-------+
+only showing top 10 rows
+</code></pre>
+<h3 id="33-&#x6570;&#x636E;&#x9700;&#x6C42;&#x5206;&#x6790;">3.3 &#x6570;&#x636E;&#x9700;&#x6C42;&#x5206;&#x6790;</h3>
+<ul>
+<li><p>&#x7528;&#x5230;&#x7684;&#x8868;&#x5B57;&#x6BB5;&#x60C5;&#x51B5;</p>
+</li>
+<li><p><strong>tb_goods</strong>            <strong>tb_goods_category </strong>   <strong>tb_goods_specification</strong>   <strong>tb_sku_specification</strong>   <strong>tb_sku</strong>               </p>
+<p>id                         id(&#x5206;&#x7C7B;ID)                       id(&#x5C5E;&#x6027;ID)                              id                                     id</p>
+<p>create_time       create_time                  create_time                            create_time                 create_time</p>
+<p>update_time      update_time                update_time                          update_time               update_time               </p>
+<p> name                 <strong>name&#xFF08;&#x5206;&#x7C7B;&#x540D;&#x5B57;&#xFF09;    name&#xFF08;&#x5C5E;&#x6027;&#x540D;&#x5B57;&#xFF09;</strong>              option_id                      <strong>name</strong></p>
+<p>sales                   parent_id                      goods_id                                 sku_id                          <strong>caption</strong></p>
+<p>comments                                                                                                spec_id                         <strong>price</strong></p>
+<p>brand_id                                                                                                                                       cost_price</p>
+<p><strong>category1_id</strong>                                        <strong>tb_specification_option</strong>                                        market_price</p>
+<p><strong>category2_id</strong>                                                id                                                                             stock</p>
+<p><strong>category3_id</strong>                                             value                                                                          sales</p>
+<p>desc_detail                                               spec_id                                                                       comments</p>
+<p>desc_pack                                                                                                                                     is_launched</p>
+<p>desc_service                                                                                                                                category_id</p>
+<p>&#x200B;                                                                                                                                                      <strong>goods_id</strong></p>
+</li>
+<li><p>&#x76EE;&#x6807;&#xFF1A;&#x4EE5;tb_sku&#x8868;&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x5C06;&#x5176;&#x4ED6;&#x4FE1;&#x606F;&#x5408;&#x5E76;</p>
+<p>&#x5408;&#x5E76;&#x540E;&#x4FDD;&#x7559;&#x5B57;&#x6BB5;&#xFF1A;sku_id | name | caption | category1_id | category2_id | category3_id | price | cost_price | market_price | specification | category1 | category2 | category3 </p>
+<ul>
+<li>sku_id | name | caption | price | cost_price | market_price &#x6765;&#x81EA;tb_sku&#x8868;</li>
+<li>category1_id | category2_id | category3_id &#x6765;&#x81EA;tb_goods&#x8868;</li>
+<li>category1 | category2 | category3 &#x6839;&#x636E;tb_goods&#x8868;&#x4E2D;&#x7684;&#x7C7B;&#x522B;ID&#x5BF9;&#x5E94;tb_goods_category&#x8868;&#x83B7;&#x5F97;</li>
+<li>specification&#x5B57;&#x6BB5;&#x5C06;&#x4EE5;tb_sku_specifition&#x8868;&#x5BF9;&#x7167;tb_goods_specification&#x8868;&#x548C;tb_specification_option&#x8868;&#x83B7;&#x5F97;</li>
+</ul>
+<p>&#x8FD9;&#x91CC;&#x5546;&#x54C1;&#x63A8;&#x8350;&#x5C06;&#x4EE5;SKU&#x4E3A;&#x6700;&#x5C0F;&#x5355;&#x4F4D;&#xFF0C;&#x5982;&#x679C;&#x4EE5;GOODS&#x4E3A;&#x6700;&#x5C0F;&#x5355;&#x4F4D;&#xFF0C;&#x90A3;&#x4E48;&#x5E94;&#x5F53;&#x4EE5;tb_goods&#x8868;&#x4E3A;&#x57FA;&#x7840;&#x8FDB;&#x884C;&#x5904;&#x7406;</p>
+</li>
+</ul>
+<h3 id="34-&#x8FDE;&#x63A5;tbsku&#x8868;&#x548C;tbgoods&#x8868;">3.4 &#x8FDE;&#x63A5;tb_sku&#x8868;&#x548C;tb_goods&#x8868;</h3>
+<ul>
+<li>sku&#x548C;1&#x3001;2&#x3001;3&#x7EA7;&#x5206;&#x7C7B;&#x5408;&#x5E76;</li>
+</ul>
+<pre><code class="lang-python">sql = <span class="hljs-string">&apos;&apos;&apos;
+select id sku_id, name, caption, price, cost_price, market_price, goods_id from tb_sku
+&apos;&apos;&apos;</span>
+<span class="hljs-comment"># &#x9009;&#x53D6;tb_sku&#x8868;&#x4E2D;&#x9700;&#x8981;&#x4FDD;&#x7559;&#x7684;&#x6570;&#x636E;</span>
+spark.sql(sql).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+------+--------------------+--------------------+-------+----------+------------+--------+
+|sku_id|                name|             caption|  price|cost_price|market_price|goods_id|
++------+--------------------+--------------------+-------+----------+------------+--------+
+|     1|Apple MacBook Pro...|&#x3010;&#x5168;&#x65B0;2017&#x6B3E;&#x3011;MacBook ...|11388.0|   10350.0|     13388.0|       1|
+|     2|Apple MacBook Pro...|&#x3010;&#x5168;&#x65B0;2017&#x6B3E;&#x3011;MacBook ...|11398.0|   10388.0|     13398.0|       1|
+|     3|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6499.0|    6300.0|      6598.0|       2|
+|     4|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      8088.0|       2|
+|     5|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6688.0|    6588.0|      6788.0|       2|
+|     6|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      7988.0|       2|
+|     7|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6688.0|    6588.0|      6788.0|       2|
+|     8|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      7988.0|       2|
+|     9|&#x534E;&#x4E3A; HUAWEI P10 Plu...|wifi&#x53CC;&#x5929;&#x7EBF;&#x8BBE;&#x8BA1;&#xFF01;&#x5F95;&#x5361;&#x4EBA;&#x50CF;&#x6444;&#x5F71;&#xFF01;...| 3388.0|    3288.0|      3388.0|       3|
+|    10|&#x534E;&#x4E3A; HUAWEI P10 Plu...|wifi&#x53CC;&#x5929;&#x7EBF;&#x8BBE;&#x8BA1;&#xFF01;&#x5F95;&#x5361;&#x4EBA;&#x50CF;&#x6444;&#x5F71;&#xFF01;...| 3788.0|    3588.0|      3888.0|       3|
++------+--------------------+--------------------+-------+----------+------------+--------+
+only showing top 10 rows
+</code></pre>
+<ul>
+<li>&#x8FDE;&#x63A5;tb_sku&#x548C;tb_goods&#xFF0C;&#x5339;&#x914D;&#x6BCF;&#x4E00;&#x4E2A;sku&#x5BF9;&#x5E94;1&#x3001;2&#x3001;3&#x7EA7;&#x5206;&#x7C7B;</li>
+</ul>
+<pre><code class="lang-python">sql2 = <span class="hljs-string">&apos;&apos;&apos;
+select a.id sku_id, name, caption, price, cost_price, market_price, goods_id, category1_id, category2_id, category3_id 
+from 
+tb_sku as a
+join
+(select id, category1_id, category2_id, category3_id from tb_goods) as b
+where a.goods_id=b.id
+&apos;&apos;&apos;</span>
+spark.sql(sql2).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+------+--------------------+--------------------+-------+----------+------------+--------+------------+------------+------------+
+|sku_id|                name|             caption|  price|cost_price|market_price|goods_id|category1_id|category2_id|category3_id|
++------+--------------------+--------------------+-------+----------+------------+--------+------------+------------+------------+
+|     1|Apple MacBook Pro...|&#x3010;&#x5168;&#x65B0;2017&#x6B3E;&#x3011;MacBook ...|11388.0|   10350.0|     13388.0|       1|           4|          45|         157|
+|     2|Apple MacBook Pro...|&#x3010;&#x5168;&#x65B0;2017&#x6B3E;&#x3011;MacBook ...|11398.0|   10388.0|     13398.0|       1|           4|          45|         157|
+|     3|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6499.0|    6300.0|      6598.0|       2|           1|          38|         115|
+|     4|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      8088.0|       2|           1|          38|         115|
+|     5|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6688.0|    6588.0|      6788.0|       2|           1|          38|         115|
+|     6|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      7988.0|       2|           1|          38|         115|
+|     7|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6688.0|    6588.0|      6788.0|       2|           1|          38|         115|
+|     8|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      7988.0|       2|           1|          38|         115|
+|     9|&#x534E;&#x4E3A; HUAWEI P10 Plu...|wifi&#x53CC;&#x5929;&#x7EBF;&#x8BBE;&#x8BA1;&#xFF01;&#x5F95;&#x5361;&#x4EBA;&#x50CF;&#x6444;&#x5F71;&#xFF01;...| 3388.0|    3288.0|      3388.0|       3|           1|          38|         115|
+|    10|&#x534E;&#x4E3A; HUAWEI P10 Plu...|wifi&#x53CC;&#x5929;&#x7EBF;&#x8BBE;&#x8BA1;&#xFF01;&#x5F95;&#x5361;&#x4EBA;&#x50CF;&#x6444;&#x5F71;&#xFF01;...| 3788.0|    3588.0|      3888.0|       3|           1|          38|         115|
++------+--------------------+--------------------+-------+----------+------------+--------+------------+------------+------------+
+only showing top 10 rows
+</code></pre>
+<ul>
+<li>&#x5339;&#x914D;1&#x3001;2&#x3001;3&#x7EA7;&#x5206;&#x7C7B;&#x7684;&#x4E2D;&#x6587;&#x63CF;&#x8FF0;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x65B9;&#x5F0F;1&#xFF1A;&#x5229;&#x7528;sql&#x8BED;&#x53E5;&#x7684;&#x65B9;&#x5F0F;</span>
+sql3 = <span class="hljs-string">&apos;&apos;&apos;
+select * from(
+    select a.id sku_id,name, caption, price, cost_price, market_price, goods_id, category1_id, category2_id, category3_id 
+    from 
+    tb_sku as a
+    join
+    (select id, category1_id, category2_id, category3_id from tb_goods) as b
+    where a.goods_id=b.id
+) as tb
+join
+(select id, name category1 from tb_goods_category) as c
+where tb.category1_id=c.id
+&apos;&apos;&apos;</span>
+<span class="hljs-comment"># &#x8FD9;&#x91CC;&#x628A;&#x4E00;&#x7EA7;&#x5206;&#x7C7B;&#x5339;&#x914D;&#x4E0A;</span>
+spark.sql(sql3).show()
+<span class="hljs-comment"># &#x4F46;&#x5982;&#x679C;&#x8FD8;&#x8981;&#x7EE7;&#x7EED;&#x5339;&#x914D;&#x4E8C;&#x7EA7;&#x4E09;&#x7EA7;&#xFF0C;&#x4F7F;&#x7528;sql&#x8BED;&#x53E5;&#x7684;&#x8BDD;&#xFF0C;&#x4EE3;&#x7801;&#x53EF;&#x8BFB;&#x6027;&#x5F88;&#x5DEE;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x6700;&#x7EC8;&#x4F7F;&#x7528;dataframe&#x7684;api&#x6765;&#x5B8C;&#x6210;&#x5206;&#x7C7B;&#x5269;&#x4F59;&#x7684;sql&#x64CD;&#x4F5C;</span>
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+------+--------------------+--------------------+-------+----------+------------+--------+------------+------------+------------+---+---------+
+|sku_id|                name|             caption|  price|cost_price|market_price|goods_id|category1_id|category2_id|category3_id| id|category1|
++------+--------------------+--------------------+-------+----------+------------+--------+------------+------------+------------+---+---------+
+|     1|Apple MacBook Pro...|&#x3010;&#x5168;&#x65B0;2017&#x6B3E;&#x3011;MacBook ...|11388.0|   10350.0|     13388.0|       1|           4|          45|         157|  4|       &#x7535;&#x8111;|
+|     2|Apple MacBook Pro...|&#x3010;&#x5168;&#x65B0;2017&#x6B3E;&#x3011;MacBook ...|11398.0|   10388.0|     13398.0|       1|           4|          45|         157|  4|       &#x7535;&#x8111;|
+|     3|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6499.0|    6300.0|      6598.0|       2|           1|          38|         115|  1|       &#x624B;&#x673A;|
+|     4|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      8088.0|       2|           1|          38|         115|  1|       &#x624B;&#x673A;|
+|     5|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6688.0|    6588.0|      6788.0|       2|           1|          38|         115|  1|       &#x624B;&#x673A;|
+|     6|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      7988.0|       2|           1|          38|         115|  1|       &#x624B;&#x673A;|
+|     7|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6688.0|    6588.0|      6788.0|       2|           1|          38|         115|  1|       &#x624B;&#x673A;|
+|     8|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      7988.0|       2|           1|          38|         115|  1|       &#x624B;&#x673A;|
+|     9|&#x534E;&#x4E3A; HUAWEI P10 Plu...|wifi&#x53CC;&#x5929;&#x7EBF;&#x8BBE;&#x8BA1;&#xFF01;&#x5F95;&#x5361;&#x4EBA;&#x50CF;&#x6444;&#x5F71;&#xFF01;...| 3388.0|    3288.0|      3388.0|       3|           1|          38|         115|  1|       &#x624B;&#x673A;|
+|    10|&#x534E;&#x4E3A; HUAWEI P10 Plu...|wifi&#x53CC;&#x5929;&#x7EBF;&#x8BBE;&#x8BA1;&#xFF01;&#x5F95;&#x5361;&#x4EBA;&#x50CF;&#x6444;&#x5F71;&#xFF01;...| 3788.0|    3588.0|      3888.0|       3|           1|          38|         115|  1|       &#x624B;&#x673A;|
++------+--------------------+--------------------+-------+----------+------------+--------+------------+------------+------------+---+---------+
+only showing top 10 rows
+</code></pre>
+<ul>
+<li>&#x65B9;&#x5F0F;2&#xFF1A;&#x5229;&#x7528;dataframe&#x7684;sql&#x5316;API&#x65B9;&#x5F0F;</li>
+</ul>
+<pre><code class="lang-python">sql2 = <span class="hljs-string">&apos;&apos;&apos;
+select a.id sku_id, name, caption, price, cost_price, market_price, goods_id, category1_id, category2_id, category3_id 
+from 
+tb_sku as a
+join
+(select id, category1_id, category2_id, category3_id from tb_goods) as b
+where a.goods_id=b.id
+&apos;&apos;&apos;</span>
+
+ret = spark.sql(sql2)
+<span class="hljs-comment"># &#x5408;&#x5E76;&#x4E00;&#x7EA7;&#x5206;&#x7C7B;</span>
+cate_df = spark.sql(<span class="hljs-string">&quot;select id, name category1 from tb_goods_category&quot;</span>)
+ret = ret.join(cate_df,[ret.category1_id==cate_df.id])
+
+<span class="hljs-comment"># &#x5408;&#x5E76;&#x4E8C;&#x7EA7;&#x5206;&#x7C7B;</span>
+cate_df = spark.sql(<span class="hljs-string">&quot;select id, name category2 from tb_goods_category&quot;</span>)
+ret = ret.join(cate_df,[ret.category2_id==cate_df.id])
+
+<span class="hljs-comment"># &#x5408;&#x5E76;&#x4E09;&#x7EA7;&#x5206;&#x7C7B;</span>
+cate_df = spark.sql(<span class="hljs-string">&quot;select id, name category3 from tb_goods_category&quot;</span>)
+ret = ret.join(cate_df,[ret.category3_id==cate_df.id])
+
+ret.select(<span class="hljs-string">&quot;sku_id,name,caption,price,cost_price,market_price,category1,category2,category3&quot;</span>.split(<span class="hljs-string">&quot;,&quot;</span>)).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+------+--------------------+--------------------+-------+----------+------------+---------+---------+---------+
+|sku_id|                name|             caption|  price|cost_price|market_price|category1|category2|category3|
++------+--------------------+--------------------+-------+----------+------------+---------+---------+---------+
+|     1|Apple MacBook Pro...|&#x3010;&#x5168;&#x65B0;2017&#x6B3E;&#x3011;MacBook ...|11388.0|   10350.0|     13388.0|       &#x7535;&#x8111;|     &#x7535;&#x8111;&#x6574;&#x673A;|      &#x7B14;&#x8BB0;&#x672C;|
+|     2|Apple MacBook Pro...|&#x3010;&#x5168;&#x65B0;2017&#x6B3E;&#x3011;MacBook ...|11398.0|   10388.0|     13398.0|       &#x7535;&#x8111;|     &#x7535;&#x8111;&#x6574;&#x673A;|      &#x7B14;&#x8BB0;&#x672C;|
+|     3|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6499.0|    6300.0|      6598.0|       &#x624B;&#x673A;|     &#x624B;&#x673A;&#x901A;&#x8BAF;|       &#x624B;&#x673A;|
+|     4|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      8088.0|       &#x624B;&#x673A;|     &#x624B;&#x673A;&#x901A;&#x8BAF;|       &#x624B;&#x673A;|
+|     5|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6688.0|    6588.0|      6788.0|       &#x624B;&#x673A;|     &#x624B;&#x673A;&#x901A;&#x8BAF;|       &#x624B;&#x673A;|
+|     6|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      7988.0|       &#x624B;&#x673A;|     &#x624B;&#x673A;&#x901A;&#x8BAF;|       &#x624B;&#x673A;|
+|     7|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 6688.0|    6588.0|      6788.0|       &#x624B;&#x673A;|     &#x624B;&#x673A;&#x901A;&#x8BAF;|       &#x624B;&#x673A;|
+|     8|Apple iPhone 8 Pl...|&#x9009;&#x3010;&#x79FB;&#x52A8;&#x4F18;&#x60E0;&#x8D2D;&#x3011;&#x65B0;&#x673A;&#x914D;&#x65B0;&#x5361;&#xFF0C;198...| 7988.0|    7888.0|      7988.0|       &#x624B;&#x673A;|     &#x624B;&#x673A;&#x901A;&#x8BAF;|       &#x624B;&#x673A;|
+|     9|&#x534E;&#x4E3A; HUAWEI P10 Plu...|wifi&#x53CC;&#x5929;&#x7EBF;&#x8BBE;&#x8BA1;&#xFF01;&#x5F95;&#x5361;&#x4EBA;&#x50CF;&#x6444;&#x5F71;&#xFF01;...| 3388.0|    3288.0|      3388.0|       &#x624B;&#x673A;|     &#x624B;&#x673A;&#x901A;&#x8BAF;|       &#x624B;&#x673A;|
+|    10|&#x534E;&#x4E3A; HUAWEI P10 Plu...|wifi&#x53CC;&#x5929;&#x7EBF;&#x8BBE;&#x8BA1;&#xFF01;&#x5F95;&#x5361;&#x4EBA;&#x50CF;&#x6444;&#x5F71;&#xFF01;...| 3788.0|    3588.0|      3888.0|       &#x624B;&#x673A;|     &#x624B;&#x673A;&#x901A;&#x8BAF;|       &#x624B;&#x673A;|
++------+--------------------+--------------------+-------+----------+------------+---------+---------+---------+
+only showing top 10 rows
+</code></pre>
+<ul>
+<li>&#x5339;&#x914D;&#x6BCF;&#x4E00;&#x4E2A;SKU&#x7684;specification&#x5E76;&#x9009;&#x51FA;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x5B57;&#x63CF;&#x8FF0;<ul>
+<li>&#x8FDE;&#x63A5;tb_sku_specification&#x8868;&#x548C;tb_specification_option</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-python">sql = <span class="hljs-string">&apos;&apos;&apos;
+select option_id, sku_id, a.spec_id, option 
+from 
+tb_sku_specification as a 
+join 
+(select id, value option from tb_specification_option) as b 
+where a.option_id=b.id
+&apos;&apos;&apos;</span>
+spark.sql(sql).sort(<span class="hljs-string">&quot;sku_id&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+---------+------+-------+-------------------+
+|option_id|sku_id|spec_id|             option|
++---------+------+-------+-------------------+
+|        4|     1|      2|                 &#x94F6;&#x8272;|
+|        7|     1|      3|core i5/8G&#x5185;&#x5B58;/512G&#x5B58;&#x50A8;|
+|        1|     1|      1|             13.3&#x82F1;&#x5BF8;|
+|        1|     2|      1|             13.3&#x82F1;&#x5BF8;|
+|        7|     2|      3|core i5/8G&#x5185;&#x5B58;/512G&#x5B58;&#x50A8;|
+|        3|     2|      2|                &#x6DF1;&#x7070;&#x8272;|
+|       11|     3|      5|               64GB|
+|        8|     3|      4|                 &#x91D1;&#x8272;|
+|        8|     4|      4|                 &#x91D1;&#x8272;|
+|       12|     4|      5|              256GB|
++---------+------+-------+-------------------+
+only showing top 10 rows
+</code></pre>
+<ul>
+<li>&#x5C06;sql1&#x7684;&#x7ED3;&#x679C;&#x518D;&#x548C;tb_goods_specification&#x8868;&#x8FDE;&#x63A5;&#xFF0C;&#x5E76;&#x9009;&#x51FA;specification&#x7684;&#x6587;&#x5B57;&#x63CF;&#x8FF0;&#x548C;&#x5BF9;&#x5E94;sku_id</li>
+</ul>
+<pre><code class="lang-python">sql2 = <span class="hljs-string">&apos;&apos;&apos;
+select sku_id, specification, option from (
+    select option_id, sku_id, a.spec_id, option from tb_sku_specification as a 
+    join 
+    (select id, value option from tb_specification_option) as b
+    where a.option_id=b.id
+) as tb 
+join 
+(select id, name specification from tb_goods_specification) as c
+where tb.spec_id=c.id
+&apos;&apos;&apos;</span>
+spark.sql(sql2).sort(<span class="hljs-string">&quot;sku_id&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+------+-------------+-------------------+
+|sku_id|specification|             option|
++------+-------------+-------------------+
+|     1|           &#x989C;&#x8272;|                 &#x94F6;&#x8272;|
+|     1|           &#x7248;&#x672C;|core i5/8G&#x5185;&#x5B58;/512G&#x5B58;&#x50A8;|
+|     1|         &#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;|             13.3&#x82F1;&#x5BF8;|
+|     2|           &#x989C;&#x8272;|                &#x6DF1;&#x7070;&#x8272;|
+|     2|           &#x7248;&#x672C;|core i5/8G&#x5185;&#x5B58;/512G&#x5B58;&#x50A8;|
+|     2|         &#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;|             13.3&#x82F1;&#x5BF8;|
+|     3|           &#x5185;&#x5B58;|               64GB|
+|     3|           &#x989C;&#x8272;|                 &#x91D1;&#x8272;|
+|     4|           &#x989C;&#x8272;|                 &#x91D1;&#x8272;|
+|     4|           &#x5185;&#x5B58;|              256GB|
++------+-------------+-------------------+
+only showing top 10 rows
+</code></pre>
+<ul>
+<li>&#x5C06;&#x521A;&#x624D;sql2&#x7684;&#x7ED3;&#x679C;&#x4EE5;SKU&#x4E3A;&#x5355;&#x4F4D;&#x8FDB;&#x884C;&#x5408;&#x5E76;<ul>
+<li>&#x5148;&#x4F7F;&#x7528;sql&#x7684;concat&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5BF9;&#x5217;&#x8FDB;&#x884C;&#x5408;&#x5E76;</li>
+<li>&#x7136;&#x540E;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;group by&#x540E;&#x4F7F;&#x7528;collect_set&#x8FDB;&#x884C;&#x805A;&#x5408;&#x64CD;&#x4F5C;&#xFF0C;&#x6536;&#x96C6;&#x6BCF;&#x4E00;&#x5217;&#x975E;&#x91CD;&#x590D;&#x6570;&#x636E;&#xFF0C;&#x518D;&#x7528;concat&#x6216;concat_ws&#x65B9;&#x6CD5;&#x5BF9;&#x5217;&#x8FDB;&#x884C;&#x5408;&#x5E76;</li>
+<li>&#x76F8;&#x5173;API<ul>
+<li><a href="https://spark.apache.org/docs/2.2.2/api/python/pyspark.sql.html?highlight=concat#pyspark.sql.functions.concat" target="_blank">pyspark.sql.functions.concat</a></li>
+<li><a href="https://spark.apache.org/docs/2.2.2/api/python/pyspark.sql.html?highlight=concat#pyspark.sql.functions.concat_ws" target="_blank">pyspark.sql.functions.concat_ws</a></li>
+<li><a href="https://spark.apache.org/docs/2.2.2/api/python/pyspark.sql.html?highlight=concat#pyspark.sql.functions.collect_set" target="_blank">pyspark.sql.functions.collect_set</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5408;&#x5E76;&#x5217;&#xFF1A;concat</li>
+</ul>
+<pre><code class="lang-python">sql3 = <span class="hljs-string">&apos;&apos;&apos;
+select sku_id, concat(specification,&quot;:&quot;,option) as temp from (
+    select option_id, sku_id, a.spec_id, option from tb_sku_specification as a 
+    join 
+    (select id, value option from tb_specification_option) as b
+    where a.option_id=b.id
+) as tb 
+join 
+(select id, name specification from tb_goods_specification) as c
+where tb.spec_id=c.id
+&apos;&apos;&apos;</span>
+spark.sql(sql3).sort(<span class="hljs-string">&quot;sku_id&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------+--------------------+
+|sku_id|                temp|
++------+--------------------+
+|     1|&#x7248;&#x672C;:core i5/8G&#x5185;&#x5B58;/5...|
+|     1|               &#x989C;&#x8272;:&#x94F6;&#x8272;|
+|     1|         &#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;:13.3&#x82F1;&#x5BF8;|
+|     2|&#x7248;&#x672C;:core i5/8G&#x5185;&#x5B58;/5...|
+|     2|              &#x989C;&#x8272;:&#x6DF1;&#x7070;&#x8272;|
+|     2|         &#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;:13.3&#x82F1;&#x5BF8;|
+|     3|               &#x989C;&#x8272;:&#x91D1;&#x8272;|
+|     3|             &#x5185;&#x5B58;:64GB|
+|     4|            &#x5185;&#x5B58;:256GB|
+|     4|               &#x989C;&#x8272;:&#x91D1;&#x8272;|
++------+--------------------+
+only showing top 10 rows
+</code></pre>
+<ul>
+<li>&#x805A;&#x5408;&#x540E;&#x5408;&#x5E76;&#x884C;&#xFF1A;collect_set</li>
+</ul>
+<pre><code class="lang-python">sql4 = <span class="hljs-string">&apos;&apos;&apos;
+select sku_id, concat_ws(&quot;,&quot;, collect_set(temp)) as specification  
+from 
+    (select sku_id, concat(specification,&quot;:&quot;,option) as temp from 
+            (select option_id, sku_id, a.spec_id, option from tb_sku_specification as a 
+            join 
+            (select id, value option from tb_specification_option) as b  
+            where a.option_id=b.id
+            ) as tb 
+        join 
+        (select id, name specification from tb_goods_specification) as c
+    where tb.spec_id=c.id
+    ) 
+group by sku_id
+&apos;&apos;&apos;</span>
+spark.sql(sql4).sort(<span class="hljs-string">&quot;sku_id&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------+--------------------+
+|sku_id|       specification|
++------+--------------------+
+|     1|&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;:13.3&#x82F1;&#x5BF8;,&#x7248;&#x672C;:co...|
+|     2|&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;:13.3&#x82F1;&#x5BF8;,&#x989C;&#x8272;:&#x6DF1;&#x7070;...|
+|     3|       &#x989C;&#x8272;:&#x91D1;&#x8272;,&#x5185;&#x5B58;:64GB|
+|     4|      &#x989C;&#x8272;:&#x91D1;&#x8272;,&#x5185;&#x5B58;:256GB|
+|     5|      &#x989C;&#x8272;:&#x6DF1;&#x7A7A;&#x7070;,&#x5185;&#x5B58;:64GB|
+|     6|     &#x5185;&#x5B58;:256GB,&#x989C;&#x8272;:&#x6DF1;&#x7A7A;&#x7070;|
+|     7|       &#x5185;&#x5B58;:64GB,&#x989C;&#x8272;:&#x94F6;&#x8272;|
+|     8|      &#x5185;&#x5B58;:256GB,&#x989C;&#x8272;:&#x94F6;&#x8272;|
+|     9|      &#x7248;&#x672C;:64GB,&#x989C;&#x8272;:&#x94BB;&#x96D5;&#x91D1;|
+|    10|     &#x7248;&#x672C;:128GB,&#x989C;&#x8272;:&#x94BB;&#x96D5;&#x91D1;|
++------+--------------------+
+only showing top 10 rows
+</code></pre>
+<ul>
+<li>&#x5BF9;&#x5408;&#x5E76;&#x540E;&#x7684;&#x884C;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF1A;sort_array</li>
+</ul>
+<pre><code class="lang-python">sql5 = <span class="hljs-string">&apos;&apos;&apos;
+select sku_id, concat_ws(&quot;,&quot;, sort_array(collect_set(temp))) as specification  from (
+    select sku_id, concat(specification,&quot;:&quot;,option) as temp from (
+        select option_id, sku_id, a.spec_id, option from tb_sku_specification as a 
+        join 
+        (select id, value option from tb_specification_option) as b
+        where a.option_id=b.id
+    ) as tb 
+    join 
+    (select id, name specification from tb_goods_specification) as c
+    where tb.spec_id=c.id
+) group by sku_id
+&apos;&apos;&apos;</span>
+spark.sql(sql5).sort(<span class="hljs-string">&quot;sku_id&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------+--------------------+
+|sku_id|       specification|
++------+--------------------+
+|     1|&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;:13.3&#x82F1;&#x5BF8;,&#x7248;&#x672C;:co...|
+|     2|&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;:13.3&#x82F1;&#x5BF8;,&#x7248;&#x672C;:co...|
+|     3|       &#x5185;&#x5B58;:64GB,&#x989C;&#x8272;:&#x91D1;&#x8272;|
+|     4|      &#x5185;&#x5B58;:256GB,&#x989C;&#x8272;:&#x91D1;&#x8272;|
+|     5|      &#x5185;&#x5B58;:64GB,&#x989C;&#x8272;:&#x6DF1;&#x7A7A;&#x7070;|
+|     6|     &#x5185;&#x5B58;:256GB,&#x989C;&#x8272;:&#x6DF1;&#x7A7A;&#x7070;|
+|     7|       &#x5185;&#x5B58;:64GB,&#x989C;&#x8272;:&#x94F6;&#x8272;|
+|     8|      &#x5185;&#x5B58;:256GB,&#x989C;&#x8272;:&#x94F6;&#x8272;|
+|     9|      &#x7248;&#x672C;:64GB,&#x989C;&#x8272;:&#x94BB;&#x96D5;&#x91D1;|
+|    10|     &#x7248;&#x672C;:128GB,&#x989C;&#x8272;:&#x94BB;&#x96D5;&#x91D1;|
++------+--------------------+
+only showing top 10 rows
+</code></pre>
+<ul>
+<li>&#x5BF9;&#x524D;&#x9762;&#x7684;&#x4E24;&#x4E2A;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x5408;&#x5E76;&#xFF0C;&#x83B7;&#x5F97;&#x6700;&#x7EC8;sku_detail&#x8868;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># a.category&#x5408;&#x5E76;</span>
+sql2 = <span class="hljs-string">&apos;&apos;&apos;
+select a.id sku_id, name, caption, price, cost_price, market_price, goods_id, category1_id, category2_id, category3_id 
+from 
+tb_sku as a
+join
+(select id, category1_id, category2_id, category3_id from tb_goods) as b
+where a.goods_id=b.id
+&apos;&apos;&apos;</span>
+
+ret = spark.sql(sql2)
+<span class="hljs-comment"># &#x5408;&#x5E76;&#x4E00;&#x7EA7;&#x5206;&#x7C7B;</span>
+cate_df = spark.sql(<span class="hljs-string">&quot;select id, name category1 from tb_goods_category&quot;</span>)
+ret = ret.join(cate_df,[ret.category1_id==cate_df.id])
+
+<span class="hljs-comment"># &#x5408;&#x5E76;&#x4E8C;&#x7EA7;&#x5206;&#x7C7B;</span>
+cate_df = spark.sql(<span class="hljs-string">&quot;select id, name category2 from tb_goods_category&quot;</span>)
+ret = ret.join(cate_df,[ret.category2_id==cate_df.id])
+
+<span class="hljs-comment"># &#x5408;&#x5E76;&#x4E09;&#x7EA7;&#x5206;&#x7C7B;</span>
+cate_df = spark.sql(<span class="hljs-string">&quot;select id, name category3 from tb_goods_category&quot;</span>)
+ret = ret.join(cate_df,[ret.category3_id==cate_df.id])
+
+<span class="hljs-comment"># b.</span>
+sql5 =  <span class="hljs-string">&apos;&apos;&apos;
+select sku_id, concat_ws(&quot;,&quot;, sort_array(collect_set(temp))) as specification  from (
+    select sku_id, concat(specification,&quot;:&quot;,option) as temp from (
+        select option_id, sku_id, a.spec_id, option from tb_sku_specification as a 
+        join 
+        (select id, value option from tb_specification_option) as b
+        where a.option_id=b.id
+    ) as tb 
+    join 
+    (select id, name specification from tb_goods_specification) as c
+    where tb.spec_id=c.id
+) group by sku_id
+&apos;&apos;&apos;</span>
+<span class="hljs-comment"># &#x907F;&#x514D;sku_id&#x51B2;&#x7A81;&#xFF0C;&#x8FD9;&#x91CC;&#x6539;&#x5199;&#x4E00;&#x4E0B;&#x540D;&#x79F0;</span>
+specification_df = spark.sql(sql5).withColumnRenamed(<span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;sku_id2&quot;</span>)
+
+sku_detail = ret.join(specification_df, ret.sku_id==specification_df.sku_id2, <span class="hljs-string">&quot;outer&quot;</span>)
+
+sku_detail = sku_detail.select(<span class="hljs-string">&quot;goods_id,sku_id,category1_id,category1,category2_id,category2,category3_id,category3,name,caption,price,cost_price,market_price,specification&quot;</span>.split(<span class="hljs-string">&quot;,&quot;</span>))
+
+sku_detail.show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+|goods_id|sku_id|category1_id|category1|category2_id|category2|category3_id|category3|                name|             caption| price|cost_price|market_price|       specification|
++--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+|     135|   148|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x968F;&#x8EAB;&#x5385; WPOS-3 &#x9AD8;&#x5EA6;&#x96C6;&#x6210;&#x4E1A;&#x52A1;...|      &#x4EAB;&#x5305;&#x90AE;&#xFF01;&#x6B63;&#x54C1;&#x4FDD;&#x8BC1;&#xFF0C;&#x8D2D;&#x7269;&#x65E0;&#x5FE7;&#xFF01;|2999.0|    2999.0|      2999.0|                null|
+|     451|   463|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x98DE;&#x82B1;&#x4EE4; &#x5B89;&#x5353;&#x624B;&#x673A;&#x8BFB;&#x5361;&#x5668;Type-c...|&#x60A8;&#x8EAB;&#x8FB9;&#x7684;&#x79C1;&#x4EBA;&#x5B9A;&#x5236;&#xFF1A;&#x3010;&#x8054;&#x7CFB;&#x5BA2;&#x670D;&#x544A;&#x77E5;&#x578B;...|   7.8|       7.8|         7.8|&#x989C;&#x8272;:Type-C TF&#x5361; &#x8BFB;&#x5361;&#x5668;...|
+|     458|   471|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x3010;&#x5305;&#x90AE;&#x3011;&#x98DE;&#x82B1;&#x4EE4; &#x5B89;&#x5353;&#x5916;&#x7F6E;&#x624B;&#x673A;&#x8BFB;&#x5361;&#x5668;...|micro usb/V8 TF&#x5361;&#x8BFB;...|  15.8|      15.8|        15.8|&#x7248;&#x672C;:360N5 N4S N4 N...|
+|     483|   496|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x54C1;&#x80DC;&#xFF08;PISEN&#xFF09; &#x5168;&#x80FD;&#x8BFB;&#x5361;&#x5668;&#x8FF7;&#x4F60;...|&#x3010;&#x4EAC;&#x4E1C;&#x914D;&#x9001;&#xB7;&#x5FEB;&#x901F;&#x9001;&#x8FBE;&#x3011;&#x63D0;&#x4F9B;&#x4E00;&#x5E74;&#x8D28;&#x4FDD;...|  29.0|      29.0|        29.0|&#x989C;&#x8272;:SD&#x8BFB;&#x5361;&#x5668;,&#x989C;&#x8272;:TF&#x8BFB;&#x5361;&#x5668;...|
+|     820|   833|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|LEXAR &#x96F7;&#x514B;&#x6C99;&#xFF08;Lexar&#xFF09; ...|                    | 160.0|     160.0|       160.0|          &#x7248;&#x672C;:25&#x5408;&#x4E00;&#x8BFB;&#x5361;&#x5668;|
+|    1075|  1088|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|&#x9752;&#x7F8E; &#x58C1;&#x6302;&#x5E7F;&#x544A;&#x673A;65&#x5BF8;&#x5B89;&#x5353;&#x7F51;&#x7EDC;&#x5E7F;&#x544A;...|                    |2699.0|    2699.0|      2699.0|&#x7248;&#x672C;:&#x89E6;&#x6478;&#x7248;,&#x7248;&#x672C;:&#x975E;&#x89E6;&#x6478;,&#x989C;&#x8272;:...|
+|    1225|  1238|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|dyplay&#x82F9;&#x679C;&#x624B;&#x673A;&#x76F8;&#x673A;&#x8BFB;&#x5361;&#x5668;&#x4E09;&#x5408;...|                    | 128.0|     128.0|       128.0|                null|
+|    1329|  1342|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x7EFF;&#x8054;&#xFF08;UGREEN&#xFF09; Type-C...|&#x652F;&#x6301;&#x8BFB;&#x53D6;&#x5B89;&#x9632;&#x76D1;&#x63A7;/&#x5355;&#x53CD;&#x76F8;&#x673A;sd/t...|  39.0|      39.0|        39.0|&#x989C;&#x8272;:Type-C+USB&#x53CC;&#x5361;&#x5355;&#x8BFB;...|
+|    1567|  1580|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|HNM 19&#x82F1;&#x5BF8;&#x9AD8;&#x6E05;&#x58C1;&#x6302;&#x6570;&#x7801;&#x76F8;&#x6846;1...|                    | 988.0|     988.0|       988.0|&#x7248;&#x672C;:10&#x82F1;&#x5BF8;&#x767D;&#x8272;&#x94A2;&#x5316;&#x73BB;&#x7483;8G&#x5361;,...|
+|    1578|  1591|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|kisdisk  &#x8BFB;&#x5361;&#x5668;&#x56DB;&#x5408;&#x4E00;US...|         &#x9AD8;&#x901F;&#x63A5;&#x53E3; &#x56DB;&#x5408;&#x4E00;&#x8BFB;&#x5361;&#x5668;| 198.0|     198.0|       198.0|&#x7248;&#x672C;:128G&#x5361;,&#x7248;&#x672C;:256G&#x5361;...|
++--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+only showing top 10 rows
+</code></pre>
+<ul>
+<li>&#x5C06;sku_detail&#x6570;&#x636E;&#x5199;&#x5165;hive&#x8868;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5C06;spark&#x7684;dataframe&#x6CE8;&#x518C;&#x4E3A;&#x4E34;&#x65F6;&#x8868;&#xFF0C;&#x4EE5;&#x4FBF;&#x80FD;&#x5BF9;&#x5176;&#x4F7F;&#x7528;sql&#x8BED;&#x53E5;</span>
+sku_detail.registerTempTable(<span class="hljs-string">&quot;tempTable&quot;</span>)
+<span class="hljs-comment"># &#x67E5;&#x770B;&#x4E34;&#x65F6;&#x8868;&#x7ED3;&#x6784;</span>
+spark.sql(<span class="hljs-string">&quot;desc tempTable&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+-------------+---------+-------+
+|     col_name|data_type|comment|
++-------------+---------+-------+
+|     goods_id|      int|   null|
+|       sku_id|      int|   null|
+| category1_id|      int|   null|
+|    category1|   string|   null|
+| category2_id|      int|   null|
+|    category2|   string|   null|
+| category3_id|      int|   null|
+|    category3|   string|   null|
+|         name|   string|   null|
+|      caption|   string|   null|
+|        price|   double|   null|
+|   cost_price|   double|   null|
+| market_price|   double|   null|
+|specification|   string|   null|
++-------------+---------+-------+
+</code></pre>
+<ul>
+<li>&#x521B;&#x5EFA;&#x8868;&#x5E76;&#x5199;&#x5165;&#x6570;&#x636E;&#x5230;Hive</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x7531;&#x4E8E;&#x5F53;&#x524D;&#x5F00;&#x542F;&#x4E86;hive sql&#x529F;&#x80FD;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x5148;&#x521B;&#x5EFA;&#x8868;</span>
+spark.sql(<span class="hljs-string">&quot;DROP TABLE IF EXISTS `sku_detail`&quot;</span>)
+
+sql = <span class="hljs-string">&apos;&apos;&apos;
+CREATE TABLE `sku_detail` (
+goods_id INT,
+sku_id INT,
+category1_id INT,
+category1 STRING,
+category2_id INT,
+category2 STRING,
+category3_id INT,
+category3 STRING,
+name STRING,
+caption STRING,
+price DOUBLE,
+cost_price DOUBLE,
+market_price DOUBLE,
+specification STRING
+)
+&apos;&apos;&apos;</span>
+spark.sql(sql)
+<span class="hljs-comment"># &#x5199;&#x5165;&#x6570;&#x636E;&#x5230;hive&#x8868;</span>
+spark.sql(<span class="hljs-string">&quot;INSERT INTO sku_detail SELECT * FROM tempTable&quot;</span>)
+</code></pre>
+<ul>
+<li>&#x68C0;&#x67E5;hive&#x8868;sku_detail&#x4E2D;&#x7684;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from sku_detail&quot;</span>).count()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">326173
+</code></pre>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from sku_detail&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;:</li>
+</ul>
+<pre><code class="lang-shell">+--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+|goods_id|sku_id|category1_id|category1|category2_id|category2|category3_id|category3|                name|             caption| price|cost_price|market_price|       specification|
++--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+|     135|   148|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x968F;&#x8EAB;&#x5385; WPOS-3 &#x9AD8;&#x5EA6;&#x96C6;&#x6210;&#x4E1A;&#x52A1;...|      &#x4EAB;&#x5305;&#x90AE;&#xFF01;&#x6B63;&#x54C1;&#x4FDD;&#x8BC1;&#xFF0C;&#x8D2D;&#x7269;&#x65E0;&#x5FE7;&#xFF01;|2999.0|    2999.0|      2999.0|                null|
+|     451|   463|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x98DE;&#x82B1;&#x4EE4; &#x5B89;&#x5353;&#x624B;&#x673A;&#x8BFB;&#x5361;&#x5668;Type-c...|&#x60A8;&#x8EAB;&#x8FB9;&#x7684;&#x79C1;&#x4EBA;&#x5B9A;&#x5236;&#xFF1A;&#x3010;&#x8054;&#x7CFB;&#x5BA2;&#x670D;&#x544A;&#x77E5;&#x578B;...|   7.8|       7.8|         7.8|&#x989C;&#x8272;:Type-C TF&#x5361; &#x8BFB;&#x5361;&#x5668;...|
+|     458|   471|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x3010;&#x5305;&#x90AE;&#x3011;&#x98DE;&#x82B1;&#x4EE4; &#x5B89;&#x5353;&#x5916;&#x7F6E;&#x624B;&#x673A;&#x8BFB;&#x5361;&#x5668;...|micro usb/V8 TF&#x5361;&#x8BFB;...|  15.8|      15.8|        15.8|&#x7248;&#x672C;:360N5 N4S N4 N...|
+|     483|   496|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x54C1;&#x80DC;&#xFF08;PISEN&#xFF09; &#x5168;&#x80FD;&#x8BFB;&#x5361;&#x5668;&#x8FF7;&#x4F60;...|&#x3010;&#x4EAC;&#x4E1C;&#x914D;&#x9001;&#xB7;&#x5FEB;&#x901F;&#x9001;&#x8FBE;&#x3011;&#x63D0;&#x4F9B;&#x4E00;&#x5E74;&#x8D28;&#x4FDD;...|  29.0|      29.0|        29.0|&#x989C;&#x8272;:SD&#x8BFB;&#x5361;&#x5668;,&#x989C;&#x8272;:TF&#x8BFB;&#x5361;&#x5668;...|
+|     820|   833|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|LEXAR &#x96F7;&#x514B;&#x6C99;&#xFF08;Lexar&#xFF09; ...|                    | 160.0|     160.0|       160.0|          &#x7248;&#x672C;:25&#x5408;&#x4E00;&#x8BFB;&#x5361;&#x5668;|
+|    1075|  1088|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|&#x9752;&#x7F8E; &#x58C1;&#x6302;&#x5E7F;&#x544A;&#x673A;65&#x5BF8;&#x5B89;&#x5353;&#x7F51;&#x7EDC;&#x5E7F;&#x544A;...|                    |2699.0|    2699.0|      2699.0|&#x7248;&#x672C;:&#x89E6;&#x6478;&#x7248;,&#x7248;&#x672C;:&#x975E;&#x89E6;&#x6478;,&#x989C;&#x8272;:...|
+|    1225|  1238|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|dyplay&#x82F9;&#x679C;&#x624B;&#x673A;&#x76F8;&#x673A;&#x8BFB;&#x5361;&#x5668;&#x4E09;&#x5408;...|                    | 128.0|     128.0|       128.0|                null|
+|    1329|  1342|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x7EFF;&#x8054;&#xFF08;UGREEN&#xFF09; Type-C...|&#x652F;&#x6301;&#x8BFB;&#x53D6;&#x5B89;&#x9632;&#x76D1;&#x63A7;/&#x5355;&#x53CD;&#x76F8;&#x673A;sd/t...|  39.0|      39.0|        39.0|&#x989C;&#x8272;:Type-C+USB&#x53CC;&#x5361;&#x5355;&#x8BFB;...|
+|    1567|  1580|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|HNM 19&#x82F1;&#x5BF8;&#x9AD8;&#x6E05;&#x58C1;&#x6302;&#x6570;&#x7801;&#x76F8;&#x6846;1...|                    | 988.0|     988.0|       988.0|&#x7248;&#x672C;:10&#x82F1;&#x5BF8;&#x767D;&#x8272;&#x94A2;&#x5316;&#x73BB;&#x7483;8G&#x5361;,...|
+|    1578|  1591|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|kisdisk  &#x8BFB;&#x5361;&#x5668;&#x56DB;&#x5408;&#x4E00;US...|         &#x9AD8;&#x901F;&#x63A5;&#x53E3; &#x56DB;&#x5408;&#x4E00;&#x8BFB;&#x5361;&#x5668;| 198.0|     198.0|       198.0|&#x7248;&#x672C;:128G&#x5361;,&#x7248;&#x672C;:256G&#x5361;...|
+|    1632|  1645|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|&#x7231;&#x56FD;&#x8005;&#xFF08;aigo&#xFF09; &#x6570;&#x7801;&#x76F8;&#x6846; DP...|21.5&#x5BF8; &#x5546;&#x4E1A;&#x5E7F;&#x544A;&#x673A; &#x5BB6;&#x7528;&#x5927;&#x5C4F;&#x76F8;...|1699.0|    1699.0|      1699.0|&#x7248;&#x672C;:&#x5B98;&#x65B9;&#x6807;&#x914D;,&#x7248;&#x672C;:&#x5B98;&#x65B9;&#x6807;&#x914D;+&#x91D1;...|
+|    1816|  1829|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x91D1;&#x58EB;&#x987F;&#xFF08;Kingston&#xFF09; USB...|11&#x6708;1&#x65E5;&#x949C;&#x60E0;&#x6765;&#x88AD;&#xFF0C;11.11&#x5143;&#x9650;...|  69.9|      69.9|        69.9|&#x989C;&#x8272;:USB3.1&#x53CC;&#x63A5;&#x53E3;Micro...|
+|    1946|  1959|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         128|     &#x6570;&#x7801;&#x76F8;&#x673A;|&#x7406;&#x5149;&#xFF08;Ricoh&#xFF09; THETA &#x5168;...|&#x3010;11.11&#x4EAC;&#x4E1C;&#x5168;&#x7403;&#x597D;&#x7269;&#x8282;&#x3011;&#x5F71;&#x50CF;&#x949C;...|1599.0|    1599.0|      1599.0|&#x989C;&#x8272;:THETA SC &#x767D;&#x8272;,&#x989C;&#x8272;...|
+|    2109|  2122|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|&#x8D1D;&#x89C6;&#x7279;&#x82F9;&#x679C;&#x7B14;&#x8BB0;&#x672C;&#x5145;&#x7535;&#x5B9D;&#x79FB;&#x52A8;&#x7535;&#x6E90;QC...|&#x5982;&#x9700;&#x66F4;&#x5927;&#x529F;&#x7387;&#x5BB9;&#x91CF;&#x79FB;&#x52A8;&#x7535;&#x6E90;&#x53EF;&#x70B9;&#x51FB;&#x4E86;&#x89E3;...| 399.0|     399.0|       399.0|&#x989C;&#x8272;:&#x592A;&#x7A7A;&#x94F6;20000&#x6BEB;&#x5B89;/DC&#x6570;...|
+|    2129|  2142|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|&#x6208;&#x6D3E; &#x65E0;&#x7EBF;&#x78C1;&#x5438;&#x5145;&#x7535;&#x5B9D;&#x8FF7;&#x4F60;&#x8D85;&#x8584;&#x5E94;&#x6025;&#x79FB;...|                    | 258.0|     258.0|       258.0|&#x989C;&#x8272;:&#x4E09;&#x5408;&#x4E00;&#xFF0C;&#x73CD;&#x73E0;&#x767D;,&#x989C;&#x8272;:&#x56DB;&#x5408;&#x4E00;...|
+|    2353|  2366|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|&#x8D4B;&#x7535; &#x5145;&#x7535;&#x5B9D;&#x8D85;&#x8584;&#x5C0F;&#x5DE7; &#x82F9;&#x679C;&#x5B89;&#x5353;&#x8FF7;&#x4F60;...|&#x9886;&#x5238;&#x4E0B;&#x5355;&#x7ACB;&#x51CF;3&#x5143;&#xFF0C;&#x5438;&#x9644;&#x5F0F;&#x5145;&#x7535;&#x5B9D;&#xFF0C;&#x8D2D;...|  89.9|      89.9|        89.9|&#x7248;&#x672C;:&#x578B;&#x53F7;,&#x989C;&#x8272;:01&#x6B3E;&#x82F9;&#x679C;6/6...|
+|    2646|  2659|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|OISLE&#x82F9;&#x679C;&#x4E13;&#x7528;&#x65E0;&#x7EBF;&#x5145;&#x7535;&#x5B9D; ip...|&#x6362;&#x624B;&#x673A;&#x4E0D;&#x7528;&#x6362;&#x80CC;&#x5939; &#x65E0;&#x7EBF;&#x5145;&#x7535; &#x82F9;&#x679C;&#x5FEB;...| 109.0|     109.0|       109.0|&#x7248;&#x672C;:iphone 5/5S/SE...|
+|    2853|  2866|           1|       &#x624B;&#x673A;|          38|     &#x624B;&#x673A;&#x901A;&#x8BAF;|         118|      &#x5BF9;&#x8BB2;&#x673A;|&#x5B9D;&#x950B;&#xFF08;BAOFENG&#xFF09; BF-UV...|&#x2605;1111&#x7279;&#x60E0;&#x2605;&#x81EA;&#x9A7E;&#x6E38;&#x6237;&#x5916;&#x4E13;&#x5C5E;&#x3010;&#x624B;...| 159.0|     159.0|       159.0|&#x989C;&#x8272;:5R&#x4E09;&#x4EE3;&#xFF08;&#x4EB2;&#x6C11;&#xFF09;,&#x989C;&#x8272;:&#x4E00;&#x4EE3;...|
+|    3162|  3175|           1|       &#x624B;&#x673A;|          38|     &#x624B;&#x673A;&#x901A;&#x8BAF;|         118|      &#x5BF9;&#x8BB2;&#x673A;|Motorola &#x6469;&#x6258;&#x7F57;&#x62C9;T8&#x5BF9;&#x8BB2;...|&#x6469;&#x6258;&#x7F57;&#x62C9;&#x514D;&#x6267;&#x7167;&#x5BF9;&#x8BB2;&#x673A; &#x5546;&#x52A1;&#x624B;&#x53F0; &#x9001;...| 480.0|     480.0|       480.0|        &#x989C;&#x8272;:MOTO&#x5546;&#x52A1;&#x7CFB;&#x5217;T|
+|    3736|  3749|           1|       &#x624B;&#x673A;|          38|     &#x624B;&#x673A;&#x901A;&#x8BAF;|         118|      &#x5BF9;&#x8BB2;&#x673A;|ZASTONE &#x5373;&#x65F6;&#x901A;D9000&#x8F66;...|&#x9001;&#x5B89;&#x88C5;6&#x4EF6;&#x5957; 50W&#x5927;&#x529F;&#x7387; &#x5E26;&#x4E2D;&#x7EE7;...|2598.0|    2598.0|      2598.0|&#x989C;&#x8272;:&#x4E2D;&#x6587;&#x7248; &#x5438;&#x76D8;&#x5929;&#x7EBF;&#x5957;&#x9910;,&#x989C;&#x8272;:...|
++--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+only showing top 10 rows
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter2.html" class="navigation navigation-prev " aria-label="Previous page: 美多业务数据导入">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter4.html" class="navigation navigation-next " aria-label="Next page: 商品关键词提取">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"商品数据处理","level":"1.8.3","depth":2,"next":{"title":"商品关键词提取","level":"1.8.4","depth":2,"path":"推荐系统实战2/chapter4.md","ref":"推荐系统实战2/chapter4.md","articles":[]},"previous":{"title":"美多业务数据导入","level":"1.8.2","depth":2,"path":"推荐系统实战2/chapter2.md","ref":"推荐系统实战2/chapter2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐系统实战2/chapter3.md","mtime":"2019-04-04T03:51:52.478Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

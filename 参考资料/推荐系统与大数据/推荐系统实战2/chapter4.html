@@ -1,0 +1,2233 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>商品关键词提取 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter5.html" />
+    
+    
+    <link rel="prev" href="chapter3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../推荐介绍/01_推荐系统简介.html">
+            
+                <a href="../推荐介绍/01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../推荐介绍/02_推荐系统架构设计.html">
+            
+                <a href="../推荐介绍/02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../推荐介绍/03_推荐算法.html">
+            
+                <a href="../推荐介绍/03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../推荐介绍/04_ 推荐系统评估.html">
+            
+                <a href="../推荐介绍/04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                <a href="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../推荐系统实战1/README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                <a href="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                <a href="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../推荐系统实战1/05_离线推荐处理.html">
+            
+                <a href="../推荐系统实战1/05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../推荐系统实战1/06_实时推荐.html">
+            
+                <a href="../推荐系统实战1/06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >商品关键词提取</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x56DB;-&#x5546;&#x54C1;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;">&#x56DB; &#x5546;&#x54C1;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;</h2>
+<ul>
+<li>&#x6839;&#x636E;&#x5546;&#x54C1;SKU&#x8BE6;&#x60C5;&#x8868;, &#x5BF9;&#x5546;&#x54C1;&#x8FDB;&#x884C;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;, &#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;&#x7684;&#x7B2C;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x8981;&#x5206;&#x8BCD; </li>
+</ul>
+<h3 id="41-jieba&#x5206;&#x8BCD;">4.1 jieba&#x5206;&#x8BCD;</h3>
+<ul>
+<li><p>&#x505C;&#x7528;&#x8BCD;</p>
+<ul>
+<li>&#x5206;&#x8BCD;&#x4E4B;&#x540E;&#x8981;&#x53BB;&#x6389;&#x7684;&#x8BCD;</li>
+</ul>
+</li>
+<li><p>&#x8F7D;&#x5165;&#x8BCD;&#x5178;</p>
+<ul>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8BCD;&#x5178;&#xFF0C;&#x4EE5;&#x4FBF;&#x5305;&#x542B; jieba &#x8BCD;&#x5E93;&#x91CC;&#x6CA1;&#x6709;&#x7684;&#x8BCD;&#x3002;&#x867D;&#x7136; jieba &#x6709;&#x65B0;&#x8BCD;&#x8BC6;&#x522B;&#x80FD;&#x529B;&#xFF0C;&#x4F46;&#x662F;&#x81EA;&#x884C;&#x6DFB;&#x52A0;&#x65B0;&#x8BCD;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x66F4;&#x9AD8;&#x7684;&#x6B63;&#x786E;&#x7387;</li>
+<li>&#x7528;&#x6CD5;&#xFF1A; jieba.load_userdict(file_name) # file_name &#x4E3A;&#x6587;&#x4EF6;&#x7C7B;&#x5BF9;&#x8C61;&#x6216;&#x81EA;&#x5B9A;&#x4E49;&#x8BCD;&#x5178;&#x7684;&#x8DEF;&#x5F84;</li>
+<li>&#x8BCD;&#x5178;&#x683C;&#x5F0F;&#x548C; <code>dict.txt</code> &#x4E00;&#x6837;&#xFF0C;&#x4E00;&#x4E2A;&#x8BCD;&#x5360;&#x4E00;&#x884C;&#xFF1B;&#x6BCF;&#x4E00;&#x884C;&#x5206;&#x4E09;&#x90E8;&#x5206;&#xFF1A;&#x8BCD;&#x8BED;&#x3001;&#x8BCD;&#x9891;&#xFF08;&#x53EF;&#x7701;&#x7565;&#xFF09;&#x3001;&#x8BCD;&#x6027;&#xFF08;&#x53EF;&#x7701;&#x7565;&#xFF09;&#xFF0C;&#x7528;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#xFF0C;&#x987A;&#x5E8F;&#x4E0D;&#x53EF;&#x98A0;&#x5012;&#x3002;<code>file_name</code> &#x82E5;&#x4E3A;&#x8DEF;&#x5F84;&#x6216;&#x4E8C;&#x8FDB;&#x5236;&#x65B9;&#x5F0F;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x6587;&#x4EF6;&#x5FC5;&#x987B;&#x4E3A; UTF-8 &#x7F16;&#x7801;&#x3002;</li>
+<li>&#x8BCD;&#x9891;&#x7701;&#x7565;&#x65F6;&#x4F7F;&#x7528;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x7684;&#x80FD;&#x4FDD;&#x8BC1;&#x5206;&#x51FA;&#x8BE5;&#x8BCD;&#x7684;&#x8BCD;&#x9891;&#x3002;</li>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x8BCD;&#x5178;&#x793A;&#x4F8B;</li>
+</ul>
+<pre><code class="lang-shell">&#x521B;&#x65B0;&#x529E; 3 i
+&#x4E91;&#x8BA1;&#x7B97; 5
+&#x51F1;&#x7279;&#x7433; nz
+&#x53F0;&#x4E2D;
+</code></pre>
+</li>
+<li><p>&#x8BCD;&#x6027;</p>
+<p><a href="https://www.cnblogs.com/csj007523/p/7773027.html" target="_blank">https://www.cnblogs.com/csj007523/p/7773027.html</a></p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> jieba
+<span class="hljs-keyword">import</span> jieba.posseg <span class="hljs-keyword">as</span> pseg
+<span class="hljs-keyword">import</span> codecs
+
+abspath = <span class="hljs-string">&quot;/home/hadoop/&quot;</span>
+userDict_path = os.path.join(abspath,<span class="hljs-string">&apos;data/all.txt&apos;</span>) <span class="hljs-comment"># &#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x8BCD;&#x5178;</span>
+<span class="hljs-comment"># jieba&#x52A0;&#x8F7D;&#x7528;&#x6237;&#x8BCD;&#x5178;</span>
+jieba.load_userdict(userDict_path)
+stopwords_path = os.path.join(abspath,<span class="hljs-string">&apos;data/baidu_stopwords.txt&apos;</span>) <span class="hljs-comment">#&#x505C;&#x7528;&#x8BCD;&#x8BCD;&#x5178;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_stopwords_list</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x8FD4;&#x56DE;stopwords&#x5217;&#x8868;&quot;&quot;&quot;</span>
+    stopwords_list = [i.strip()
+                      <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> codecs.open(stopwords_path).readlines()]
+    <span class="hljs-keyword">return</span> stopwords_list
+
+<span class="hljs-comment"># &#x6240;&#x6709;&#x7684;&#x505C;&#x7528;&#x8BCD;&#x5217;&#x8868;</span>
+stopwords_list = get_stopwords_list()
+
+<span class="hljs-comment"># &#x5206;&#x8BCD;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cut_sentence</span><span class="hljs-params">(sentence)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x5BF9;&#x5207;&#x5272;&#x4E4B;&#x540E;&#x7684;&#x8BCD;&#x8BED;&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#xFF0C;&#x53BB;&#x9664;&#x505C;&#x7528;&#x8BCD;&#xFF0C;&#x4FDD;&#x7559;&#x540D;&#x8BCD;&#xFF0C;&#x82F1;&#x6587;&#x548C;&#x81EA;&#x5B9A;&#x4E49;&#x8BCD;&#x5E93;&#x4E2D;&#x7684;&#x8BCD;&#xFF0C;&#x957F;&#x5EA6;&#x5927;&#x4E8E;2&#x7684;&#x8BCD;&quot;&quot;&quot;</span>
+    <span class="hljs-comment"># print(sentence,&quot;*&quot;*100)</span>
+    <span class="hljs-comment"># eg:[pair(&apos;&#x4ECA;&#x5929;&apos;, &apos;t&apos;), pair(&apos;&#x6709;&apos;, &apos;d&apos;), pair(&apos;&#x96FE;&apos;, &apos;n&apos;), pair(&apos;&#x973E;&apos;, &apos;g&apos;)]</span>
+    seg_list = pseg.lcut(sentence)
+    <span class="hljs-comment">#&#x8FC7;&#x6EE4;&#x505C;&#x7528;&#x8BCD;</span>
+    seg_list = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> seg_list <span class="hljs-keyword">if</span> i.word <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> stopwords_list]
+    filtered_words_list = []
+    <span class="hljs-keyword">for</span> seg <span class="hljs-keyword">in</span> seg_list:
+        <span class="hljs-comment"># print(seg)</span>
+        <span class="hljs-keyword">if</span> len(seg.word) &lt;= <span class="hljs-number">1</span>:
+            <span class="hljs-keyword">continue</span>
+        <span class="hljs-keyword">elif</span> seg.flag == <span class="hljs-string">&quot;eng&quot;</span>:
+            <span class="hljs-keyword">if</span> len(seg.word) &lt;= <span class="hljs-number">2</span>:
+                <span class="hljs-comment"># &#x5982;&#x679C;&#x662F;&#x82F1;&#x6587; &#x957F;&#x5EA6;&lt;=2&#x7684;&#x8FC7;&#x6EE4;&#x6389;</span>
+                <span class="hljs-keyword">continue</span>
+            <span class="hljs-keyword">else</span>:
+                filtered_words_list.append(seg.word)
+        <span class="hljs-keyword">elif</span> seg.flag.startswith(<span class="hljs-string">&quot;n&quot;</span>):
+            <span class="hljs-comment"># &#x5982;&#x679C;&#x662F;&#x540D;&#x8BCD;&#x7684; &#x52A0;&#x5165;&#x5230;&#x5206;&#x8BCD;&#x7684;&#x7ED3;&#x679C;&#x4E2D;</span>
+            filtered_words_list.append(seg.word)
+        <span class="hljs-keyword">elif</span> seg.flag <span class="hljs-keyword">in</span> [<span class="hljs-string">&quot;x&quot;</span>, <span class="hljs-string">&quot;eng&quot;</span>]:  <span class="hljs-comment"># &#x662F;&#x81EA;&#x5B9A;&#x4E00;&#x4E2A;&#x8BCD;&#x8BED;&#x6216;&#x8005;&#x662F;&#x82F1;&#x6587;&#x5355;&#x8BCD;</span>
+            <span class="hljs-comment"># &#x662F;&#x81EA;&#x5B9A;&#x4E00;&#x4E2A;&#x8BCD;&#x8BED;&#x6216;&#x8005;&#x662F;&#x82F1;&#x6587;&#x5355;&#x8BCD;</span>
+            filtered_words_list.append(seg.word)
+    <span class="hljs-keyword">return</span> filtered_words_list
+</code></pre>
+<ul>
+<li>&#x5229;&#x7528;jieba&#x5206;&#x8BCD;</li>
+</ul>
+<pre><code class="lang-python">sentence = <span class="hljs-string">&apos;&apos;&apos;
+&#x6500;&#x5347;&#xFF08;IPASON&#xFF09;H68 i7 8700K/Z370/GTX1070Ti 8G/16G DDR4&#x6C34;&#x51B7;&#x6E38;&#x620F;&#x53F0;&#x5F0F;DIY&#x7EC4;&#x88C5;&#x7535;&#x8111;&#x4EAC;&#x4E1C;&#x81EA;&#x8425;&#x6E38;&#x620F;&#x4E3B;&#x673A;UPC&#x4EAC;&#x4E1C;&#x81EA;&#x8425;&#xFF0C;&#x81EA;&#x5E26;&#x5185;&#x5B58;&#x3011;OMG&#x6218;&#x961F;&#x8BAD;&#x7EC3;&#x6307;&#x5B9A;&#x7528;&#x673A;&#xFF0C;&#x81EA;&#x5E26;16G&#x5185;&#x5B58;&#xFF0C;GTX1070Ti 8G&#xFF01;&#x516D;&#x6838;&#x5904;&#x7406;&#x5668;+GTX1050Ti&#x6E38;&#x620F;&#x4E3B;&#x673A;&#xFF0C;&#x70B9;&#x6B64;&#x62A2;&#x8D2D;
+&apos;&apos;&apos;</span>
+cut_sentence(sentence)
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">[&apos;IPASON&apos;,
+ &apos;H68&apos;,
+ &apos;i7&apos;,
+ &apos;8700K&apos;,
+ &apos;Z370&apos;,
+ &apos;GTX1070Ti&apos;,
+ &apos;16G&apos;,
+ &apos;DDR4&apos;,
+ &apos;&#x6C34;&#x51B7;&apos;,
+ &apos;&#x6E38;&#x620F;&apos;,
+ &apos;&#x53F0;&#x5F0F;&apos;,
+ &apos;DIY&apos;,
+ &apos;&#x7535;&#x8111;&apos;,
+ &apos;&#x4EAC;&#x4E1C;&apos;,
+ &apos;&#x6E38;&#x620F;&apos;,
+ &apos;UPC&apos;,
+ &apos;&#x4EAC;&#x4E1C;&apos;,
+ &apos;&#x81EA;&#x5E26;&apos;,
+ &apos;&#x5185;&#x5B58;&apos;,
+ &apos;OMG&apos;,
+ &apos;&#x6218;&#x961F;&apos;,
+ &apos;&#x81EA;&#x5E26;&apos;,
+ &apos;16G&apos;,
+ &apos;&#x5185;&#x5B58;&apos;,
+ &apos;GTX1070Ti&apos;,
+ &apos;&#x5904;&#x7406;&#x5668;&apos;,
+ &apos;GTX1050Ti&apos;,
+ &apos;&#x6E38;&#x620F;&apos;]
+</code></pre>
+<h3 id="42-&#x5546;&#x54C1;&#x5F52;&#x7C7B;">4.2 &#x5546;&#x54C1;&#x5F52;&#x7C7B;</h3>
+<ul>
+<li><p>&#x5BF9;&#x4E8E;&#x7535;&#x5546;&#x6765;&#x8BF4;&#xFF0C;&#x540C;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x8BCD;&#x5728;&#x4E0D;&#x540C;&#x54C1;&#x7C7B;&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x901A;&#x5E38;&#x90FD;&#x5177;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x5F80;&#x5F80;&#x9700;&#x8981;&#x6839;&#x636E;&#x54C1;&#x7C7B;&#x7279;&#x6027;&#xFF0C;&#x5206;&#x522B;&#x8FDB;&#x884C;&#x5173;&#x952E;&#x8BCD;&#x7684;&#x89E3;&#x6790;&#x63D0;&#x53D6;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x5546;&#x54C1;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;&#x7B49;&#x5904;&#x7406;&#x65F6;&#xFF0C;&#x90FD;&#x662F;&#x8981;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x522B;&#x8FDB;&#x884C;&#x72EC;&#x7ACB;&#x7684;&#x5904;&#x7406;</p>
+<ul>
+<li>&#x7535;&#x5B50;&#x4EA7;&#x54C1;&#x4E2D;&#x7684;&#x201C;&#x82F9;&#x679C;&#x201D;&#x548C;&#x751F;&#x9C9C;&#x4E2D;&#x7684;&#x201C;&#x82F9;&#x679C;&#x201D;&#xFF0C;&#x610F;&#x4E49;&#x4E0D;&#x540C;</li>
+<li>&#x63A8;&#x8350;&#x7C7B;&#x4F3C;&#x7269;&#x54C1;&#x65F6;&#xFF0C;&#x901A;&#x5E38;&#x4E5F;&#x662F;&#x63A8;&#x8350;&#x76F8;&#x540C;&#x7C7B;&#x522B;&#x7684;&#x4EA7;&#x54C1;&#xFF1A;&#x7528;&#x6237;&#x6B63;&#x5728;&#x6D4F;&#x89C8;&#x56FE;&#x4E66;&#xFF0C;&#x90A3;&#x4E48;&#x76F8;&#x5173;&#x7684;&#x7269;&#x54C1;&#x63A8;&#x8350;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x98DF;&#x54C1;&#x7684;</li>
+</ul>
+</li>
+<li><p>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x5546;&#x54C1;&#x6570;&#x636E;&#x6240;&#x6709;&#x4E00;&#x7EA7;&#x5206;&#x7C7B;</p>
+</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from tb_goods_category where parent_id is null&quot;</span>).show(<span class="hljs-number">100</span>)
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+---+--------------------+--------------------+----+---------+
+| id|         create_time|         update_time|name|parent_id|
++---+--------------------+--------------------+----+---------+
+|  1|2018-04-09 08:03:...|2018-04-09 08:03:...|  &#x624B;&#x673A;|     null|
+|  2|2018-04-09 08:04:...|2018-04-09 08:04:...|  &#x76F8;&#x673A;|     null|
+|  3|2018-04-09 08:04:...|2018-04-09 08:04:...|  &#x6570;&#x7801;|     null|
+|  4|2018-04-09 08:05:...|2018-04-09 08:05:...|  &#x7535;&#x8111;|     null|
+|  5|2018-04-09 08:05:...|2018-04-09 08:05:...|  &#x529E;&#x516C;|     null|
+|  6|2018-04-09 08:05:...|2018-04-09 08:05:...|&#x5BB6;&#x7528;&#x7535;&#x5668;|     null|
+|  7|2018-04-09 08:05:...|2018-04-09 08:05:...|  &#x5BB6;&#x5C45;|     null|
+|  8|2018-04-09 08:05:...|2018-04-09 08:05:...|  &#x5BB6;&#x5177;|     null|
+|  9|2018-04-09 08:05:...|2018-04-09 08:05:...|  &#x5BB6;&#x88C5;|     null|
+| 10|2018-04-09 08:05:...|2018-04-09 08:05:...|  &#x53A8;&#x5177;|     null|
+| 11|2018-04-09 08:06:...|2018-04-09 08:06:...|  &#x7537;&#x88C5;|     null|
+| 12|2018-04-09 08:06:...|2018-04-09 08:06:...|  &#x5973;&#x88C5;|     null|
+| 13|2018-04-09 08:06:...|2018-04-09 08:06:...|  &#x7AE5;&#x88C5;|     null|
+| 14|2018-04-09 08:06:...|2018-04-09 08:06:...|  &#x5185;&#x8863;|     null|
+| 15|2018-04-09 08:06:...|2018-04-09 08:06:...|  &#x5973;&#x978B;|     null|
+| 16|2018-04-09 08:08:...|2018-04-09 08:08:...|  &#x7BB1;&#x5305;|     null|
+| 17|2018-04-09 08:09:...|2018-04-09 08:09:...|  &#x949F;&#x8868;|     null|
+| 18|2018-04-09 08:09:...|2018-04-09 08:09:...|  &#x73E0;&#x5B9D;|     null|
+| 19|2018-04-09 08:09:...|2018-04-09 08:09:...|  &#x7537;&#x978B;|     null|
+| 20|2018-04-09 08:09:...|2018-04-09 08:09:...|  &#x8FD0;&#x52A8;|     null|
+| 21|2018-04-09 08:09:...|2018-04-09 08:09:...|  &#x6237;&#x5916;|     null|
+| 22|2018-04-09 08:11:...|2018-04-09 08:11:...|  &#x623F;&#x4EA7;|     null|
+| 23|2018-04-09 08:11:...|2018-04-09 08:11:...|  &#x6C7D;&#x8F66;|     null|
+| 24|2018-04-09 08:11:...|2018-04-09 08:11:...|&#x6C7D;&#x8F66;&#x7528;&#x54C1;|     null|
+| 25|2018-04-09 08:11:...|2018-04-09 08:11:...|  &#x6BCD;&#x5A74;|     null|
+| 26|2018-04-09 08:11:...|2018-04-09 08:11:...|&#x73A9;&#x5177;&#x4E50;&#x5668;|     null|
+| 27|2018-04-09 08:56:...|2018-04-09 08:56:...|  &#x98DF;&#x54C1;|     null|
+| 28|2018-04-09 08:56:...|2018-04-09 08:56:...|  &#x9152;&#x7C7B;|     null|
+| 29|2018-04-09 08:56:...|2018-04-09 08:56:...|  &#x751F;&#x9C9C;|     null|
+| 30|2018-04-09 08:56:...|2018-04-09 08:56:...|  &#x7279;&#x4EA7;|     null|
+| 31|2018-04-09 08:56:...|2018-04-09 08:56:...|  &#x56FE;&#x4E66;|     null|
+| 32|2018-04-09 08:56:...|2018-04-09 08:56:...|  &#x97F3;&#x50CF;|     null|
+| 33|2018-04-09 08:56:...|2018-04-09 08:56:...| &#x7535;&#x5B50;&#x4E66;|     null|
+| 34|2018-04-09 08:56:...|2018-04-09 08:56:...|  &#x673A;&#x7968;|     null|
+| 35|2018-04-09 08:56:...|2018-04-09 08:56:...|  &#x9152;&#x5E97;|     null|
+| 36|2018-04-09 08:56:...|2018-04-09 08:56:...|  &#x65C5;&#x6E38;|     null|
+| 37|2018-04-09 08:57:...|2018-04-09 08:57:...|  &#x751F;&#x6D3B;|     null|
++---+--------------------+--------------------+----+---------+
+</code></pre>
+<ul>
+<li><p>&#x4F46;&#x5982;&#x4F55;&#x5177;&#x4F53;&#x7ED9;&#x5546;&#x54C1;&#x5F52;&#x7C7B;&#xFF0C;&#x5176;&#x5B9E;&#x4E0D;&#x662F;&#x7531;&#x6211;&#x4EEC;&#x968F;&#x610F;&#x51B3;&#x5B9A;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7531;&#x4EA7;&#x54C1;&#x8BBE;&#x8BA1;&#x7B49;&#x4EBA;&#x5458;&#x9488;&#x5BF9;&#x4EA7;&#x54C1;&#x7279;&#x6027;&#x6765;&#x5212;&#x5206;&#xFF0C;&#x4EE5;&#x4E0B;&#x5212;&#x5206;&#x4EC5;&#x4F9B;&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li>&#x7535;&#x5B50;&#x4EA7;&#x54C1;: &#x624B;&#x673A;&#x3001;&#x76F8;&#x673A;&#x3001;&#x6570;&#x7801;&#x3001;&#x7535;&#x8111;&#x3001;&#x529E;&#x516C;   ==&gt;   1-5</li>
+<li>&#x5BB6;&#x5C45;&#x4EA7;&#x54C1;&#xFF1A;&#x5BB6;&#x7528;&#x7535;&#x5668;&#x3001;&#x5BB6;&#x5C45;&#x3001;&#x5BB6;&#x5177;&#x3001;&#x5BB6;&#x88C5;&#x3001;&#x53A8;&#x5177;   ==&gt;   6-10</li>
+<li>&#x670D;&#x9970;&#x4EA7;&#x54C1;&#xFF1A;&#x7537;&#x88C5;&#x3001;&#x5973;&#x88C5;&#x3001;&#x7AE5;&#x88C5;&#x3001;&#x5185;&#x8863;&#x3001;&#x5973;&#x978B;&#x3001;&#x7BB1;&#x5305;&#x3001;&#x949F;&#x8868;&#x3001;&#x73E0;&#x5B9D;&#x3001;&#x7537;&#x978B;&#x3001;&#x8FD0;&#x52A8;&#x3001;&#x6237;&#x5916;   ==&gt;   11-21</li>
+<li>&#x8D44;&#x4EA7;&#x4EA7;&#x54C1;&#xFF1A;&#x623F;&#x4EA7;&#x3001;&#x6C7D;&#x8F66;&#x3001;&#x6C7D;&#x8F66;&#x7528;&#x54C1;   ==&gt;   22-24</li>
+<li>&#x6BCD;&#x5A74;&#x7528;&#x54C1;&#xFF1A;&#x6BCD;&#x5A74;&#x3001;&#x73A9;&#x5177;&#x4E50;&#x5668;   ==&gt;   25-26</li>
+<li>&#x98DF;&#x7528;&#x4EA7;&#x54C1;&#xFF1A;&#x98DF;&#x54C1;&#x3001;&#x9152;&#x7C7B;&#x3001;&#x751F;&#x9C9C;&#x3001;&#x7279;&#x4EA7;   ==&gt;   27-30</li>
+<li>&#x5F71;&#x97F3;&#x56FE;&#x4E66;&#x4EA7;&#x54C1;&#xFF1A;&#x56FE;&#x4E66;&#x3001;&#x97F3;&#x50CF;&#x3001;&#x7535;&#x5B50;&#x4E66;   ==&gt;   31-33</li>
+<li>&#x65C5;&#x6E38;&#x51FA;&#x884C;&#x4EA7;&#x54C1;&#xFF1A;&#x673A;&#x7968;&#x3001;&#x9152;&#x5E97;&#x3001;&#x65C5;&#x6E38;&#x3001;&#x751F;&#x6D3B;   ==&gt;   34-37</li>
+</ul>
+<p>&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5BF9;&#x8FD9;&#x51E0;&#x5927;&#x7C7B;&#x522B;&#x7684;&#x5546;&#x54C1;&#xFF0C;&#x5206;&#x522B;&#x8FDB;&#x884C;&#x5173;&#x952E;&#x8BCD;&#x7684;&#x63D0;&#x53D6;&#x5DE5;&#x4F5C;</p>
+</li>
+<li><p>&#x67E5;&#x8BE2;sku&#x8BE6;&#x60C5;</p>
+</li>
+</ul>
+<pre><code class="lang-python">sku_detail = spark.sql(<span class="hljs-string">&quot;select * from sku_detail&quot;</span>)
+sku_detail.show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+|goods_id|sku_id|category1_id|category1|category2_id|category2|category3_id|category3|                name|             caption| price|cost_price|market_price|       specification|
++--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+|     135|   148|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x968F;&#x8EAB;&#x5385; WPOS-3 &#x9AD8;&#x5EA6;&#x96C6;&#x6210;&#x4E1A;&#x52A1;...|      &#x4EAB;&#x5305;&#x90AE;&#xFF01;&#x6B63;&#x54C1;&#x4FDD;&#x8BC1;&#xFF0C;&#x8D2D;&#x7269;&#x65E0;&#x5FE7;&#xFF01;|2999.0|    2999.0|      2999.0|                null|
+|     451|   463|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x98DE;&#x82B1;&#x4EE4; &#x5B89;&#x5353;&#x624B;&#x673A;&#x8BFB;&#x5361;&#x5668;Type-c...|&#x60A8;&#x8EAB;&#x8FB9;&#x7684;&#x79C1;&#x4EBA;&#x5B9A;&#x5236;&#xFF1A;&#x3010;&#x8054;&#x7CFB;&#x5BA2;&#x670D;&#x544A;&#x77E5;&#x578B;...|   7.8|       7.8|         7.8|&#x989C;&#x8272;:Type-C TF&#x5361; &#x8BFB;&#x5361;&#x5668;...|
+|     458|   471|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x3010;&#x5305;&#x90AE;&#x3011;&#x98DE;&#x82B1;&#x4EE4; &#x5B89;&#x5353;&#x5916;&#x7F6E;&#x624B;&#x673A;&#x8BFB;&#x5361;&#x5668;...|micro usb/V8 TF&#x5361;&#x8BFB;...|  15.8|      15.8|        15.8|&#x7248;&#x672C;:360N5 N4S N4 N...|
+|     483|   496|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x54C1;&#x80DC;&#xFF08;PISEN&#xFF09; &#x5168;&#x80FD;&#x8BFB;&#x5361;&#x5668;&#x8FF7;&#x4F60;...|&#x3010;&#x4EAC;&#x4E1C;&#x914D;&#x9001;&#xB7;&#x5FEB;&#x901F;&#x9001;&#x8FBE;&#x3011;&#x63D0;&#x4F9B;&#x4E00;&#x5E74;&#x8D28;&#x4FDD;...|  29.0|      29.0|        29.0|&#x989C;&#x8272;:SD&#x8BFB;&#x5361;&#x5668;,&#x989C;&#x8272;:TF&#x8BFB;&#x5361;&#x5668;...|
+|     820|   833|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|LEXAR &#x96F7;&#x514B;&#x6C99;&#xFF08;Lexar&#xFF09; ...|                    | 160.0|     160.0|       160.0|          &#x7248;&#x672C;:25&#x5408;&#x4E00;&#x8BFB;&#x5361;&#x5668;|
+|    1075|  1088|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|&#x9752;&#x7F8E; &#x58C1;&#x6302;&#x5E7F;&#x544A;&#x673A;65&#x5BF8;&#x5B89;&#x5353;&#x7F51;&#x7EDC;&#x5E7F;&#x544A;...|                    |2699.0|    2699.0|      2699.0|&#x7248;&#x672C;:&#x89E6;&#x6478;&#x7248;,&#x7248;&#x672C;:&#x975E;&#x89E6;&#x6478;,&#x989C;&#x8272;:...|
+|    1225|  1238|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|dyplay&#x82F9;&#x679C;&#x624B;&#x673A;&#x76F8;&#x673A;&#x8BFB;&#x5361;&#x5668;&#x4E09;&#x5408;...|                    | 128.0|     128.0|       128.0|                null|
+|    1329|  1342|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x7EFF;&#x8054;&#xFF08;UGREEN&#xFF09; Type-C...|&#x652F;&#x6301;&#x8BFB;&#x53D6;&#x5B89;&#x9632;&#x76D1;&#x63A7;/&#x5355;&#x53CD;&#x76F8;&#x673A;sd/t...|  39.0|      39.0|        39.0|&#x989C;&#x8272;:Type-C+USB&#x53CC;&#x5361;&#x5355;&#x8BFB;...|
+|    1567|  1580|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|HNM 19&#x82F1;&#x5BF8;&#x9AD8;&#x6E05;&#x58C1;&#x6302;&#x6570;&#x7801;&#x76F8;&#x6846;1...|                    | 988.0|     988.0|       988.0|&#x7248;&#x672C;:10&#x82F1;&#x5BF8;&#x767D;&#x8272;&#x94A2;&#x5316;&#x73BB;&#x7483;8G&#x5361;,...|
+|    1578|  1591|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|kisdisk  &#x8BFB;&#x5361;&#x5668;&#x56DB;&#x5408;&#x4E00;US...|         &#x9AD8;&#x901F;&#x63A5;&#x53E3; &#x56DB;&#x5408;&#x4E00;&#x8BFB;&#x5361;&#x5668;| 198.0|     198.0|       198.0|&#x7248;&#x672C;:128G&#x5361;,&#x7248;&#x672C;:256G&#x5361;...|
+|    1632|  1645|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|&#x7231;&#x56FD;&#x8005;&#xFF08;aigo&#xFF09; &#x6570;&#x7801;&#x76F8;&#x6846; DP...|21.5&#x5BF8; &#x5546;&#x4E1A;&#x5E7F;&#x544A;&#x673A; &#x5BB6;&#x7528;&#x5927;&#x5C4F;&#x76F8;...|1699.0|    1699.0|      1699.0|&#x7248;&#x672C;:&#x5B98;&#x65B9;&#x6807;&#x914D;,&#x7248;&#x672C;:&#x5B98;&#x65B9;&#x6807;&#x914D;+&#x91D1;...|
+|    1816|  1829|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x91D1;&#x58EB;&#x987F;&#xFF08;Kingston&#xFF09; USB...|11&#x6708;1&#x65E5;&#x949C;&#x60E0;&#x6765;&#x88AD;&#xFF0C;11.11&#x5143;&#x9650;...|  69.9|      69.9|        69.9|&#x989C;&#x8272;:USB3.1&#x53CC;&#x63A5;&#x53E3;Micro...|
+|    1946|  1959|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         128|     &#x6570;&#x7801;&#x76F8;&#x673A;|&#x7406;&#x5149;&#xFF08;Ricoh&#xFF09; THETA &#x5168;...|&#x3010;11.11&#x4EAC;&#x4E1C;&#x5168;&#x7403;&#x597D;&#x7269;&#x8282;&#x3011;&#x5F71;&#x50CF;&#x949C;...|1599.0|    1599.0|      1599.0|&#x989C;&#x8272;:THETA SC &#x767D;&#x8272;,&#x989C;&#x8272;...|
+|    2109|  2122|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|&#x8D1D;&#x89C6;&#x7279;&#x82F9;&#x679C;&#x7B14;&#x8BB0;&#x672C;&#x5145;&#x7535;&#x5B9D;&#x79FB;&#x52A8;&#x7535;&#x6E90;QC...|&#x5982;&#x9700;&#x66F4;&#x5927;&#x529F;&#x7387;&#x5BB9;&#x91CF;&#x79FB;&#x52A8;&#x7535;&#x6E90;&#x53EF;&#x70B9;&#x51FB;&#x4E86;&#x89E3;...| 399.0|     399.0|       399.0|&#x989C;&#x8272;:&#x592A;&#x7A7A;&#x94F6;20000&#x6BEB;&#x5B89;/DC&#x6570;...|
+|    2129|  2142|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|&#x6208;&#x6D3E; &#x65E0;&#x7EBF;&#x78C1;&#x5438;&#x5145;&#x7535;&#x5B9D;&#x8FF7;&#x4F60;&#x8D85;&#x8584;&#x5E94;&#x6025;&#x79FB;...|                    | 258.0|     258.0|       258.0|&#x989C;&#x8272;:&#x4E09;&#x5408;&#x4E00;&#xFF0C;&#x73CD;&#x73E0;&#x767D;,&#x989C;&#x8272;:&#x56DB;&#x5408;&#x4E00;...|
+|    2353|  2366|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|&#x8D4B;&#x7535; &#x5145;&#x7535;&#x5B9D;&#x8D85;&#x8584;&#x5C0F;&#x5DE7; &#x82F9;&#x679C;&#x5B89;&#x5353;&#x8FF7;&#x4F60;...|&#x9886;&#x5238;&#x4E0B;&#x5355;&#x7ACB;&#x51CF;3&#x5143;&#xFF0C;&#x5438;&#x9644;&#x5F0F;&#x5145;&#x7535;&#x5B9D;&#xFF0C;&#x8D2D;...|  89.9|      89.9|        89.9|&#x7248;&#x672C;:&#x578B;&#x53F7;,&#x989C;&#x8272;:01&#x6B3E;&#x82F9;&#x679C;6/6...|
+|    2646|  2659|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|OISLE&#x82F9;&#x679C;&#x4E13;&#x7528;&#x65E0;&#x7EBF;&#x5145;&#x7535;&#x5B9D; ip...|&#x6362;&#x624B;&#x673A;&#x4E0D;&#x7528;&#x6362;&#x80CC;&#x5939; &#x65E0;&#x7EBF;&#x5145;&#x7535; &#x82F9;&#x679C;&#x5FEB;...| 109.0|     109.0|       109.0|&#x7248;&#x672C;:iphone 5/5S/SE...|
+|    2853|  2866|           1|       &#x624B;&#x673A;|          38|     &#x624B;&#x673A;&#x901A;&#x8BAF;|         118|      &#x5BF9;&#x8BB2;&#x673A;|&#x5B9D;&#x950B;&#xFF08;BAOFENG&#xFF09; BF-UV...|&#x2605;1111&#x7279;&#x60E0;&#x2605;&#x81EA;&#x9A7E;&#x6E38;&#x6237;&#x5916;&#x4E13;&#x5C5E;&#x3010;&#x624B;...| 159.0|     159.0|       159.0|&#x989C;&#x8272;:5R&#x4E09;&#x4EE3;&#xFF08;&#x4EB2;&#x6C11;&#xFF09;,&#x989C;&#x8272;:&#x4E00;&#x4EE3;...|
+|    3162|  3175|           1|       &#x624B;&#x673A;|          38|     &#x624B;&#x673A;&#x901A;&#x8BAF;|         118|      &#x5BF9;&#x8BB2;&#x673A;|Motorola &#x6469;&#x6258;&#x7F57;&#x62C9;T8&#x5BF9;&#x8BB2;...|&#x6469;&#x6258;&#x7F57;&#x62C9;&#x514D;&#x6267;&#x7167;&#x5BF9;&#x8BB2;&#x673A; &#x5546;&#x52A1;&#x624B;&#x53F0; &#x9001;...| 480.0|     480.0|       480.0|        &#x989C;&#x8272;:MOTO&#x5546;&#x52A1;&#x7CFB;&#x5217;T|
+|    3736|  3749|           1|       &#x624B;&#x673A;|          38|     &#x624B;&#x673A;&#x901A;&#x8BAF;|         118|      &#x5BF9;&#x8BB2;&#x673A;|ZASTONE &#x5373;&#x65F6;&#x901A;D9000&#x8F66;...|&#x9001;&#x5B89;&#x88C5;6&#x4EF6;&#x5957; 50W&#x5927;&#x529F;&#x7387; &#x5E26;&#x4E2D;&#x7EE7;...|2598.0|    2598.0|      2598.0|&#x989C;&#x8272;:&#x4E2D;&#x6587;&#x7248; &#x5438;&#x76D8;&#x5929;&#x7EBF;&#x5957;&#x9910;,&#x989C;&#x8272;:...|
++--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x4EE5;&#x7535;&#x5B50;&#x4EA7;&#x54C1;&#x4E3A;&#x4F8B;&#x5BF9;&#x4E00;&#x7EA7;&#x5206;&#x7C7B;id&#x662F;1&#x5230;5&#x7684;&#x5546;&#x54C1;&#xFF0C;&#x5373;&#x7535;&#x5B50;&#x4EA7;&#x54C1;&#x8FDB;&#x884C;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x7535;&#x5B50;&#x4EA7;&#x54C1;</span>
+electronic_product = sku_detail.where(<span class="hljs-string">&quot;category1_id&lt;=5 and category1_id&gt;=1&quot;</span>)
+electronic_product.show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+|goods_id|sku_id|category1_id|category1|category2_id|category2|category3_id|category3|                name|             caption| price|cost_price|market_price|       specification|
++--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+|     135|   148|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x968F;&#x8EAB;&#x5385; WPOS-3 &#x9AD8;&#x5EA6;&#x96C6;&#x6210;&#x4E1A;&#x52A1;...|      &#x4EAB;&#x5305;&#x90AE;&#xFF01;&#x6B63;&#x54C1;&#x4FDD;&#x8BC1;&#xFF0C;&#x8D2D;&#x7269;&#x65E0;&#x5FE7;&#xFF01;|2999.0|    2999.0|      2999.0|                null|
+|     451|   463|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x98DE;&#x82B1;&#x4EE4; &#x5B89;&#x5353;&#x624B;&#x673A;&#x8BFB;&#x5361;&#x5668;Type-c...|&#x60A8;&#x8EAB;&#x8FB9;&#x7684;&#x79C1;&#x4EBA;&#x5B9A;&#x5236;&#xFF1A;&#x3010;&#x8054;&#x7CFB;&#x5BA2;&#x670D;&#x544A;&#x77E5;&#x578B;...|   7.8|       7.8|         7.8|&#x989C;&#x8272;:Type-C TF&#x5361; &#x8BFB;&#x5361;&#x5668;...|
+|     458|   471|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x3010;&#x5305;&#x90AE;&#x3011;&#x98DE;&#x82B1;&#x4EE4; &#x5B89;&#x5353;&#x5916;&#x7F6E;&#x624B;&#x673A;&#x8BFB;&#x5361;&#x5668;...|micro usb/V8 TF&#x5361;&#x8BFB;...|  15.8|      15.8|        15.8|&#x7248;&#x672C;:360N5 N4S N4 N...|
+|     483|   496|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x54C1;&#x80DC;&#xFF08;PISEN&#xFF09; &#x5168;&#x80FD;&#x8BFB;&#x5361;&#x5668;&#x8FF7;&#x4F60;...|&#x3010;&#x4EAC;&#x4E1C;&#x914D;&#x9001;&#xB7;&#x5FEB;&#x901F;&#x9001;&#x8FBE;&#x3011;&#x63D0;&#x4F9B;&#x4E00;&#x5E74;&#x8D28;&#x4FDD;...|  29.0|      29.0|        29.0|&#x989C;&#x8272;:SD&#x8BFB;&#x5361;&#x5668;,&#x989C;&#x8272;:TF&#x8BFB;&#x5361;&#x5668;...|
+|     820|   833|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|LEXAR &#x96F7;&#x514B;&#x6C99;&#xFF08;Lexar&#xFF09; ...|                    | 160.0|     160.0|       160.0|          &#x7248;&#x672C;:25&#x5408;&#x4E00;&#x8BFB;&#x5361;&#x5668;|
+|    1075|  1088|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|&#x9752;&#x7F8E; &#x58C1;&#x6302;&#x5E7F;&#x544A;&#x673A;65&#x5BF8;&#x5B89;&#x5353;&#x7F51;&#x7EDC;&#x5E7F;&#x544A;...|                    |2699.0|    2699.0|      2699.0|&#x7248;&#x672C;:&#x89E6;&#x6478;&#x7248;,&#x7248;&#x672C;:&#x975E;&#x89E6;&#x6478;,&#x989C;&#x8272;:...|
+|    1225|  1238|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|dyplay&#x82F9;&#x679C;&#x624B;&#x673A;&#x76F8;&#x673A;&#x8BFB;&#x5361;&#x5668;&#x4E09;&#x5408;...|                    | 128.0|     128.0|       128.0|                null|
+|    1329|  1342|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x7EFF;&#x8054;&#xFF08;UGREEN&#xFF09; Type-C...|&#x652F;&#x6301;&#x8BFB;&#x53D6;&#x5B89;&#x9632;&#x76D1;&#x63A7;/&#x5355;&#x53CD;&#x76F8;&#x673A;sd/t...|  39.0|      39.0|        39.0|&#x989C;&#x8272;:Type-C+USB&#x53CC;&#x5361;&#x5355;&#x8BFB;...|
+|    1567|  1580|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|HNM 19&#x82F1;&#x5BF8;&#x9AD8;&#x6E05;&#x58C1;&#x6302;&#x6570;&#x7801;&#x76F8;&#x6846;1...|                    | 988.0|     988.0|       988.0|&#x7248;&#x672C;:10&#x82F1;&#x5BF8;&#x767D;&#x8272;&#x94A2;&#x5316;&#x73BB;&#x7483;8G&#x5361;,...|
+|    1578|  1591|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|kisdisk  &#x8BFB;&#x5361;&#x5668;&#x56DB;&#x5408;&#x4E00;US...|         &#x9AD8;&#x901F;&#x63A5;&#x53E3; &#x56DB;&#x5408;&#x4E00;&#x8BFB;&#x5361;&#x5668;| 198.0|     198.0|       198.0|&#x7248;&#x672C;:128G&#x5361;,&#x7248;&#x672C;:256G&#x5361;...|
+|    1632|  1645|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         135|     &#x6570;&#x7801;&#x76F8;&#x6846;|&#x7231;&#x56FD;&#x8005;&#xFF08;aigo&#xFF09; &#x6570;&#x7801;&#x76F8;&#x6846; DP...|21.5&#x5BF8; &#x5546;&#x4E1A;&#x5E7F;&#x544A;&#x673A; &#x5BB6;&#x7528;&#x5927;&#x5C4F;&#x76F8;...|1699.0|    1699.0|      1699.0|&#x7248;&#x672C;:&#x5B98;&#x65B9;&#x6807;&#x914D;,&#x7248;&#x672C;:&#x5B98;&#x65B9;&#x6807;&#x914D;+&#x91D1;...|
+|    1816|  1829|           3|       &#x6570;&#x7801;|          41|     &#x6570;&#x7801;&#x914D;&#x4EF6;|         140|      &#x8BFB;&#x5361;&#x5668;|&#x91D1;&#x58EB;&#x987F;&#xFF08;Kingston&#xFF09; USB...|11&#x6708;1&#x65E5;&#x949C;&#x60E0;&#x6765;&#x88AD;&#xFF0C;11.11&#x5143;&#x9650;...|  69.9|      69.9|        69.9|&#x989C;&#x8272;:USB3.1&#x53CC;&#x63A5;&#x53E3;Micro...|
+|    1946|  1959|           2|       &#x76F8;&#x673A;|          40|     &#x6444;&#x5F71;&#x6444;&#x50CF;|         128|     &#x6570;&#x7801;&#x76F8;&#x673A;|&#x7406;&#x5149;&#xFF08;Ricoh&#xFF09; THETA &#x5168;...|&#x3010;11.11&#x4EAC;&#x4E1C;&#x5168;&#x7403;&#x597D;&#x7269;&#x8282;&#x3011;&#x5F71;&#x50CF;&#x949C;...|1599.0|    1599.0|      1599.0|&#x989C;&#x8272;:THETA SC &#x767D;&#x8272;,&#x989C;&#x8272;...|
+|    2109|  2122|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|&#x8D1D;&#x89C6;&#x7279;&#x82F9;&#x679C;&#x7B14;&#x8BB0;&#x672C;&#x5145;&#x7535;&#x5B9D;&#x79FB;&#x52A8;&#x7535;&#x6E90;QC...|&#x5982;&#x9700;&#x66F4;&#x5927;&#x529F;&#x7387;&#x5BB9;&#x91CF;&#x79FB;&#x52A8;&#x7535;&#x6E90;&#x53EF;&#x70B9;&#x51FB;&#x4E86;&#x89E3;...| 399.0|     399.0|       399.0|&#x989C;&#x8272;:&#x592A;&#x7A7A;&#x94F6;20000&#x6BEB;&#x5B89;/DC&#x6570;...|
+|    2129|  2142|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|&#x6208;&#x6D3E; &#x65E0;&#x7EBF;&#x78C1;&#x5438;&#x5145;&#x7535;&#x5B9D;&#x8FF7;&#x4F60;&#x8D85;&#x8584;&#x5E94;&#x6025;&#x79FB;...|                    | 258.0|     258.0|       258.0|&#x989C;&#x8272;:&#x4E09;&#x5408;&#x4E00;&#xFF0C;&#x73CD;&#x73E0;&#x767D;,&#x989C;&#x8272;:&#x56DB;&#x5408;&#x4E00;...|
+|    2353|  2366|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|&#x8D4B;&#x7535; &#x5145;&#x7535;&#x5B9D;&#x8D85;&#x8584;&#x5C0F;&#x5DE7; &#x82F9;&#x679C;&#x5B89;&#x5353;&#x8FF7;&#x4F60;...|&#x9886;&#x5238;&#x4E0B;&#x5355;&#x7ACB;&#x51CF;3&#x5143;&#xFF0C;&#x5438;&#x9644;&#x5F0F;&#x5145;&#x7535;&#x5B9D;&#xFF0C;&#x8D2D;...|  89.9|      89.9|        89.9|&#x7248;&#x672C;:&#x578B;&#x53F7;,&#x989C;&#x8272;:01&#x6B3E;&#x82F9;&#x679C;6/6...|
+|    2646|  2659|           1|       &#x624B;&#x673A;|          39|     &#x624B;&#x673A;&#x914D;&#x4EF6;|         126|     &#x79FB;&#x52A8;&#x7535;&#x6E90;|OISLE&#x82F9;&#x679C;&#x4E13;&#x7528;&#x65E0;&#x7EBF;&#x5145;&#x7535;&#x5B9D; ip...|&#x6362;&#x624B;&#x673A;&#x4E0D;&#x7528;&#x6362;&#x80CC;&#x5939; &#x65E0;&#x7EBF;&#x5145;&#x7535; &#x82F9;&#x679C;&#x5FEB;...| 109.0|     109.0|       109.0|&#x7248;&#x672C;:iphone 5/5S/SE...|
+|    2853|  2866|           1|       &#x624B;&#x673A;|          38|     &#x624B;&#x673A;&#x901A;&#x8BAF;|         118|      &#x5BF9;&#x8BB2;&#x673A;|&#x5B9D;&#x950B;&#xFF08;BAOFENG&#xFF09; BF-UV...|&#x2605;1111&#x7279;&#x60E0;&#x2605;&#x81EA;&#x9A7E;&#x6E38;&#x6237;&#x5916;&#x4E13;&#x5C5E;&#x3010;&#x624B;...| 159.0|     159.0|       159.0|&#x989C;&#x8272;:5R&#x4E09;&#x4EE3;&#xFF08;&#x4EB2;&#x6C11;&#xFF09;,&#x989C;&#x8272;:&#x4E00;&#x4EE3;...|
+|    3162|  3175|           1|       &#x624B;&#x673A;|          38|     &#x624B;&#x673A;&#x901A;&#x8BAF;|         118|      &#x5BF9;&#x8BB2;&#x673A;|Motorola &#x6469;&#x6258;&#x7F57;&#x62C9;T8&#x5BF9;&#x8BB2;...|&#x6469;&#x6258;&#x7F57;&#x62C9;&#x514D;&#x6267;&#x7167;&#x5BF9;&#x8BB2;&#x673A; &#x5546;&#x52A1;&#x624B;&#x53F0; &#x9001;...| 480.0|     480.0|       480.0|        &#x989C;&#x8272;:MOTO&#x5546;&#x52A1;&#x7CFB;&#x5217;T|
+|    3736|  3749|           1|       &#x624B;&#x673A;|          38|     &#x624B;&#x673A;&#x901A;&#x8BAF;|         118|      &#x5BF9;&#x8BB2;&#x673A;|ZASTONE &#x5373;&#x65F6;&#x901A;D9000&#x8F66;...|&#x9001;&#x5B89;&#x88C5;6&#x4EF6;&#x5957; 50W&#x5927;&#x529F;&#x7387; &#x5E26;&#x4E2D;&#x7EE7;...|2598.0|    2598.0|      2598.0|&#x989C;&#x8272;:&#x4E2D;&#x6587;&#x7248; &#x5438;&#x76D8;&#x5929;&#x7EBF;&#x5957;&#x9910;,&#x989C;&#x8272;:...|
++--------+------+------------+---------+------------+---------+------------+---------+--------------------+--------------------+------+----------+------------+--------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x6570;&#x636E;&#x6574;&#x5408; &#x4E3A;&#x4E86;&#x8BA9;&#x6570;&#x636E;&#x8868;&#x73B0;&#x51FA;&#x8DB3;&#x591F;&#x7684;&#x7279;&#x5F81;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x628A;&#x4E00;&#x4E2A;&#x5546;&#x54C1;&#x6240;&#x6709;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x90FD;&#x62FC;&#x63A5;&#x4E3A;&#x4E00;&#x4E2A;&#x957F;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5229;&#x7528;concat_ws&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x591A;&#x5217;&#x6570;&#x636E;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;&#x957F;&#x6587;&#x672C;&#x5185;&#x5BB9;</span>
+<span class="hljs-keyword">from</span> pyspark.sql.functions <span class="hljs-keyword">import</span> concat_ws
+<span class="hljs-comment"># &#x5408;&#x5E76;&#x591A;&#x5217;&#x6570;&#x636E;</span>
+<span class="hljs-comment"># summary&#x5B57;&#x6BB5;&#x5C31;&#x662F;&#x62FC;&#x63A5;&#x7684;&#x957F;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;</span>
+ret = electronic_product.select(<span class="hljs-string">&quot;goods_id&quot;</span>, <span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;category1_id&quot;</span>, <span class="hljs-string">&quot;category2_id&quot;</span>, <span class="hljs-string">&quot;category3_id&quot;</span>,\
+    concat_ws(\
+              <span class="hljs-string">&quot;,&quot;</span>, \
+              electronic_product.category1, \
+              electronic_product.category2, \
+              electronic_product.category3, \
+              electronic_product.name, \
+              electronic_product.caption, \
+              electronic_product.price, \
+              electronic_product.specification\
+             ).alias(<span class="hljs-string">&quot;summary&quot;</span>)
+)
+ret.show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+--------+------+------------+------------+------------+--------------------+
+|goods_id|sku_id|category1_id|category2_id|category3_id|             summary|
++--------+------+------------+------------+------------+--------------------+
+|     135|   148|           3|          41|         140|&#x6570;&#x7801;,&#x6570;&#x7801;&#x914D;&#x4EF6;,&#x8BFB;&#x5361;&#x5668;,&#x968F;&#x8EAB;&#x5385; W...|
+|     451|   463|           3|          41|         140|&#x6570;&#x7801;,&#x6570;&#x7801;&#x914D;&#x4EF6;,&#x8BFB;&#x5361;&#x5668;,&#x98DE;&#x82B1;&#x4EE4; &#x5B89;...|
+|     458|   471|           3|          41|         140|&#x6570;&#x7801;,&#x6570;&#x7801;&#x914D;&#x4EF6;,&#x8BFB;&#x5361;&#x5668;,&#x3010;&#x5305;&#x90AE;&#x3011;&#x98DE;...|
+|     483|   496|           3|          41|         140|&#x6570;&#x7801;,&#x6570;&#x7801;&#x914D;&#x4EF6;,&#x8BFB;&#x5361;&#x5668;,&#x54C1;&#x80DC;&#xFF08;PI...|
+|     820|   833|           3|          41|         140|&#x6570;&#x7801;,&#x6570;&#x7801;&#x914D;&#x4EF6;,&#x8BFB;&#x5361;&#x5668;,LEXAR...|
+|    1075|  1088|           2|          40|         135|&#x76F8;&#x673A;,&#x6444;&#x5F71;&#x6444;&#x50CF;,&#x6570;&#x7801;&#x76F8;&#x6846;,&#x9752;&#x7F8E; &#x58C1;...|
+|    1225|  1238|           3|          41|         140|&#x6570;&#x7801;,&#x6570;&#x7801;&#x914D;&#x4EF6;,&#x8BFB;&#x5361;&#x5668;,dypla...|
+|    1329|  1342|           3|          41|         140|&#x6570;&#x7801;,&#x6570;&#x7801;&#x914D;&#x4EF6;,&#x8BFB;&#x5361;&#x5668;,&#x7EFF;&#x8054;&#xFF08;UG...|
+|    1567|  1580|           2|          40|         135|&#x76F8;&#x673A;,&#x6444;&#x5F71;&#x6444;&#x50CF;,&#x6570;&#x7801;&#x76F8;&#x6846;,HNM ...|
+|    1578|  1591|           3|          41|         140|&#x6570;&#x7801;,&#x6570;&#x7801;&#x914D;&#x4EF6;,&#x8BFB;&#x5361;&#x5668;,kisdi...|
+|    1632|  1645|           2|          40|         135|&#x76F8;&#x673A;,&#x6444;&#x5F71;&#x6444;&#x50CF;,&#x6570;&#x7801;&#x76F8;&#x6846;,&#x7231;&#x56FD;&#x8005;&#xFF08;...|
+|    1816|  1829|           3|          41|         140|&#x6570;&#x7801;,&#x6570;&#x7801;&#x914D;&#x4EF6;,&#x8BFB;&#x5361;&#x5668;,&#x91D1;&#x58EB;&#x987F;&#xFF08;K...|
+|    1946|  1959|           2|          40|         128|&#x76F8;&#x673A;,&#x6444;&#x5F71;&#x6444;&#x50CF;,&#x6570;&#x7801;&#x76F8;&#x673A;,&#x7406;&#x5149;&#xFF08;R...|
+|    2109|  2122|           1|          39|         126|&#x624B;&#x673A;,&#x624B;&#x673A;&#x914D;&#x4EF6;,&#x79FB;&#x52A8;&#x7535;&#x6E90;,&#x8D1D;&#x89C6;&#x7279;&#x82F9;...|
+|    2129|  2142|           1|          39|         126|&#x624B;&#x673A;,&#x624B;&#x673A;&#x914D;&#x4EF6;,&#x79FB;&#x52A8;&#x7535;&#x6E90;,&#x6208;&#x6D3E; &#x65E0;...|
+|    2353|  2366|           1|          39|         126|&#x624B;&#x673A;,&#x624B;&#x673A;&#x914D;&#x4EF6;,&#x79FB;&#x52A8;&#x7535;&#x6E90;,&#x8D4B;&#x7535; &#x5145;...|
+|    2646|  2659|           1|          39|         126|&#x624B;&#x673A;,&#x624B;&#x673A;&#x914D;&#x4EF6;,&#x79FB;&#x52A8;&#x7535;&#x6E90;,OISL...|
+|    2853|  2866|           1|          38|         118|&#x624B;&#x673A;,&#x624B;&#x673A;&#x901A;&#x8BAF;,&#x5BF9;&#x8BB2;&#x673A;,&#x5B9D;&#x950B;&#xFF08;BA...|
+|    3162|  3175|           1|          38|         118|&#x624B;&#x673A;,&#x624B;&#x673A;&#x901A;&#x8BAF;,&#x5BF9;&#x8BB2;&#x673A;,Motor...|
+|    3736|  3749|           1|          38|         118|&#x624B;&#x673A;,&#x624B;&#x673A;&#x901A;&#x8BAF;,&#x5BF9;&#x8BB2;&#x673A;,ZASTO...|
++--------+------+------------+------------+------------+--------------------+
+only showing top 20 rows
+</code></pre>
+<h3 id="43-&#x57FA;&#x4E8E;textrank&#x63D0;&#x53D6;&#x5173;&#x952E;&#x8BCD;">4.3 &#x57FA;&#x4E8E;TextRank&#x63D0;&#x53D6;&#x5173;&#x952E;&#x8BCD;</h3>
+<ul>
+<li>TextRank&#x539F;&#x7406;&#x7B80;&#x4ECB;<ul>
+<li>TextRank&#x662F;&#x57FA;&#x4E8E;PageRank&#x7B97;&#x6CD5;&#x7684;&#x4E00;&#x79CD;&#x7528;&#x6765;&#x505A;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x63D0;&#x53D6;&#x77ED;&#x8BED;&#x548C;&#x81EA;&#x52A8;&#x6458;&#x8981;<ul>
+<li>PageRank&#x8BBE;&#x8BA1;&#x4E4B;&#x521D;&#x662F;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;Google&#x7684;&#x7F51;&#x9875;&#x6392;&#x540D;</li>
+<li>&#x4EE5;&#x8BE5;&#x516C;&#x53F8;&#x521B;&#x529E;&#x4EBA;&#x62C9;&#x91CC;&#xB7;&#x4F69;&#x5947;&#xFF08;Larry Page&#xFF09;&#x4E4B;&#x59D3;&#x6765;&#x547D;&#x540D;</li>
+<li>&#x4F53;&#x73B0;&#x7F51;&#x9875;&#x7684;&#x76F8;&#x5173;&#x6027;&#x548C;&#x91CD;&#x8981;&#x6027;&#xFF0C;&#x5728;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x4F18;&#x5316;&#x64CD;&#x4F5C;&#x4E2D;&#x7ECF;&#x5E38;&#x88AB;&#x7528;&#x6765;&#x8BC4;&#x4F30;&#x7F51;&#x9875;&#x4F18;&#x5316;&#x7684;&#x6210;&#x6548;&#x56E0;&#x7D20;&#x4E4B;&#x4E00;</li>
+<li>PageRank&#x901A;&#x8FC7;&#x4E92;&#x8054;&#x7F51;&#x4E2D;&#x7684;&#x8D85;&#x94FE;&#x63A5;&#x5173;&#x7CFB;&#x6765;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x7F51;&#x9875;&#x7684;&#x6392;&#x540D;&#xFF0C;&#x5176;&#x516C;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x79CD;&#x6295;&#x7968;&#x7684;&#x601D;&#x60F3;&#x6765;&#x8BBE;&#x8BA1;&#x7684;&#xFF1A;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x8BA1;&#x7B97;&#x7F51;&#x9875;A&#x7684;PageRank&#x503C;&#xFF08;&#x4EE5;&#x4E0B;&#x7B80;&#x79F0;PR&#x503C;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x77E5;&#x9053;&#x6709;&#x54EA;&#x4E9B;&#x7F51;&#x9875;&#x94FE;&#x63A5;&#x5230;&#x7F51;&#x9875;A&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8981;&#x9996;&#x5148;&#x5F97;&#x5230;&#x7F51;&#x9875;A&#x7684;&#x5165;&#x94FE;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x5165;&#x94FE;&#x7ED9;&#x7F51;&#x9875;A&#x7684;&#x6295;&#x7968;&#x6765;&#x8BA1;&#x7B97;&#x7F51;&#x9875;A&#x7684;PR&#x503C;&#x3002;</li>
+<li>&#x5F53;&#x67D0;&#x4E9B;&#x9AD8;&#x8D28;&#x91CF;&#x7684;&#x7F51;&#x9875;&#x6307;&#x5411;&#x7F51;&#x9875;A&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90A3;&#x4E48;&#x7F51;&#x9875;A&#x7684;PR&#x503C;&#x4F1A;&#x56E0;&#x4E3A;&#x8FD9;&#x4E9B;&#x9AD8;&#x8D28;&#x91CF;&#x7684;&#x6295;&#x7968;&#x800C;&#x53D8;&#x5927;</li>
+<li>&#x7F51;&#x9875;A&#x88AB;&#x8F83;&#x5C11;&#x7F51;&#x9875;&#x6307;&#x5411;&#x6216;&#x88AB;&#x4E00;&#x4E9B;PR&#x503C;&#x8F83;&#x4F4E;&#x7684;&#x7F51;&#x9875;&#x6307;&#x5411;&#x7684;&#x65F6;&#x5019;,A&#x7684;PR&#x503C;&#x4E5F;&#x4E0D;&#x4F1A;&#x5F88;&#x5927;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x5408;&#x7406;&#x5730;&#x53CD;&#x6620;&#x4E00;&#x4E2A;&#x7F51;&#x9875;&#x7684;&#x8D28;&#x91CF;&#x6C34;&#x5E73;</li>
+</ul>
+</li>
+<li><a href="http://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf" target="_blank">TextRank </a>&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x6587;&#x672C;&#x7684;&#x57FA;&#x4E8E;&#x56FE;&#x7684;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x3002;&#x5176;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x6765;&#x6E90;&#x4E8E;&#x8C37;&#x6B4C;&#x7684; <a href="http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf" target="_blank">PageRank</a>&#x7B97;&#x6CD5;, &#x901A;&#x8FC7;&#x628A;&#x6587;&#x672C;&#x5206;&#x5272;&#x6210;&#x82E5;&#x5E72;&#x7EC4;&#x6210;&#x5355;&#x5143;(&#x5355;&#x8BCD;&#x3001;&#x53E5;&#x5B50;)&#x5E76;&#x5EFA;&#x7ACB;&#x56FE;&#x6A21;&#x578B;, &#x5229;&#x7528;&#x5C40;&#x90E8;&#x8BCD;&#x6C47;&#x4E4B;&#x95F4;&#x5173;&#x7CFB;&#xFF08;&#x5171;&#x73B0;&#x7A97;&#x53E3;&#xFF09;&#x548C;&#x6295;&#x7968;&#x673A;&#x5236;&#x5BF9;&#x6587;&#x672C;&#x4E2D;&#x7684;&#x91CD;&#x8981;&#x6210;&#x5206;&#x8FDB;&#x884C;&#x6392;&#x5E8F;, &#x4EC5;&#x5229;&#x7528;&#x5355;&#x7BC7;&#x6587;&#x6863;&#x672C;&#x8EAB;&#x7684;&#x4FE1;&#x606F;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;&#x3001;&#x6587;&#x6458;&#x3002; TextRank&#x4E0D;&#x9700;&#x8981;&#x4E8B;&#x5148;&#x5BF9;&#x591A;&#x7BC7;&#x6587;&#x6863;&#x8FDB;&#x884C;&#x5B66;&#x4E60;&#x8BAD;&#x7EC3;, &#x56E0;&#x5176;&#x7B80;&#x6D01;&#x6709;&#x6548;&#x800C;&#x5F97;&#x5230;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>&#x4F7F;&#x7528;jieba&#x4E2D;&#x6587;&#x5206;&#x8BCD;&#x81EA;&#x5E26;&#x7684;textrank&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x5904;&#x7406;</li>
+</ul>
+<pre><code class="lang-python">ret.where(<span class="hljs-string">&quot;category1_id=4&quot;</span>).first()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">Row(goods_id=29588, sku_id=29601, category1_id=4, category2_id=45, category3_id=158, summary=&apos;&#x7535;&#x8111;,&#x7535;&#x8111;&#x6574;&#x673A;,&#x6E38;&#x620F;&#x672C;,&#x6234;&#x5C14;DELL&#x7075;&#x8D8A;&#x6E38;&#x5323;Master15.6&#x82F1;&#x5BF8;&#x6E38;&#x620F;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;(i5-7300HQ 8G 128GSSD+1T GTX1050Ti 4G&#x72EC;&#x663E;)&#x7EA2;,&#x3010;GTX1050Ti 4G&#x72EC;&#x663E;&#x3011;&#x5E27;&#x7387;&#x9AD8;&#x7A33;&#x5B9A;&#x6027;&#x5F3A;&#x8FD0;&#x884C;&#x66F4;&#x7545;&#x5FEB;,IPS&#x9632;&#x7729;&#x5149;&#x663E;&#x793A;&#x5C4F;&#x5168;&#x9762;&#x8FD8;&#x539F;&#x6E38;&#x620F;&#x6218;&#x573A;&#xFF01;,7099.0,&#x7248;&#x672C;:&#x6E38;&#x620F;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;,&#x989C;&#x8272;:i5 8G GTX1050Ti PCIe &#x9ED1;,&#x989C;&#x8272;:i5 8G GTX1050Ti &#x767D;,&#x989C;&#x8272;:i5 8G GTX1050Ti &#x9AD8;&#x8272;&#x57DF;,&#x989C;&#x8272;:i5 8G GTX1060 6G PCIe &#x9ED1;,&#x989C;&#x8272;:i5 8G GTX1060 6G &#x767D;,&#x989C;&#x8272;:i5 8G GTX1060 6G &#x9AD8;&#x8272;&#x57DF;,&#x989C;&#x8272;:i5 8G GTX1060 6G &#x9ED1;,&#x989C;&#x8272;:i5-7300HQ 128G+1T GTX1050Ti &#x7EA2;,&#x989C;&#x8272;:i7 16G GTX1060 &#x767D;,&#x989C;&#x8272;:i7 8G GTX1050Ti &#x767D;,&#x989C;&#x8272;:i7 GTX1050Ti &#x9AD8;&#x8272;&#x57DF;,&#x989C;&#x8272;:i7 GTX1060 &#x9AD8;&#x8272;&#x57DF;,&#x989C;&#x8272;:i9 16G GTX1060 &#x767D;&apos;)
+</code></pre>
+<ul>
+<li>&#x7ED3;&#x5DF4;&#x4F7F;&#x7528;&#x793A;&#x8303;<ul>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#x7EE7;&#x627F; jieba.analyse.TextRank</li>
+<li>&#x91CD;&#x5199;pairfilter&#x51FD;&#x6570; &#x5728;&#x8FD9;&#x91CC;&#x505A;&#x8BCD;&#x8BED;&#x8FC7;&#x6EE4;</li>
+<li>&#x521B;&#x5EFA;&#x5BF9;&#x8C61; &#x8C03;&#x7528;textrank&#x65B9;&#x6CD5;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+
+<span class="hljs-comment"># if os.path.exists(&quot;/tmp/jieba.cache&quot;):</span>
+<span class="hljs-comment">#     print(&quot;exists&quot;)</span>
+<span class="hljs-comment">#     os.remove(&quot;/tmp/jieba.cache&quot;)</span>
+
+<span class="hljs-keyword">import</span> jieba
+<span class="hljs-keyword">import</span> jieba.analyse
+<span class="hljs-keyword">import</span> jieba.posseg <span class="hljs-keyword">as</span> pseg
+<span class="hljs-keyword">import</span> codecs
+
+abspath = <span class="hljs-string">&quot;/home/hadoop/&quot;</span>
+
+<span class="hljs-comment"># &#x7ED3;&#x5DF4;&#x52A0;&#x8F7D;&#x7528;&#x6237;&#x8BCD;&#x5178;</span>
+userDict_path = os.path.join(abspath, <span class="hljs-string">&quot;data/all.txt&quot;</span>)
+jieba.load_userdict(userDict_path)
+
+<span class="hljs-comment"># &#x505C;&#x7528;&#x8BCD;&#x6587;&#x672C;</span>
+stopwords_path = os.path.join(abspath, <span class="hljs-string">&quot;data/baidu_stopwords.txt&quot;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_stopwords_list</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x8FD4;&#x56DE;stopwords&#x5217;&#x8868;&quot;&quot;&quot;</span>
+    stopwords_list = [i.strip()
+                      <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> codecs.open(stopwords_path).readlines()]
+    <span class="hljs-keyword">return</span> stopwords_list
+
+<span class="hljs-comment"># &#x6240;&#x6709;&#x7684;&#x505C;&#x7528;&#x8BCD;&#x5217;&#x8868;</span>
+stopwords_list = get_stopwords_list()
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextRank</span><span class="hljs-params">(jieba.analyse.TextRank)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, window=<span class="hljs-number">20</span>, word_min_len=<span class="hljs-number">2</span>)</span>:</span>
+        super(TextRank, self).__init__()
+        self.span = window  <span class="hljs-comment"># &#x7A97;&#x53E3;&#x5927;&#x5C0F;</span>
+        self.word_min_len = word_min_len  <span class="hljs-comment"># &#x5355;&#x8BCD;&#x7684;&#x6700;&#x5C0F;&#x957F;&#x5EA6;</span>
+        <span class="hljs-comment"># &#x8981;&#x4FDD;&#x7559;&#x7684;&#x8BCD;&#x6027;&#xFF0C;&#x6839;&#x636E;jieba github &#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x89C1;https://github.com/baidu/lac</span>
+        self.pos_filt = frozenset(
+            (<span class="hljs-string">&apos;n&apos;</span>, <span class="hljs-string">&apos;x&apos;</span>, <span class="hljs-string">&apos;eng&apos;</span>, <span class="hljs-string">&apos;f&apos;</span>, <span class="hljs-string">&apos;s&apos;</span>, <span class="hljs-string">&apos;t&apos;</span>, <span class="hljs-string">&apos;nr&apos;</span>, <span class="hljs-string">&apos;ns&apos;</span>, <span class="hljs-string">&apos;nt&apos;</span>, <span class="hljs-string">&quot;nw&quot;</span>, <span class="hljs-string">&quot;nz&quot;</span>, <span class="hljs-string">&quot;PER&quot;</span>, <span class="hljs-string">&quot;LOC&quot;</span>, <span class="hljs-string">&quot;ORG&quot;</span>))
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pairfilter</span><span class="hljs-params">(self, wp)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#xFF0C;&#x8FD4;&#x56DE;True&#x6216;&#x8005;False&quot;&quot;&quot;</span>
+
+        <span class="hljs-keyword">if</span> wp.flag == <span class="hljs-string">&quot;eng&quot;</span>:
+            <span class="hljs-keyword">if</span> len(wp.word) &lt;= <span class="hljs-number">2</span>:
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+        <span class="hljs-comment">#&#x5982;&#x679C;&#x4E0D;&#x662F;&#x505C;&#x7528;&#x8BCD; &#x8BCD;&#x6027;&#x8F93;&#x5165;&#x4FDD;&#x7559;&#x5217;&#x8868;&#x4E2D;&#x7684; &#x5207;&#x5355;&#x8BCD;&#x957F;&#x5EA6;&gt;2 &#x8FD9;&#x4E9B;&#x8BCD;&#x90FD;&#x7559;&#x4E0B;</span>
+        <span class="hljs-keyword">if</span> wp.flag <span class="hljs-keyword">in</span> self.pos_filt <span class="hljs-keyword">and</span> len(wp.word.strip()) &gt;= self.word_min_len \
+                <span class="hljs-keyword">and</span> wp.word.lower() <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> stopwords_list:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+
+text =  <span class="hljs-string">&apos;&apos;&apos;&#x7535;&#x8111;,&#x7535;&#x8111;&#x6574;&#x673A;,&#x6E38;&#x620F;&#x672C;,&#x6234;&#x5C14;DELL&#x7075;&#x8D8A;&#x6E38;&#x5323;Master15.6&#x82F1;&#x5BF8;&#x6E38;&#x620F;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;(i5-7300HQ 8G 128GSSD+1T GTX1050Ti 4G&#x72EC;&#x663E;)&#x7EA2;,&#x3010;GTX1050Ti 4G&#x72EC;&#x663E;&#x3011;&#x5E27;&#x7387;&#x9AD8;&#x7A33;&#x5B9A;&#x6027;&#x5F3A;&#x8FD0;&#x884C;&#x66F4;&#x7545;&#x5FEB;,IPS&#x9632;&#x7729;&#x5149;&#x663E;&#x793A;&#x5C4F;&#x5168;&#x9762;&#x8FD8;&#x539F;&#x6E38;&#x620F;&#x6218;&#x573A;&#xFF01;,7099.0,&#x7248;&#x672C;:&#x6E38;&#x620F;&#x7B14;&#x8BB0;&#x672C;&#x7535;&#x8111;,&#x989C;&#x8272;:i5 8G GTX1050Ti PCIe &#x9ED1;,&#x989C;&#x8272;:i5 8G GTX1050Ti &#x767D;,&#x989C;&#x8272;:i5 8G GTX1050Ti &#x9AD8;&#x8272;&#x57DF;,&#x989C;&#x8272;:i5 8G GTX1060 6G PCIe &#x9ED1;,&#x989C;&#x8272;:i5 8G GTX1060 6G &#x767D;,&#x989C;&#x8272;:i5 8G GTX1060 6G &#x9AD8;&#x8272;&#x57DF;,&#x989C;&#x8272;:i5 8G GTX1060 6G &#x9ED1;,&#x989C;&#x8272;:i5-7300HQ 128G+1T GTX1050Ti &#x7EA2;,&#x989C;&#x8272;:i7 16G GTX1060 &#x767D;,&#x989C;&#x8272;:i7 8G GTX1050Ti &#x767D;,&#x989C;&#x8272;:i7 GTX1050Ti &#x9AD8;&#x8272;&#x57DF;,&#x989C;&#x8272;:i7 GTX1060 &#x9AD8;&#x8272;&#x57DF;,&#x989C;&#x8272;:i9 16G GTX1060 &#x767D;&apos;&apos;&apos;</span>       
+
+textrank_model = TextRank(window=<span class="hljs-number">10</span>, word_min_len=<span class="hljs-number">2</span>)
+allowPOS = (<span class="hljs-string">&apos;n&apos;</span>, <span class="hljs-string">&quot;x&quot;</span>, <span class="hljs-string">&apos;eng&apos;</span>, <span class="hljs-string">&apos;nr&apos;</span>, <span class="hljs-string">&apos;ns&apos;</span>, <span class="hljs-string">&apos;nt&apos;</span>, <span class="hljs-string">&quot;nw&quot;</span>, <span class="hljs-string">&quot;nz&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>)
+tags = textrank_model.textrank(text, topK=<span class="hljs-number">20</span>, withWeight=<span class="hljs-keyword">True</span>, allowPOS=allowPOS, withFlag=<span class="hljs-keyword">False</span>)
+print(tags)
+</code></pre>
+<ul>
+<li>&#x4F7F;&#x7528;TextRank&#x63D0;&#x53D6;&#x6240;&#x6709;&#x5173;&#x952E;&#x8BCD;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> partial
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_mapPartitions</span><span class="hljs-params">(partition, industry)</span>:</span>
+
+    <span class="hljs-keyword">import</span> os
+
+    <span class="hljs-keyword">import</span> jieba
+    <span class="hljs-keyword">import</span> jieba.analyse
+    <span class="hljs-keyword">import</span> jieba.posseg <span class="hljs-keyword">as</span> pseg
+    <span class="hljs-keyword">import</span> codecs
+
+    abspath = <span class="hljs-string">&quot;/home/hadoop/&quot;</span>
+
+    <span class="hljs-comment"># &#x7ED3;&#x5DF4;&#x52A0;&#x8F7D;&#x7528;&#x6237;&#x8BCD;&#x5178;</span>
+    userDict_path = os.path.join(abspath, <span class="hljs-string">&quot;data/all.txt&quot;</span>)
+    jieba.load_userdict(userDict_path)
+
+    <span class="hljs-comment"># &#x505C;&#x7528;&#x8BCD;&#x6587;&#x672C;</span>
+    stopwords_path = os.path.join(abspath, <span class="hljs-string">&quot;data/baidu_stopwords.txt&quot;</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_stopwords_list</span><span class="hljs-params">()</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x8FD4;&#x56DE;stopwords&#x5217;&#x8868;&quot;&quot;&quot;</span>
+        stopwords_list = [i.strip()
+                          <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> codecs.open(stopwords_path).readlines()]
+        <span class="hljs-keyword">return</span> stopwords_list
+
+    <span class="hljs-comment"># &#x6240;&#x6709;&#x7684;&#x505C;&#x7528;&#x8BCD;&#x5217;&#x8868;</span>
+    stopwords_list = get_stopwords_list()
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextRank</span><span class="hljs-params">(jieba.analyse.TextRank)</span>:</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, window=<span class="hljs-number">20</span>, word_min_len=<span class="hljs-number">2</span>)</span>:</span>
+            super(TextRank, self).__init__()
+            self.span = window  <span class="hljs-comment"># &#x7A97;&#x53E3;&#x5927;&#x5C0F;</span>
+            self.word_min_len = word_min_len  <span class="hljs-comment"># &#x5355;&#x8BCD;&#x7684;&#x6700;&#x5C0F;&#x957F;&#x5EA6;</span>
+            <span class="hljs-comment"># &#x8981;&#x4FDD;&#x7559;&#x7684;&#x8BCD;&#x6027;&#xFF0C;&#x6839;&#x636E;jieba github &#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x89C1;https://github.com/baidu/lac</span>
+            self.pos_filt = frozenset(
+                (<span class="hljs-string">&apos;n&apos;</span>, <span class="hljs-string">&apos;x&apos;</span>, <span class="hljs-string">&apos;eng&apos;</span>, <span class="hljs-string">&apos;f&apos;</span>, <span class="hljs-string">&apos;s&apos;</span>, <span class="hljs-string">&apos;t&apos;</span>, <span class="hljs-string">&apos;nr&apos;</span>, <span class="hljs-string">&apos;ns&apos;</span>, <span class="hljs-string">&apos;nt&apos;</span>, <span class="hljs-string">&quot;nw&quot;</span>, <span class="hljs-string">&quot;nz&quot;</span>, <span class="hljs-string">&quot;PER&quot;</span>, <span class="hljs-string">&quot;LOC&quot;</span>, <span class="hljs-string">&quot;ORG&quot;</span>))
+
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pairfilter</span><span class="hljs-params">(self, wp)</span>:</span>
+            <span class="hljs-string">&quot;&quot;&quot;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#xFF0C;&#x8FD4;&#x56DE;True&#x6216;&#x8005;False&quot;&quot;&quot;</span>
+
+            <span class="hljs-keyword">if</span> wp.flag == <span class="hljs-string">&quot;eng&quot;</span>:
+                <span class="hljs-keyword">if</span> len(wp.word) &lt;= <span class="hljs-number">2</span>:
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+            <span class="hljs-keyword">if</span> wp.flag <span class="hljs-keyword">in</span> self.pos_filt <span class="hljs-keyword">and</span> len(wp.word.strip()) &gt;= self.word_min_len \
+                    <span class="hljs-keyword">and</span> wp.word.lower() <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> stopwords_list:
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+    textrank_model = TextRank(window=<span class="hljs-number">10</span>, word_min_len=<span class="hljs-number">2</span>)
+    allowPOS = (<span class="hljs-string">&apos;n&apos;</span>, <span class="hljs-string">&quot;x&quot;</span>, <span class="hljs-string">&apos;eng&apos;</span>, <span class="hljs-string">&apos;nr&apos;</span>, <span class="hljs-string">&apos;ns&apos;</span>, <span class="hljs-string">&apos;nt&apos;</span>, <span class="hljs-string">&quot;nw&quot;</span>, <span class="hljs-string">&quot;nz&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>)
+
+    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> partition:
+        tags = textrank_model.textrank(row.summary, topK=<span class="hljs-number">20</span>, withWeight=<span class="hljs-keyword">True</span>, allowPOS=allowPOS, withFlag=<span class="hljs-keyword">False</span>)
+        <span class="hljs-keyword">for</span> tag <span class="hljs-keyword">in</span> tags:
+            <span class="hljs-keyword">yield</span> row.sku_id, industry, tag[<span class="hljs-number">0</span>], tag[<span class="hljs-number">1</span>]
+
+mapPartitions = partial(_mapPartitions, industry=<span class="hljs-string">&quot;&#x7535;&#x5B50;&#x4EA7;&#x54C1;&quot;</span>)
+
+sku_tag_weights = ret.rdd.mapPartitions(mapPartitions)
+sku_tag_weights = sku_tag_weights.toDF([<span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;industry&quot;</span>, <span class="hljs-string">&quot;tag&quot;</span>,<span class="hljs-string">&quot;weights&quot;</span>])
+sku_tag_weights
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">DataFrame[sku_id: bigint, industry: string, tag: string, weights: double]
+</code></pre>
+<ul>
+<li>textrank&#x7ED3;&#x679C;&#x663E;&#x793A;</li>
+</ul>
+<pre><code class="lang-python">sku_tag_weights.where(<span class="hljs-string">&quot;tag=&apos;i5&apos;&quot;</span>).orderBy(<span class="hljs-string">&quot;weights&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------+--------+---+-------------------+
+|sku_id|industry|tag|            weights|
++------+--------+---+-------------------+
+| 42090|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.08546975192173897|
+| 43265|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.10551986636215893|
+| 37795|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.11665840899649133|
+| 31619|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.11913525223903051|
+| 42450|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.11919319831950932|
+| 29746|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.12156392019404358|
+| 42539|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.12200729167516883|
+| 37640|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.12349789949353178|
+| 37711|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.12349789949353178|
+| 37636|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.12349789949353178|
+| 37664|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.12349789949353178|
+| 37489|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.12403634476677387|
+| 37288|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.12502307694727494|
+| 37270|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5| 0.1259262008416576|
+| 36980|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5| 0.1259262008416576|
+| 37342|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5| 0.1268697472853674|
+| 37224|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5| 0.1268697472853674|
+| 36332|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5| 0.1268697472853674|
+| 43205|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.12737637312201944|
+| 37159|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| i5|0.12784211950916827|
++------+--------+---+-------------------+
+only showing top 20 rows
+</code></pre>
+<h3 id="44-&#x5C06;&#x63D0;&#x53D6;&#x7684;&#x5173;&#x952E;&#x8BCD;&#x5B58;&#x5165;hive&#x4E2D;">4.4 &#x5C06;&#x63D0;&#x53D6;&#x7684;&#x5173;&#x952E;&#x8BCD;&#x5B58;&#x5165;hive&#x4E2D;</h3>
+<ul>
+<li>&#x663E;&#x793A;&#x51FA;&#x5206;&#x8BCD;&#x6570;&#x91CF;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-python">sku_tag_weights.count()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">1174703
+</code></pre>
+<ul>
+<li>&#x521B;&#x5EFA;&#x4E34;&#x65F6;&#x8868;</li>
+</ul>
+<pre><code class="lang-python">sku_tag_weights.registerTempTable(<span class="hljs-string">&quot;tempTable&quot;</span>)
+spark.sql(<span class="hljs-string">&quot;desc tempTable&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+--------+---------+-------+
+|col_name|data_type|comment|
++--------+---------+-------+
+|  sku_id|   bigint|   null|
+|industry|   string|   null|
+|     tag|   string|   null|
+| weights|   double|   null|
++--------+---------+-------+
+</code></pre>
+<ul>
+<li>&#x521B;&#x5EFA;hive&#x8868;</li>
+</ul>
+<pre><code class="lang-python">sql = <span class="hljs-string">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS sku_tag_weights(
+sku_id INT,
+industry STRING,
+tag STRING,
+weights DOUBLE
+)&quot;&quot;&quot;</span>
+spark.sql(sql)
+</code></pre>
+<ul>
+<li>&#x4ECE;&#x4E34;&#x65F6;&#x8868;&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x63D2;&#x5165;&#x8868;&#x4E2D;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;INSERT INTO sku_tag_weights SELECT * FROM tempTable&quot;</span>)
+spark.sql(<span class="hljs-string">&quot;SELECT * FROM sku_tag_weights&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------+--------+----+-------------------+
+|sku_id|industry| tag|            weights|
++------+--------+----+-------------------+
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x9AD8;&#x5EA6;|                1.0|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x7EC8;&#x7AEF;| 0.9880227098783998|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|WPOS| 0.9474997114660046|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x8EAB;&#x4EFD;| 0.8859077272889758|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| &#x89E6;&#x6478;&#x5C4F;| 0.8677093692671172|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x68EE;&#x9510;| 0.8643336666795045|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| &#x6536;&#x94F6;&#x673A;| 0.8606879409613701|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x667A;&#x80FD;|  0.853869407929065|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x4E1A;&#x52A1;| 0.8500761345577008|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| &#x8BFB;&#x5361;&#x5668;| 0.6114834155265747|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x6B63;&#x54C1;| 0.5977867682869656|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x5305;&#x90AE;| 0.5962385663111377|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|&#x6570;&#x7801;&#x914D;&#x4EF6;| 0.4880302016489459|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x6570;&#x7801;|0.48644615569271077|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x8D2D;&#x7269;|  0.442940968516803|
+|   463|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| &#x8BFB;&#x5361;&#x5668;|                1.0|
+|   463|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x989C;&#x8272;| 0.7811873889257711|
+|   463|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x5B89;&#x5353;| 0.5651375469154993|
+|   463|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x624B;&#x673A;|  0.458740094560001|
+|   463|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x7535;&#x8111;| 0.4219429919380977|
++------+--------+----+-------------------+
+only showing top 20 rows
+</code></pre>
+<h3 id="45-&#x57FA;&#x4E8E;tfidf&#x63D0;&#x53D6;&#x5173;&#x952E;&#x8BCD;">4.5 &#x57FA;&#x4E8E;TFIDF&#x63D0;&#x53D6;&#x5173;&#x952E;&#x8BCD;</h3>
+<ul>
+<li><p>&#x7531;&#x4E8E;TFIDF&#x7684;&#x6C42;&#x503C;&#x9700;&#x8981;&#x6839;&#x636E;&#x5168;&#x4F53;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x91CC;&#x5C06;&#x4F7F;&#x7528;spark&#x4E2D;TFIDF&#x7684;&#x76F8;&#x5173;&#x6A21;&#x5757;</p>
+<p>&#x5148;&#x5206;&#x8BCD;&#xFF0C;&#x7136;&#x540E;&#x5206;&#x522B;&#x8BA1;&#x7B97;&#x8BCD;&#x7684;TF&#x548C;IDF&#x503C;</p>
+<p>TF = &#x5F53;&#x524D;&#x6587;&#x6863;&#x67D0;&#x5173;&#x952E;&#x8BCD;&#x7684;&#x4E2A;&#x6570;/&#x5F53;&#x524D;&#x6587;&#x6863;&#x7684;&#x5173;&#x952E;&#x8BCD;&#x603B;&#x4E2A;&#x6570;   &#x5355;&#x8BCD;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x9891;&#x7387;</p>
+<ul>
+<li>&#x5982;&#x67D0;&#x6587;&#x6863;&#x5171;&#x6709;100&#x4E2A;&#x8BCD;(&#x542B;&#x91CD;&#x590D;)&#xFF0C;&#x5176;&#x4E2D;&#x201D;python&#x201C;&#x51FA;&#x73B0;&#x4E86;5&#x6B21;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x6587;&#x6863;&#x4E2D;&#x201D;python&#x201C;&#x7684;TF&#x503C;&#x4E3A;&#xFF1A;5/100 = 0.05</li>
+</ul>
+<p>IDF = log(&#x603B;&#x6587;&#x6863;&#x4E2A;&#x6570;/(&#x542B;&#x6709;&#x67D0;&#x5173;&#x952E;&#x8BCD;&#x7684;&#x6587;&#x6863;&#x4E2A;&#x6570;+1))&#xFF0C;&#x8FD9;&#x91CC;+1&#x662F;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x5206;&#x6BCD;&#x4E3A;0</p>
+<ul>
+<li>&#x5982;&#x5171;100&#x7BC7;&#x6587;&#x6863;&#xFF0C;&#x5176;&#x4E2D;5&#x7BC7;&#x542B;&#x6709;&#x201D;python&#x201C;&#xFF0C;&#x90A3;&#x4E48;&quot;python&quot;&#x7684;IDF&#x503C;&#xFF1A;math.log(100/6) = 2.81</li>
+</ul>
+<p>TFIDF = TF * IDF</p>
+</li>
+<li><pre><code class="lang-python"><span class="hljs-keyword">import</span> math
+math.log(<span class="hljs-number">100</span>/<span class="hljs-number">6</span>)
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>&#x8BA1;&#x7B97;TF &#x9700;&#x8981;&#x5148;&#x8BA1;&#x7B97;&#x8BCD;&#x8BED;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570; spark &#x4E2D;&#x63D0;&#x4F9B;&#x4E86;CountVectorizer&#x6765;&#x7EDF;&#x8BA1;&#x8BCD;&#x8BED;&#x51FA;&#x73B0;&#x6B21;&#x6570;</p>
+</li>
+<li><p>&#x57FA;&#x4E8E;CountVectorizer&#x7684;&#x7ED3;&#x679C;&#xFF0C; &#x53EF;&#x4EE5;&#x5229;&#x7528;Spark &#x63D0;&#x4F9B;&#x7684;IDF&#x6A21;&#x5757;&#x8BA1;&#x7B97; IDF&#x503C;</p>
+</li>
+<li>TF= CountVectorizer&#x7EDF;&#x8BA1;&#x51FA;&#x7684;&#x8BCD;&#x8BED;&#x51FA;&#x73B0;&#x6B21;&#x6570;/&#x6587;&#x6863;&#x957F;&#x5EA6;</li>
+<li>&#x5C06;&#x4E0A;&#x4E24;&#x6B65;&#x7684;&#x7ED3;&#x679C;&#x76F8;&#x4E58;&#x5F97;&#x5230;TFIDF&#x503C;</li>
+</ul>
+<p><strong>CountVectorizer&#x4F7F;&#x7528;&#x4ECB;&#x7ECD;</strong></p>
+<p>&#x2460; &#x521B;&#x5EFA;DataFrame &#x51C6;&#x5907;&#x6570;&#x636E; </p>
+<p>&#x2461; &#x521B;&#x5EFA;CountVectorizer</p>
+<p>&#x2462; &#x8C03;&#x7528;fit&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x6A21;&#x578B;</p>
+<p>&#x2463; &#x901A;&#x8FC7;transform&#x83B7;&#x53D6;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> CountVectorizer
+
+<span class="hljs-comment"># CountVectorizer&#x5BF9;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x8FDB;&#x884C;&#x4E2A;&#x6570;&#x7EDF;&#x8BA1;</span>
+<span class="hljs-comment"># Input data: Each row is a bag of words with a ID.</span>
+df = spark.createDataFrame([
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;a b c g h&quot;</span>.split(<span class="hljs-string">&quot; &quot;</span>)),
+    (<span class="hljs-number">1</span>, <span class="hljs-string">&quot;a b b c a d e f&quot;</span>.split(<span class="hljs-string">&quot; &quot;</span>))
+], [<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-string">&quot;words&quot;</span>])
+
+<span class="hljs-comment"># fit a CountVectorizerModel from the corpus.</span>
+<span class="hljs-comment"># vocabSize: &#x6700;&#x591A;&#x4FDD;&#x7559;&#x7684;&#x5355;&#x8BCD;&#x4E2A;&#x6570;</span>
+<span class="hljs-comment"># minDF&#xFF1A;&#x6700;&#x5C0F;&#x7684;&#x51FA;&#x73B0;&#x6B21;&#x6570;&#xFF0C;&#x5373;&#x8BCD;&#x9891;</span>
+cv = CountVectorizer(inputCol=<span class="hljs-string">&quot;words&quot;</span>, outputCol=<span class="hljs-string">&quot;features&quot;</span>, vocabSize=<span class="hljs-number">100</span>, minDF=<span class="hljs-number">1.0</span>)
+
+model = cv.fit(df)
+print(<span class="hljs-string">&quot;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x7684;&#x8BCD;&#xFF1A;&quot;</span>, model.vocabulary)
+
+result = model.transform(df)
+result.show(truncate=<span class="hljs-keyword">False</span>)
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code class="lang-shell">&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x7684;&#x8BCD;&#xFF1A; [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;f&apos;, &apos;g&apos;, &apos;d&apos;, &apos;e&apos;, &apos;h&apos;]
++---+------------------------+-------------------------------------------+
+|id |words                   |features                                   |
++---+------------------------+-------------------------------------------+
+|0  |[a, b, c, g, h]         |(8,[0,1,2,4,7],[1.0,1.0,1.0,1.0,1.0])      |
+|1  |[a, b, b, c, a, d, e, f]|(8,[0,1,2,3,5,6],[2.0,2.0,1.0,1.0,1.0,1.0])|
++---+------------------------+-------------------------------------------+
+</code></pre>
+<ul>
+<li>&#x5206;&#x8BCD;&#x5E76;&#x7EDF;&#x8BA1;&#x4E2A;&#x6570;&#x51FD;&#x6570;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">words</span><span class="hljs-params">(partitions)</span>:</span>
+    <span class="hljs-comment"># &#x5148;&#x5206;&#x8BCD;</span>
+
+    <span class="hljs-keyword">import</span> os
+
+    <span class="hljs-keyword">import</span> jieba
+    <span class="hljs-keyword">import</span> jieba.posseg <span class="hljs-keyword">as</span> pseg
+    <span class="hljs-keyword">import</span> codecs
+
+    abspath = <span class="hljs-string">&quot;/home/hadoop/&quot;</span>
+
+    <span class="hljs-comment"># &#x7ED3;&#x5DF4;&#x52A0;&#x8F7D;&#x7528;&#x6237;&#x8BCD;&#x5178;</span>
+    userDict_path = os.path.join(abspath, <span class="hljs-string">&quot;data/all.txt&quot;</span>)
+    jieba.load_userdict(userDict_path)
+
+    <span class="hljs-comment"># &#x505C;&#x7528;&#x8BCD;&#x6587;&#x672C;</span>
+    stopwords_path = os.path.join(abspath, <span class="hljs-string">&quot;data/baidu_stopwords.txt&quot;</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_stopwords_list</span><span class="hljs-params">()</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x8FD4;&#x56DE;stopwords&#x5217;&#x8868;&quot;&quot;&quot;</span>
+        stopwords_list = [i.strip()
+                          <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> codecs.open(stopwords_path).readlines()]
+        <span class="hljs-keyword">return</span> stopwords_list
+
+    <span class="hljs-comment"># &#x6240;&#x6709;&#x7684;&#x505C;&#x7528;&#x8BCD;&#x5217;&#x8868;</span>
+    stopwords_list = get_stopwords_list()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cut_sentence</span><span class="hljs-params">(sentence)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x5BF9;&#x5207;&#x5272;&#x4E4B;&#x540E;&#x7684;&#x8BCD;&#x8BED;&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#xFF0C;&#x53BB;&#x9664;&#x505C;&#x7528;&#x8BCD;&#xFF0C;&#x4FDD;&#x7559;&#x540D;&#x8BCD;&#xFF0C;&#x82F1;&#x6587;&#x548C;&#x81EA;&#x5B9A;&#x4E49;&#x8BCD;&#x5E93;&#x4E2D;&#x7684;&#x8BCD;&#xFF0C;&#x957F;&#x5EA6;&#x5927;&#x4E8E;2&#x7684;&#x8BCD;&quot;&quot;&quot;</span>
+        <span class="hljs-comment"># print(sentence,&quot;*&quot;*100)</span>
+        <span class="hljs-comment"># eg:[pair(&apos;&#x4ECA;&#x5929;&apos;, &apos;t&apos;), pair(&apos;&#x6709;&apos;, &apos;d&apos;), pair(&apos;&#x96FE;&apos;, &apos;n&apos;), pair(&apos;&#x973E;&apos;, &apos;g&apos;)]</span>
+        seg_list = pseg.lcut(sentence)
+        seg_list = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> seg_list <span class="hljs-keyword">if</span> i.flag <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> stopwords_list]
+        filtered_words_list = []
+        <span class="hljs-keyword">for</span> seg <span class="hljs-keyword">in</span> seg_list:
+            <span class="hljs-comment"># print(seg)</span>
+            <span class="hljs-keyword">if</span> len(seg.word) &lt;= <span class="hljs-number">1</span>:
+                <span class="hljs-keyword">continue</span>
+            <span class="hljs-keyword">elif</span> seg.flag == <span class="hljs-string">&quot;eng&quot;</span>:
+                <span class="hljs-keyword">if</span> len(seg.word) &lt;= <span class="hljs-number">2</span>:
+                    <span class="hljs-keyword">continue</span>
+                <span class="hljs-keyword">else</span>:
+                    filtered_words_list.append(seg.word)
+            <span class="hljs-keyword">elif</span> seg.flag.startswith(<span class="hljs-string">&quot;n&quot;</span>):
+                filtered_words_list.append(seg.word)
+            <span class="hljs-keyword">elif</span> seg.flag <span class="hljs-keyword">in</span> [<span class="hljs-string">&quot;x&quot;</span>, <span class="hljs-string">&quot;eng&quot;</span>]:  <span class="hljs-comment"># &#x662F;&#x81EA;&#x5B9A;&#x4E00;&#x4E2A;&#x8BCD;&#x8BED;&#x6216;&#x8005;&#x662F;&#x82F1;&#x6587;&#x5355;&#x8BCD;</span>
+                filtered_words_list.append(seg.word)
+        <span class="hljs-keyword">return</span> filtered_words_list
+
+    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> partitions:
+        <span class="hljs-keyword">yield</span> row.sku_id, cut_sentence(row.summary)
+
+doc = ret.rdd.mapPartitions(words)
+doc = doc.toDF([<span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;words&quot;</span>])
+doc
+</code></pre>
+<ul>
+<li>&#x4F7F;&#x7528;CountVectorizer &#x7EDF;&#x8BA1;&#x8BCD;&#x9891;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> CountVectorizer
+
+<span class="hljs-comment"># 6w * 20</span>
+<span class="hljs-comment"># &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;&#x6240;&#x6709;&#x51FA;&#x73B0;&#x8FC7;&#x7684;&#x8BCD;&#x90FD;&#x7EDF;&#x8BA1;&#x51FA;&#x6765;&#xFF0C;&#x8FD9;&#x91CC;&#x6700;&#x591A;&#x4F1A;&#x6709;6w * 20&#x4E2A;&#x8BCD;</span>
+cv = CountVectorizer(inputCol=<span class="hljs-string">&quot;words&quot;</span>, outputCol=<span class="hljs-string">&quot;rawFeatures&quot;</span>, vocabSize=<span class="hljs-number">60000</span>*<span class="hljs-number">20</span>, minDF=<span class="hljs-number">1.0</span>)
+
+cv_model = cv.fit(doc)
+cv_result= cv_model.transform(doc)
+cv_result.show()
+</code></pre>
+<ul>
+<li>&#x7EC8;&#x7AEF;&#x663E;&#x793A;&#xFF08;&#x8017;&#x65F6;&#x8F83;&#x957F;&#xFF09;</li>
+</ul>
+<pre><code class="lang-shell">+------+--------------------+--------------------+
+|sku_id|               words|         rawFeatures|
++------+--------------------+--------------------+
+|   148|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, W...|(42513,[7,10,36,9...|
+|   463|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, &#x98DE;...|(42513,[0,2,3,5,1...|
+|   471|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, &#x5305;...|(42513,[0,1,5,10,...|
+|   496|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, &#x54C1;...|(42513,[0,5,10,13...|
+|   833|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, L...|(42513,[1,10,36,5...|
+|  1088|[&#x6444;&#x5F71;, &#x6570;&#x7801;&#x76F8;&#x6846;, &#x9752;&#x7F8E;, &#x58C1;&#x6302;...|(42513,[0,1,9,48,...|
+|  1238|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, d...|(42513,[10,22,36,...|
+|  1342|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, &#x7EFF;...|(42513,[0,5,10,36...|
+|  1580|[&#x6444;&#x5F71;, &#x6570;&#x7801;&#x76F8;&#x6846;, HNM, &#x82F1;...|(42513,[1,2,4,9,1...|
+|  1591|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, k...|(42513,[1,3,10,36...|
+|  1645|[&#x6444;&#x5F71;, &#x6570;&#x7801;&#x76F8;&#x6846;, &#x7231;&#x56FD;&#x8005;, a...|(42513,[1,4,17,20...|
+|  1829|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, &#x91D1;...|(42513,[0,10,36,5...|
+|  1959|[&#x6444;&#x5F71;, &#x6570;&#x7801;&#x76F8;&#x673A;, &#x7406;&#x5149;, Ri...|(42513,[0,6,9,13,...|
+|  2122|[&#x624B;&#x673A;, &#x624B;&#x673A;&#x914D;&#x4EF6;, &#x79FB;&#x52A8;&#x7535;&#x6E90;, ...|(42513,[0,5,22,24...|
+|  2142|[&#x624B;&#x673A;, &#x624B;&#x673A;&#x914D;&#x4EF6;, &#x79FB;&#x52A8;&#x7535;&#x6E90;, ...|(42513,[0,5,22,23...|
+|  2366|[&#x624B;&#x673A;, &#x624B;&#x673A;&#x914D;&#x4EF6;, &#x79FB;&#x52A8;&#x7535;&#x6E90;, ...|(42513,[0,1,2,5,1...|
+|  2659|[&#x624B;&#x673A;, &#x624B;&#x673A;&#x914D;&#x4EF6;, &#x79FB;&#x52A8;&#x7535;&#x6E90;, ...|(42513,[0,1,2,5,9...|
+|  2866|[&#x624B;&#x673A;, &#x624B;&#x673A;, &#x901A;&#x8BAF;, &#x5BF9;&#x8BB2;&#x673A;,...|(42513,[0,5,21,43...|
+|  3175|[&#x624B;&#x673A;, &#x624B;&#x673A;, &#x901A;&#x8BAF;, &#x5BF9;&#x8BB2;&#x673A;,...|(42513,[0,5,21,23...|
+|  3749|[&#x624B;&#x673A;, &#x624B;&#x673A;, &#x901A;&#x8BAF;, &#x5BF9;&#x8BB2;&#x673A;,...|(42513,[0,5,11,11...|
++------+--------------------+--------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x8BCD;&#x9891;&#x7EDF;&#x8BA1;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-python">print(cv_model.vocabulary)
+len(cv_model.vocabulary)
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">[&apos;&#x989C;&#x8272;&apos;, &apos;&#x7248;&#x672C;&apos;, &apos;&#x9ED1;&#x8272;&apos;, &apos;&#x7535;&#x8111;&apos;, &apos;&#x82F1;&#x5BF8;&apos;, &apos;&#x624B;&#x673A;&apos;, &apos;&#x5957;&#x88C5;&apos;, &apos;&#x667A;&#x80FD;&apos;, &apos;&#x529E;&#x516C;&apos;, &apos;&#x767D;&#x8272;&apos;, &apos;&#x6570;&#x7801;&apos;, &apos;&#x5957;&#x9910;&apos;, &apos;&#x9F20;&#x6807;&apos;, &apos;&#x4EAC;&#x4E1C;&apos;, &apos;&#x5185;&#x5B58;&apos;, &apos;&#x6E38;&#x620F;&apos;, &apos;&#x578B;&#x53F7;&apos;, &apos;&#x9AD8;&#x6E05;&apos;, &apos;&#x952E;&#x76D8;&apos;, &apos;&#x4EA7;&#x54C1;&apos;, &apos;i5&apos;, &apos;&#x5B98;&#x65B9;&apos;, &apos;&#x8033;&#x673A;&apos;, &apos;&#x82F9;&#x679C;&apos;, &apos;&#x65E0;&#x7EBF;&apos;, &apos;&#x5BB9;&#x91CF;&apos;, &apos;&#x91D1;&#x5C5E;&apos;, &apos;&#x539F;&#x88C5;&apos;, &apos;i7&apos;, &apos;&#x6587;&#x5177;&apos;, &apos;&#x7535;&#x8111;&#x914D;&#x4EF6;&apos;, &apos;&#x56FA;&#x6001;&apos;, &apos;&#x84DD;&#x8272;&apos;, &apos;&#x5C0F;&#x7C73;&apos;, &apos;&#x652F;&#x67B6;&apos;, &apos;&#x624B;&#x673A;&#x914D;&#x4EF6;&apos;, &apos;&#x5E73;&#x53F0;&apos;, &apos;&#x5E73;&#x677F;&apos;, &apos;&#x8BFB;&#x5361;&#x5668;&apos;, &apos;&#x534E;&#x4E3A;&apos;, &apos;&#x8017;&#x6750;&apos;, &apos;&#x4E3B;&#x677F;&apos;, &apos;&#x84DD;&#x7259;&apos;, &apos;&#x955C;&#x5934;&apos;, &apos;&#x5C3A;&#x5BF8;&apos;, &apos;&#x7EA2;&#x8272;&apos;, &apos;&#x4E0B;&#x5355;&apos;, &apos;&#x94F6;&#x8272;&apos;, &apos;&#x673A;&#x68B0;&apos;, &apos;&#x786C;&#x76D8;&apos;, &apos;&#x6444;&#x5F71;&apos;, &apos;U&#x76D8;&apos;, &apos;&#x7ECF;&#x5178;&apos;, &apos;&#x6570;&#x636E;&#x7EBF;&apos;, &apos;&#x5B89;&#x5353;&apos;, &apos;USB&apos;, &apos;&#x94A2;&#x5316;&apos;, &apos;&#x5145;&#x7535;&#x5668;&apos;, &apos;&#x624B;&#x73AF;&apos;, &apos;&#x7535;&#x6C60;&apos;, &apos;&#x5185;&#x5B58;&#x5361;&apos;, &apos;&#x6444;&#x50CF;&#x5934;&apos;, &apos;&#x5BB6;&#x7528;&apos;, &apos;&#x58A8;&#x76D2;&apos;, &apos;&#x7535;&#x5B50;&apos;, &apos;&#x7B14;&#x8BB0;&#x672C;&apos;, &apos;&#x91D1;&#x8272;&apos;, &apos;CPU&apos;, &apos;&#x9EA6;&#x514B;&#x98CE;&apos;, &apos;&#x5BA2;&#x670D;&apos;, &apos;&#x7535;&#x6E90;&apos;, &apos;&#x7C89;&#x8272;&apos;, &apos;&#x8363;&#x8000;&apos;, &apos;&#x5546;&#x54C1;&apos;, &apos;&#x79D2;&#x6740;&apos;, &apos;DDR4&apos;, &apos;&#x6253;&#x5370;&#x673A;&apos;, &apos;&#x65B0;&#x54C1;&apos;, &apos;&#x4E13;&#x4E1A;&apos;, &apos;HDMI&apos;, &apos;&#x4F73;&#x80FD;&apos;, &apos;&#x4E13;&#x7528;&apos;, &apos;&#x9F20;&#x6807;&#x57AB;&apos;, &apos;&#x624B;&#x8868;&apos;, &apos;&#x5B66;&#x751F;&apos;, &apos;&#x5546;&#x52A1;&apos;, &apos;USB3&apos;, &apos;&#x914D;&#x4EF6;&apos;, &apos;&#x53F0;&#x5F0F;&#x673A;&apos;, &apos;&#x9886;&#x5238;&apos;, &apos;&#x5F69;&#x8272;&apos;, &apos;&#x7F51;&#x901A;&apos;, &apos;WIFI&apos;, &apos;Type&apos;, &apos;&#x5B58;&#x50A8;&#x5361;&apos;, &apos;&#x5F71;&#x97F3;&apos;, &apos;&#x8BA1;&#x7B97;&#x5668;&apos;, &apos;&#x8BED;&#x97F3;&apos;, &apos;&#x952E;&#x9F20;&#x5957;&apos;, &apos;&#x6B63;&#x54C1;&apos;, &apos;RGB&apos;, &apos;&#x9759;&#x97F3;&apos;, &apos;&#x534E;&#x7855;&apos;, &apos;&#x4FDD;&#x62A4;&#x5957;&apos;, &apos;&#x8BDD;&#x7B52;&apos;, &apos;i3&apos;, &apos;&#x7267;&#x9A6C;&#x4EBA;&apos;, &apos;&#x529E;&#x516C;&#x8BBE;&#x5907;&apos;, &apos;&#x65B0;&#x6B3E;&apos;, &apos;&#x9752;&#x8F74;&apos;, &apos;&#x663E;&#x793A;&#x5668;&apos;, &apos;&#x84DD;&#x5149;&apos;, &apos;&#x673A;&#x5668;&#x4EBA;&apos;, &apos;&#x9177;&#x777F;&apos;, &apos;&#x513F;&#x7AE5;&apos;,......]
+
+42443
+</code></pre>
+<h3 id="47-idf&#x503C;&#x8BA1;&#x7B97;">4.7 IDF&#x503C;&#x8BA1;&#x7B97;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> IDF
+idf = IDF(inputCol=<span class="hljs-string">&quot;rawFeatures&quot;</span>, outputCol=<span class="hljs-string">&quot;features&quot;</span>)
+
+idfModel = idf.fit(cv_result)
+rescaledData = idfModel.transform(cv_result)
+
+rescaledData.select(<span class="hljs-string">&quot;words&quot;</span>, <span class="hljs-string">&quot;features&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+--------------------+--------------------+
+|               words|            features|
++--------------------+--------------------+
+|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, W...|(42443,[7,10,38,9...|
+|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, &#x98DE;...|(42443,[0,2,3,5,1...|
+|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, &#x5305;...|(42443,[0,1,5,10,...|
+|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, &#x54C1;...|(42443,[0,5,10,13...|
+|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, L...|(42443,[1,10,38,5...|
+|[&#x6444;&#x5F71;, &#x6570;&#x7801;&#x76F8;&#x6846;, &#x9752;&#x7F8E;, &#x58C1;&#x6302;...|(42443,[0,1,9,50,...|
+|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, d...|(42443,[10,23,38,...|
+|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, &#x7EFF;...|(42443,[0,5,10,38...|
+|[&#x6444;&#x5F71;, &#x6570;&#x7801;&#x76F8;&#x6846;, HNM, &#x82F1;...|(42443,[1,2,4,9,1...|
+|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, k...|(42443,[1,3,10,38...|
+|[&#x6444;&#x5F71;, &#x6570;&#x7801;&#x76F8;&#x6846;, &#x7231;&#x56FD;&#x8005;, a...|(42443,[1,4,17,21...|
+|[&#x6570;&#x7801;, &#x6570;&#x7801;&#x914D;&#x4EF6;, &#x8BFB;&#x5361;&#x5668;, &#x91D1;...|(42443,[0,10,38,5...|
+|[&#x6444;&#x5F71;, &#x6570;&#x7801;&#x76F8;&#x673A;, &#x7406;&#x5149;, Ri...|(42443,[0,6,9,13,...|
+|[&#x624B;&#x673A;, &#x624B;&#x673A;&#x914D;&#x4EF6;, &#x79FB;&#x52A8;&#x7535;&#x6E90;, ...|(42443,[0,5,23,25...|
+|[&#x624B;&#x673A;, &#x624B;&#x673A;&#x914D;&#x4EF6;, &#x79FB;&#x52A8;&#x7535;&#x6E90;, ...|(42443,[0,5,23,24...|
+|[&#x624B;&#x673A;, &#x624B;&#x673A;&#x914D;&#x4EF6;, &#x79FB;&#x52A8;&#x7535;&#x6E90;, ...|(42443,[0,1,2,5,1...|
+|[&#x624B;&#x673A;, &#x624B;&#x673A;&#x914D;&#x4EF6;, &#x79FB;&#x52A8;&#x7535;&#x6E90;, ...|(42443,[0,1,2,5,9...|
+|[&#x624B;&#x673A;, &#x624B;&#x673A;, &#x901A;&#x8BAF;, &#x5BF9;&#x8BB2;&#x673A;,...|(42443,[0,5,22,45...|
+|[&#x624B;&#x673A;, &#x624B;&#x673A;, &#x901A;&#x8BAF;, &#x5BF9;&#x8BB2;&#x673A;,...|(42443,[0,5,22,24...|
+|[&#x624B;&#x673A;, &#x624B;&#x673A;, &#x901A;&#x8BAF;, &#x5BF9;&#x8BB2;&#x673A;,...|(42443,[0,5,11,11...|
++--------------------+--------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x5229;&#x7528;idf&#x5C5E;&#x6027;&#xFF0C;&#x83B7;&#x53D6;&#x6BCF;&#x4E00;&#x4E2A;&#x8BCD;&#x7684;idf&#x503C;&#xFF0C;&#x8FD9;&#x91CC;&#x6BCF;&#x4E00;&#x4E2A;&#x503C;&#x4E0E;cv_model.vocabulary&#x4E2D;&#x7684;&#x8BCD;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;</li>
+</ul>
+<pre><code class="lang-python">idfModel.idf.toArray()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">array([ 0.24258429,  1.25958267,  1.40733883, ..., 10.41409315,
+       10.41409315, 10.41409315])
+</code></pre>
+<ul>
+<li>&#x5C06;&#x5173;&#x952E;&#x8BCD;&#x548C;idf&#x7ED3;&#x679C;&#x653E;&#x5728;&#x4E00;&#x8D77;</li>
+</ul>
+<pre><code class="lang-python">keywords_list_with_idf = list(zip(cv_model.vocabulary, idfModel.idf.toArray()))
+keywords_list_with_idf
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">[(&apos;&#x989C;&#x8272;&apos;, 0.2425842894701456),
+ (&apos;&#x7248;&#x672C;&apos;, 1.2595826650830566),
+ (&apos;&#x9ED1;&#x8272;&apos;, 1.407338832221065),
+ (&apos;&#x7535;&#x8111;&apos;, 0.9269926353711626),
+ (&apos;&#x82F1;&#x5BF8;&apos;, 1.9777846894227953),
+ (&apos;&#x624B;&#x673A;&apos;, 1.3972161773351852),
+ (&apos;&#x5957;&#x88C5;&apos;, 2.1746317022809443),
+ (&apos;&#x667A;&#x80FD;&apos;, 1.938138708698929),
+...   ......
+]
+</code></pre>
+<h3 id="48-tfidf&#x503C;&#x8BA1;&#x7B97;">4.8 TFIDF&#x503C;&#x8BA1;&#x7B97;</h3>
+<ul>
+<li>&#x5C55;&#x793A;&#x4E00;&#x884C;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python">row = rescaledData.first()
+row
+</code></pre>
+<ul>
+<li>&#x7EC8;&#x7AEF;&#x663E;&#x793A;</li>
+</ul>
+<pre><code class="lang-python">Row(words=[<span class="hljs-string">&apos;&#x6570;&#x7801;&apos;</span>, <span class="hljs-string">&apos;&#x6570;&#x7801;&#x914D;&#x4EF6;&apos;</span>, <span class="hljs-string">&apos;&#x8BFB;&#x5361;&#x5668;&apos;</span>, <span class="hljs-string">&apos;WPOS&apos;</span>, <span class="hljs-string">&apos;&#x9AD8;&#x5EA6;&apos;</span>, <span class="hljs-string">&apos;&#x4E1A;&#x52A1;&apos;</span>, <span class="hljs-string">&apos;&#x667A;&#x80FD;&apos;</span>, <span class="hljs-string">&apos;&#x7EC8;&#x7AEF;&apos;</span>, <span class="hljs-string">&apos;&#x68EE;&#x9510;&apos;</span>, <span class="hljs-string">&apos;&#x89E6;&#x6478;&#x5C4F;&apos;</span>, <span class="hljs-string">&apos;&#x6536;&#x94F6;&#x673A;&apos;</span>, <span class="hljs-string">&apos;&#x8EAB;&#x4EFD;&apos;</span>, <span class="hljs-string">&apos;&#x5305;&#x90AE;&apos;</span>, <span class="hljs-string">&apos;&#x6B63;&#x54C1;&apos;</span>, <span class="hljs-string">&apos;&#x8D2D;&#x7269;&apos;</span>], rawFeatures=SparseVector(<span class="hljs-number">42443</span>, {<span class="hljs-number">7</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">10</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">38</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">99</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">195</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">216</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">356</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">422</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">647</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">2923</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">4425</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">7473</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">13946</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">14562</span>: <span class="hljs-number">1.0</span>, <span class="hljs-number">24286</span>: <span class="hljs-number">1.0</span>}), features=SparseVector(<span class="hljs-number">42443</span>, {<span class="hljs-number">7</span>: <span class="hljs-number">1.9381</span>, <span class="hljs-number">10</span>: <span class="hljs-number">1.4125</span>, <span class="hljs-number">38</span>: <span class="hljs-number">3.4038</span>, <span class="hljs-number">99</span>: <span class="hljs-number">2.9766</span>, <span class="hljs-number">195</span>: <span class="hljs-number">3.4514</span>, <span class="hljs-number">216</span>: <span class="hljs-number">3.6123</span>, <span class="hljs-number">356</span>: <span class="hljs-number">4.1244</span>, <span class="hljs-number">422</span>: <span class="hljs-number">4.7829</span>, <span class="hljs-number">647</span>: <span class="hljs-number">5.8446</span>, <span class="hljs-number">2923</span>: <span class="hljs-number">6.8587</span>, <span class="hljs-number">4425</span>: <span class="hljs-number">7.7399</span>, <span class="hljs-number">7473</span>: <span class="hljs-number">8.0627</span>, <span class="hljs-number">13946</span>: <span class="hljs-number">9.1613</span>, <span class="hljs-number">14562</span>: <span class="hljs-number">9.1613</span>, <span class="hljs-number">24286</span>: <span class="hljs-number">10.0086</span>}))
+</code></pre>
+<ul>
+<li>row.rawFeatures&#x662F;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x7C7B;&#x578B;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># row.rawFeatures.indices&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x5F53;&#x524D;&#x884C;&#x6BCF;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x8BCD; &#x5728;&#x6240;&#x6709;&#x5173;&#x952E;&#x8BCD;&#x8868;&#x4E2D;&#x7684;&#x7D22;&#x5F15;</span>
+row.rawFeatures.indices
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">array([    7,    10,    38,    99,   195,   216,   356,   422,   647,
+        2923,  4425,  7473, 13946, 14562, 24286], dtype=int32)
+</code></pre>
+<ul>
+<li>&#x7EDF;&#x8BA1;&#x4E00;&#x884C;&#x6709;&#x51E0;&#x4E2A;&#x5173;&#x952E;&#x8BCD;</li>
+</ul>
+<pre><code class="lang-python">row.rawFeatures.values <span class="hljs-comment">#&#x5F53;&#x524D;&#x884C;&#x6240;&#x6709;&#x5173;&#x952E;&#x8BCD;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x7684;&#x96C6;&#x5408;</span>
+row.rawFeatures.values.sum() <span class="hljs-comment">#&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x51FA;&#x4E00;&#x884C;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x5173;&#x952E;&#x8BCD;</span>
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
+</code></pre>
+<pre><code class="lang-python">row.rawFeatures[<span class="hljs-number">7</span>] <span class="hljs-comment">#&#x83B7;&#x53D6;&#x7B2C;7&#x4E2A;&#x5173;&#x952E;&#x8BCD;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;</span>
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">1.0
+</code></pre>
+<ul>
+<li><p>tfidf&#x7EDF;&#x8BA1;&#x7ED3;&#x679C;&#x601D;&#x8DEF;&#x5206;&#x6790;</p>
+<ul>
+<li>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF; &#x5904;&#x7406;&#x597D;&#x4E86;&#x4E24;&#x4EFD;&#x6570;&#x636E; keywords_list_with_idf&#xFF08;&#x5173;&#x952E;&#x8BCD;&#x548C;idf&#x7ED3;&#x679C;&#x5408;&#x5E76;&#x540E;&#x7684;&#x6570;&#x636E;&#xFF09; cv_result &#xFF08;&#x8BCD;&#x9891;&#x7EDF;&#x8BA1;&#x7684;&#x7ED3;&#x679C;&#xFF09;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x8FD9;&#x4E24;&#x4EFD;&#x6570;&#x636E;&#x8BA1;&#x7B97;TF-IDF&#x503C;<ul>
+<li>keywords_list_with_idf &#x4E2D;&#x5DF2;&#x7ECF;&#x5305;&#x542B;&#x4E86;&#x6BCF;&#x4E2A;&#x8BCD;&#x7684;idf&#x503C;</li>
+<li>&#x53EA;&#x9700;&#x8BA1;&#x7B97;&#x51FA;&#x6BCF;&#x4E2A;&#x8BCD;&#x7684;tf&#x503C;&#x5373;&#x53EF;</li>
+<li>tf = &#x6587;&#x672C;&#x51FA;&#x73B0;&#x6B21;&#x6570;/&#x6587;&#x6863;&#x957F;&#x5EA6;<ul>
+<li>&#x901A;&#x8FC7;rdd&#x7684;map&#x64CD;&#x4F5C; &#x53EF;&#x4EE5;&#x5C06;&#x6BCF;&#x4E00;&#x884C;&#x7684;&#x6570;&#x636E;&#x62FF;&#x5230; </li>
+<li>&#x901A;&#x8FC7;&#x8FD9;&#x4E00;&#x884C;&#x6570;&#x636E;&#x7684; row.rawFeatures.values.sum() &#x53EF;&#x8BA1;&#x7B97;&#x51FA;&#x4E00;&#x884C;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x5173;&#x952E;&#x8BCD;&#xFF08;&#x6587;&#x6863;&#x957F;&#x5EA6;&#xFF09;</li>
+<li>&#x904D;&#x5386;&#x8FD9;&#x4E00;&#x884C;&#x6570;&#x636E;&#x7684; row.rawFeatures.indices &#x83B7;&#x53D6;&#x7D22;&#x5F15; &#x8FD9;&#x4E2A;&#x7D22;&#x5F15;&#x4E0E;keywords_list_with_idf &#x7684;&#x7D22;&#x5F15;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;</li>
+<li>&#x901A;&#x8FC7;row.rawFeatures &#x4F20;&#x5165;&#x7D22;&#x5F15;&#x83B7;&#x53D6;&#x5355;&#x8BCD;&#x51FA;&#x73B0;&#x6B21;&#x6570; /&#x6587;&#x6863;&#x957F;&#x5EA6; &#x53EF;&#x8BA1;&#x7B97;tf&#x503C;</li>
+<li>&#x901A;&#x8FC7;&#x7D22;&#x5F15; &#x5230;keywords_list_with_idf &#x4E2D;&#x627E;&#x5230;idf&#x503C;</li>
+<li>tf*idf &#x53EF;&#x4EE5;&#x7B97;&#x51FA;&#x8BE5;&#x884C;&#x6BCF;&#x4E2A;&#x8BCD;&#x8BED;&#x7684;tf-idf&#x503C;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>tfidf&#x7EDF;&#x8BA1;&#x7ED3;&#x679C;</p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> partial
+<span class="hljs-comment">#tf &#x5C31;&#x662F;&#x8BCD;&#x5E93;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x8BCD;&#x5728; &#x5F53;&#x524D;&#x6587;&#x7AE0; &#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x9891;&#x7387;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_tfidf</span><span class="hljs-params">(partition, kw_list)</span>:</span>
+    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> partition:
+        words_length = row.rawFeatures.values.sum()
+        <span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span>  row.rawFeatures.indices:
+            word, idf = kw_list[int(index)] 
+            tf = row.rawFeatures[int(index)]/words_length   <span class="hljs-comment"># &#x8BA1;&#x7B97;TF&#x503C;</span>
+            tfidf = float(tf)*float(idf)    <span class="hljs-comment"># &#x8BA1;&#x7B97;&#x8BE5;&#x8BCD;&#x7684;TFIDF&#x503C;</span>
+            <span class="hljs-keyword">yield</span> row.sku_id, word, tfidf
+
+<span class="hljs-comment"># &#x4F7F;&#x7528;partial&#x4E3A;&#x51FD;&#x6570;&#x9884;&#x5B9A;&#x4E49;&#x8981;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;</span>
+tfidf = partial(_tfidf, kw_list=keywords_list_with_idf)            
+
+keyword_tfidf = cv_result.rdd.mapPartitions(tfidf)
+keyword_tfidf = keyword_tfidf.toDF([<span class="hljs-string">&quot;sku_id&quot;</span>,<span class="hljs-string">&quot;keyword&quot;</span>, <span class="hljs-string">&quot;tfidf&quot;</span>])
+keyword_tfidf.show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+------+-------+-------------------+
+|sku_id|keyword|              tfidf|
++------+-------+-------------------+
+|   148|     &#x667A;&#x80FD;|0.12920924724659527|
+|   148|     &#x6570;&#x7801;|0.09416669674352422|
+|   148|    &#x8BFB;&#x5361;&#x5668;|0.22691875231942266|
+|   148|     &#x6B63;&#x54C1;| 0.1984394909665287|
+|   148|   &#x6570;&#x7801;&#x914D;&#x4EF6;| 0.2300917543361638|
+|   148|     &#x8D2D;&#x7269;| 0.2408169399138654|
+|   148|     &#x5305;&#x90AE;| 0.2752684393351877|
+|   148|    &#x89E6;&#x6478;&#x5C4F;|0.31885875801848024|
+|   148|     &#x9AD8;&#x5EA6;| 0.3896366762502419|
+|   148|    &#x6536;&#x94F6;&#x673A;|0.45724967270727696|
+|   148|     &#x7EC8;&#x7AEF;|  0.515996300178136|
+|   148|     &#x4E1A;&#x52A1;|  0.537514526329006|
+|   148|     &#x68EE;&#x9510;| 0.6107553455735467|
+|   148|     &#x8EAB;&#x4EFD;| 0.6107553455735467|
+|   148|   WPOS| 0.6672418695993603|
+|   463|     &#x989C;&#x8272;|0.08984603313709096|
+|   463|     &#x9ED1;&#x8272;|0.20849464181052813|
+|   463|     &#x7535;&#x8111;|0.17166530284651157|
+|   463|     &#x624B;&#x673A;|0.20699498923484225|
+|   463|     &#x6570;&#x7801;|0.05231483152418012|
++------+-------+-------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x5206;&#x7EC4;&#x67E5;&#x770B;tfidf&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-python">keyword_tfidf.orderBy(<span class="hljs-string">&quot;tfidf&quot;</span>, ascending=<span class="hljs-keyword">False</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------+-------+------------------+
+|sku_id|keyword|             tfidf|
++------+-------+------------------+
+| 65304|     &#x94A5;&#x5319;|16.866725445032152|
+| 46934|    K22|15.970125524670596|
+| 64669|     &#x7814;&#x94B5;|15.621139728147854|
+| 23128|     &#x6728;&#x7EB9;|13.619016619083395|
+| 23350|     &#x6728;&#x7EB9;|13.619016619083395|
+| 46559|    XAD|13.354329091785555|
+| 10349|     &#x6761;&#x7EBF;|13.255835415734486|
+| 53158|     &#x7578;&#x53D8;|13.191231766589008|
+|  4507|   W88D|13.136324307737405|
+| 61486|     &#x5355;&#x6392;| 13.02289314127927|
+| 65283|    &#x62A2;&#x7B54;&#x5668;|12.954087439685217|
+| 51841|     &#x7EAF;&#x94DC;| 12.68401586837053|
+| 65127|    &#x94A5;&#x5319;&#x76D8;|12.663736560299217|
+| 46847|    &#x4F4E;&#x78B3;&#x94A2;| 12.38866944982758|
+| 46643|X45X100|12.307564634298311|
+| 65127|     &#x94C1;&#x73AF;|12.149775344114998|
+| 46349|    XAD|11.975349457307699|
+| 66679|     &#x5361;&#x4F4D;|11.935691239580011|
+| 65127|     &#x94A5;&#x5319;|11.869177165022624|
+| 46848|     &#x6C34;&#x9053;|11.650520419971981|
++------+-------+------------------+
+only showing top 20 rows
+</code></pre>
+<h3 id="49-&#x5C06;tfidf&#x7ED3;&#x679C;&#x5B58;&#x5165;hive&#x4E2D;">4.9 &#x5C06;TFIDF&#x7ED3;&#x679C;&#x5B58;&#x5165;hive&#x4E2D;</h3>
+<ul>
+<li>&#x628A;tfidf&#x7ED3;&#x679C;&#x653E;&#x5230;&#x4E34;&#x65F6;&#x8868;&#x4E2D;</li>
+</ul>
+<pre><code class="lang-python">keyword_tfidf.registerTempTable(<span class="hljs-string">&quot;tempTable&quot;</span>)
+spark.sql(<span class="hljs-string">&quot;desc tempTable&quot;</span>).show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+--------+---------+-------+
+|col_name|data_type|comment|
++--------+---------+-------+
+|  sku_id|   bigint|   null|
+| keyword|   string|   null|
+|   tfidf|   double|   null|
++--------+---------+-------+
+</code></pre>
+<ul>
+<li>&#x521B;&#x5EFA;hive&#x8868;</li>
+</ul>
+<pre><code class="lang-python">sql = <span class="hljs-string">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS sku_tag_tfidf(
+sku_id INT,
+tag STRING,
+weights DOUBLE
+)&quot;&quot;&quot;</span>
+spark.sql(sql)
+</code></pre>
+<ul>
+<li>&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x4E34;&#x65F6;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x5230;hive&#x8868;&#x4E2D;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;INSERT INTO sku_tag_tfidf SELECT * FROM tempTable&quot;</span>)
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;select * from sku_tag_tfidf&quot;</span>).show()
+</code></pre>
+<pre><code class="lang-shell">+------+----+-------------------+
+|sku_id| tag|            weights|
++------+----+-------------------+
+|   148|  &#x667A;&#x80FD;|0.12920924724659527|
+|   148|  &#x6570;&#x7801;|0.09416669674352422|
+|   148| &#x8BFB;&#x5361;&#x5668;|0.22691875231942266|
+|   148|  &#x6B63;&#x54C1;| 0.1984394909665287|
+|   148|&#x6570;&#x7801;&#x914D;&#x4EF6;| 0.2300917543361638|
+|   148|  &#x8D2D;&#x7269;| 0.2408169399138654|
+|   148|  &#x5305;&#x90AE;| 0.2752684393351877|
+|   148| &#x89E6;&#x6478;&#x5C4F;|0.31885875801848024|
+|   148|  &#x9AD8;&#x5EA6;| 0.3896366762502419|
+|   148| &#x6536;&#x94F6;&#x673A;|0.45724967270727696|
+|   148|  &#x7EC8;&#x7AEF;|  0.515996300178136|
+|   148|  &#x4E1A;&#x52A1;|  0.537514526329006|
+|   148|  &#x68EE;&#x9510;| 0.6107553455735467|
+|   148|  &#x8EAB;&#x4EFD;| 0.6107553455735467|
+|   148|WPOS| 0.6672418695993603|
+|   463|  &#x989C;&#x8272;|0.08984603313709096|
+|   463|  &#x9ED1;&#x8272;|0.20849464181052813|
+|   463|  &#x7535;&#x8111;|0.17166530284651157|
+|   463|  &#x624B;&#x673A;|0.20699498923484225|
+|   463|  &#x6570;&#x7801;|0.05231483152418012|
++------+----+-------------------+
+only showing top 20 rows
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter3.html" class="navigation navigation-prev " aria-label="Previous page: 商品数据处理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter5.html" class="navigation navigation-next " aria-label="Next page: 商品关键词权重选择">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"商品关键词提取","level":"1.8.4","depth":2,"next":{"title":"商品关键词权重选择","level":"1.8.5","depth":2,"path":"推荐系统实战2/chapter5.md","ref":"推荐系统实战2/chapter5.md","articles":[]},"previous":{"title":"商品数据处理","level":"1.8.3","depth":2,"path":"推荐系统实战2/chapter3.md","ref":"推荐系统实战2/chapter3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐系统实战2/chapter4.md","mtime":"2019-04-04T08:39:39.340Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

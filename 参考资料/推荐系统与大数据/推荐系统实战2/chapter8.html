@@ -1,0 +1,1695 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>埋点日志处理 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter9.html" />
+    
+    
+    <link rel="prev" href="chapter7.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../推荐介绍/01_推荐系统简介.html">
+            
+                <a href="../推荐介绍/01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../推荐介绍/02_推荐系统架构设计.html">
+            
+                <a href="../推荐介绍/02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../推荐介绍/03_推荐算法.html">
+            
+                <a href="../推荐介绍/03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../推荐介绍/04_ 推荐系统评估.html">
+            
+                <a href="../推荐介绍/04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                <a href="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../推荐系统实战1/README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                <a href="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                <a href="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../推荐系统实战1/05_离线推荐处理.html">
+            
+                <a href="../推荐系统实战1/05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../推荐系统实战1/06_实时推荐.html">
+            
+                <a href="../推荐系统实战1/06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.8" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >埋点日志处理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x516B;-&#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x5904;&#x7406;">&#x516B; &#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x5904;&#x7406;</h2>
+<h3 id="81-&#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x4ECB;&#x7ECD;">8.1 &#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x4ECB;&#x7ECD;</h3>
+<p>&#x57CB;&#x70B9;&#x5C31;&#x662F;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x7279;&#x5B9A;&#x7684;&#x6D41;&#x7A0B;&#x6536;&#x96C6;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#xFF0C;&#x7528;&#x6765;&#x8DDF;&#x8E2A;&#x5E94;&#x7528;&#x4F7F;&#x7528;&#x7684;&#x72B6;&#x51B5;&#xFF0C;&#x540E;&#x7EED;&#x7528;&#x6765;&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x4EA7;&#x54C1;&#x6216;&#x662F;&#x63D0;&#x4F9B;&#x8FD0;&#x8425;&#x7684;&#x6570;&#x636E;&#x652F;&#x6491;&#x3002;&#x6BD4;&#x5982;&#x7528;&#x4E8E;&#x4F5C;&#x4E3A;&#x5B9E;&#x73B0;&#x4E2A;&#x6027;&#x5316;&#x63A8;&#x8350;&#x7684;&#x6570;&#x636E;&#x652F;&#x6491;&#x3002;</p>
+<p>&#x57CB;&#x70B9;&#x65B9;&#x5F0F;&#x4E3B;&#x6D41;&#x7684;&#x65E0;&#x975E;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>&#x81EA;&#x884C;&#x7814;&#x53D1;&#xFF1A;&#x5728;&#x7814;&#x53D1;&#x7684;&#x4EA7;&#x54C1;&#x4E2D;&#x6CE8;&#x5165;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;&#xFF0C;&#x5E76;&#x642D;&#x5EFA;&#x8D77;&#x76F8;&#x5E94;&#x7684;&#x540E;&#x53F0;&#x67E5;&#x8BE2;&#x548C;&#x5904;&#x7406;</li>
+<li>&#x7B2C;&#x4E09;&#x65B9;&#x5E73;&#x53F0;&#xFF1A;&#x7B2C;&#x4E09;&#x65B9;&#x7EDF;&#x8BA1;&#x5DE5;&#x5177;&#xFF0C;&#x5982;&#x53CB;&#x76DF;&#x3001;&#x767E;&#x5EA6;&#x79FB;&#x52A8;&#x7B49;</li>
+</ul>
+<p>&#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x4E3B;&#x8981;&#x5206;&#x4E3A;&#x7C7B;&#x578B;&#xFF1A;</p>
+<ul>
+<li>&#x66DD;&#x5149;&#x65E5;&#x5FD7;&#xFF1A;&#x5546;&#x54C1;&#x88AB;&#x5C55;&#x793A;&#x5230;&#x9875;&#x9762;&#x88AB;&#x79F0;&#x4E3A;&#x66DD;&#x5149;&#xFF0C;&#x66DD;&#x5149;&#x65E5;&#x5FD7;&#x4E5F;&#x5C31;&#x662F;&#x6307;&#x5546;&#x54C1;&#x4E00;&#x65E6;&#x88AB;&#x5C55;&#x793A;&#x51FA;&#x6765;&#xFF0C;&#x5219;&#x8BB0;&#x5F55;&#x4E00;&#x6761;&#x66DD;&#x5149;&#x65E5;&#x5FD7;<ul>
+<li>&#x66DD;&#x5149;&#x65F6;&#x95F4;</li>
+<li>&#x66DD;&#x5149;&#x573A;&#x666F;</li>
+<li>&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;</li>
+<li>&#x5546;&#x54C1;ID</li>
+<li>&#x5546;&#x54C1;&#x7C7B;&#x522B;ID</li>
+</ul>
+</li>
+<li>&#x70B9;&#x51FB;&#x6D41;&#x65E5;&#x5FD7;&#xFF1A;&#x7528;&#x6237;&#x6D4F;&#x89C8;&#x3001;&#x6536;&#x85CF;&#x3001;&#x52A0;&#x8D2D;&#x7269;&#x8F66;&#x3001;&#x8D2D;&#x4E70;&#x3001;&#x8BC4;&#x8BBA;&#x3001;&#x641C;&#x7D22;&#x7B49;&#x884C;&#x4E3A;&#x8BB0;&#x5F55;&#x65E5;&#x5FD7;<ul>
+<li>&#x88AB;&#x66DD;&#x5149;&#x65F6;&#x95F4;&#xFF1A;&#x5BF9;&#x5E94;&#x66DD;&#x5149;&#x65E5;&#x5FD7;&#x7684;&#x66DD;&#x5149;&#x65F6;&#x95F4;(&#x6D4F;&#x89C8;)</li>
+<li>&#x88AB;&#x66DD;&#x5149;&#x573A;&#x666F;&#xFF1A;&#x5BF9;&#x5E94;&#x66DD;&#x5149;&#x65E5;&#x5FD7;&#x7684;&#x66DD;&#x5149;&#x573A;&#x666F;(&#x6D4F;&#x89C8;)</li>
+<li>&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;</li>
+<li>&#x884C;&#x4E3A;&#x65F6;&#x95F4;</li>
+<li>&#x884C;&#x4E3A;&#x7C7B;&#x578B;</li>
+<li>&#x5546;&#x54C1;ID</li>
+<li>&#x5546;&#x54C1;&#x7C7B;&#x522B;ID</li>
+<li>&#x505C;&#x7559;&#x65F6;&#x957F;(&#x6D4F;&#x89C8;)</li>
+<li>&#x8BC4;&#x5206;(&#x8BC4;&#x8BBA;)</li>
+<li>&#x641C;&#x7D22;&#x8BCD;(&#x641C;&#x7D22;)</li>
+</ul>
+</li>
+</ul>
+<h3 id="82-&#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x610F;&#x4E49;">8.2 &#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x610F;&#x4E49;</h3>
+<p>&#x7528;&#x6237;&#x884C;&#x4E3A;&#x504F;&#x597D;&#x5206;&#x6790;</p>
+<ul>
+<li>&#x5229;&#x7528;&#x70B9;&#x51FB;&#x6D41;&#x65E5;&#x5FD7;&#x5206;&#x6790;&#x4E2A;&#x4F53;/&#x7FA4;&#x4F53;&#x7528;&#x6237;&#x7684;&#x884C;&#x4E3A;&#x7279;&#x5F81;&#xFF0C;&#x9884;&#x6D4B;&#x51FA;&#x7528;&#x6237;&#x884C;&#x4E3A;&#x7684;&#x504F;&#x597D;</li>
+</ul>
+<p>&#x7EDF;&#x8BA1;&#x6307;&#x6807;&#x5206;&#x6790;</p>
+<ul>
+<li>&#x70B9;&#x51FB;&#x7387;&#xFF1A;&#x88AB;&#x70B9;&#x51FB;&#x7684;&#x6982;&#x7387;<ul>
+<li>&#x8BA1;&#x7B97;&#x516C;&#x5F0F;&#xFF1A;&#x70B9;&#x51FB;&#x6B21;&#x6570;/&#x66DD;&#x5149;&#x6B21;&#x6570;&#x3002;&#x67D0;&#x5546;&#x54C1;&#x5171;&#x66DD;&#x5149;/&#x5C55;&#x793A;&#x4E86;100&#x6B21;&#xFF0C;&#x66DD;&#x5149;&#x540E;&#x5171;&#x88AB;&#x70B9;&#x51FB;10&#x6B21;&#xFF0C;&#x70B9;&#x51FB;&#x7387;=10%</li>
+</ul>
+</li>
+<li>&#x8DF3;&#x51FA;&#x7387;&#xFF1A;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x540E;&#xFF0C;&#x4E4B;&#x540E;&#x6CA1;&#x6709;&#x518D;&#x4E5F;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#xFF0C;&#x79F0;&#x4E3A;&#x8DF3;&#x51FA;<ul>
+<li>&#x8BA1;&#x7B97;&#x516C;&#x5F0F;&#xFF1A;&#x8BBF;&#x95EE;&#x4E00;&#x6B21;&#x9000;&#x51FA;&#x7684;&#x8BBF;&#x95EE;&#x91CF;/&#x603B;&#x7684;&#x8BBF;&#x95EE;&#x91CF;</li>
+<li>&#x6574;&#x4F53;(&#x6574;&#x4E2A;&#x677F;&#x5757;/&#x5E94;&#x7528;)&#x8DF3;&#x51FA;&#x7387;</li>
+<li>&#x5355;&#x9875;&#x9762;&#x7684;&#x8DF3;&#x51FA;&#x7387;&#x3002;&#x5982;&#x67D0;&#x9875;&#x9762;&#x5171;&#x6709;100&#x4E2A;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#xFF0C;&#x5176;&#x4E2D;&#x6709;10&#x4E2A;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x5F53;&#x524D;&#x9875;&#x9762;&#x540E;&#x5C31;&#x518D;&#x4E5F;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x8BBF;&#x95EE;&#x4E86;&#xFF0C;&#x5F53;&#x524D;&#x9875;&#x9762;&#x8DF3;&#x51FA;&#x7387;&#x662F;10%</li>
+</ul>
+</li>
+<li>&#x8F6C;&#x5316;&#x7387;&#xFF1A;&#x7535;&#x5546;&#x4E2D;&#x7684;&#x8F6C;&#x5316;&#x7387;&#x8BA1;&#x7B97;&#xFF1A;&#x5546;&#x54C1;&#x8BA2;&#x5355;&#x6210;&#x4EA4;&#x91CF;/&#x5546;&#x54C1;&#x8BBF;&#x95EE;&#x91CF;&#x3002;&#x5982;&#x67D0;&#x5546;&#x54C1;&#x7D2F;&#x8BA1;&#x8BBF;&#x95EE;&#x91CF;&#x662F;100&#x4E2A;&#xFF0C;&#x6700;&#x7EC8;&#x63D0;&#x4EA4;&#x8BA2;&#x5355;&#x7684;&#x53EA;&#x6709;5&#x4E2A;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x5546;&#x54C1;&#x8F6C;&#x5316;&#x7387;&#x5C31;&#x662F;5%</li>
+</ul>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x8DF3;&#x51FA;&#x7387;&#x548C;&#x8F6C;&#x5316;&#x7387;&#x4E2D;&#x7684;&#x8BBF;&#x95EE;&#x91CF;&#x6307;&#x7684;&#x662F;&#x72EC;&#x7ACB;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x91CF;&#x3002;&#x72EC;&#x7ACB;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x91CF;&#xFF1A;&#x9996;&#x5148;&#x72EC;&#x7ACB;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x91CF;&#x5E76;&#x4E0D;&#x7B49;&#x4EF7;&#x4E8E;&#x6765;&#x8BBF;&#x95EE;&#x7684;&#x603B;&#x7528;&#x6237;&#x4E2A;&#x6570;&#x3002;&#x72EC;&#x7ACB;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x91CF;&#xFF1A;&#x6BD4;&#x5982;&#x67D0;&#x7528;&#x6237;A&#x5728;1&#x6708;1&#x65E5;&#x8BBF;&#x95EE;&#x4E86;&#x5546;&#x54C1;1&#xFF0C;1&#x6708;2&#x65E5;&#x53C8;&#x8BBF;&#x95EE;&#x4E86;&#x5546;&#x54C1;1&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x91CC;&#x5546;&#x54C1;1&#x7684;&#x8BBF;&#x95EE;&#x91CF;&#x5E94;&#x7B97;&#x4F5C;1&#x6B21;&#xFF0C;&#x800C;&#x4E0D;&#x662F;2&#x6B21;&#x3002;</p>
+<h3 id="83-&#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x5904;&#x7406;">8.3 &#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x5904;&#x7406;</h3>
+<ul>
+<li>&#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;</li>
+</ul>
+<pre><code class="lang-shell">cat /home/hadoop/code/meiduoSourceCode/logs/exposure.log
+2018/12/30 03:19:41: exposure_timesteamp&lt;1543519181&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;
+2018/12/30 13:18:13: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;
+2018/12/30 13:18:13: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;
+2018/12/31 01:47:59: exposure_timesteamp&lt;1543600079&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;
+2018/12/31 01:49:20: exposure_timesteamp&lt;1543600079&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;
+2018/12/31 01:52:53: exposure_timesteamp&lt;1543600373&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;
+2018/12/31 01:57:47: exposure_timesteamp&lt;1543600666&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;
+</code></pre>
+<ul>
+<li>&#x57CB;&#x70B9;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#x5316;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_logger</span><span class="hljs-params">(logger_name, path, level)</span>:</span>
+    <span class="hljs-comment"># &#x521B;&#x5EFA;logger</span>
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(level)
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;formatter</span>
+    fmt = <span class="hljs-string">&quot;%(asctime)s: %(message)s&quot;</span>
+    datefmt = <span class="hljs-string">&quot;%Y/%m/%d %H:%M:%S&quot;</span>
+    formatter = logging.Formatter(fmt, datefmt)
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;handler</span>
+    handler = logging.FileHandler(path)
+    handler.setLevel(level)
+
+    <span class="hljs-comment"># &#x6DFB;&#x52A0; handler &#x548C; formatter &#x5230; logger</span>
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+
+    <span class="hljs-keyword">return</span> logger
+</code></pre>
+<ul>
+<li>&#x5904;&#x7406;&#x66DD;&#x5149;&#x65E5;&#x5FD7;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> logging
+
+exposure_logger = get_logger(<span class="hljs-string">&quot;exposure&quot;</span>, <span class="hljs-string">&quot;/home/hadoop/code/meiduoSourceCode/logs/exposure.log&quot;</span>, logging.DEBUG)
+
+<span class="hljs-comment"># &#x66DD;&#x5149;&#x65E5;&#x5FD7;</span>
+exposure_timesteamp = time.time()
+exposure_loc = <span class="hljs-string">&quot;detail&quot;</span>
+uid = <span class="hljs-number">1</span>
+sku_id = <span class="hljs-number">1</span>
+cate_id = <span class="hljs-number">1</span>
+</code></pre>
+<ul>
+<li>&#x521B;&#x5EFA;&#x65E5;&#x5FD7;</li>
+</ul>
+<pre><code class="lang-python">exposure_logger.info(<span class="hljs-string">&quot;exposure_timesteamp&lt;%d&gt; exposure_loc&lt;%s&gt; uid&lt;%d&gt; sku_id&lt;%d&gt; cate_id&lt;%d&gt;&quot;</span>%(exposure_timesteamp, exposure_loc, uid, sku_id, cate_id))
+</code></pre>
+<ul>
+<li>&#x70B9;&#x51FB;&#x65E5;&#x5FD7;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> logging
+
+click_trace_logger = get_logger(<span class="hljs-string">&quot;click_trace&quot;</span>, <span class="hljs-string">&quot;/root/meiduoSourceCode/logs/click_trace.log&quot;</span>, logging.DEBUG)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x6A21;&#x62DF;&#x4EA7;&#x751F;&#x70B9;&#x51FB;&#x6D41;&#x65E5;&#x5FD7;</span>
+exposure_timesteamp = exposure_timesteamp
+exposure_loc = exposure_loc
+timesteamp = time.time()
+behavior=<span class="hljs-string">&quot;pv&quot;</span> <span class="hljs-comment"># pv fav cart buy share </span>
+uid = <span class="hljs-number">1</span>
+sku_id = <span class="hljs-number">1</span>
+cate_id = <span class="hljs-number">1</span>
+<span class="hljs-comment"># &#x5047;&#x8BBE;&#x67D0;&#x70B9;&#x51FB;&#x6D41;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</span>
+click_trace_logger.info(<span class="hljs-string">&quot;exposure_timesteamp&lt;%d&gt; exposure_loc&lt;%s&gt; timesteamp&lt;%d&gt; behavior&lt;%s&gt; uid&lt;%d&gt; sku_id&lt;%d&gt; cate_id&lt;%d&gt;&quot;</span>%(exposure_timesteamp, exposure_loc, timesteamp, behavior, uid, sku_id, cate_id))
+</code></pre>
+<h3 id="84-flume&#x91C7;&#x96C6;&#x65E5;&#x5FD7;">8.4 Flume&#x91C7;&#x96C6;&#x65E5;&#x5FD7;</h3>
+<h4 id="841-flume&#x6982;&#x8FF0;">8.4.1 Flume&#x6982;&#x8FF0;</h4>
+<p><strong>&#x6982;&#x5FF5;</strong></p>
+<p>Flume &#x662F; Cloudera &#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x4E2A;&#x9AD8;&#x53EF;&#x7528;&#x7684;&#xFF0C;&#x9AD8;&#x53EF;&#x9760;&#x7684;&#xFF0C;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x6D77;&#x91CF;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x3001;&#x805A;&#x5408;&#x548C;&#x4F20;&#x8F93;&#x7684;&#x8F6F;&#x4EF6;&#x3002; </p>
+<p>Flume &#x6838;&#x5FC3;</p>
+<ul>
+<li>&#x628A;&#x6570;&#x636E;&#x4ECE;&#x6570;&#x636E;&#x6E90;(source)&#x6536;&#x96C6;&#x8FC7;&#x6765;</li>
+<li>&#x5C06;&#x6536;&#x96C6;&#x5230;&#x7684;&#x6570;&#x636E;&#x9001;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x76EE;&#x7684;&#x5730;(sink)</li>
+<li>&#x4E3A;&#x4FDD;&#x8BC1;&#x6210;&#x529F;&#xFF0C;&#x5728;&#x9001;&#x5230;&#x76EE;&#x7684;&#x5730;(sink)&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x7F13;&#x5B58;&#x6570;&#x636E;(channel),&#x5F85;&#x6570;&#x636E;&#x5230;&#x8FBE;&#x76EE;&#x7684;&#x5730;(sink)&#x540E;&#xFF0C;flume &#x518D;&#x5220;&#x9664;&#x81EA;&#x5DF1;&#x7F13;&#x5B58;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+</ul>
+<p>Flume&#x4F18;&#x52BF;</p>
+<ul>
+<li>&#x652F;&#x6301;&#x5B9A;&#x5236;&#x5404;&#x7C7B;&#x6570;&#x636E;&#x53D1;&#x9001;&#x65B9;/&#x63A5;&#x53D7;&#x65B9;&#xFF0C;&#x7528;&#x4E8E;&#x6536;&#x96C6;&#x5404;&#x7C7B;&#x578B;&#x6570;&#x636E;/&#x6700;&#x7EC8;&#x5B58;&#x50A8;&#x6570;&#x636E;</li>
+<li>&#x901A;&#x8FC7;&#x7B80;&#x5355;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x4E00;&#x822C;&#x7684;&#x91C7;&#x96C6;&#x9700;&#x6C42;</li>
+<li>&#x7279;&#x6B8A;&#x573A;&#x666F;&#x4E5F;&#x5177;&#x5907;&#x826F;&#x597D;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x80FD;&#x529B;</li>
+<li>&#x9002;&#x7528;&#x4E8E;&#x5927;&#x90E8;&#x5206;&#x7684;&#x65E5;&#x5E38;&#x6570;&#x636E;&#x91C7;&#x96C6;&#x573A;&#x666F;</li>
+</ul>
+<h4 id="842-flume&#x8FD0;&#x884C;&#x673A;&#x5236;">8.4.2 Flume&#x8FD0;&#x884C;&#x673A;&#x5236;</h4>
+<p>Flume &#x7CFB;&#x7EDF;&#x4E2D;&#x6838;&#x5FC3;&#x7684;&#x89D2;&#x8272;&#x662F; <strong>agent</strong>&#xFF0C;agent &#x672C;&#x8EAB;&#x662F;&#x4E00;&#x4E2A; Java &#x8FDB;&#x7A0B;&#xFF0C;&#x4E00;&#x822C;&#x8FD0;&#x884C;&#x5728;&#x65E5;&#x5FD7;&#x6536;&#x96C6;&#x8282;&#x70B9;&#x3002;</p>
+<p><img src="../img/1540347254561.png" alt=""></p>
+<p>&#x6BCF;&#x4E00;&#x4E2A; agent &#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x4F20;&#x9012;&#x5458;&#xFF0C;&#x5185;&#x90E8;&#x6709;&#x4E09;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<p><strong>Source</strong>&#xFF1A;&#x91C7;&#x96C6;&#x6E90;&#xFF0C;&#x7528;&#x4E8E;&#x8DDF;&#x6570;&#x636E;&#x6E90;&#x5BF9;&#x63A5;&#xFF0C;&#x4EE5;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF1B;</p>
+<p><strong>Sink</strong>&#xFF1A;&#x4E0B;&#x6C89;&#x5730;&#xFF0C;&#x91C7;&#x96C6;&#x6570;&#x636E;&#x7684;&#x4F20;&#x9001;&#x76EE;&#x7684;&#xFF0C;&#x7528;&#x4E8E;&#x5F80;&#x4E0B;&#x4E00;&#x7EA7; agent &#x4F20;&#x9012;&#x6570;&#x636E;&#x6216;&#x8005;&#x5F80;</p>
+<p>&#x6700;&#x7EC8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x4F20;&#x9012;&#x6570;&#x636E;&#xFF1B;</p>
+<p><strong>Channel</strong>&#xFF1A;agent &#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x901A;&#x9053;&#xFF0C;&#x7528;&#x4E8E;&#x4ECE; source &#x5C06;&#x6570;&#x636E;&#x4F20;&#x9012;&#x5230; sink&#xFF1B;&#x5728;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x7684;&#x4F20;&#x8F93;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6D41;&#x52A8;&#x7684;&#x662F; event&#xFF0C;&#x5B83;&#x662F; Flume &#x5185;&#x90E8;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x6700;&#x57FA;&#x672C;&#x5355;&#x5143;&#x3002;event &#x5C06;&#x4F20;&#x8F93;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#x3002;&#x5982;&#x679C;&#x662F;&#x6587;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x4E00;&#x884C;&#x8BB0;&#x5F55;&#xFF0C; event &#x4E5F;&#x662F;&#x4E8B;&#x52A1;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;&#x3002;event &#x4ECE; source&#xFF0C;&#x6D41;&#x5411; channel&#xFF0C;&#x518D;&#x5230; sink&#xFF0C;&#x672C;&#x8EAB;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#xFF0C;&#x5E76;&#x53EF;&#x643A;&#x5E26; headers(&#x5934;&#x4FE1;&#x606F;)&#x4FE1;&#x606F;&#x3002;event &#x4EE3;&#x8868;&#x7740;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x7684;&#x6700;&#x5C0F;&#x5B8C;&#x6574;&#x5355;&#x5143;&#xFF0C;&#x4ECE;&#x5916;&#x90E8;&#x6570;&#x636E;&#x6E90;&#x6765;&#xFF0C;&#x5411;&#x5916;&#x90E8;&#x7684;&#x76EE;&#x7684;&#x5730;&#x53BB;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684; event &#x5305;&#x62EC;&#xFF1A;event headers&#x3001;event body&#x3001;event &#x4FE1;&#x606F;&#xFF0C;&#x5176;&#x4E2D; event &#x4FE1;&#x606F;&#x5C31;&#x662F; flume &#x6536;&#x96C6;&#x5230;&#x7684;&#x65E5;&#x8BB0;&#x8BB0;&#x5F55;&#x3002;</p>
+<p>flume&#x7684;&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#xFF1A;&#x5148;&#x6307;&#x5B9A;Source&#x5C06;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x91C7;&#x96C6;&#xFF0C;&#x8F93;&#x51FA;&#x5230;Channel&#xFF0C;Channel&#x76F8;&#x5F53;&#x4E8E;&#x5185;&#x5B58;&#x5B58;&#x50A8;&#xFF0C;&#x5F53;Channel&#x5B58;&#x50A8;&#x5230;&#x4E00;&#x5B9A;&#x503C;&#x65F6;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x5199;&#x5165;&#x5230;Sink&#x4E2D;</p>
+<p><strong>Flume&#x7684;&#x53EF;&#x914D;&#x7F6E;&#x5B50;&#x7EC4;&#x4EF6;</strong></p>
+<p><strong>Source</strong></p>
+<ul>
+<li>Avro Source &#x5E8F;&#x5217;&#x5316;&#x6570;&#x636E;&#x6E90;</li>
+<li>ThriftSource &#x5E8F;&#x5217;&#x5316;&#x6570;&#x636E;&#x6E90;</li>
+<li>Exec Source &#x6267;&#x884C;Linux&#x547D;&#x4EE4;&#x884C;&#x7684;&#x6570;&#x636E;&#x6E90;</li>
+<li>NETCAT Source &#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#xFF0C;ip&#x76D1;&#x63A7;&#x7684;&#x6570;&#x636E;&#x6E90;</li>
+<li>Kafka Source &#x76F4;&#x63A5;&#x5BF9;&#x63A5;Kafka&#x7684;&#x6570;&#x636E;&#x6E90;</li>
+<li>&#x81EA;&#x5B9A;&#x4E49;Source</li>
+</ul>
+<p><strong>Channel</strong></p>
+<ul>
+<li>Memory Channel</li>
+<li>File Channel</li>
+<li>Kafka Channel</li>
+<li>JDBC Channel</li>
+</ul>
+<p><strong>Sink</strong></p>
+<ul>
+<li>HDFS Sink &#x5199;&#x5165;&#x5230;HDFS</li>
+<li>Hive Sink &#x5199;&#x5165;&#x5230;Hive</li>
+<li>Avro Sink &#x5199;&#x5165;&#x5230;&#x5E8F;&#x5217;&#x5316;</li>
+<li>HBase Sinks &#x5199;&#x5165;&#x5230;HBase<ul>
+<li>HBase Sink &#x540C;&#x6B65;&#x5199;&#x5165;&#x5230;HBase</li>
+<li>Async HBase Sink &#x5F02;&#x6B65;&#x5199;&#x5165;&#x5230;Hbase</li>
+</ul>
+</li>
+</ul>
+<h4 id="843-&#x91C7;&#x96C6;&#x76EE;&#x5F55;&#x5230;hdfs">8.4.3 &#x91C7;&#x96C6;&#x76EE;&#x5F55;&#x5230;HDFS</h4>
+<p>&#x91C7;&#x96C6;&#x9700;&#x6C42;&#xFF1A;<strong>&#x670D;&#x52A1;&#x5668;&#x7684;&#x67D0;&#x7279;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x4F1A;&#x4E0D;&#x65AD;&#x4EA7;&#x751F;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6BCF;&#x5F53;&#x6709;&#x65B0;&#x6587;&#x4EF6;&#x51FA;&#x73B0;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x628A;&#x6587;&#x4EF6;&#x91C7;&#x96C6;&#x5230; HDFS &#x4E2D;&#x53BB;</strong></p>
+<p>&#x6839;&#x636E;&#x9700;&#x6C42;&#xFF0C;&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4EE5;&#x4E0B; 3 &#x5927;&#x8981;&#x7D20;</p>
+<p>&#x200B;    &#x91C7;&#x96C6;&#x6E90;&#xFF0C;&#x5373; source&#x2014;&#x2014;&#x76D1;&#x63A7;&#x6587;&#x4EF6;&#x76EE;&#x5F55; :  <strong>spooldir</strong></p>
+<p>&#x200B;    &#x4E0B;&#x6C89;&#x76EE;&#x6807;&#xFF0C;&#x5373; sink&#x2014;&#x2014;HDFS &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;  :  <strong>hdfs sink</strong></p>
+<p>&#x200B;    source &#x548C; sink &#x4E4B;&#x95F4;&#x7684;&#x4F20;&#x9012;&#x901A;&#x9053;&#x2014;&#x2014;channel&#xFF0C;&#x53EF;&#x7528; file channel &#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5185;&#x5B58; channel</p>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7F16;&#x5199;&#xFF1A;</p>
+<pre><code>#Name the components on this agent 
+spool-memory-hdfs.sources = spool-source
+spool-memory-hdfs.sinks = hdfs-sink
+spool-memory-hdfs.channels = memory-channel
+
+# Describe/configure the source
+#flume&#x7684;source&#x91C7;&#x7528;spooldir&#x65F6;,&#x76EE;&#x5F55;&#x4E0B;&#x9762;&#x4E0D;&#x5141;&#x8BB8;&#x5B58;&#x653E;&#x540C;&#x540D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5426;&#x5219;&#x62A5;&#x9519;&#xFF01;
+spool-memory-hdfs.sources.spool-source.type = spooldir
+spool-memory-hdfs.sources.spool-source.spoolDir = /home/hadoop/tmp/log
+spool-memory-hdfs.sources.spool-source.fileHeader = true
+
+# Describe the sink 
+spool-memory-hdfs.sinks.hdfs-sink.type = hdfs
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.path = /flume/events/%y-%m-%d/%H%M/
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.filePrefix = events-
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.round = true
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.roundValue = 10
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.roundUnit = minute
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.rollInterval = 3
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.rollSize = 20
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.rollCount = 5
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.batchSize = 1
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.useLocalTimeStamp = true
+#&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F; Sequencefile&#xFF0C;&#x53EF;&#x7528; DataStream&#xFF0C;&#x5219;&#x4E3A;&#x666E;&#x901A;&#x6587;&#x672C; 
+spool-memory-hdfs.sinks.hdfs-sink.hdfs.fileType = DataStream
+
+# Use a channel which buffers events in memory 
+spool-memory-hdfs.channels.memory-channel.type = memory
+spool-memory-hdfs.channels.memory-channel.capacity = 1000
+spool-memory-hdfs.channels.memory-channel.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+spool-memory-hdfs.sources.spool-source.channels = memory-channel
+spool-memory-hdfs.sinks.hdfs-sink.channel = memory-channel
+</code></pre><p>&#x542F;&#x52A8;&#xFF1A;</p>
+<p><code>bin/flume-ng agent -f spool-memory-hdfs.properties -n spool-memory-hdfs -Dflume.root.logger=INFO,console</code></p>
+<p>Channel &#x53C2;&#x6570;&#x89E3;&#x91CA;&#xFF1A;</p>
+<ul>
+<li><p>capacity&#xFF1A;&#x9ED8;&#x8BA4;&#x8BE5;&#x901A;&#x9053;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x7684; event &#x6570;&#x91CF;</p>
+</li>
+<li><p>trasactionCapacity&#xFF1A;&#x6BCF;&#x6B21;&#x6700;&#x5927;&#x53EF;&#x4EE5;&#x4ECE; source &#x4E2D;&#x62FF;&#x5230;&#x6216;&#x8005;&#x9001;&#x5230; sink &#x4E2D;&#x7684; event&#x6570;&#x91CF;
+sinks&#x53C2;&#x6570;&#x89E3;&#x6790;&#xFF1A;</p>
+</li>
+<li><p>rollInterval&#xFF1A;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;30</p>
+<p>hdfs sink &#x95F4;&#x9694;&#x591A;&#x957F;&#x5C06;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x6EDA;&#x52A8;&#x6210;&#x6700;&#x7EC8;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C;&#x5355;&#x4F4D;&#xFF1A;&#x79D2;&#xFF1B;</p>
+<p>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x6210; 0&#xFF0C;&#x5219;&#x8868;&#x793A;&#x4E0D;&#x6839;&#x636E;&#x65F6;&#x95F4;&#x6765;&#x6EDA;&#x52A8;&#x6587;&#x4EF6;&#xFF1B;</p>
+<p>&#x6CE8;&#xFF1A;&#x6EDA;&#x52A8;&#xFF08;roll&#xFF09;&#x6307;&#x7684;&#x662F;&#xFF0C;hdfs sink &#x5C06;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x91CD;&#x547D;&#x540D;&#x6210;&#x6700;&#x7EC8;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x65B0;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x6765;&#x5199;&#x5165;&#x6570;&#x636E;&#xFF1B;</p>
+</li>
+<li><p>rollSize</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;1024</p>
+<p>&#x5F53;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x8FBE;&#x5230;&#x8BE5;&#x5927;&#x5C0F;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;bytes&#xFF09;&#x65F6;&#xFF0C;&#x6EDA;&#x52A8;&#x6210;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF1B;</p>
+<p>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x6210; 0&#xFF0C;&#x5219;&#x8868;&#x793A;&#x4E0D;&#x6839;&#x636E;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x6765;&#x6EDA;&#x52A8;&#x6587;&#x4EF6;&#xFF1B;</p>
+</li>
+<li><p>rollCount</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;10</p>
+<p>&#x5F53; events &#x6570;&#x636E;&#x8FBE;&#x5230;&#x8BE5;&#x6570;&#x91CF;&#x65F6;&#x5019;&#xFF0C;&#x5C06;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x6EDA;&#x52A8;&#x6210;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF1B;</p>
+<p>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x6210; 0&#xFF0C;&#x5219;&#x8868;&#x793A;&#x4E0D;&#x6839;&#x636E; events &#x6570;&#x636E;&#x6765;&#x6EDA;&#x52A8;&#x6587;&#x4EF6;&#xFF1B;</p>
+</li>
+<li><p>round</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;false</p>
+<p>&#x662F;&#x5426;&#x542F;&#x7528;&#x65F6;&#x95F4;&#x4E0A;&#x7684;&#x201C;&#x820D;&#x5F03;&#x201D;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x201C;&#x820D;&#x5F03;&#x201D;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x201C;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x201D;&#x3002;</p>
+</li>
+<li><p>roundValue</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;1</p>
+<p>&#x65F6;&#x95F4;&#x4E0A;&#x8FDB;&#x884C;&#x201C;&#x820D;&#x5F03;&#x201D;&#x7684;&#x503C;&#xFF1B;</p>
+</li>
+<li><p>roundUnit</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;seconds</p>
+<p>&#x65F6;&#x95F4;&#x4E0A;&#x8FDB;&#x884C;&#x201C;&#x820D;&#x5F03;&#x201D;&#x7684;&#x5355;&#x4F4D;&#xFF0C;&#x5305;&#x542B;&#xFF1A;second,minute,hour</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<p>a1.sinks.k1.hdfs.path = /flume/events/%y-%m-%d/%H%M/%S</p>
+<p>a1.sinks.k1.hdfs.round = true</p>
+<p>a1.sinks.k1.hdfs.roundValue = 10</p>
+<p>a1.sinks.k1.hdfs.roundUnit = minute</p>
+<p>&#x5F53;&#x65F6;&#x95F4;&#x4E3A; 2015-10-16 17:38:59 &#x65F6;&#x5019;&#xFF0C;hdfs.path &#x4F9D;&#x7136;&#x4F1A;&#x88AB;&#x89E3;&#x6790;&#x4E3A;&#xFF1A;</p>
+<p>/flume/events/20151016/17:30/00</p>
+<p>&#x56E0;&#x4E3A;&#x8BBE;&#x7F6E;&#x7684;&#x662F;&#x820D;&#x5F03; 10 &#x5206;&#x949F;&#x5185;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x8BE5;&#x76EE;&#x5F55;&#x6BCF; 10 &#x5206;&#x949F;&#x65B0;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x3002;</p>
+</li>
+</ul>
+<h4 id="844-&#x91C7;&#x96C6;&#x6587;&#x4EF6;&#x5230;hdfs">8.4.4 &#x91C7;&#x96C6;&#x6587;&#x4EF6;&#x5230;HDFS</h4>
+<p>&#x91C7;&#x96C6;&#x9700;&#x6C42;&#xFF1A;<strong>&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x751F;&#x6210;&#x7684;&#x65E5;&#x5FD7;&#xFF0C;&#x65E5;&#x5FD7;&#x5185;&#x5BB9;&#x4E0D;&#x65AD;&#x589E;&#x52A0;&#xFF0C;&#x9700;&#x8981;&#x628A;&#x8FFD;&#x52A0;&#x5230;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5B9E;&#x65F6;&#x91C7;&#x96C6;&#x5230; hdfs</strong></p>
+<p>&#x6839;&#x636E;&#x9700;&#x6C42;&#xFF0C;&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4EE5;&#x4E0B; 3 &#x5927;&#x8981;&#x7D20;</p>
+<p>&#x200B;    &#x91C7;&#x96C6;&#x6E90;&#xFF0C;&#x5373; source&#x2014;&#x2014;&#x76D1;&#x63A7;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x66F4;&#x65B0; :  exec  &#x2018;tail -F file&#x2019;</p>
+<p>&#x200B;    &#x4E0B;&#x6C89;&#x76EE;&#x6807;&#xFF0C;&#x5373; sink&#x2014;&#x2014;HDFS &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;  :  hdfs sink</p>
+<p>&#x200B;    Source &#x548C; sink &#x4E4B;&#x95F4;&#x7684;&#x4F20;&#x9012;&#x901A;&#x9053;&#x2014;&#x2014;channel&#xFF0C;&#x53EF;&#x7528; file channel &#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5185;&#x5B58; channel</p>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7F16;&#x5199;&#xFF1A;</p>
+<pre><code>#Name the components on this agent 
+exec-memory-hdfs.sources = exec-source
+exec-memory-hdfs.sinks = hdfs-sink
+exec-memory-hdfs.channels = memory-channel
+
+# Describe/configure the source
+exec-memory-hdfs.sources.exec-source.type = exec
+exec-memory-hdfs.sources.exec-source.command = tail -F /home/hadoop/tmp/logs/test.log
+
+# Describe the sink 
+exec-memory-hdfs.sinks.hdfs-sink.type = hdfs
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.path = /flume/events/%y-%m-%d/%H%M/
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.filePrefix = events-
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.round = true
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.roundValue = 10
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.roundUnit = minute
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.rollInterval = 3
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.rollSize = 20
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.rollCount = 5
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.batchSize = 1
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.useLocalTimeStamp = true
+#&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F; Sequencefile&#xFF0C;&#x53EF;&#x7528; DataStream&#xFF0C;&#x5219;&#x4E3A;&#x666E;&#x901A;&#x6587;&#x672C; 
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.fileType = DataStream
+#&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F; Sequencefile&#xFF0C;&#x53EF;&#x7528; DataStream&#xFF0C;&#x5219;&#x4E3A;&#x666E;&#x901A;&#x6587;&#x672C; 
+exec-memory-hdfs.sinks.hdfs-sink.hdfs.fileType = DataStream
+
+# Use a channel which buffers events in memory 
+exec-memory-hdfs.channels.memory-channel.type = memory
+exec-memory-hdfs.channels.memory-channel.capacity = 1000
+exec-memory-hdfs.channels.memory-channel.transactionCapacity = 100
+
+
+# Bind the source and sink to the channel
+exec-memory-hdfs.sources.exec-source.channels = memory-channel
+exec-memory-hdfs.sinks.hdfs-sink.channel = memory-channel
+</code></pre><h3 id="85-&#x79BB;&#x7EBF;&#x65E5;&#x5FD7;&#x5904;&#x7406;">8.5 &#x79BB;&#x7EBF;&#x65E5;&#x5FD7;&#x5904;&#x7406;</h3>
+<ul>
+<li>&#x67E5;&#x770B;&#x79BB;&#x7EBF;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;</li>
+</ul>
+<pre><code class="lang-shell">!hadoop fs -ls /project2-meiduo-rs/logs/click-trace
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/root/bigdata/hadoop-2.9.1/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/root/bigdata/apache-hive-2.3.4-bin/lib/log4j-slf4j-impl-2.6.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+Found 2 items
+drwxr-xr-x   - root supergroup          0 2018-12-30 13:28 /project2-meiduo-rs/logs/click-trace/18-12-30
+drwxr-xr-x   - root supergroup          0 2018-12-31 02:51 /project2-meiduo-rs/logs/click-trace/18-12-31
+</code></pre>
+<ul>
+<li>&#x901A;&#x8FC7;spark&#x8BFB;&#x53D6;&#x70B9;&#x51FB;&#x65E5;&#x5FD7;</li>
+</ul>
+<pre><code class="lang-python">date = <span class="hljs-string">&quot;18-12-01&quot;</span>
+click_trace = spark.read.csv(<span class="hljs-string">&quot;hdfs://localhost:8020/project2-meiduo-rs/logs/click-trace/%s&quot;</span>%date)
+click_trace.show(truncate=<span class="hljs-keyword">False</span>)
+</code></pre>
+<p>&#x7EC8;&#x7AEF;&#x663E;&#x793A;:</p>
+<pre><code class="lang-shell">+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|_c0                                                                                                                                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|2018/11/30 13:21:08: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543555268&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/11/30 13:21:08: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543555268&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/11/30 13:28:37: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543555717&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/11/30 13:28:37: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543555717&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/11/30 13:28:37: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543555717&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/11/30 13:28:37: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543555717&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/11/30 13:28:37: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543555717&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:34:28: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543602868&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:34:28: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543602868&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:34:29: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543602869&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:34:29: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543602869&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:34:30: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543602870&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:34:30: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543602870&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:34:31: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543602871&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:17:30: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543601850&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:17:30: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543601850&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:17:54: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543601850&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:17:54: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543601850&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:30:54: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543602654&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
+|2018/12/01 02:30:54: exposure_timesteamp&lt;1543601846&gt; exposure_loc&lt;detail&gt; timesteamp&lt;1543602654&gt; behavior&lt;pv&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt; stay_time&lt;60&gt;|
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>spark&#x8BFB;&#x53D6;&#x66DD;&#x5149;&#x65E5;&#x5FD7;</li>
+</ul>
+<pre><code class="lang-python">date = <span class="hljs-string">&quot;18-12-01&quot;</span>
+exposure = spark.read.csv(<span class="hljs-string">&quot;hdfs://localhost:8020/project2-meiduo-rs/logs/exposure/%s&quot;</span>%date)
+exposure.show(truncate=<span class="hljs-keyword">False</span>)
+</code></pre>
+<p>&#x7EC8;&#x7AEF;&#x663E;&#x793A;</p>
+<pre><code class="lang-shell">+-----------------------------------------------------------------------------------------------------+
+|_c0                                                                                                  |
++-----------------------------------------------------------------------------------------------------+
+|2018/11/30 03:19:41: exposure_timesteamp&lt;1543519181&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;|
+|2018/11/30 13:18:13: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;|
+|2018/11/30 13:18:13: exposure_timesteamp&lt;1543555093&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;|
+|2018/12/01 01:47:59: exposure_timesteamp&lt;1543600079&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;|
+|2018/12/01 01:49:20: exposure_timesteamp&lt;1543600079&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;|
+|2018/12/01 01:52:53: exposure_timesteamp&lt;1543600373&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;|
+|2018/12/01 01:57:47: exposure_timesteamp&lt;1543600666&gt; exposure_loc&lt;detail&gt; uid&lt;1&gt; sku_id&lt;1&gt; cate_id&lt;1&gt;|
++-----------------------------------------------------------------------------------------------------+
+</code></pre>
+<ul>
+<li>&#x5904;&#x7406;&#x66DD;&#x5149;&#x65E5;&#x5FD7;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">from</span> pyspark.sql <span class="hljs-keyword">import</span> Row
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">map</span><span class="hljs-params">(row)</span>:</span>
+    match = re.search(<span class="hljs-string">&quot;\
+exposure_timesteamp&lt;(?P&lt;exposure_timesteamp&gt;.*?)&gt; \
+exposure_loc&lt;(?P&lt;exposure_loc&gt;.*?)&gt; \
+timesteamp&lt;(?P&lt;timesteamp&gt;.*?)&gt; \
+behavior&lt;(?P&lt;behavior&gt;.*?)&gt; \
+uid&lt;(?P&lt;uid&gt;.*?)&gt; \
+sku_id&lt;(?P&lt;sku_id&gt;.*?)&gt; \
+cate_id&lt;(?P&lt;cate_id&gt;.*?)&gt; \
+&quot;</span>, row._c0)
+
+    row = Row(exposure_timesteamp=match.group(<span class="hljs-string">&quot;exposure_timesteamp&quot;</span>),
+                exposure_loc=match.group(<span class="hljs-string">&quot;exposure_loc&quot;</span>),
+                timesteamp=match.group(<span class="hljs-string">&quot;timesteamp&quot;</span>),
+                behavior=match.group(<span class="hljs-string">&quot;behavior&quot;</span>),
+                uid=match.group(<span class="hljs-string">&quot;uid&quot;</span>),
+                sku_id=match.group(<span class="hljs-string">&quot;sku_id&quot;</span>),
+                cate_id=match.group(<span class="hljs-string">&quot;cate_id&quot;</span>),
+                )
+
+    <span class="hljs-keyword">return</span> row
+click_trace.rdd.map(map).toDF().show()
+</code></pre>
+<p>&#x7EC8;&#x7AEF;&#x6570;&#x636E;&#x663E;&#x793A;</p>
+<pre><code class="lang-shell">+--------+-------+------------+-------------------+------+---------+----------+---+
+|behavior|cate_id|exposure_loc|exposure_timesteamp|sku_id|stay_time|timesteamp|uid|
++--------+-------+------------+-------------------+------+---------+----------+---+
+|      pv|      1|      detail|         1543555093|     1|       60|1543555268|  1|
+|      pv|      1|      detail|         1543555093|     1|       60|1543555268|  1|
+|      pv|      1|      detail|         1543555093|     1|       60|1543555717|  1|
+|      pv|      1|      detail|         1543555093|     1|       60|1543555717|  1|
+|      pv|      1|      detail|         1543555093|     1|       60|1543555717|  1|
+|      pv|      1|      detail|         1543555093|     1|       60|1543555717|  1|
+|      pv|      1|      detail|         1543555093|     1|       60|1543555717|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543602868|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543602868|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543602869|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543602869|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543602870|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543602870|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543602871|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543601850|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543601850|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543601850|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543601850|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543602654|  1|
+|      pv|      1|      detail|         1543601846|     1|       60|1543602654|  1|
++--------+-------+------------+-------------------+------+---------+----------+---+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x5904;&#x7406;&#x70B9;&#x51FB;&#x65E5;&#x5FD7;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">from</span> pyspark.sql <span class="hljs-keyword">import</span> Row
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">map</span><span class="hljs-params">(row)</span>:</span>
+    match = re.search(<span class="hljs-string">&quot;\
+exposure_timesteamp&lt;(?P&lt;exposure_timesteamp&gt;.*?)&gt; \
+exposure_loc&lt;(?P&lt;exposure_loc&gt;.*?)&gt; \
+uid&lt;(?P&lt;uid&gt;.*?)&gt; \
+sku_id&lt;(?P&lt;sku_id&gt;.*?)&gt; \
+cate_id&lt;(?P&lt;cate_id&gt;.*?)&gt;&quot;</span>, row._c0)
+
+    row = Row(exposure_timesteamp=match.group(<span class="hljs-string">&quot;exposure_timesteamp&quot;</span>),
+                exposure_loc=match.group(<span class="hljs-string">&quot;exposure_loc&quot;</span>),
+                uid=match.group(<span class="hljs-string">&quot;uid&quot;</span>),
+                sku_id=match.group(<span class="hljs-string">&quot;sku_id&quot;</span>),
+                cate_id=match.group(<span class="hljs-string">&quot;cate_id&quot;</span>))
+
+    <span class="hljs-keyword">return</span> row
+exposure.rdd.map(map).toDF().show()
+</code></pre>
+<p>&#x7EC8;&#x7AEF;&#x663E;&#x793A;</p>
+<pre><code class="lang-python">+-------+------------+-------------------+------+---+
+|cate_id|exposure_loc|exposure_timesteamp|sku_id|uid|
++-------+------------+-------------------+------+---+
+|      <span class="hljs-number">1</span>|      detail|         <span class="hljs-number">1543519181</span>|     <span class="hljs-number">1</span>|  <span class="hljs-number">1</span>|
+|      <span class="hljs-number">1</span>|      detail|         <span class="hljs-number">1543555093</span>|     <span class="hljs-number">1</span>|  <span class="hljs-number">1</span>|
+|      <span class="hljs-number">1</span>|      detail|         <span class="hljs-number">1543555093</span>|     <span class="hljs-number">1</span>|  <span class="hljs-number">1</span>|
+|      <span class="hljs-number">1</span>|      detail|         <span class="hljs-number">1543600079</span>|     <span class="hljs-number">1</span>|  <span class="hljs-number">1</span>|
+|      <span class="hljs-number">1</span>|      detail|         <span class="hljs-number">1543600079</span>|     <span class="hljs-number">1</span>|  <span class="hljs-number">1</span>|
+|      <span class="hljs-number">1</span>|      detail|         <span class="hljs-number">1543600373</span>|     <span class="hljs-number">1</span>|  <span class="hljs-number">1</span>|
+|      <span class="hljs-number">1</span>|      detail|         <span class="hljs-number">1543600666</span>|     <span class="hljs-number">1</span>|  <span class="hljs-number">1</span>|
++-------+------------+-------------------+------+---+
+</code></pre>
+<ul>
+<li>&#x5229;&#x7528;&#x70B9;&#x51FB;&#x6D41;&#x65E5;&#x5FD7;&#x4E2D;&#x884C;&#x4E3A;&#x662F;&quot;pv&quot;&#x7684;&#x6570;&#x636E;&#x540C;&#x65F6;<code>cate_id|exposure_loc|exposure_timesteamp|sku_id|uid</code>&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5BF9;&#x5E94;&#xFF0C;&#x6700;&#x7EC8;&#x5C31;&#x80FD;&#x5F97;&#x51FA;&#xFF1A;&#x6240;&#x6709;&#x66DD;&#x5149;&#x7684;&#x5546;&#x54C1;&#x4E2D;&#xFF0C;&#x54EA;&#x4E9B;&#x5546;&#x54C1;&#x88AB;&#x7528;&#x6237;&#x6D4F;&#x89C8;&#x4E86;&#xFF0C;&#x54EA;&#x4E9B;&#x6CA1;&#x6709;&#x88AB;&#x6D4F;&#x89C8;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter7.html" class="navigation navigation-prev " aria-label="Previous page: 商品相似度计算与商品召回">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter9.html" class="navigation navigation-next " aria-label="Next page: Spark Streaming">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"埋点日志处理","level":"1.8.8","depth":2,"next":{"title":"Spark Streaming","level":"1.8.9","depth":2,"path":"推荐系统实战2/chapter9.md","ref":"推荐系统实战2/chapter9.md","articles":[]},"previous":{"title":"商品相似度计算与商品召回","level":"1.8.7","depth":2,"path":"推荐系统实战2/chapter7.md","ref":"推荐系统实战2/chapter7.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐系统实战2/chapter8.md","mtime":"2019-04-06T06:49:05.977Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

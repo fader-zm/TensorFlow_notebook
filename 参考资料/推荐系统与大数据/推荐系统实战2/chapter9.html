@@ -1,0 +1,1590 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Spark Streaming · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter10.html" />
+    
+    
+    <link rel="prev" href="chapter8.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../推荐介绍/01_推荐系统简介.html">
+            
+                <a href="../推荐介绍/01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../推荐介绍/02_推荐系统架构设计.html">
+            
+                <a href="../推荐介绍/02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../推荐介绍/03_推荐算法.html">
+            
+                <a href="../推荐介绍/03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../推荐介绍/04_ 推荐系统评估.html">
+            
+                <a href="../推荐介绍/04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                <a href="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../推荐系统实战1/README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                <a href="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                <a href="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../推荐系统实战1/05_离线推荐处理.html">
+            
+                <a href="../推荐系统实战1/05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../推荐系统实战1/06_实时推荐.html">
+            
+                <a href="../推荐系统实战1/06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.9" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Spark Streaming</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4E5D;-spark-streaming">&#x4E5D; Spark Streaming</h2>
+<h3 id="91-sparkstreaming&#x662F;&#x4EC0;&#x4E48;">9.1 SparkStreaming&#x662F;&#x4EC0;&#x4E48;</h3>
+<ul>
+<li><p>&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x6269;&#x5C55;&#xFF0C;&#x9AD8;&#x541E;&#x5410;&#x5177;&#x6709;&#x5BB9;&#x9519;&#x6027;&#x7684;&#x5FAE;&#x6279;&#x5904;&#x7406;(mini-batch)&#x8BA1;&#x7B97;&#x6846;&#x67B6;</p>
+<p>&#x541E;&#x5410;&#x91CF;&#xFF1A;&#x5355;&#x4F4D;&#x65F6;&#x95F4;&#x5185;&#x6210;&#x529F;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x7684;&#x6570;&#x91CF;</p>
+</li>
+</ul>
+<p><img src="pics/ss1.png" alt="ss1"></p>
+<ul>
+<li>spark-core&#x548C;spark-sql &#x7528;&#x4E8E;&#x79BB;&#x7EBF;&#x6279;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#xFF0C;&#x5BF9;&#x5B9E;&#x65F6;&#x6027;&#x8981;&#x6C42;&#x4E0D;&#x9AD8;&#x3002;</li>
+<li>spark streaming &#x7528;&#x4E8E;&#x5B9E;&#x65F6;&#x6570;&#x636E;&#x5904;&#x7406;&#xFF0C;&#x53EF;&#x8FBE;&#x79D2;&#x7EA7;&#x5EF6;&#x8FDF;</li>
+</ul>
+<p><img src="pics/ss2.png" alt="ss2"></p>
+<p><strong>&#x5B9E;&#x65F6;&#x8BA1;&#x7B97;&#x6846;&#x67B6;&#x5BF9;&#x6BD4;</strong></p>
+<p>Storm</p>
+<ul>
+<li>&#x6D41;&#x5F0F;&#x8BA1;&#x7B97;&#x6846;&#x67B6;</li>
+<li>&#x4EE5;record&#x4E3A;&#x5355;&#x4F4D;&#x5904;&#x7406;&#x6570;&#x636E;</li>
+<li>&#x4E5F;&#x652F;&#x6301;micro-batch&#x65B9;&#x5F0F;&#xFF08;Trident&#xFF09;</li>
+</ul>
+<p>Spark</p>
+<ul>
+<li>&#x5FAE;&#x6279;&#x5904;&#x7406;&#x8BA1;&#x7B97;&#x6846;&#x67B6;</li>
+<li>&#x4EE5;RDD&#x4E3A;&#x5355;&#x4F4D;&#x5904;&#x7406;&#x6570;&#x636E;</li>
+<li>&#x652F;&#x6301;micro-batch&#x6D41;&#x5F0F;&#x5904;&#x7406;&#x6570;&#x636E;&#xFF08;Spark Streaming&#xFF09;</li>
+</ul>
+<p>&#x5BF9;&#x6BD4;&#xFF1A;</p>
+<ul>
+<li>&#x541E;&#x5410;&#x91CF;&#xFF1A;Spark Streaming&#x4F18;&#x4E8E;Storm</li>
+<li>&#x5EF6;&#x8FDF;&#xFF1A;Spark Streaming&#x5DEE;&#x4E8E;Storm</li>
+</ul>
+<h3 id="92-sparkstreaming&#x7684;&#x7EC4;&#x4EF6;">9.2 SparkStreaming&#x7684;&#x7EC4;&#x4EF6;</h3>
+<ul>
+<li>Streaming Context<ul>
+<li>&#x4E00;&#x65E6;&#x4E00;&#x4E2A;Context&#x5DF2;&#x7ECF;&#x542F;&#x52A8;(&#x8C03;&#x7528;&#x4E86;Streaming Context&#x7684;start()),&#x5C31;&#x4E0D;&#x80FD;&#x6709;&#x65B0;&#x7684;&#x6D41;&#x7B97;&#x5B50;(Dstream)&#x5EFA;&#x7ACB;&#x6216;&#x8005;&#x662F;&#x6DFB;&#x52A0;&#x5230;context&#x4E2D;</li>
+<li>&#x4E00;&#x65E6;&#x4E00;&#x4E2A;context&#x5DF2;&#x7ECF;&#x505C;&#x6B62;,&#x4E0D;&#x80FD;&#x91CD;&#x65B0;&#x542F;&#x52A8;(Streaming Context&#x8C03;&#x7528;&#x4E86;stop&#x65B9;&#x6CD5;&#x4E4B;&#x540E; &#x5C31;&#x4E0D;&#x80FD;&#x518D;&#x6B21;&#x8C03; start())</li>
+<li>&#x5728;JVM(java&#x865A;&#x62DF;&#x673A;)&#x4E2D;, &#x540C;&#x4E00;&#x65F6;&#x95F4;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;Streaming Context&#x5904;&#x4E8E;&#x6D3B;&#x8DC3;&#x72B6;&#x6001;, &#x4E00;&#x4E2A;SparkContext&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Streaming Context</li>
+<li>&#x5728;Streaming Context&#x4E0A;&#x8C03;&#x7528;Stop&#x65B9;&#x6CD5;, &#x4E5F;&#x4F1A;&#x5173;&#x95ED;SparkContext&#x5BF9;&#x8C61;, &#x5982;&#x679C;&#x53EA;&#x60F3;&#x4EC5;&#x5173;&#x95ED;Streaming Context&#x5BF9;&#x8C61;,&#x8BBE;&#x7F6E;stop()&#x7684;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x4E3A;false</li>
+<li>&#x4E00;&#x4E2A;SparkContext&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x5229;&#x7528;&#x53BB;&#x521B;&#x5EFA;&#x591A;&#x4E2A;Streaming Context&#x5BF9;&#x8C61;(&#x4E0D;&#x5173;&#x95ED;SparkContext&#x524D;&#x63D0;&#x4E0B;), &#x4F46;&#x662F;&#x9700;&#x8981;&#x5173;&#x4E00;&#x4E2A;&#x518D;&#x5F00;&#x4E0B;&#x4E00;&#x4E2A;</li>
+</ul>
+</li>
+<li>DStream (&#x79BB;&#x6563;&#x6D41;)<ul>
+<li>&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x8FDE;&#x7EED;&#x7684;&#x6570;&#x636E;&#x6D41;</li>
+<li>&#x5728;&#x5185;&#x90E8;, DStream&#x7531;&#x4E00;&#x7CFB;&#x5217;&#x8FDE;&#x7EED;&#x7684;RDD&#x7EC4;&#x6210;</li>
+<li>DStreams&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;RDD&#x90FD;&#x5305;&#x542B;&#x786E;&#x5B9A;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x5185;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x4EFB;&#x4F55;&#x5BF9;DStreams&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x8F6C;&#x6362;&#x6210;&#x4E86;&#x5BF9;DStreams&#x9690;&#x542B;&#x7684;RDD&#x7684;&#x64CD;&#x4F5C;</li>
+<li>&#x6570;&#x636E;&#x6E90;<ul>
+<li>&#x57FA;&#x672C;&#x6E90;<ul>
+<li>TCP/IP Socket</li>
+<li>FileSystem</li>
+</ul>
+</li>
+<li>&#x9AD8;&#x7EA7;&#x6E90;<ul>
+<li>Kafka</li>
+<li>Flume</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="93-spark-streaming&#x7F16;&#x7801;&#x5B9E;&#x8DF5;">9.3 Spark Streaming&#x7F16;&#x7801;&#x5B9E;&#x8DF5;</h3>
+<p><strong>Spark Streaming&#x7F16;&#x7801;&#x6B65;&#x9AA4;&#xFF1A;</strong></p>
+<ul>
+<li>1&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;StreamingContext</li>
+<li>2&#xFF0C;&#x4ECE;StreamingContext&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5BF9;&#x8C61;</li>
+<li>3&#xFF0C;&#x5BF9;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;Transformations&#x64CD;&#x4F5C;</li>
+<li>4&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;</li>
+<li>5&#xFF0C;&#x5F00;&#x59CB;&#x548C;&#x505C;&#x6B62;</li>
+</ul>
+<p><strong>&#x5229;&#x7528;Spark Streaming&#x5B9E;&#x73B0;WordCount</strong></p>
+<p>&#x9700;&#x6C42;&#xFF1A;&#x76D1;&#x542C;&#x67D0;&#x4E2A;&#x7AEF;&#x53E3;&#x4E0A;&#x7684;&#x7F51;&#x7EDC;&#x6570;&#x636E;&#xFF0C;&#x5B9E;&#x65F6;&#x7EDF;&#x8BA1;&#x51FA;&#x73B0;&#x7684;&#x4E0D;&#x540C;&#x5355;&#x8BCD;&#x4E2A;&#x6570;&#x3002;</p>
+<p>1&#xFF0C;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x4E00;&#x4E2A;nc&#x5DE5;&#x5177;&#xFF1A;yum install nc.x86_64</p>
+<p>2&#xFF0C;&#x6267;&#x884C;&#x6307;&#x4EE4;&#xFF1A;nc -lk 9999 -v</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-comment"># &#x914D;&#x7F6E;spark driver&#x548C;pyspark&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x6240;&#x4F7F;&#x7528;&#x7684;python&#x89E3;&#x91CA;&#x5668;&#x8DEF;&#x5F84;</span>
+PYSPARK_PYTHON = <span class="hljs-string">&quot;/home/hadoop/miniconda3/bin/python3&quot;</span>
+JAVA_HOME=<span class="hljs-string">&apos;/home/hadoop/app/jdk1.8.0_191&apos;</span>
+SPARK_HOME = <span class="hljs-string">&quot;/home/hadoop/app/spark-2.3.0-bin-2.6.0-cdh5.7.0&quot;</span>
+<span class="hljs-comment"># &#x5F53;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x7248;&#x672C;&#x65F6;&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x51FA;&#x9519;</span>
+os.environ[<span class="hljs-string">&quot;PYSPARK_PYTHON&quot;</span>] = PYSPARK_PYTHON
+os.environ[<span class="hljs-string">&quot;PYSPARK_DRIVER_PYTHON&quot;</span>] = PYSPARK_PYTHON
+os.environ[<span class="hljs-string">&apos;JAVA_HOME&apos;</span>]=JAVA_HOME
+os.environ[<span class="hljs-string">&quot;SPARK_HOME&quot;</span>] = SPARK_HOME
+
+<span class="hljs-keyword">from</span> pyspark <span class="hljs-keyword">import</span> SparkContext
+<span class="hljs-keyword">from</span> pyspark.streaming <span class="hljs-keyword">import</span> StreamingContext
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+
+    sc = SparkContext(<span class="hljs-string">&quot;local[2]&quot;</span>,appName=<span class="hljs-string">&quot;NetworkWordCount&quot;</span>)
+    <span class="hljs-comment">#&#x53C2;&#x6570;2&#xFF1A;&#x6307;&#x5B9A;&#x6267;&#x884C;&#x8BA1;&#x7B97;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;</span>
+    ssc = StreamingContext(sc, <span class="hljs-number">1</span>)
+    <span class="hljs-comment">#&#x76D1;&#x542C;ip&#xFF0C;&#x7AEF;&#x53E3;&#x4E0A;&#x7684;&#x4E0A;&#x7684;&#x6570;&#x636E;</span>
+    lines = ssc.socketTextStream(<span class="hljs-string">&apos;hadoop000&apos;</span>,<span class="hljs-number">9999</span>)
+    <span class="hljs-comment">#&#x5C06;&#x6570;&#x636E;&#x6309;&#x7A7A;&#x683C;&#x8FDB;&#x884C;&#x62C6;&#x5206;&#x4E3A;&#x591A;&#x4E2A;&#x5355;&#x8BCD;</span>
+    words = lines.flatMap(<span class="hljs-keyword">lambda</span> line: line.split(<span class="hljs-string">&quot; &quot;</span>))
+    <span class="hljs-comment">#&#x5C06;&#x5355;&#x8BCD;&#x8F6C;&#x6362;&#x4E3A;(&#x5355;&#x8BCD;&#xFF0C;1)&#x7684;&#x5F62;&#x5F0F;</span>
+    pairs = words.map(<span class="hljs-keyword">lambda</span> word:(word,<span class="hljs-number">1</span>))
+    <span class="hljs-comment">#&#x7EDF;&#x8BA1;&#x5355;&#x8BCD;&#x4E2A;&#x6570;</span>
+    wordCounts = pairs.reduceByKey(<span class="hljs-keyword">lambda</span> x,y:x+y)
+    <span class="hljs-comment">#&#x6253;&#x5370;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#xFF0C;&#x4F1A;&#x4F7F;&#x5F97;&#x524D;&#x9762;&#x7684;transformation&#x64CD;&#x4F5C;&#x6267;&#x884C;</span>
+    wordCounts.pprint()
+    <span class="hljs-comment">#&#x542F;&#x52A8;StreamingContext</span>
+    ssc.start()
+    <span class="hljs-comment">#&#x7B49;&#x5F85;&#x8BA1;&#x7B97;&#x7ED3;&#x675F;</span>
+    ssc.awaitTermination()
+</code></pre>
+<p>&#x53EF;&#x89C6;&#x5316;&#x67E5;&#x770B;&#x6548;&#x679C;&#xFF1A;<a href="http://192.168.199.188:4040" target="_blank">http://192.168.199.188:4040</a></p>
+<p>&#x70B9;&#x51FB;streaming&#xFF0C;&#x67E5;&#x770B;&#x6548;&#x679C;</p>
+<h3 id="94-spark-streaming&#x7684;&#x72B6;&#x6001;&#x64CD;&#x4F5C;">9.4 Spark Streaming&#x7684;&#x72B6;&#x6001;&#x64CD;&#x4F5C;</h3>
+<p>&#x5728;Spark Streaming&#x4E2D;&#x5B58;&#x5728;&#x4E24;&#x79CD;&#x72B6;&#x6001;&#x64CD;&#x4F5C;</p>
+<ul>
+<li>UpdateStateByKey</li>
+<li>Windows&#x64CD;&#x4F5C;</li>
+</ul>
+<p>&#x4F7F;&#x7528;&#x6709;&#x72B6;&#x6001;&#x7684;transformation&#xFF0C;&#x9700;&#x8981;&#x5F00;&#x542F;Checkpoint</p>
+<ul>
+<li>spark streaming &#x7684;&#x5BB9;&#x9519;&#x673A;&#x5236;</li>
+<li>&#x5B83;&#x5C06;&#x8DB3;&#x591F;&#x591A;&#x7684;&#x4FE1;&#x606F;checkpoint&#x5230;&#x67D0;&#x4E9B;&#x5177;&#x5907;&#x5BB9;&#x9519;&#x6027;&#x7684;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x5982;hdfs&#x4E0A;&#xFF0C;&#x4EE5;&#x4FBF;&#x51FA;&#x9519;&#x65F6;&#x80FD;&#x591F;&#x8FC5;&#x901F;&#x6062;&#x590D;</li>
+</ul>
+<h4 id="941-updatestatebykey">9.4.1 updateStateByKey</h4>
+<p>Spark Streaming&#x5B9E;&#x73B0;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x65F6;&#x6279;&#x5904;&#x7406;&#x64CD;&#x4F5C;&#xFF0C;&#x6BCF;&#x9694;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5C06;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6253;&#x5305;&#xFF0C;&#x5C01;&#x88C5;&#x6210;RDD&#xFF0C;&#x662F;&#x65E0;&#x72B6;&#x6001;&#x7684;&#x3002;</p>
+<p>&#x65E0;&#x72B6;&#x6001;&#xFF1A;&#x6307;&#x7684;&#x662F;&#x6BCF;&#x4E2A;&#x65F6;&#x95F4;&#x7247;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x662F;&#x6CA1;&#x6709;&#x5173;&#x8054;&#x7684;&#x3002;</p>
+<p>&#x9700;&#x6C42;&#xFF1A;&#x60F3;&#x8981;&#x5C06;&#x4E00;&#x4E2A;&#x5927;&#x65F6;&#x95F4;&#x6BB5;&#xFF08;1&#x5929;&#xFF09;&#xFF0C;&#x5373;&#x591A;&#x4E2A;&#x5C0F;&#x65F6;&#x95F4;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x5185;&#x7684;&#x6570;&#x636E;&#x6301;&#x7EED;&#x8FDB;&#x884C;&#x7D2F;&#x79EF;&#x64CD;&#x4F5C;</p>
+<p>&#x4E00;&#x822C;&#x8D85;&#x8FC7;&#x4E00;&#x5929;&#x90FD;&#x662F;&#x7528;RDD&#x6216;Spark SQL&#x6765;&#x8FDB;&#x884C;&#x79BB;&#x7EBF;&#x6279;&#x5904;&#x7406;</p>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;UpdateStateByKey&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x6BCF;&#x4E00;&#x79D2;&#x7684;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x597D;&#x653E;&#x5165;mysql&#x4E2D;&#x53D6;&#xFF0C;&#x518D;&#x7528;mysql&#x6765;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;&#x8BA1;&#x7B97;</p>
+<p>Spark Streaming&#x4E2D;&#x63D0;&#x4F9B;&#x8FD9;&#x79CD;&#x72B6;&#x6001;&#x4FDD;&#x62A4;&#x673A;&#x5236;&#xFF0C;&#x5373;updateStateByKey</p>
+<p>&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ul>
+<li>&#x9996;&#x5148;&#xFF0C;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;state&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+<li>&#x5176;&#x6B21;&#xFF0C;&#x8981;&#x5B9A;&#x4E49;state&#x66F4;&#x65B0;&#x51FD;&#x6570;--&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x7684;state&#x548C;&#x65B0;&#x503C;&#x6765;&#x66F4;&#x65B0;state</li>
+<li>&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;batch&#xFF0C;Spark&#x90FD;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A;&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;key&#x53BB;&#x5E94;&#x7528;&#x4E00;&#x6B21;state&#x66F4;&#x65B0;&#x51FD;&#x6570;&#xFF0C;&#x65E0;&#x8BBA;&#x8FD9;&#x4E2A;key&#x5728;batch&#x4E2D;&#x662F;&#x5426;&#x6709;&#x65B0;&#x7684;&#x6570;&#x636E;&#x3002;&#x5982;&#x679C;state&#x66F4;&#x65B0;&#x51FD;&#x6570;&#x8FD4;&#x56DE;none&#xFF0C;&#x90A3;&#x4E48;key&#x5BF9;&#x5E94;&#x7684;state&#x5C31;&#x4F1A;&#x88AB;&#x5220;&#x9664;</li>
+<li>&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x65B0;&#x51FA;&#x73B0;&#x7684;key&#xFF0C;&#x4E5F;&#x4F1A;&#x6267;&#x884C;state&#x66F4;&#x65B0;&#x51FD;&#x6570;</li>
+</ul>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;&#x8BCD;&#x7EDF;&#x8BA1;&#x3002;</p>
+<h4 id="&#x6848;&#x4F8B;&#xFF1A;updatestatebykey">&#x6848;&#x4F8B;&#xFF1A;updateStateByKey</h4>
+<p>&#x9700;&#x6C42;&#xFF1A;&#x76D1;&#x542C;&#x7F51;&#x7EDC;&#x7AEF;&#x53E3;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x83B7;&#x53D6;&#x5230;&#x6BCF;&#x4E2A;&#x6279;&#x6B21;&#x7684;&#x51FA;&#x73B0;&#x7684;&#x5355;&#x8BCD;&#x6570;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x628A;&#x6BCF;&#x4E2A;&#x6279;&#x6B21;&#x7684;&#x4FE1;&#x606F;&#x4FDD;&#x7559;&#x4E0B;&#x6765;</p>
+<p><strong>&#x4EE3;&#x7801;</strong></p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-comment"># &#x914D;&#x7F6E;spark driver&#x548C;pyspark&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x6240;&#x4F7F;&#x7528;&#x7684;python&#x89E3;&#x91CA;&#x5668;&#x8DEF;&#x5F84;</span>
+PYSPARK_PYTHON = <span class="hljs-string">&quot;/home/hadoop/miniconda3/bin/python3&quot;</span>
+JAVA_HOME=<span class="hljs-string">&apos;/home/hadoop/app/jdk1.8.0_181&apos;</span>
+SPARK_HOME = <span class="hljs-string">&quot;/home/hadoop/app/spark-2.3.0-bin-2.6.0-cdh5.7.0&quot;</span>
+<span class="hljs-comment"># &#x5F53;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x7248;&#x672C;&#x65F6;&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x51FA;&#x9519;</span>
+os.environ[<span class="hljs-string">&quot;PYSPARK_PYTHON&quot;</span>] = PYSPARK_PYTHON
+os.environ[<span class="hljs-string">&quot;PYSPARK_DRIVER_PYTHON&quot;</span>] = PYSPARK_PYTHON
+os.environ[<span class="hljs-string">&apos;JAVA_HOME&apos;</span>]=JAVA_HOME
+os.environ[<span class="hljs-string">&quot;SPARK_HOME&quot;</span>] = SPARK_HOME
+<span class="hljs-keyword">from</span> pyspark.streaming <span class="hljs-keyword">import</span> StreamingContext
+<span class="hljs-keyword">from</span> pyspark.sql.session <span class="hljs-keyword">import</span> SparkSession
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;SparkContext</span>
+spark = SparkSession.builder.master(<span class="hljs-string">&quot;local[2]&quot;</span>).getOrCreate()
+sc = spark.sparkContext
+
+ssc = StreamingContext(sc, <span class="hljs-number">3</span>)
+<span class="hljs-comment">#&#x5F00;&#x542F;&#x68C0;&#x67E5;&#x70B9;</span>
+ssc.checkpoint(<span class="hljs-string">&quot;checkpoint&quot;</span>)
+
+<span class="hljs-comment">#&#x5B9A;&#x4E49;state&#x66F4;&#x65B0;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">updateFunc</span><span class="hljs-params">(new_values, last_sum)</span>:</span>
+    <span class="hljs-keyword">return</span> sum(new_values) + (last_sum <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>)
+
+lines = ssc.socketTextStream(<span class="hljs-string">&quot;localhost&quot;</span>, <span class="hljs-number">9999</span>)
+<span class="hljs-comment"># &#x5BF9;&#x6570;&#x636E;&#x4EE5;&#x7A7A;&#x683C;&#x8FDB;&#x884C;&#x62C6;&#x5206;&#xFF0C;&#x5206;&#x4E3A;&#x591A;&#x4E2A;&#x5355;&#x8BCD;</span>
+counts = lines.flatMap(<span class="hljs-keyword">lambda</span> line: line.split(<span class="hljs-string">&quot; &quot;</span>)) \
+    .map(<span class="hljs-keyword">lambda</span> word: (word, <span class="hljs-number">1</span>)) \
+    .updateStateByKey(updateFunc=updateFunc)<span class="hljs-comment">#&#x5E94;&#x7528;updateStateByKey&#x51FD;&#x6570;</span>
+
+counts.pprint()
+
+ssc.start()
+ssc.awaitTermination()
+</code></pre>
+<h4 id="1042-windows">10.4.2 Windows</h4>
+<ul>
+<li>&#x7A97;&#x53E3;&#x957F;&#x5EA6;L&#xFF1A;&#x8FD0;&#x7B97;&#x7684;&#x6570;&#x636E;&#x91CF;</li>
+<li>&#x6ED1;&#x52A8;&#x95F4;&#x9694;G&#xFF1A;&#x63A7;&#x5236;&#x6BCF;&#x9694;&#x591A;&#x957F;&#x65F6;&#x95F4;&#x505A;&#x4E00;&#x6B21;&#x8FD0;&#x7B97;</li>
+</ul>
+<p>&#x6BCF;&#x9694;G&#x79D2;&#xFF0C;&#x7EDF;&#x8BA1;&#x6700;&#x8FD1;L&#x79D2;&#x7684;&#x6570;&#x636E;</p>
+<p><img src="pics/ss14.png" alt="ss14"></p>
+<p><strong>&#x64CD;&#x4F5C;&#x7EC6;&#x8282;</strong></p>
+<ul>
+<li>Window&#x64CD;&#x4F5C;&#x662F;&#x57FA;&#x4E8E;&#x7A97;&#x53E3;&#x957F;&#x5EA6;&#x548C;&#x6ED1;&#x52A8;&#x95F4;&#x9694;&#x6765;&#x5DE5;&#x4F5C;&#x7684;</li>
+<li>&#x7A97;&#x53E3;&#x7684;&#x957F;&#x5EA6;&#x63A7;&#x5236;&#x8003;&#x8651;&#x524D;&#x51E0;&#x6279;&#x6B21;&#x6570;&#x636E;&#x91CF;</li>
+<li>&#x9ED8;&#x8BA4;&#x4E3A;&#x6279;&#x5904;&#x7406;&#x7684;&#x6ED1;&#x52A8;&#x95F4;&#x9694;&#x6765;&#x786E;&#x5B9A;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x7684;&#x9891;&#x7387;</li>
+</ul>
+<p><strong>&#x76F8;&#x5173;&#x51FD;&#x6570;</strong></p>
+<p><img src="pics/ss15.png" alt="ss15"></p>
+<ul>
+<li>Smart computation</li>
+<li>invAddFunc</li>
+</ul>
+<p>reduceByKeyAndWindow(func,invFunc,windowLength,slideInterval,[num,Tasks])</p>
+<p>func:&#x6B63;&#x5411;&#x64CD;&#x4F5C;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;updateStateByKey</p>
+<p>invFunc&#xFF1A;&#x53CD;&#x5411;&#x64CD;&#x4F5C;</p>
+<p><img src="pics/ss16.png" alt="ss16"></p>
+<p>&#x4F8B;&#x5982;&#x5728;&#x70ED;&#x8BCD;&#x65F6;&#xFF0C;&#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x4E2D;&#x53EF;&#x80FD;&#x662F;&#x70ED;&#x8BCD;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x4E2D;&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#x70ED;&#x8BCD;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x4E2D;&#x628A;&#x8BE5;&#x6B21;&#x5254;&#x9664;&#x6389;</p>
+<p>&#x5178;&#x578B;&#x6848;&#x4F8B;&#xFF1A;&#x70ED;&#x70B9;&#x641C;&#x7D22;&#x8BCD;&#x6ED1;&#x52A8;&#x7EDF;&#x8BA1;&#xFF0C;&#x6BCF;&#x9694;10&#x79D2;&#xFF0C;&#x7EDF;&#x8BA1;&#x6700;&#x8FD1;60&#x79D2;&#x949F;&#x7684;&#x641C;&#x7D22;&#x8BCD;&#x7684;&#x641C;&#x7D22;&#x9891;&#x6B21;&#xFF0C;&#x5E76;&#x6253;&#x5370;&#x51FA;&#x6700;&#x9760;&#x524D;&#x7684;3&#x4E2A;&#x641C;&#x7D22;&#x8BCD;&#x51FA;&#x73B0;&#x6B21;&#x6570;&#x3002;</p>
+<p><img src="pics/ss17.png" alt="ss17"></p>
+<p><strong>&#x6848;&#x4F8B;</strong></p>
+<p>&#x76D1;&#x542C;&#x7F51;&#x7EDC;&#x7AEF;&#x53E3;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6BCF;&#x9694;3&#x79D2;&#x7EDF;&#x8BA1;&#x524D;6&#x79D2;&#x51FA;&#x73B0;&#x7684;&#x5355;&#x8BCD;&#x6570;&#x91CF;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-comment"># &#x914D;&#x7F6E;spark driver&#x548C;pyspark&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x6240;&#x4F7F;&#x7528;&#x7684;python&#x89E3;&#x91CA;&#x5668;&#x8DEF;&#x5F84;</span>
+PYSPARK_PYTHON = <span class="hljs-string">&quot;/home/hadoop/miniconda3/bin/python3&quot;</span>
+JAVA_HOME=<span class="hljs-string">&apos;/home/hadoop/app/jdk1.8.0_181&apos;</span>
+SPARK_HOME = <span class="hljs-string">&quot;/home/hadoop/app/spark-2.3.0-bin-2.6.0-cdh5.7.0&quot;</span>
+<span class="hljs-comment"># &#x5F53;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x7248;&#x672C;&#x65F6;&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x51FA;&#x9519;</span>
+os.environ[<span class="hljs-string">&quot;PYSPARK_PYTHON&quot;</span>] = PYSPARK_PYTHON
+os.environ[<span class="hljs-string">&quot;PYSPARK_DRIVER_PYTHON&quot;</span>] = PYSPARK_PYTHON
+os.environ[<span class="hljs-string">&apos;JAVA_HOME&apos;</span>]=JAVA_HOME
+os.environ[<span class="hljs-string">&quot;SPARK_HOME&quot;</span>] = SPARK_HOME
+<span class="hljs-keyword">from</span> pyspark <span class="hljs-keyword">import</span> SparkContext
+<span class="hljs-keyword">from</span> pyspark.streaming <span class="hljs-keyword">import</span> StreamingContext
+<span class="hljs-keyword">from</span> pyspark.sql.session <span class="hljs-keyword">import</span> SparkSession
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_countryname</span><span class="hljs-params">(line)</span>:</span>
+    country_name = line.strip()
+
+    <span class="hljs-keyword">if</span> country_name == <span class="hljs-string">&apos;usa&apos;</span>:
+        output = <span class="hljs-string">&apos;USA&apos;</span>
+    <span class="hljs-keyword">elif</span> country_name == <span class="hljs-string">&apos;ind&apos;</span>:
+        output = <span class="hljs-string">&apos;India&apos;</span>
+    <span class="hljs-keyword">elif</span> country_name == <span class="hljs-string">&apos;aus&apos;</span>:
+        output = <span class="hljs-string">&apos;Australia&apos;</span>
+    <span class="hljs-keyword">else</span>:
+        output = <span class="hljs-string">&apos;Unknown&apos;</span>
+
+    <span class="hljs-keyword">return</span> (output, <span class="hljs-number">1</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    <span class="hljs-comment">#&#x5B9A;&#x4E49;&#x5904;&#x7406;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;</span>
+    batch_interval = <span class="hljs-number">1</span> <span class="hljs-comment"># base time unit (in seconds)</span>
+    <span class="hljs-comment">#&#x5B9A;&#x4E49;&#x7A97;&#x53E3;&#x957F;&#x5EA6;</span>
+    window_length = <span class="hljs-number">6</span> * batch_interval
+    <span class="hljs-comment">#&#x5B9A;&#x4E49;&#x6ED1;&#x52A8;&#x65F6;&#x95F4;&#x95F4;&#x9694;</span>
+    frequency = <span class="hljs-number">3</span> * batch_interval
+
+    <span class="hljs-comment">#&#x83B7;&#x53D6;StreamingContext</span>
+    spark = SparkSession.builder.master(<span class="hljs-string">&quot;local[2]&quot;</span>).getOrCreate()
+    sc = spark.sparkContext
+    ssc = StreamingContext(sc, batch_interval)
+
+    <span class="hljs-comment">#&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x68C0;&#x67E5;&#x70B9;</span>
+    ssc.checkpoint(<span class="hljs-string">&quot;checkpoint&quot;</span>)
+
+    lines = ssc.socketTextStream(<span class="hljs-string">&apos;hadoop000&apos;</span>, <span class="hljs-number">9999</span>)
+    addFunc = <span class="hljs-keyword">lambda</span> x, y: x + y
+    invAddFunc = <span class="hljs-keyword">lambda</span> x, y: x - y
+    <span class="hljs-comment">#&#x8C03;&#x7528;reduceByKeyAndWindow&#xFF0C;&#x6765;&#x8FDB;&#x884C;&#x7A97;&#x53E3;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;</span>
+    window_counts = lines.map(get_countryname) \
+        .reduceByKeyAndWindow(addFunc, invAddFunc, window_length, frequency)
+    <span class="hljs-comment">#&#x8F93;&#x51FA;&#x5904;&#x7406;&#x7ED3;&#x679C;&#x4FE1;&#x606F;</span>
+    window_counts.pprint()
+
+    ssc.start()
+    ssc.awaitTermination()
+</code></pre>
+<h3 id="95&#x3001;spark-streaming&#x5BF9;&#x63A5;flume">9.5&#x3001;Spark Streaming&#x5BF9;&#x63A5;flume</h3>
+<p>flume&#x4F5C;&#x4E3A;&#x65E5;&#x5FD7;&#x5B9E;&#x65F6;&#x91C7;&#x96C6;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0E;SparkStreaming&#x5B9E;&#x65F6;&#x5904;&#x7406;&#x6846;&#x67B6;&#x8FDB;&#x884C;&#x5BF9;&#x63A5;&#xFF0C;flume&#x5B9E;&#x65F6;&#x4EA7;&#x751F;&#x6570;&#x636E;&#xFF0C;sparkStreaming&#x505A;&#x5B9E;&#x65F6;&#x5904;&#x7406;&#x3002;</p>
+<p>Spark Streaming&#x5BF9;&#x63A5;FlumeNG&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4E00;&#x79CD;&#x662F;FlumeNG&#x5C06;&#x6D88;&#x606F;<strong>Push</strong>&#x63A8;&#x7ED9;Spark Streaming&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x662F;Spark Streaming&#x4ECE;flume &#x4E2D;<strong>Pull</strong>&#x62C9;&#x53D6;&#x6570;&#x636E;&#x3002;</p>
+<h4 id="951-pull&#x65B9;&#x5F0F;">9.5.1 Pull&#x65B9;&#x5F0F;</h4>
+<ul>
+<li><p>1&#xFF0C;&#x5B89;&#x88C5;flume1.6&#x4EE5;&#x4E0A;</p>
+</li>
+<li><p>2&#xFF0C;&#x5199;flume&#x7684;agent&#xFF0C;&#x6CE8;&#x610F;&#x65E2;&#x7136;&#x662F;&#x62C9;&#x53D6;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x4E48;flume&#x5411;&#x81EA;&#x5DF1;&#x6240;&#x5728;&#x7684;&#x673A;&#x5668;&#x4E0A;&#x4EA7;&#x6570;&#x636E;&#x5C31;&#x884C;</p>
+</li>
+<li><p>3&#xFF0C;&#x7F16;&#x5199;flume-pull.conf&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
+</li>
+</ul>
+<pre><code class="lang-properties">simple-agent.sources = netcat-source
+simple-agent.sinks = spark-sink
+simple-agent.channels = memory-channel
+
+# source
+simple-agent.sources.netcat-source.type = netcat
+simple-agent.sources.netcat-source.bind = localhost
+simple-agent.sources.netcat-source.port = 44444
+
+# Describe the sink
+simple-agent.sinks.spark-sink.type = org.apache.spark.streaming.flume.sink.SparkSink
+simple-agent.sinks.spark-sink.hostname = localhost
+simple-agent.sinks.spark-sink.port = 41414
+
+# Use a channel which buffers events in memory
+simple-agent.channels.memory-channel.type = memory
+
+# Bind the source and sink to the channel
+simple-agent.sources.netcat-source.channels = memory-channel
+simple-agent.sinks.spark-sink.channel=memory-channel
+</code></pre>
+<ul>
+<li><p>4&#xFF0C;&#x542F;&#x52A8;flume</p>
+<p>flume-ng agent -n simple-agent -f flume-pull.conf -Dflume.root.logger=INFO,console</p>
+</li>
+<li><p>5&#xFF0C;&#x7F16;&#x5199;word count&#x4EE3;&#x7801;</p>
+<p>&#x4EE3;&#x7801;&#xFF1A;</p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark <span class="hljs-keyword">import</span> SparkContext
+<span class="hljs-keyword">from</span> pyspark.streaming <span class="hljs-keyword">import</span> StreamingContext
+<span class="hljs-keyword">from</span> pyspark.streaming.flume <span class="hljs-keyword">import</span> FlumeUtils
+
+sc=SparkContext(<span class="hljs-string">&quot;local[2]&quot;</span>,<span class="hljs-string">&quot;FlumeWordCount_Pull&quot;</span>)
+<span class="hljs-comment">#&#x5904;&#x7406;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x4E3A;2s</span>
+ssc=StreamingContext(sc,<span class="hljs-number">2</span>)
+
+<span class="hljs-comment">#&#x5229;&#x7528;flume&#x5DE5;&#x5177;&#x7C7B;&#x521B;&#x5EFA;pull&#x65B9;&#x5F0F;&#x7684;&#x6D41;</span>
+lines = FlumeUtils.createPollingStream(ssc, [(<span class="hljs-string">&quot;localhost&quot;</span>,<span class="hljs-number">41414</span>)])
+
+lines1=lines.map(<span class="hljs-keyword">lambda</span> x:x[<span class="hljs-number">1</span>])
+counts = lines1.flatMap(<span class="hljs-keyword">lambda</span> line:line.split(<span class="hljs-string">&quot; &quot;</span>))\
+        .map(<span class="hljs-keyword">lambda</span> word:(word,<span class="hljs-number">1</span>))\
+        .reduceByKey(<span class="hljs-keyword">lambda</span> a,b:a+b)
+counts.pprint()
+<span class="hljs-comment">#&#x542F;&#x52A8;spark streaming&#x5E94;&#x7528;</span>
+ssc.start()
+<span class="hljs-comment">#&#x7B49;&#x5F85;&#x8BA1;&#x7B97;&#x7EC8;&#x6B62;</span>
+ssc.awaitTermination()
+</code></pre>
+<p>&#x4E0B;&#x8F7D;&#x4F9D;&#x8D56;&#x5305; spark-streaming-flume-assembly_2.11-2.3.0.jar&#xFF0C;&#x542F;&#x52A8;spark</p>
+<p><code>spark-submit --jars xxx/spark-streaming-flume-assembly_2.11-2.3.0.jar xxx/flume_pull.py</code></p>
+<p>&#x6700;&#x540E;&#xFF1A;&#x542F;&#x52A8;telnet&#x5411;&#x7F51;&#x7EDC;&#x7AEF;&#x53E3;&#x53D1;&#x9001;&#x6570;&#x636E;</p>
+<p><code>telnet localhost 44444</code></p>
+<h4 id="952-push&#x65B9;&#x5F0F;">9.5.2 push&#x65B9;&#x5F0F;</h4>
+<p>&#x5927;&#x90E8;&#x5206;&#x64CD;&#x4F5C;&#x548C;&#x4E4B;&#x524D;&#x4E00;&#x81F4;</p>
+<p>flume&#x914D;&#x7F6E;</p>
+<pre><code class="lang-properties">simple-agent.sources = netcat-source
+simple-agent.sinks = avro-sink
+simple-agent.channels = memory-channel
+
+simple-agent.sources.netcat-source.type = netcat
+simple-agent.sources.netcat-source.bind = localhost
+simple-agent.sources.netcat-source.port = 44444
+
+simple-agent.sinks.avro-sink.type = avro
+simple-agent.sinks.avro-sink.hostname = localhost
+simple-agent.sinks.avro-sink.port = 41414
+simple-agent.channels.memory-channel.type = memory
+simple-agent.sources.netcat-source.channels = memory-channel
+
+simple-agent.sources.netcat-source.channels = memory-channel
+simple-agent.sinks.avro-sink.channel=memory-channel
+</code></pre>
+<p>&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark <span class="hljs-keyword">import</span> SparkContext
+<span class="hljs-keyword">from</span> pyspark.streaming <span class="hljs-keyword">import</span> StreamingContext
+<span class="hljs-keyword">from</span> pyspark.streaming.flume <span class="hljs-keyword">import</span> FlumeUtils
+
+sc=SparkContext(<span class="hljs-string">&quot;local[2]&quot;</span>,<span class="hljs-string">&quot;FlumeWordCount_Push&quot;</span>)
+<span class="hljs-comment">#&#x5904;&#x7406;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x4E3A;2s</span>
+ssc=StreamingContext(sc,<span class="hljs-number">2</span>)
+<span class="hljs-comment">#&#x521B;&#x5EFA;push&#x65B9;&#x5F0F;&#x7684;DStream</span>
+lines = FlumeUtils.createStream(ssc, <span class="hljs-string">&quot;localhost&quot;</span>,<span class="hljs-number">41414</span>)
+lines1=lines.map(<span class="hljs-keyword">lambda</span> x:x[<span class="hljs-number">1</span>].strip())
+<span class="hljs-comment">#&#x5BF9;1s&#x5185;&#x6536;&#x5230;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x5206;&#x5272;</span>
+words=lines1.flatMap(<span class="hljs-keyword">lambda</span> line:line.split(<span class="hljs-string">&quot; &quot;</span>))
+<span class="hljs-comment">#&#x6620;&#x5C04;&#x4E3A;&#xFF08;word&#xFF0C;1&#xFF09;&#x5143;&#x7956;</span>
+pairs=words.map(<span class="hljs-keyword">lambda</span> word:(word,<span class="hljs-number">1</span>))
+wordcounts=pairs.reduceByKey(<span class="hljs-keyword">lambda</span> x,y:x+y)
+wordcounts.pprint()
+<span class="hljs-comment">#&#x542F;&#x52A8;spark streaming&#x5E94;&#x7528;</span>
+ssc.start()
+<span class="hljs-comment">#&#x7B49;&#x5F85;&#x8BA1;&#x7B97;&#x7EC8;&#x6B62;</span>
+ssc.awaitTermination()
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter8.html" class="navigation navigation-prev " aria-label="Previous page: 埋点日志处理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter10.html" class="navigation navigation-next " aria-label="Next page: 实时推荐">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Spark Streaming","level":"1.8.9","depth":2,"next":{"title":"实时推荐","level":"1.8.10","depth":2,"path":"推荐系统实战2/chapter10.md","ref":"推荐系统实战2/chapter10.md","articles":[]},"previous":{"title":"埋点日志处理","level":"1.8.8","depth":2,"path":"推荐系统实战2/chapter8.md","ref":"推荐系统实战2/chapter8.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐系统实战2/chapter9.md","mtime":"2019-04-06T15:48:21.942Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

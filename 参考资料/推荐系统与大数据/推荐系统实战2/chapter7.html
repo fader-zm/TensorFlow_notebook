@@ -1,0 +1,1763 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>商品相似度计算与商品召回 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter8.html" />
+    
+    
+    <link rel="prev" href="chapter6.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../推荐介绍/01_推荐系统简介.html">
+            
+                <a href="../推荐介绍/01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../推荐介绍/02_推荐系统架构设计.html">
+            
+                <a href="../推荐介绍/02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../推荐介绍/03_推荐算法.html">
+            
+                <a href="../推荐介绍/03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../推荐介绍/04_ 推荐系统评估.html">
+            
+                <a href="../推荐介绍/04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                <a href="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../推荐系统实战1/README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                <a href="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                <a href="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../推荐系统实战1/05_离线推荐处理.html">
+            
+                <a href="../推荐系统实战1/05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../推荐系统实战1/06_实时推荐.html">
+            
+                <a href="../推荐系统实战1/06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.7" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >商品相似度计算与商品召回</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4E03;-&#x57FA;&#x4E8E;&#x5185;&#x5BB9;&#x7684;&#x5546;&#x54C1;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#x4E0E;&#x5546;&#x54C1;&#x53EC;&#x56DE;">&#x4E03; &#x57FA;&#x4E8E;&#x5185;&#x5BB9;&#x7684;&#x5546;&#x54C1;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#x4E0E;&#x5546;&#x54C1;&#x53EC;&#x56DE;</h2>
+<ul>
+<li><p>&#x7F51;&#x7AD9;&#x521D;&#x671F;&#xFF0C;&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x5927;&#x91CF;&#x7684;&#x7528;&#x6237;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x6B64;&#x521D;&#x671F;&#x7684;&#x79BB;&#x7EBF;&#x63A8;&#x8350;&#x5C06;&#x4EE5;&#x57FA;&#x4E8E;&#x7269;&#x54C1;&#x753B;&#x50CF;&#x7684;&#x53EC;&#x56DE;&#x63A8;&#x8350;&#x4E3A;&#x4E3B;&#xFF0C;</p>
+<p>&#x4E3B;&#x8981;&#x5B9E;&#x73B0;&#x903B;&#x8F91;&#xFF1A;</p>
+<p>&#x6839;&#x636E;&#x5546;&#x54C1;&#x5173;&#x952E;&#x8BCD;&#x5BF9;&#x5E94;&#x7684;&#x6743;&#x91CD;&#x503C;&#x7ED3;&#x5408;&#x8BE5;&#x5173;&#x952E;&#x8BCD;&#x5BF9;&#x5E94;&#x7684;&#x8BCD;&#x5411;&#x91CF;&#x8FDB;&#x884C;&#x52A0;&#x6743;&#x6C42;&#x5E73;&#x5747;&#x8BA1;&#x7B97;&#x51FA;&#x8BE5;&#x5546;&#x54C1;&#x7684;&#x5411;&#x91CF;&#x503C;</p>
+<p>&#x6BCF;&#x4E00;&#x4E2A;sku&#x5BF9;&#x5E94;n&#x4E2A;&#x5173;&#x952E;&#x8BCD;  </p>
+<pre><code class="lang-python">words=[<span class="hljs-string">&apos;&#x6570;&#x7801;&apos;</span>, <span class="hljs-string">&apos;&#x6570;&#x7801;&#x914D;&#x4EF6;&apos;</span>, <span class="hljs-string">&apos;&#x8BFB;&#x5361;&#x5668;&apos;</span>, <span class="hljs-string">&apos;WPOS&apos;</span>, <span class="hljs-string">&apos;&#x9AD8;&#x5EA6;&apos;</span>, <span class="hljs-string">&apos;&#x4E1A;&#x52A1;&apos;</span>, <span class="hljs-string">&apos;&#x667A;&#x80FD;&apos;</span>, <span class="hljs-string">&apos;&#x7EC8;&#x7AEF;&apos;</span>, <span class="hljs-string">&apos;&#x68EE;&#x9510;&apos;</span>, <span class="hljs-string">&apos;&#x89E6;&#x6478;&#x5C4F;&apos;</span>, <span class="hljs-string">&apos;&#x6536;&#x94F6;&#x673A;&apos;</span>, <span class="hljs-string">&apos;&#x8EAB;&#x4EFD;&apos;</span>, <span class="hljs-string">&apos;&#x5305;&#x90AE;&apos;</span>, <span class="hljs-string">&apos;&#x6B63;&#x54C1;&apos;</span>, <span class="hljs-string">&apos;&#x8D2D;&#x7269;&apos;</span>]
+</code></pre>
+<p>&#x6BCF;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x8BCD;&#x6709;&#x4E00;&#x4E2A;&#x8BCD;&#x5411;&#x91CF;</p>
+<pre><code class="lang-shell">[Row(word=&apos;&#x949F;&#x7231;&apos;, vector=DenseVector([-0.0042, -0.1172, 0.0594, 0.0564, -0.049, -0.0457, 0.0411, 0.1067, -0.0022, -0.0802, -0.0047, 0.0994, -0.0352, 0.0873, -0.0881, -0.0294, 0.044, 0.0465, 0.0676, 0.024, 0.0667, -0.0318, -0.1308, 0.0375, 0.062, -0.0315, 0.1234, 0.0362, -0.0514, 0.1064, -0.0207, -0.0979, 0.0573, -0.0375, -0.1729, 0.1023, 0.0792, 0.0389, 0.0515, 0.0372, 0.0506, -0.1057, 0.0342, -0.1603, 0.1454, 0.0428, -0.0016, -0.0058, -0.0609, -0.0648, -0.0104, -0.0365, -0.1157, 0.0437, 0.064, 0.0896, 0.0412, 0.048, 0.1512, -0.0691, -0.047, -0.1193, -0.0817, 0.0354, 0.2027, 0.0355, -0.0444, -0.0089, -0.0672, 0.0502, -0.062, -0.0532, -0.0295, -0.1187, -0.0217, 0.0015, 0.0039, -0.1415, 0.0448, 0.0175, -0.1728, -0.0365, -0.058, 0.0222, -0.1564, 0.1083, 0.0279, 0.0307, 0.0911, 0.0291, 0.0404, -0.0636, 0.1131, 0.0489, 0.0226, 0.0851, 0.1362, 0.091, -0.0671, -0.0095])),
+</code></pre>
+<p>&#x6BCF;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x8BCD;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x6743;&#x91CD;</p>
+<pre><code class="lang-shell">+------+--------+----+-------------------+-------------------+-------------------+
+|sku_id|industry| tag|           textrank|              tfidf|            weights|
++------+--------+----+-------------------+-------------------+-------------------+
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x667A;&#x80FD;|  0.853869407929065|0.12920924724659527|0.49153932758783014|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|WPOS| 0.9474997114660046| 0.6672418695993603| 0.8073707905326825|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x5305;&#x90AE;| 0.5962385663111377| 0.2752684393351877| 0.4357535028231627|
+|   148|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  &#x8D2D;&#x7269;|  0.442940968516803| 0.2408169399138654| 0.3418789542153342|
+</code></pre>
+</li>
+</ul>
+<p>  &#x901A;&#x8FC7;sku&#x5BF9;&#x5E94;&#x7684;&#x5173;&#x952E;&#x8BCD; &#x4EE5;&#x53CA;&#x5173;&#x952E;&#x8BCD;&#x7684;&#x6743;&#x91CD; &#x5173;&#x952E;&#x8BCD;&#x7684;&#x8BCD;&#x5411;&#x91CF; &#x8BA1;&#x7B97;&#x51FA;&#x4E00;&#x4E2A;sku&#x7684;&#x5411;&#x91CF;</p>
+<p>  &#x8BA1;&#x7B97;&#x4E0D;&#x540C;&#x7684;sku&#x4E4B;&#x95F4;&#x7684;&#x5411;&#x91CF;&#x76F8;&#x4F3C;&#x5EA6; &#x4F5C;&#x4E3A;&#x53EC;&#x56DE;&#x5546;&#x54C1;&#x7684;&#x4F9D;&#x636E;</p>
+<p>  &#x5229;&#x7528;&#x76F8;&#x4F3C;&#x5EA6;&#x5F97;&#x51FA;&#x6BCF;&#x4EF6;&#x4EF6;&#x5546;&#x54C1;TOP-N&#x4E0E;&#x4E4B;&#x76F8;&#x4F3C;&#x7684;&#x5546;&#x54C1;</p>
+<h3 id="71-&#x52A0;&#x8F7D;&#x8BCD;&#x9891;&#x6743;&#x91CD;&#x6570;&#x636E;">7.1 &#x52A0;&#x8F7D;&#x8BCD;&#x9891;&#x6743;&#x91CD;&#x6570;&#x636E;</h3>
+<ul>
+<li>&#x52A0;&#x8F7D;&#x4E4B;&#x524D;&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-python">sku_tag_weights = spark.sql(<span class="hljs-string">&quot;select * from sku_tag_merge_weights&quot;</span>)
+sku_tag_weights.show()
+</code></pre>
+<p>&#x5C55;&#x793A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------+--------+-------+-------------------+-------------------+-------------------+
+|sku_id|industry|    tag|           textrank|              tfidf|            weights|
++------+--------+-------+-------------------+-------------------+-------------------+
+|    85|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x6570;&#x7801;|0.37669191799893376|0.07434212900804543| 0.2255170235034896|
+|   172|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   USB2| 0.5297582014310518| 0.4902682570089824| 0.5100132292200171|
+|   182|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x578B;&#x53F7;| 0.9112570559313992| 0.4417105502575884| 0.6764838030944937|
+|   190|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|    &#x96F7;&#x514B;&#x6C99;|0.18932069864134093|0.25239101355870736|0.22085585610002414|
+|   271|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   &#x6570;&#x7801;&#x914D;&#x4EF6;|0.18629417960331815|0.16435125309725987|  0.175322716350289|
+|   282|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|    &#x9999;&#x69DF;&#x8272;|0.20939011016154468|  0.450895660720322|0.33014288544093334|
+|   305|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x661F;&#x7A7A;|0.25201085335696144|0.32303206716234273| 0.2875214602596521|
+|   312|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   SONY| 0.6481662914614708| 0.4221730662623697| 0.5351696788619202|
+|   326|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x5DDD;&#x5B87;| 0.3939664586744098| 0.8599491424894472| 0.6269578005819285|
+|   334|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| TOPSSD|0.37769613311191574| 0.9027798790978679| 0.6402380061048918|
+|   334|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x5929;&#x7855;|0.31446175905424484| 0.9027798790978679| 0.6086208190760564|
+|   351|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   &#x6570;&#x7801;&#x914D;&#x4EF6;| 0.3284858938211362|0.43142203938030715|0.37995396660072167|
+|   370|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x529F;&#x80FD;|  0.171914010773732|0.20335407147331752|0.18763404112352478|
+|   403|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   &#x6570;&#x7801;&#x914D;&#x4EF6;| 0.3543503711641944| 0.2465268796458898|0.30043862540504207|
+|   410|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|MicroSD| 0.3341093557715508|0.35569624565338087| 0.3449028007124658|
+|   414|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x989C;&#x8272;| 0.1632912209999795|0.03465489849573508|0.09897305974785729|
+|   441|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|    &#x624B;&#x673A;&#x5361;|0.09101143769017656|0.21072675335984295|0.15086909552500977|
+|   441|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x6570;&#x7801;|0.09553860210195766|0.04556453068235043|0.07055156639215404|
+|   450|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   &#x6570;&#x7801;&#x914D;&#x4EF6;|0.41273510820561926|0.21571101969015358| 0.3142230639478864|
+|   456|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x6570;&#x7801;| 0.2580242294098149|0.06726192624537444|0.16264307782759468|
++------+--------+-------+-------------------+-------------------+-------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x54C1;&#x7C7B;&#x7684;&#x5173;&#x952E;&#x8BCD;&#x6743;&#x91CD;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-python">spark.sql(<span class="hljs-string">&quot;SELECT * FROM sku_tag_merge_weights where sku_id=1 order by weights&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------+--------+-------+-------------------+--------------------+-------------------+
+|sku_id|industry|    tag|           textrank|               tfidf|            weights|
++------+--------+-------+-------------------+--------------------+-------------------+
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x989C;&#x8272;|0.23858124571960931|0.012129214473507281| 0.1253552300965583|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x5B98;&#x65B9;|0.40193232407753093|  0.1290345523159126|0.26548343819672177|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x4EA7;&#x54C1;| 0.4465411654517351| 0.09150413938225072| 0.2690226524169929|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x7279;&#x60E0;| 0.3683345433126666|   0.212171847060278| 0.2902531951864723|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x7248;&#x672C;| 0.5631617412377677| 0.06297913325415283| 0.3130704372459603|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     i5|0.47596461597376005|  0.1554620507339392|0.31571333335384966|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x5185;&#x5B58;|  0.508557740569568| 0.14093529366222984|0.32474651711589897|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x5C4F;&#x5E55;| 0.5488410475104375| 0.21232883306051142|0.38058494028547446|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x7535;&#x8111;| 0.6740172924015514| 0.09269926353711627|0.38335827796933386|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x5373;&#x53D1;| 0.5133667671128688| 0.26525609786407256|0.38931143248847067|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x5C3A;&#x5BF8;| 0.6342523535440957| 0.18900585201996106|0.41162910278202836|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x624D;&#x534E;|0.40417007695625207|  0.5004314021995202|0.45230073957788614|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x9ED1;&#x4E94;|0.46778188068617316|  0.5004314021995202|0.48410664144284665|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x94F6;&#x8272;|  0.684377750753916|  0.3039150706380271|0.49414641069597154|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   core| 0.5574657990181027| 0.46577404317152293| 0.5116199210948128|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x82F1;&#x5BF8;| 0.8975902158426171| 0.19777846894227954| 0.5476843423924483|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|    &#x7B14;&#x8BB0;&#x672C;|  0.899406809710101|  0.2816696831885774| 0.5905382464493392|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|    Pro| 0.8695484060070439| 0.38615852650639787| 0.6278534662567209|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|  Apple| 0.8817364088520955| 0.46631090759580734| 0.6740236582239514|
+|     1|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|MacBook|                1.0|  0.5903233645581719| 0.7951616822790859|
++------+--------+-------+-------------------+--------------------+-------------------+
+</code></pre>
+<h3 id="72-&#x52A0;&#x8F7D;word2vec&#x6A21;&#x578B;">7.2 &#x52A0;&#x8F7D;Word2vec&#x6A21;&#x578B;</h3>
+<ul>
+<li>&#x4ECE;hdfs&#x4E2D;&#x628A;&#x6A21;&#x578B;&#x52A0;&#x8F7D;&#x51FA;&#x6765;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> Word2VecModel
+word2vec_model = Word2VecModel.load(<span class="hljs-string">&quot;hdfs://localhost:9000/&#x7535;&#x5B50;&#x4EA7;&#x54C1;.word2vec_model&quot;</span>)
+vectors = word2vec_model.getVectors()
+<span class="hljs-comment"># &#x8FD9;&#x91CC;&#x6CE8;&#x610F;&#xFF0C;&#x7531;&#x4E8E;&#x90E8;&#x5206;&#x8BCD;&#x5728;wrod2vec&#x6A21;&#x578B;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x56E0;&#x6B64;&#x5FC5;&#x987B;&#x4F7F;&#x7528;inner join&#xFF0C;&#x820D;&#x5F03;&#x6389;&#x8FD9;&#x6B21;&#xFF0C;&#x4ED6;&#x4EEC;&#x6570;&#x91CF;&#x8F83;&#x5C11;&#xFF0C;&#x5C31;&#x5FFD;&#x7565;&#x4E0D;&#x8BA1;</span>
+_ = sku_tag_weights.join(vectors, sku_tag_weights.tag==vectors.word, <span class="hljs-string">&quot;inner&quot;</span>)
+_.show()
+</code></pre>
+<ul>
+<li>&#x663E;&#x793A;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-shell">+------+--------+-------+-------------------+-------------------+-------------------+-------+--------------------+
+|sku_id|industry|    tag|           textrank|              tfidf|            weights|   word|              vector|
++------+--------+-------+-------------------+-------------------+-------------------+-------+--------------------+
+|    85|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x6570;&#x7801;|0.37669191799893376|0.07434212900804543| 0.2255170235034896|     &#x6570;&#x7801;|[0.05912682041525...|
+|   172|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   USB2| 0.5297582014310518| 0.4902682570089824| 0.5100132292200171|   USB2|[-0.1141790449619...|
+|   182|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x578B;&#x53F7;| 0.9112570559313992| 0.4417105502575884| 0.6764838030944937|     &#x578B;&#x53F7;|[-0.8850123286247...|
+|   190|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|    &#x96F7;&#x514B;&#x6C99;|0.18932069864134093|0.25239101355870736|0.22085585610002414|    &#x96F7;&#x514B;&#x6C99;|[-0.1313853859901...|
+|   271|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   &#x6570;&#x7801;&#x914D;&#x4EF6;|0.18629417960331815|0.16435125309725987|  0.175322716350289|   &#x6570;&#x7801;&#x914D;&#x4EF6;|[-0.2159668058156...|
+|   282|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|    &#x9999;&#x69DF;&#x8272;|0.20939011016154468|  0.450895660720322|0.33014288544093334|    &#x9999;&#x69DF;&#x8272;|[-0.1126879602670...|
+|   305|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x661F;&#x7A7A;|0.25201085335696144|0.32303206716234273| 0.2875214602596521|     &#x661F;&#x7A7A;|[0.28189748525619...|
+|   312|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   SONY| 0.6481662914614708| 0.4221730662623697| 0.5351696788619202|   SONY|[-0.1847716569900...|
+|   326|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x5DDD;&#x5B87;| 0.3939664586744098| 0.8599491424894472| 0.6269578005819285|     &#x5DDD;&#x5B87;|[-0.1949329227209...|
+|   334|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;| TOPSSD|0.37769613311191574| 0.9027798790978679| 0.6402380061048918| TOPSSD|[-0.0161089580506...|
+|   334|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x5929;&#x7855;|0.31446175905424484| 0.9027798790978679| 0.6086208190760564|     &#x5929;&#x7855;|[-0.0332020446658...|
+|   351|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   &#x6570;&#x7801;&#x914D;&#x4EF6;| 0.3284858938211362|0.43142203938030715|0.37995396660072167|   &#x6570;&#x7801;&#x914D;&#x4EF6;|[-0.2159668058156...|
+|   370|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x529F;&#x80FD;|  0.171914010773732|0.20335407147331752|0.18763404112352478|     &#x529F;&#x80FD;|[0.17380681633949...|
+|   403|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   &#x6570;&#x7801;&#x914D;&#x4EF6;| 0.3543503711641944| 0.2465268796458898|0.30043862540504207|   &#x6570;&#x7801;&#x914D;&#x4EF6;|[-0.2159668058156...|
+|   410|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|MicroSD| 0.3341093557715508|0.35569624565338087| 0.3449028007124658|MicroSD|[-0.0490555875003...|
+|   414|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x989C;&#x8272;| 0.1632912209999795|0.03465489849573508|0.09897305974785729|     &#x989C;&#x8272;|[0.00411114702001...|
+|   441|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|    &#x624B;&#x673A;&#x5361;|0.09101143769017656|0.21072675335984295|0.15086909552500977|    &#x624B;&#x673A;&#x5361;|[-0.1219766363501...|
+|   441|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x6570;&#x7801;|0.09553860210195766|0.04556453068235043|0.07055156639215404|     &#x6570;&#x7801;|[0.05912682041525...|
+|   450|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|   &#x6570;&#x7801;&#x914D;&#x4EF6;|0.41273510820561926|0.21571101969015358| 0.3142230639478864|   &#x6570;&#x7801;&#x914D;&#x4EF6;|[-0.2159668058156...|
+|   456|    &#x7535;&#x5B50;&#x4EA7;&#x54C1;|     &#x6570;&#x7801;| 0.2580242294098149|0.06726192624537444|0.16264307782759468|     &#x6570;&#x7801;|[0.05912682041525...|
++------+--------+-------+-------------------+-------------------+-------------------+-------+--------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x5C55;&#x793A;&#x8868;&#x4E2D;&#x7ED3;&#x679C;</li>
+</ul>
+<pre><code class="lang-python">print(_.count())
+sku_tag_weights.count()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">1140439
+1172403
+</code></pre>
+<h3 id="73-&#x8BA1;&#x7B97;&#x5546;&#x54C1;&#x76F8;&#x4F3C;&#x5EA6;">7.3 &#x8BA1;&#x7B97;&#x5546;&#x54C1;&#x76F8;&#x4F3C;&#x5EA6;</h3>
+<ul>
+<li>&#x4F7F;&#x7528;&#x6BCF;&#x4E2A;&#x8BCD;&#x7684;&#x7EFC;&#x5408;&#x6743;&#x91CD;&#x4E58;&#x4EE5;&#x6BCF;&#x4E2A;&#x8BCD;&#x7684;&#x8BCD;&#x5411;&#x91CF;</li>
+</ul>
+<pre><code class="lang-python">sku_tag_vector = _.rdd.map(<span class="hljs-keyword">lambda</span> r:(r.sku_id, r.tag, r.weights*r.vector)).toDF([<span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;tag&quot;</span>,<span class="hljs-string">&quot;vector&quot;</span>])
+sku_tag_vector.show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------+-------+--------------------+
+|sku_id|    tag|              vector|
++------+-------+--------------------+
+|    85|     &#x6570;&#x7801;|[0.01333410454927...|
+|   172|   USB2|[-0.0582328234302...|
+|   182|     &#x578B;&#x53F7;|[-0.5986965058535...|
+|   190|    &#x96F7;&#x514B;&#x6C99;|[-0.0290172319018...|
+|   271|   &#x6570;&#x7801;&#x914D;&#x4EF6;|[-0.0378638870371...|
+|   282|    &#x9999;&#x69DF;&#x8272;|[-0.0372031283570...|
+|   305|     &#x661F;&#x7A7A;|[0.08105157660438...|
+|   312|   SONY|[-0.0988841883341...|
+|   326|     &#x5DDD;&#x5B87;|[-0.1222147164901...|
+|   334| TOPSSD|[-0.0103135671827...|
+|   334|     &#x5929;&#x7855;|[-0.0202074556195...|
+|   351|   &#x6570;&#x7801;&#x914D;&#x4EF6;|[-0.0820574445237...|
+|   370|     &#x529F;&#x80FD;|[0.03261207532459...|
+|   403|   &#x6570;&#x7801;&#x914D;&#x4EF6;|[-0.0648847702723...|
+|   410|MicroSD|[-0.0169194095194...|
+|   414|     &#x989C;&#x8272;|[4.06892799643887...|
+|   441|    &#x624B;&#x673A;&#x5361;|[-0.0184025048013...|
+|   441|     &#x6570;&#x7801;|[0.00417148979608...|
+|   450|   &#x6570;&#x7801;&#x914D;&#x4EF6;|[-0.0678617514344...|
+|   456|     &#x6570;&#x7801;|[0.00961656805449...|
++------+-------+--------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x521B;&#x5EFA;&#x4E34;&#x65F6;&#x8868;</li>
+</ul>
+<pre><code class="lang-python">sku_tag_vector.registerTempTable(<span class="hljs-string">&quot;tempTable&quot;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">map</span><span class="hljs-params">(row)</span>:</span>
+    x = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> row.vectors:
+        x += v
+    <span class="hljs-comment">#  &#x5C06;&#x5E73;&#x5747;&#x5411;&#x91CF;&#x4F5C;&#x4E3A;sku&#x7684;&#x5411;&#x91CF;</span>
+    <span class="hljs-keyword">return</span> row.sku_id, x/len(row.vectors)
+
+sku_vector = spark.sql(<span class="hljs-string">&quot;select sku_id, collect_set(vector) vectors from tempTable group by sku_id&quot;</span>).rdd.map(map).toDF([<span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;vector&quot;</span>])
+sku_vector.show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------+--------------------+
+|sku_id|              vector|
++------+--------------------+
+|    26|[0.01235398195028...|
+|    29|[0.21760844687031...|
+|   474|[-0.0423007059418...|
+|   964|[0.08240807672413...|
+|  1677|[0.02065021965251...|
+|  1697|[0.39568690077127...|
+|  1806|[0.05530353810490...|
+|  1950|[0.13603717113579...|
+|  2040|[-0.0108802742841...|
+|  2214|[-0.0480597909252...|
+|  2250|[0.03186294420201...|
+|  2453|[-0.0384253501587...|
+|  2509|[-0.0221520914506...|
+|  2529|[-0.0486537793846...|
+|  2927|[-0.0213679434397...|
+|  3091|[-0.0477536702739...|
+|  3506|[-0.1093108035922...|
+|  3764|[0.01326956604482...|
+|  4590|[0.16880469210238...|
+|  4823|[0.13785943123954...|
++------+--------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x8BA1;&#x7B97;&#x76AE;&#x5C14;&#x900A;&#x76F8;&#x5173;&#x7CFB;&#x6570;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.mllib.stat <span class="hljs-keyword">import</span> Statistics
+<span class="hljs-comment"># print(sku_vector.where(&quot;sku_id=1&quot;).select(&quot;vector&quot;).first().vector)</span>
+v1 = sku_vector.where(<span class="hljs-string">&quot;sku_id=1&quot;</span>).select(<span class="hljs-string">&quot;vector&quot;</span>).first().vector
+v2 = sku_vector.where(<span class="hljs-string">&quot;sku_id=2&quot;</span>).select(<span class="hljs-string">&quot;vector&quot;</span>).first().vector
+
+sc = spark.sparkContext
+
+x = sc.parallelize(v1)  <span class="hljs-comment"># rdd</span>
+y = sc.parallelize(v2)
+<span class="hljs-comment"># </span>
+Statistics.corr(x, y, method=<span class="hljs-string">&quot;pearson&quot;</span>)
+<span class="hljs-comment"># &#x7EA6;0.97</span>
+</code></pre>
+<ul>
+<li>&#x8BA1;&#x7B97;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+vector1 = v1
+vector2 = v2
+<span class="hljs-comment"># &#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;</span>
+np.dot(vector1,vector2)/(np.linalg.norm(vector1)*(np.linalg.norm(vector2)))
+<span class="hljs-comment"># 0.97</span>
+</code></pre>
+<ul>
+<li>&#x67E5;&#x8BE2;sku_vector&#x7684;&#x6761;&#x76EE;&#x6570;&#x91CF;</li>
+</ul>
+<pre><code class="lang-python">sku_vector.count()   <span class="hljs-comment"># 6w6 * 6w6   44&#x4EBF;</span>
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">66651
+</code></pre>
+<ul>
+<li>&#x4E3A;&#x8BA1;&#x7B97;sku&#x76F8;&#x4F3C;&#x5EA6;&#x51C6;&#x5907;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment">#sku_vector.withColumnRenamed(&quot;sku_id&quot;, &quot;sku_id2&quot;).withColumnRenamed(&quot;vector&quot;, &quot;vector2&quot;)</span>
+<span class="hljs-comment">#sku_vector.join(sku_vector.withColumnRenamed(&quot;sku_id&quot;, &quot;sku_id2&quot;).withColumnRenamed(&quot;vector&quot;, &quot;vector2&quot;))</span>
+temp_df = sku_vector.withColumnRenamed(<span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;sku_id2&quot;</span>).withColumnRenamed(<span class="hljs-string">&quot;vector&quot;</span>, <span class="hljs-string">&quot;vector2&quot;</span>)
+<span class="hljs-keyword">import</span> time
+start = time.time()
+
+<span class="hljs-comment">### &#x6CE8;&#x610F;&#x6CE8;&#x610F;&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x91CC;&#x4E00;&#x5B9A;&#x4E0D;&#x8981;&#x7528;inner join&#xFF0C;&#x56E0;&#x4E3A;&#x5185;&#x8FDE;&#x63A5;&#x7531;&#x4E8E;&#x4F1A;&#x5254;&#x9664;&#x6761;&#x5DE6;&#x53F3;&#x8868;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6761;&#x76EE;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4F1A;&#x6709;&#x8FC7;&#x6EE4;&#x64CD;&#x4F5C;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x91CF;&#x6781;&#x5176;&#x5927;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x975E;&#x5E38;&#x6162;&#xFF0C;&#x6CE8;&#x610F;&#x662F;&#x975E;&#x5E38;&#x6162;</span>
+print(sku_vector.join(temp_df, sku_vector.sku_id!=temp_df.sku_id2, how=<span class="hljs-string">&quot;inner&quot;</span>).count())
+print(time.time()-start)
+<span class="hljs-comment"># 66651 * 66651 &#x7EA6;36&#x4EBF;&#x6761;&#x76EE;</span>
+<span class="hljs-comment"># &#x8FD9;&#x91CC;&#x5176;&#x5B9E;&#x672C;&#x8EAB;&#x662F;&#x4E00;&#x4E2A;&#x81EA;&#x8FDE;&#x63A5;&#xFF0C;&#x4E0D;&#x4F1A;&#x6709;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6761;&#x76EE;&#xFF0C;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x7528;outer&#xFF0C;&#x63D0;&#x5347;&#x6267;&#x884C;&#x6548;&#x7387;</span>
+temp_df = sku_vector.withColumnRenamed(<span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;sku_id2&quot;</span>).withColumnRenamed(<span class="hljs-string">&quot;vector&quot;</span>, <span class="hljs-string">&quot;vector2&quot;</span>)
+<span class="hljs-keyword">import</span> time
+start = time.time()
+print(sku_vector.join(temp_df, sku_vector.sku_id!=temp_df.sku_id2, how=<span class="hljs-string">&quot;outer&quot;</span>).count())
+print(time.time()-start)
+<span class="hljs-comment"># 66651 * 66651 &#x7EA6;44&#x4EBF;&#x6761;&#x76EE;</span>
+</code></pre>
+<ul>
+<li><pre><code class="lang-python">sku_vector.join(temp_df, sku_vector.sku_id!=temp_df.sku_id2, how=<span class="hljs-string">&quot;outer&quot;</span>).show(<span class="hljs-number">100</span>)
+</code></pre>
+</li>
+<li><p>&#x8BA1;&#x7B97;&#x7269;&#x54C1;&#x4E24;&#x4E24;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;</p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x7684;DataFrame </span>
+temp_df = sku_vector.withColumnRenamed(<span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;sku_id2&quot;</span>).withColumnRenamed(<span class="hljs-string">&quot;vector&quot;</span>, <span class="hljs-string">&quot;vector2&quot;</span>)
+<span class="hljs-comment"># &#x628A;sku_vector &#x548C; &#x4E34;&#x65F6;&#x7684;DataFrame &#x505A;JOIN  &#x6BCF;&#x4E00;&#x6761;&#x8BB0;&#x5F55; sku_id &#x548C; sku_id2 &#x90FD;&#x662F;&#x4E0D;&#x540C;&#x7684;</span>
+<span class="hljs-comment"># 1 2 vector1 vector2</span>
+<span class="hljs-comment"># 1 3 vector1 vector3</span>
+<span class="hljs-comment"># 1 4 vector1 vector4</span>
+<span class="hljs-comment">#........................</span>
+sku_vector_join = sku_vector.join(temp_df, sku_vector.sku_id!=temp_df.sku_id2, how=<span class="hljs-string">&quot;outer&quot;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mapPartitions</span><span class="hljs-params">(partition)</span>:</span>
+    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> partition:
+        vector1 = row.vector
+        vector2 = row.vector2
+
+        sim = np.dot(vector1,vector2)/(np.linalg.norm(vector1)*(np.linalg.norm(vector2)))
+
+        <span class="hljs-keyword">yield</span> row.sku_id, row.sku_id2, float(sim)
+
+similarity = sku_vector_join.rdd.mapPartitions(mapPartitions).toDF([<span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;sku_id2&quot;</span>, <span class="hljs-string">&quot;sim&quot;</span>])
+similarity
+</code></pre>
+<p>&#x663E;&#x793A;&#x8BA1;&#x7B97;&#x7ED3;&#x679C; </p>
+<pre><code class="lang-python">similarity.show()
+</code></pre>
+<p>&#x7EC8;&#x7AEF;&#x663E;&#x793A;</p>
+<pre><code class="lang-shell">+------+-------+--------------------+
+|sku_id|sku_id2|                 sim|
++------+-------+--------------------+
+|    26|     29| 0.31983941722824993|
+|    26|    474|  0.1923222912419553|
+|    26|    964|  0.2150093035916437|
+|    26|   1677|  0.1619193116837042|
+|    26|   1697| 0.11683355244602506|
+|    26|   1806|  0.1404007057243507|
+|    26|   1950| 0.04163347845281761|
+|    26|   2040|  0.3258932783082057|
+|    26|   2214| 0.14748466518194572|
+|    26|   2250|   0.072558953233589|
+|    26|   2453| 0.15444468268515185|
+|    26|   2509|  0.2075858797438308|
+|    26|   2529| 0.09926985028799892|
+|    26|   2927|  0.2502524514154315|
+|    26|   3091| 0.05759395308873295|
+|    26|   3506|0.005805630735091046|
+|    26|   3764|  0.3108594219056489|
+|    26|   4590|  0.3535770338801637|
+|    26|   4823|  0.3520366415295813|
+|    26|   4894| 0.38996569066820563|
++------+-------+--------------------+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x7531;&#x4E8E;&#x6761;&#x76EE;&#x6570;&#x5B9E;&#x5728;&#x592A;&#x591A;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x91CC;&#x8FDB;&#x884C;&#x5982;&#x67E5;&#x8BE2;&#x3001;&#x5206;&#x7EC4;&#x7B49;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x5927;&#x91CF;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x5BF9;&#x786C;&#x4EF6;&#x8981;&#x6C42;&#x5F88;&#x9AD8;&#xFF0C;&#x6240;&#x4EE5;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x6CA1;&#x80FD;&#x8DD1;&#x6210;&#x529F;</li>
+</ul>
+<pre><code class="lang-python">similarity.where(<span class="hljs-string">&quot;sku_id=1&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
+&lt;ipython-input-11-8d8704b2f321&gt; in &lt;module&gt;
+----&gt; 1 similarity.where(&quot;sku_id=1&quot;).show()
+
+~/miniconda2/envs/bigdata/lib/python3.6/site-packages/pyspark-2.2.2-py3.6.egg/pyspark/sql/dataframe.py in show(self, n, truncate)
+    334         &quot;&quot;&quot;
+    335         if isinstance(truncate, bool) and truncate:
+--&gt; 336             print(self._jdf.showString(n, 20))
+    337         else:
+    338             print(self._jdf.showString(n, int(truncate)))
+
+~/miniconda2/envs/bigdata/lib/python3.6/site-packages/py4j-0.10.7-py3.6.egg/py4j/java_gateway.py in __call__(self, *args)
+   1253             proto.END_COMMAND_PART
+   1254 
+-&gt; 1255         answer = self.gateway_client.send_command(command)
+   1256         return_value = get_return_value(
+   1257             answer, self.gateway_client, self.target_id, self.name)
+
+~/miniconda2/envs/bigdata/lib/python3.6/site-packages/py4j-0.10.7-py3.6.egg/py4j/java_gateway.py in send_command(self, command, retry, binary)
+    983         connection = self._get_connection()
+    984         try:
+--&gt; 985             response = connection.send_command(command)
+    986             if binary:
+    987                 return response, self._create_connection_guard(connection)
+
+~/miniconda2/envs/bigdata/lib/python3.6/site-packages/py4j-0.10.7-py3.6.egg/py4j/java_gateway.py in send_command(self, command)
+   1150 
+   1151         try:
+-&gt; 1152             answer = smart_decode(self.stream.readline()[:-1])
+   1153             logger.debug(&quot;Answer received: {0}&quot;.format(answer))
+   1154             if answer.startswith(proto.RETURN_MESSAGE):
+
+~/miniconda2/envs/bigdata/lib/python3.6/socket.py in readinto(self, b)
+    584         while True:
+    585             try:
+--&gt; 586                 return self._sock.recv_into(b)
+    587             except timeout:
+    588                 self._timeout_occurred = True
+
+KeyboardInterrupt:
+</code></pre>
+<ul>
+<li><p>&#x8003;&#x8651;&#x4F7F;&#x7528;foreachPartition&#x65B9;&#x6CD5;&#xFF0C;&#x904D;&#x5386;&#x6BCF;&#x4E00;&#x884C;&#x6570;&#x636E;&#xFF0C;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;, &#x5C06;&#x7ED3;&#x679C;&#x76F4;&#x63A5;&#x5B58;&#x5165;redis</p>
+<ul>
+<li>foreachPartition&#x5C5E;&#x4E8E;action&#x8FD0;&#x7B97;&#x64CD;&#x4F5C;&#xFF0C;&#x800C;mapPartitions&#x662F;&#x5728;Transformation&#xFF0C;</li>
+<li>&#x4F7F;&#x7528;: <ul>
+<li>mapPartitions&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x7EE7;&#x7EED;&#x5728;&#x8FD4;&#x56DE;RDD&#x4E0A;&#x505A;&#x5176;&#x4ED6;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>foreachPartition&#x662F;action&#x64CD;&#x4F5C;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x6570;&#x636E;&#x5904;&#x7406;&#x7684;&#x6700;&#x540E;&#x4E00;&#x6B65;, &#x5982;&#x5C06;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x843D;&#x5730;&#x5230;hdfs&#x4E2D;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>&#x6BCF;&#x4E00;&#x4E2A;&#x5546;&#x54C1;&#x53EA;&#x4FDD;&#x7559;&#x4E0E;&#x5B83;&#x76F8;&#x4F3C;&#x7684;TOP100&#x4E2A;&#x5546;&#x54C1;&#x7684;sku_id&#x548C;&#x5BF9;&#x5E94;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x91CC;&#x7684;&#x7ED3;&#x679C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x5546;&#x54C1;&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x4E00;&#x4E2A;&#x53EC;&#x56DE;&#x7ED3;&#x679C;&#x96C6;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> gc
+<span class="hljs-keyword">import</span> redis
+temp_df = sku_vector.withColumnRenamed(<span class="hljs-string">&quot;sku_id&quot;</span>, <span class="hljs-string">&quot;sku_id2&quot;</span>).withColumnRenamed(<span class="hljs-string">&quot;vector&quot;</span>, <span class="hljs-string">&quot;vector2&quot;</span>)
+sku_vector_join = sku_vector.join(temp_df, sku_vector.sku_id!=temp_df.sku_id2, how=<span class="hljs-string">&quot;outer&quot;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foreachPartition</span><span class="hljs-params">(partition)</span>:</span>
+    client = redis.StrictRedis()
+
+    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> partition:
+        vector1 = row.vector
+        vector2 = row.vector2
+
+        <span class="hljs-comment"># &#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#x516C;&#x5F0F;</span>
+        sim = np.dot(vector1,vector2)/(np.linalg.norm(vector1)*(np.linalg.norm(vector2)))
+        <span class="hljs-comment">#zcard &#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x96C6; key &#x7684;&#x57FA;&#x6570;&#x3002;&#x8FD4;&#x56DE;&#x503C;</span>
+        <span class="hljs-comment">#&#x5F53; key &#x5B58;&#x5728;&#x4E14;&#x662F;&#x6709;&#x5E8F;&#x96C6;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x96C6;&#x7684;&#x57FA;&#x6570;&#x3002; &#x5F53; key &#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE; 0</span>
+        <span class="hljs-keyword">if</span> client.zcard(row.sku_id) &lt; <span class="hljs-number">100</span>: <span class="hljs-comment">#&#x5982;&#x679C;&#x5B58;&#x5165;redis&#x4E2D;&#x7684;&#x6570;&#x91CF;&#x6CA1;&#x8D85;&#x8FC7;100&#x76F4;&#x63A5;&#x4FDD;&#x5B58;</span>
+            client.zadd(row.sku_id, float(sim), row.sku_id2)
+        <span class="hljs-keyword">else</span>:<span class="hljs-comment">#&#x5982;&#x679C;&#x5B58;&#x5165;redis&#x4E2D;&#x7684;&#x6570;&#x91CF;&#x8D85;&#x8FC7;100 &#x6BD4;&#x8F83;min_sim&#x503C; &#x53EA;&#x4FDD;&#x7559;&#x6BD4;&#x8F83;&#x5927;&#x7684;</span>
+            <span class="hljs-comment"># &#x53D6;&#x51FA;&#x5F53;&#x524D;redis&#x4E2D;&#x4E0E;sku_id&#x76F8;&#x4F3C;&#x5EA6;&#x6700;&#x5C0F;&#x7684;sku_id2&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x503C;</span>
+            key = client.zrange(row.sku_id, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+            min_sim = client.zscore(row.sku_id, key[<span class="hljs-number">0</span>]) <span class="hljs-keyword">if</span> len(key) == <span class="hljs-number">1</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">None</span>
+
+            <span class="hljs-keyword">if</span> min_sim <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+                client.zadd(row.sku_id, float(sim), row.sku_id2)
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-keyword">if</span> sim &gt; min_sim:<span class="hljs-comment"># &#x5982;&#x679C;&#x5F53;&#x524D;&#x4FDD;&#x5B58;&#x7684;sku &#x76F8;&#x4F3C;&#x5EA6;&#x6BD4;&#x5DF2;&#x7ECF;&#x7F13;&#x5B58;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x8FD8;&#x8981;&#x5927; </span>
+                    <span class="hljs-comment">#&#x5220;&#x9664;&#x76F8;&#x4F3C;&#x5EA6;&#x5C0F;&#x7684;</span>
+                    client.zrem(row.sku_id, key[<span class="hljs-number">0</span>])
+                    <span class="hljs-comment">#&#x4FDD;&#x7559;&#x76F8;&#x4F3C;&#x5EA6;&#x5927;&#x7684;</span>
+                    client.zadd(row.sku_id, float(sim), row.sku_id2)
+        <span class="hljs-comment"># </span>
+            <span class="hljs-keyword">del</span> key
+            <span class="hljs-keyword">del</span> min_sim
+        <span class="hljs-keyword">del</span> vector1
+        <span class="hljs-keyword">del</span> vector2
+        <span class="hljs-keyword">del</span> sim
+        <span class="hljs-keyword">del</span> row
+        gc.collect()
+        <span class="hljs-comment"># &#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x8282;&#x7EA6;&#x5185;&#x5B58;&#x5F00;&#x9500;&#xFF0C;&#x624B;&#x52A8;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;&#xFF0C;&#x907F;&#x514D;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x7B49;&#x95EE;&#x9898;</span>
+
+sku_vector_join.foreachPartition(foreachPartition)
+
+<span class="hljs-comment"># &#x4F46;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#xFF0C;&#x7531;&#x4E8E;&#x8BA1;&#x7B97;&#x91CF;&#x6BD4;&#x8F83;&#x5927;&#xFF0C; &#x975E;&#x5E38;&#x8017;&#x65F6;&#xFF0C;&#x9884;&#x8BA1;4&#x6838;8g&#x9700;&#x8981;&#x4E00;&#x5929;&#x65F6;&#x95F4;&#x624D;&#x80FD;&#x8DD1;&#x5B8C;</span>
+<span class="hljs-comment"># &#x8FD9;&#x91CC;&#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x4F1A;&#x60F3;&#xFF0C;&#x5149;&#x662F;&#x8BA1;&#x7B97;6w&#x6761;&#x7535;&#x5B50;&#x4EA7;&#x54C1;&#x7684;&#x76F8;&#x4F3C;&#x5C31;&#x8981;&#x8FD9;&#x8FD9;&#x4E48;&#x4E45;&#x65F6;&#x95F4;&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x679C;&#x5168;&#x90E8;&#x5927;&#x7C7B;&#x90FD;&#x8981;&#x8BA1;&#x7B97;&#x5B8C;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x6570;&#x91CF;&#x91CF;&#x52A0;&#x500D;&#x4E86;&#xFF0C;&#x8BE5;&#x5982;&#x4F55;&#x5904;&#x7406;&#xFF1A;</span>
+    <span class="hljs-comment"># &#x5176;&#x5B9E;&#x5927;&#x5BB6;&#x601D;&#x8003;&#x4E00;&#x4E0B;&#xFF0C;&#x5BF9;&#x4E8E;&#x5546;&#x54C1;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#xFF0C;&#x5176;&#x5B9E;&#x5F80;&#x5F80;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x5F00;&#x59CB;&#x5BF9;&#x6240;&#x6709;&#x7684;&#x5546;&#x54C1;&#x8FDB;&#x884C;&#x4E24;&#x4E24;&#x8BA1;&#x7B97;&#xFF0C;&#x6BD4;&#x5982;6w&#x6761;&#xFF0C;&#x90A3;&#x4E48;&#x8BA1;&#x7B97;&#x91CF;&#x5C31;&#x662F;6w*6w</span>
+    <span class="hljs-comment"># &#x4F46;&#x662F;&#x5176;&#x5B9E;&#x540E;&#x9762;&#x5982;&#x679C;&#x6709;&#x65B0;&#x589E;&#x5546;&#x54C1;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5BF9;&#x65B0;&#x589E;&#x5546;&#x54C1;&#x4E0E;&#x5176;&#x4ED6;&#x5546;&#x54C1;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x5C31;&#x53EF;&#x4EE5;&#xFF0C;&#x90A3;&#x4E48;&#x65B0;&#x589E;&#x5546;&#x54C1;&#x540E;&#x7684;&#x8BA1;&#x7B97;&#x91CF;&#x662F;1*6w</span>
+    <span class="hljs-comment"># &#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5728;&#x4E00;&#x5F00;&#x59CB;&#x628A;&#x6240;&#x6709;&#x7684;&#x90FD;&#x7B97;&#x4E00;&#x904D;&#xFF0C;&#x4E4B;&#x540E;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x91C7;&#x53D6;&#x7684;&#x662F;&#x589E;&#x91CF;&#x66F4;&#x65B0;</span>
+    <span class="hljs-comment"># &#x6216;&#x8005;&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x53D1;&#x5C55;&#x60C5;&#x51B5;&#xFF0C;&#x6BCF;&#x9694;&#x51E0;&#x4E2A;&#x6708;&#x505A;&#x4E00;&#x6B21;&#x5168;&#x91CF;&#x66F4;&#x65B0;&#xFF0C;&#x671F;&#x95F4;&#x5C31;&#x53EA;&#x505A;&#x589E;&#x91CF;&#x66F4;&#x65B0;</span>
+
+<span class="hljs-comment"># &#x4E00;&#x4E0B;&#x62A5;&#x9519;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x624B;&#x52A8;&#x5173;&#x95ED;&#x7A0B;&#x5E8F;&#x5BFC;&#x81F4;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x91CC;&#x6CA1;&#x6709;&#x7B49;&#x5168;&#x90E8;&#x7B97;&#x51FA;&#x7ED3;&#x679C;&#xFF0C;&#x53EA;&#x7B97;&#x4E86;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x5C31;&#x5173;&#x95ED;&#x4E86;</span>
+</code></pre>
+<h3 id="74-&#x5176;&#x5B83;&#x8BA1;&#x7B97;&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x65B9;&#x6CD5;">7.4 &#x5176;&#x5B83;&#x8BA1;&#x7B97;&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x65B9;&#x6CD5;</h3>
+<ul>
+<li>&#x5982;pyspark.ml.stat.Correlation&#x3001;pyspark.mllib.stat.Statistics &#x4F46;&#x8FD9;&#x4E9B;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#x90FD;&#x53EA;&#x80FD;&#x5B8C;&#x6210;&#x6240;&#x6709;&#x5217;&#x4E24;&#x4E24;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x884C;&#x4E24;&#x4E24;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x81EA;&#x884C;&#x53BB;&#x5B9E;&#x73B0;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.ml.linalg <span class="hljs-keyword">import</span> Vectors
+<span class="hljs-keyword">from</span> pyspark.ml.stat <span class="hljs-keyword">import</span> Correlation
+
+dataset = [[Vectors.dense([<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-2</span>])],
+[Vectors.dense([<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>])],
+[Vectors.dense([<span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">0</span>, <span class="hljs-number">8</span>])],
+[Vectors.dense([<span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>])],
+[Vectors.dense([<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-2</span>])]]
+dataset = spark.createDataFrame(dataset, [<span class="hljs-string">&apos;features&apos;</span>])
+dataset.show()
+pearsonCorr = Correlation.corr(dataset, <span class="hljs-string">&apos;features&apos;</span>, <span class="hljs-string">&apos;pearson&apos;</span>).show(truncate=<span class="hljs-keyword">False</span>)
+<span class="hljs-comment"># print(str(pearsonCorr).replace(&apos;nan&apos;, &apos;NaN&apos;))</span>
+
+spearmanCorr = Correlation.corr(dataset, <span class="hljs-string">&apos;features&apos;</span>, method=<span class="hljs-string">&apos;spearman&apos;</span>).show()
+<span class="hljs-comment"># print(str(spearmanCorr).replace(&apos;nan&apos;, &apos;NaN&apos;))</span>
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">+------------------+
+|          features|
++------------------+
+|[1.0,0.0,0.0,-2.0]|
+| [4.0,5.0,0.0,3.0]|
+| [6.0,7.0,0.0,8.0]|
+| [9.0,0.0,0.0,1.0]|
+|[1.0,0.0,0.0,-2.0]|
++------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|pearson(features)                                                                                                                                                                                                                                                      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|1.0                 0.2522120576380154  NaN  0.5517643975445569  
+0.2522120576380154  1.0                 NaN  0.9262057975392757  
+NaN                 NaN                 1.0  NaN                 
+0.5517643975445569  0.9262057975392757  NaN  1.0                 |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++--------------------+
+|  spearman(features)|
++--------------------+
+|1.0              ...|
++--------------------+
+</code></pre>
+<ul>
+<li><p>```python
+from <strong>future</strong> import print_function</p>
+</li>
+</ul>
+<p>import numpy as np</p>
+<p>from pyspark import SparkContext
+from pyspark.mllib.stat import Statistics</p>
+<p>if <strong>name</strong> == &quot;<strong>main</strong>&quot;:
+    sc = spark.sparkContext</p>
+<pre><code># $example on$
+seriesX = sc.parallelize([1.0, 2.0, 3.0, 3.0, 5.0])  # a series
+# seriesY must have the same number of partitions and cardinality as seriesX
+seriesY = sc.parallelize([11.0, 22.0, 33.0, 33.0, 555.0])
+
+# Compute the correlation using Pearson&apos;s method. Enter &quot;spearman&quot; for Spearman&apos;s method.
+# If a method is not specified, Pearson&apos;s method will be used by default.
+print(&quot;Correlation is: &quot; + str(Statistics.corr(seriesX, seriesY, method=&quot;pearson&quot;)))
+
+data = sc.parallelize(
+    [np.array([1.0, 10.0, 100.0]), np.array([2.0, 20.0, 200.0]), np.array([5.0, 33.0, 366.0]), np.array([5.0, 33.0, 366.0])]
+)  # an RDD of Vectors
+
+# calculate the correlation matrix using Pearson&apos;s method. Use &quot;spearman&quot; for Spearman&apos;s method.
+# If a method is not specified, Pearson&apos;s method will be used by default.
+print(Statistics.corr(data, method=&quot;pearson&quot;))
+</code></pre><pre><code>
+&#x663E;&#x793A;&#x7ED3;&#x679C;
+
+``` shell
+Correlation is: 0.8500286768773007
+[[1.         0.98473193 0.99316078]
+ [0.98473193 1.         0.99832152]
+ [0.99316078 0.99832152 1.        ]]
+</code></pre><ul>
+<li><pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.mllib.stat <span class="hljs-keyword">import</span> Statistics
+<span class="hljs-keyword">from</span> pyspark.mllib.linalg <span class="hljs-keyword">import</span> Vectors
+rdd = sc.parallelize([Vectors.dense([<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-2</span>]), Vectors.dense([<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>]),Vectors.dense([<span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">0</span>,  <span class="hljs-number">8</span>]), Vectors.dense([<span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>]), Vectors.dense([<span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>])])
+pearsonCorr = Statistics.corr(rdd)
+pearsonCorr
+</code></pre>
+</li>
+</ul>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-shell">array([[ 1.        , -0.16524238,         nan,  0.24090545],
+       [-0.16524238,  1.        ,         nan,  0.89613897],
+       [        nan,         nan,  1.        ,         nan],
+       [ 0.24090545,  0.89613897,         nan,  1.        ]])
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter6.html" class="navigation navigation-prev " aria-label="Previous page: 商品关键词词向量计算">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter8.html" class="navigation navigation-next " aria-label="Next page: 埋点日志处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"商品相似度计算与商品召回","level":"1.8.7","depth":2,"next":{"title":"埋点日志处理","level":"1.8.8","depth":2,"path":"推荐系统实战2/chapter8.md","ref":"推荐系统实战2/chapter8.md","articles":[]},"previous":{"title":"商品关键词词向量计算","level":"1.8.6","depth":2,"path":"推荐系统实战2/chapter6.md","ref":"推荐系统实战2/chapter6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐系统实战2/chapter7.md","mtime":"2019-04-06T03:03:52.227Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

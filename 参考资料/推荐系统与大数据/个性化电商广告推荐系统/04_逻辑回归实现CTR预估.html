@@ -1,0 +1,2496 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>逻辑回归实现CTR预估 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="05_离线推荐处理.html" />
+    
+    
+    <link rel="prev" href="03_CTR预估数据准备.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../推荐介绍/01_推荐系统简介.html">
+            
+                <a href="../推荐介绍/01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../推荐介绍/02_推荐系统架构设计.html">
+            
+                <a href="../推荐介绍/02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../推荐介绍/03_推荐算法.html">
+            
+                <a href="../推荐介绍/03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../推荐介绍/04_ 推荐系统评估.html">
+            
+                <a href="../推荐介绍/04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                <a href="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="03_CTR预估数据准备.html">
+            
+                <a href="03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.4" data-path="04_逻辑回归实现CTR预估.html">
+            
+                <a href="04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="05_离线推荐处理.html">
+            
+                <a href="05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="06_实时推荐.html">
+            
+                <a href="06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../推荐系统实战2/chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../推荐系统实战2/chapter1.html">
+            
+                <a href="../推荐系统实战2/chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../推荐系统实战2/chapter2.html">
+            
+                <a href="../推荐系统实战2/chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../推荐系统实战2/chapter3.html">
+            
+                <a href="../推荐系统实战2/chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../推荐系统实战2/chapter4.html">
+            
+                <a href="../推荐系统实战2/chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../推荐系统实战2/chapter5.html">
+            
+                <a href="../推荐系统实战2/chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../推荐系统实战2/chapter6.html">
+            
+                <a href="../推荐系统实战2/chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../推荐系统实战2/chapter7.html">
+            
+                <a href="../推荐系统实战2/chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../推荐系统实战2/chapter8.html">
+            
+                <a href="../推荐系统实战2/chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../推荐系统实战2/chapter9.html">
+            
+                <a href="../推荐系统实战2/chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../推荐系统实战2/chapter10.html">
+            
+                <a href="../推荐系统实战2/chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../推荐系统实战2/chapter11.html">
+            
+                <a href="../推荐系统实战2/chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >逻辑回归实现CTR预估</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="9-lr&#x5B9E;&#x73B0;ctr&#x9884;&#x4F30;">9 LR&#x5B9E;&#x73B0;CTR&#x9884;&#x4F30;</h2>
+<h3 id="91-spark&#x903B;&#x8F91;&#x56DE;&#x5F52;lr&#x6A21;&#x578B;&#x4F7F;&#x7528;&#x4ECB;&#x7ECD;">9.1 Spark&#x903B;&#x8F91;&#x56DE;&#x5F52;(LR)&#x6A21;&#x578B;&#x4F7F;&#x7528;&#x4ECB;&#x7ECD;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> VectorAssembler
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+
+<span class="hljs-comment"># &#x6837;&#x672C;&#x6570;&#x636E;&#x96C6;</span>
+sample_dataset = [
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">37</span>, <span class="hljs-number">10</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-number">3</span>, <span class="hljs-number">18</span>, <span class="hljs-number">7</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">27</span>, <span class="hljs-number">4</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">14</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">32</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">1</span>, <span class="hljs-number">12</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">57</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">5</span>, <span class="hljs-number">18</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">22</span>, <span class="hljs-number">0.75</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">17</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">32</span>, <span class="hljs-number">1.5</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">17</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">22</span>, <span class="hljs-number">0.75</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">12</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">57</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">14</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">32</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">16</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">22</span>, <span class="hljs-number">1.5</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">14</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">37</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">20</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">27</span>, <span class="hljs-number">4</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">18</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">47</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">5</span>, <span class="hljs-number">17</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">22</span>, <span class="hljs-number">1.5</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">17</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">27</span>, <span class="hljs-number">4</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">14</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">37</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">1</span>, <span class="hljs-number">17</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">37</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">18</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">22</span>, <span class="hljs-number">0.75</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-number">3</span>, <span class="hljs-number">16</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">22</span>, <span class="hljs-number">1.5</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">16</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">27</span>, <span class="hljs-number">10</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">14</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>),
+    (<span class="hljs-number">1</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">32</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">3</span>, <span class="hljs-number">14</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>),
+    (<span class="hljs-number">1</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">27</span>, <span class="hljs-number">7</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">16</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>),
+    (<span class="hljs-number">1</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">42</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">3</span>, <span class="hljs-number">18</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>),
+    (<span class="hljs-number">1</span>, <span class="hljs-string">&quot;female&quot;</span>, <span class="hljs-number">42</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">14</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>),
+    (<span class="hljs-number">1</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">27</span>, <span class="hljs-number">7</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">17</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">1</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">32</span>, <span class="hljs-number">10</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">14</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>),
+    (<span class="hljs-number">1</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">47</span>, <span class="hljs-number">15</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">3</span>, <span class="hljs-number">16</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>),
+    (<span class="hljs-number">0</span>, <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-number">37</span>, <span class="hljs-number">4</span>, <span class="hljs-string">&quot;yes&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">20</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>)
+]
+
+columns = [<span class="hljs-string">&quot;affairs&quot;</span>, <span class="hljs-string">&quot;gender&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>, <span class="hljs-string">&quot;label&quot;</span>, <span class="hljs-string">&quot;children&quot;</span>, <span class="hljs-string">&quot;religiousness&quot;</span>, <span class="hljs-string">&quot;education&quot;</span>, <span class="hljs-string">&quot;occupation&quot;</span>, <span class="hljs-string">&quot;rating&quot;</span>]
+
+<span class="hljs-comment"># pandas&#x6784;&#x5EFA;dataframe&#xFF0C;&#x65B9;&#x4FBF;</span>
+pdf = pd.DataFrame(sample_dataset, columns=columns)
+
+<span class="hljs-comment"># &#x8F6C;&#x6362;&#x6210;spark&#x7684;dataframe</span>
+df = spark.createDataFrame(pdf)
+
+<span class="hljs-comment"># &#x7279;&#x5F81;&#x9009;&#x53D6;&#xFF1A;affairs&#x4E3A;&#x76EE;&#x6807;&#x503C;&#xFF0C;&#x5176;&#x4F59;&#x4E3A;&#x7279;&#x5F81;&#x503C;</span>
+df2 = df.select(<span class="hljs-string">&quot;affairs&quot;</span>,<span class="hljs-string">&quot;age&quot;</span>, <span class="hljs-string">&quot;religiousness&quot;</span>, <span class="hljs-string">&quot;education&quot;</span>, <span class="hljs-string">&quot;occupation&quot;</span>, <span class="hljs-string">&quot;rating&quot;</span>)
+
+<span class="hljs-comment"># &#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x7684;&#x5B57;&#x6BB5;</span>
+colArray2 = [<span class="hljs-string">&quot;age&quot;</span>, <span class="hljs-string">&quot;religiousness&quot;</span>, <span class="hljs-string">&quot;education&quot;</span>, <span class="hljs-string">&quot;occupation&quot;</span>, <span class="hljs-string">&quot;rating&quot;</span>]
+
+<span class="hljs-comment"># &#x8BA1;&#x7B97;&#x51FA;&#x7279;&#x5F81;&#x5411;&#x91CF;</span>
+df3 = VectorAssembler().setInputCols(colArray2).setOutputCol(<span class="hljs-string">&quot;features&quot;</span>).transform(df2)
+print(<span class="hljs-string">&quot;&#x6570;&#x636E;&#x96C6;&#xFF1A;&quot;</span>)
+df3.show()
+
+<span class="hljs-comment">#  &#x968F;&#x673A;&#x5207;&#x5206;&#x4E3A;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x96C6;</span>
+trainDF, testDF = df3.randomSplit([<span class="hljs-number">0.8</span>,<span class="hljs-number">0.2</span>])
+print(<span class="hljs-string">&quot;&#x8BAD;&#x7EC3;&#x96C6;&#xFF1A;&quot;</span>)
+trainDF.show(<span class="hljs-number">10</span>)
+print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x96C6;&#xFF1A;&quot;</span>)
+testDF.show(<span class="hljs-number">10</span>)
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code class="lang-shell">&#x6570;&#x636E;&#x96C6;&#xFF1A;
++-------+---+-------------+---------+----------+------+--------------------+
+|affairs|age|religiousness|education|occupation|rating|            features|
++-------+---+-------------+---------+----------+------+--------------------+
+|      0| 37|            3|       18|         7|     4|[37.0,3.0,18.0,7....|
+|      0| 27|            4|       14|         6|     4|[27.0,4.0,14.0,6....|
+|      0| 32|            1|       12|         1|     4|[32.0,1.0,12.0,1....|
+|      0| 57|            5|       18|         6|     5|[57.0,5.0,18.0,6....|
+|      0| 22|            2|       17|         6|     3|[22.0,2.0,17.0,6....|
+|      0| 32|            2|       17|         5|     5|[32.0,2.0,17.0,5....|
+|      0| 22|            2|       12|         1|     3|[22.0,2.0,12.0,1....|
+|      0| 57|            2|       14|         4|     4|[57.0,2.0,14.0,4....|
+|      0| 32|            4|       16|         1|     2|[32.0,4.0,16.0,1....|
+|      0| 22|            4|       14|         4|     5|[22.0,4.0,14.0,4....|
+|      0| 37|            2|       20|         7|     2|[37.0,2.0,20.0,7....|
+|      0| 27|            4|       18|         6|     4|[27.0,4.0,18.0,6....|
+|      0| 47|            5|       17|         6|     4|[47.0,5.0,17.0,6....|
+|      0| 22|            2|       17|         5|     4|[22.0,2.0,17.0,5....|
+|      0| 27|            4|       14|         5|     4|[27.0,4.0,14.0,5....|
+|      0| 37|            1|       17|         5|     5|[37.0,1.0,17.0,5....|
+|      0| 37|            2|       18|         4|     3|[37.0,2.0,18.0,4....|
+|      0| 22|            3|       16|         5|     4|[22.0,3.0,16.0,5....|
+|      0| 22|            2|       16|         5|     5|[22.0,2.0,16.0,5....|
+|      0| 27|            2|       14|         1|     5|[27.0,2.0,14.0,1....|
++-------+---+-------------+---------+----------+------+--------------------+
+only showing top 20 rows
+
+&#x8BAD;&#x7EC3;&#x96C6;&#xFF1A;
++-------+---+-------------+---------+----------+------+--------------------+
+|affairs|age|religiousness|education|occupation|rating|            features|
++-------+---+-------------+---------+----------+------+--------------------+
+|      0| 32|            1|       12|         1|     4|[32.0,1.0,12.0,1....|
+|      0| 37|            3|       18|         7|     4|[37.0,3.0,18.0,7....|
+|      0| 22|            2|       17|         6|     3|[22.0,2.0,17.0,6....|
+|      0| 32|            2|       17|         5|     5|[32.0,2.0,17.0,5....|
+|      0| 57|            5|       18|         6|     5|[57.0,5.0,18.0,6....|
+|      0| 57|            2|       14|         4|     4|[57.0,2.0,14.0,4....|
+|      0| 22|            2|       17|         5|     4|[22.0,2.0,17.0,5....|
+|      0| 22|            4|       14|         4|     5|[22.0,4.0,14.0,4....|
+|      0| 27|            4|       18|         6|     4|[27.0,4.0,18.0,6....|
+|      0| 37|            2|       20|         7|     2|[37.0,2.0,20.0,7....|
++-------+---+-------------+---------+----------+------+--------------------+
+only showing top 10 rows
+
+&#x6D4B;&#x8BD5;&#x96C6;&#xFF1A;
++-------+---+-------------+---------+----------+------+--------------------+
+|affairs|age|religiousness|education|occupation|rating|            features|
++-------+---+-------------+---------+----------+------+--------------------+
+|      0| 27|            4|       14|         6|     4|[27.0,4.0,14.0,6....|
+|      0| 22|            2|       12|         1|     3|[22.0,2.0,12.0,1....|
+|      0| 32|            4|       16|         1|     2|[32.0,4.0,16.0,1....|
+|      0| 27|            4|       14|         5|     4|[27.0,4.0,14.0,5....|
+|      0| 22|            3|       16|         5|     4|[22.0,3.0,16.0,5....|
+|      1| 27|            4|       16|         1|     2|[27.0,4.0,16.0,1....|
++-------+---+-------------+---------+----------+------+--------------------+
+</code></pre>
+<ul>
+<li>&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.ml.classification <span class="hljs-keyword">import</span> LogisticRegression
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x8BAD;&#x7EC3;&#x5668;</span>
+lr = LogisticRegression()
+<span class="hljs-comment"># &#x8BAD;&#x7EC3;&#x6A21;&#x578B;</span>
+model = lr.setLabelCol(<span class="hljs-string">&quot;affairs&quot;</span>).setFeaturesCol(<span class="hljs-string">&quot;features&quot;</span>).fit(trainDF)
+<span class="hljs-comment"># &#x9884;&#x6D4B;&#x6570;&#x636E;</span>
+model.transform(testDF).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code class="lang-shell">+-------+---+-------------+---------+----------+------+--------------------+--------------------+--------------------+----------+
+|affairs|age|religiousness|education|occupation|rating|            features|       rawPrediction|         probability|prediction|
++-------+---+-------------+---------+----------+------+--------------------+--------------------+--------------------+----------+
+|      0| 27|            4|       14|         6|     4|[27.0,4.0,14.0,6....|[0.39067871041193...|[0.59644607432863...|       0.0|
+|      0| 22|            2|       12|         1|     3|[22.0,2.0,12.0,1....|[-2.6754687573263...|[0.06443650129497...|       1.0|
+|      0| 32|            4|       16|         1|     2|[32.0,4.0,16.0,1....|[-4.5240336812732...|[0.01072883305878...|       1.0|
+|      0| 27|            4|       14|         5|     4|[27.0,4.0,14.0,5....|[0.16206512668426...|[0.54042783360658...|       0.0|
+|      0| 22|            3|       16|         5|     4|[22.0,3.0,16.0,5....|[1.69102697292197...|[0.84435916906682...|       0.0|
+|      1| 27|            4|       16|         1|     2|[27.0,4.0,16.0,1....|[-4.7969907272012...|[0.00818697014985...|       1.0|
++-------+---+-------------+---------+----------+------+--------------------+--------------------+--------------------+----------+
+</code></pre>
+<h3 id="92-&#x57FA;&#x4E8E;lr&#x7684;&#x70B9;&#x51FB;&#x7387;&#x9884;&#x6D4B;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;">9.2 &#x57FA;&#x4E8E;LR&#x7684;&#x70B9;&#x51FB;&#x7387;&#x9884;&#x6D4B;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;</h3>
+<ul>
+<li><p>&#x672C;&#x5C0F;&#x8282;&#x4E3B;&#x8981;&#x6839;&#x636E;&#x5E7F;&#x544A;&#x70B9;&#x51FB;&#x6837;&#x672C;&#x6570;&#x636E;&#x96C6;(raw_sample)&#x3001;&#x5E7F;&#x544A;&#x57FA;&#x672C;&#x7279;&#x5F81;&#x6570;&#x636E;&#x96C6;(ad_feature)&#x3001;&#x7528;&#x6237;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x6570;&#x636E;&#x96C6;(user_profile)&#x6784;&#x5EFA;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x6837;&#x672C;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x5E76;&#x6309;&#x65E5;&#x671F;&#x5212;&#x5206;&#x4E3A;&#x4E86;&#x8BAD;&#x7EC3;&#x96C6;(&#x524D;&#x4E03;&#x5929;)&#x548C;&#x6D4B;&#x8BD5;&#x96C6;(&#x6700;&#x540E;&#x4E00;&#x5929;)&#xFF0C;&#x5229;&#x7528;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x3002;</p>
+<p>&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x5BF9;&#x7C7B;&#x522B;&#x7279;&#x5F81;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x8FBE;&#x5230;&#x63D0;&#x9AD8;&#x4E86;&#x6A21;&#x578B;&#x7684;&#x6548;&#x679C;</p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-string">&apos;&apos;&apos;&#x4ECE;HDFS&#x4E2D;&#x52A0;&#x8F7D;&#x6837;&#x672C;&#x6570;&#x636E;&#x4FE1;&#x606F;&apos;&apos;&apos;</span>
+_raw_sample_df1 = spark.read.csv(<span class="hljs-string">&quot;hdfs://localhost:8020/csv/raw_sample.csv&quot;</span>, header=<span class="hljs-keyword">True</span>)
+<span class="hljs-comment"># _raw_sample_df1.show()    # &#x5C55;&#x793A;&#x6570;&#x636E;&#xFF0C;&#x9ED8;&#x8BA4;&#x524D;20&#x6761;</span>
+<span class="hljs-comment"># &#x66F4;&#x6539;&#x8868;&#x7ED3;&#x6784;&#xFF0C;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</span>
+<span class="hljs-keyword">from</span> pyspark.sql.types <span class="hljs-keyword">import</span> StructType, StructField, IntegerType, FloatType, LongType, StringType
+
+<span class="hljs-comment"># &#x66F4;&#x6539;df&#x8868;&#x7ED3;&#x6784;&#xFF1A;&#x66F4;&#x6539;&#x5217;&#x7C7B;&#x578B;&#x548C;&#x5217;&#x540D;&#x79F0;</span>
+_raw_sample_df2 = _raw_sample_df1.\
+    withColumn(<span class="hljs-string">&quot;user&quot;</span>, _raw_sample_df1.user.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;userId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;time_stamp&quot;</span>, _raw_sample_df1.time_stamp.cast(LongType())).withColumnRenamed(<span class="hljs-string">&quot;time_stamp&quot;</span>, <span class="hljs-string">&quot;timestamp&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;adgroup_id&quot;</span>, _raw_sample_df1.adgroup_id.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;adgroup_id&quot;</span>, <span class="hljs-string">&quot;adgroupId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;pid&quot;</span>, _raw_sample_df1.pid.cast(StringType())).\
+    withColumn(<span class="hljs-string">&quot;nonclk&quot;</span>, _raw_sample_df1.nonclk.cast(IntegerType())).\
+    withColumn(<span class="hljs-string">&quot;clk&quot;</span>, _raw_sample_df1.clk.cast(IntegerType()))
+_raw_sample_df2.printSchema()
+_raw_sample_df2.show()
+
+<span class="hljs-comment"># &#x6837;&#x672C;&#x6570;&#x636E;pid&#x7279;&#x5F81;&#x5904;&#x7406;</span>
+<span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> OneHotEncoder
+<span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> StringIndexer
+<span class="hljs-keyword">from</span> pyspark.ml <span class="hljs-keyword">import</span> Pipeline
+
+stringindexer = StringIndexer(inputCol=<span class="hljs-string">&apos;pid&apos;</span>, outputCol=<span class="hljs-string">&apos;pid_feature&apos;</span>)
+encoder = OneHotEncoder(dropLast=<span class="hljs-keyword">False</span>, inputCol=<span class="hljs-string">&apos;pid_feature&apos;</span>, outputCol=<span class="hljs-string">&apos;pid_value&apos;</span>)
+pipeline = Pipeline(stages=[stringindexer, encoder])
+pipeline_fit = pipeline.fit(_raw_sample_df2)
+raw_sample_df = pipeline_fit.transform(_raw_sample_df2)
+raw_sample_df.show()
+
+<span class="hljs-string">&apos;&apos;&apos;pid&#x548C;&#x7279;&#x5F81;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;
+430548_1007&#xFF1A;0
+430549_1007&#xFF1A;1
+&apos;&apos;&apos;</span>
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code class="lang-shell">root
+ |-- userId: integer (nullable = true)
+ |-- timestamp: long (nullable = true)
+ |-- adgroupId: integer (nullable = true)
+ |-- pid: string (nullable = true)
+ |-- nonclk: integer (nullable = true)
+ |-- clk: integer (nullable = true)
+
++------+----------+---------+-----------+------+---+
+|userId| timestamp|adgroupId|        pid|nonclk|clk|
++------+----------+---------+-----------+------+---+
+|581738|1494137644|        1|430548_1007|     1|  0|
+|449818|1494638778|        3|430548_1007|     1|  0|
+|914836|1494650879|        4|430548_1007|     1|  0|
+|914836|1494651029|        5|430548_1007|     1|  0|
+|399907|1494302958|        8|430548_1007|     1|  0|
+|628137|1494524935|        9|430548_1007|     1|  0|
+|298139|1494462593|        9|430539_1007|     1|  0|
+|775475|1494561036|        9|430548_1007|     1|  0|
+|555266|1494307136|       11|430539_1007|     1|  0|
+|117840|1494036743|       11|430548_1007|     1|  0|
+|739815|1494115387|       11|430539_1007|     1|  0|
+|623911|1494625301|       11|430548_1007|     1|  0|
+|623911|1494451608|       11|430548_1007|     1|  0|
+|421590|1494034144|       11|430548_1007|     1|  0|
+|976358|1494156949|       13|430548_1007|     1|  0|
+|286630|1494218579|       13|430539_1007|     1|  0|
+|286630|1494289247|       13|430539_1007|     1|  0|
+|771431|1494153867|       13|430548_1007|     1|  0|
+|707120|1494220810|       13|430548_1007|     1|  0|
+|530454|1494293746|       13|430548_1007|     1|  0|
++------+----------+---------+-----------+------+---+
+only showing top 20 rows
+
++------+----------+---------+-----------+------+---+-----------+-------------+
+|userId| timestamp|adgroupId|        pid|nonclk|clk|pid_feature|    pid_value|
++------+----------+---------+-----------+------+---+-----------+-------------+
+|581738|1494137644|        1|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|449818|1494638778|        3|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|914836|1494650879|        4|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|914836|1494651029|        5|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|399907|1494302958|        8|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|628137|1494524935|        9|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|298139|1494462593|        9|430539_1007|     1|  0|        1.0|(2,[1],[1.0])|
+|775475|1494561036|        9|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|555266|1494307136|       11|430539_1007|     1|  0|        1.0|(2,[1],[1.0])|
+|117840|1494036743|       11|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|739815|1494115387|       11|430539_1007|     1|  0|        1.0|(2,[1],[1.0])|
+|623911|1494625301|       11|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|623911|1494451608|       11|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|421590|1494034144|       11|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|976358|1494156949|       13|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|286630|1494218579|       13|430539_1007|     1|  0|        1.0|(2,[1],[1.0])|
+|286630|1494289247|       13|430539_1007|     1|  0|        1.0|(2,[1],[1.0])|
+|771431|1494153867|       13|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|707120|1494220810|       13|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
+|530454|1494293746|       13|430548_1007|     1|  0|        0.0|(2,[0],[1.0])|
++------+----------+---------+-----------+------+---+-----------+-------------+
+only showing top 20 rows
+
+&apos;pid&#x548C;&#x7279;&#x5F81;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;\n430548_1007&#xFF1A;0\n430549_1007&#xFF1A;1\n&apos;
+</code></pre>
+<ul>
+<li>&#x4ECE;HDFS&#x4E2D;&#x52A0;&#x8F7D;&#x5E7F;&#x544A;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python">_ad_feature_df = spark.read.csv(<span class="hljs-string">&quot;hdfs://localhost:8020/datasets/ad_feature.csv&quot;</span>, header=<span class="hljs-keyword">True</span>)
+
+<span class="hljs-comment"># &#x66F4;&#x6539;&#x8868;&#x7ED3;&#x6784;&#xFF0C;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</span>
+<span class="hljs-keyword">from</span> pyspark.sql.types <span class="hljs-keyword">import</span> StructType, StructField, IntegerType, FloatType
+
+<span class="hljs-comment"># &#x66FF;&#x6362;&#x6389;NULL&#x5B57;&#x7B26;&#x4E32;</span>
+_ad_feature_df = _ad_feature_df.replace(<span class="hljs-string">&quot;NULL&quot;</span>, <span class="hljs-string">&quot;-1&quot;</span>)
+
+<span class="hljs-comment"># &#x66F4;&#x6539;df&#x8868;&#x7ED3;&#x6784;&#xFF1A;&#x66F4;&#x6539;&#x5217;&#x7C7B;&#x578B;&#x548C;&#x5217;&#x540D;&#x79F0;</span>
+ad_feature_df = _ad_feature_df.\
+    withColumn(<span class="hljs-string">&quot;adgroup_id&quot;</span>, _ad_feature_df.adgroup_id.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;adgroup_id&quot;</span>, <span class="hljs-string">&quot;adgroupId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;cate_id&quot;</span>, _ad_feature_df.cate_id.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;cate_id&quot;</span>, <span class="hljs-string">&quot;cateId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;campaign_id&quot;</span>, _ad_feature_df.campaign_id.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;campaign_id&quot;</span>, <span class="hljs-string">&quot;campaignId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;customer&quot;</span>, _ad_feature_df.customer.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;customer&quot;</span>, <span class="hljs-string">&quot;customerId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;brand&quot;</span>, _ad_feature_df.brand.cast(IntegerType())).withColumnRenamed(<span class="hljs-string">&quot;brand&quot;</span>, <span class="hljs-string">&quot;brandId&quot;</span>).\
+    withColumn(<span class="hljs-string">&quot;price&quot;</span>, _ad_feature_df.price.cast(FloatType()))
+ad_feature_df.printSchema()
+ad_feature_df.show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code class="lang-shell">root
+ |-- adgroupId: integer (nullable = true)
+ |-- cateId: integer (nullable = true)
+ |-- campaignId: integer (nullable = true)
+ |-- customerId: integer (nullable = true)
+ |-- brandId: integer (nullable = true)
+ |-- price: float (nullable = true)
+
++---------+------+----------+----------+-------+-----+
+|adgroupId|cateId|campaignId|customerId|brandId|price|
++---------+------+----------+----------+-------+-----+
+|    63133|  6406|     83237|         1|  95471|170.0|
+|   313401|  6406|     83237|         1|  87331|199.0|
+|   248909|   392|     83237|         1|  32233| 38.0|
+|   208458|   392|     83237|         1| 174374|139.0|
+|   110847|  7211|    135256|         2| 145952|32.99|
+|   607788|  6261|    387991|         6| 207800|199.0|
+|   375706|  4520|    387991|         6|     -1| 99.0|
+|    11115|  7213|    139747|         9| 186847| 33.0|
+|    24484|  7207|    139744|         9| 186847| 19.0|
+|    28589|  5953|    395195|        13|     -1|428.0|
+|    23236|  5953|    395195|        13|     -1|368.0|
+|   300556|  5953|    395195|        13|     -1|639.0|
+|    92560|  5953|    395195|        13|     -1|368.0|
+|   590965|  4284|     28145|        14| 454237|249.0|
+|   529913|  4284|     70206|        14|     -1|249.0|
+|   546930|  4284|     28145|        14|     -1|249.0|
+|   639794|  6261|     70206|        14|  37004| 89.9|
+|   335413|  4284|     28145|        14|     -1|249.0|
+|   794890|  4284|     70206|        14| 454237|249.0|
+|   684020|  6261|     70206|        14|  37004| 99.0|
++---------+------+----------+----------+-------+-----+
+only showing top 20 rows
+</code></pre>
+<ul>
+<li>&#x4ECE;HDFS&#x52A0;&#x8F7D;&#x7528;&#x6237;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.sql.types <span class="hljs-keyword">import</span> StructType, StructField, StringType, IntegerType, LongType, FloatType
+
+<span class="hljs-comment"># &#x6784;&#x5EFA;&#x8868;&#x7ED3;&#x6784;schema&#x5BF9;&#x8C61;</span>
+schema = StructType([
+    StructField(<span class="hljs-string">&quot;userId&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;cms_segid&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;cms_group_id&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;final_gender_code&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;age_level&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;pvalue_level&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;shopping_level&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;occupation&quot;</span>, IntegerType()),
+    StructField(<span class="hljs-string">&quot;new_user_class_level&quot;</span>, IntegerType())
+])
+<span class="hljs-comment"># &#x5229;&#x7528;schema&#x4ECE;hdfs&#x52A0;&#x8F7D;</span>
+_user_profile_df1 = spark.read.csv(<span class="hljs-string">&quot;hdfs://localhost:9000/datasets/user_profile.csv&quot;</span>, header=<span class="hljs-keyword">True</span>, schema=schema)
+<span class="hljs-comment"># user_profile_df.printSchema()</span>
+<span class="hljs-comment"># user_profile_df.show()</span>
+
+<span class="hljs-string">&apos;&apos;&apos;&#x5BF9;&#x7F3A;&#x5931;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7279;&#x5F81;&#x70ED;&#x7F16;&#x7801;&apos;&apos;&apos;</span>
+<span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> OneHotEncoder
+<span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> StringIndexer
+<span class="hljs-keyword">from</span> pyspark.ml <span class="hljs-keyword">import</span> Pipeline
+
+<span class="hljs-comment"># &#x4F7F;&#x7528;&#x70ED;&#x7F16;&#x7801;&#x8F6C;&#x6362;pvalue_level&#x7684;&#x4E00;&#x7EF4;&#x6570;&#x636E;&#x4E3A;&#x591A;&#x7EF4;&#xFF0C;&#x589E;&#x52A0;n-1&#x4E2A;&#x865A;&#x62DF;&#x53D8;&#x91CF;&#xFF0C;n&#x4E3A;pvalue_level&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;</span>
+
+<span class="hljs-comment"># &#x9700;&#x8981;&#x5148;&#x5C06;&#x7F3A;&#x5931;&#x503C;&#x5168;&#x90E8;&#x66FF;&#x6362;&#x4E3A;&#x6570;&#x503C;&#xFF0C;&#x4FBF;&#x4E8E;&#x5904;&#x7406;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+<span class="hljs-keyword">from</span> pyspark.sql.types <span class="hljs-keyword">import</span> StringType
+_user_profile_df2 = _user_profile_df1.na.fill(<span class="hljs-number">-1</span>)
+<span class="hljs-comment"># _user_profile_df2.show()</span>
+
+<span class="hljs-comment"># &#x70ED;&#x7F16;&#x7801;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x5C06;&#x5F85;&#x5904;&#x7406;&#x5B57;&#x6BB5;&#x8F6C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x624D;&#x53EF;&#x5904;&#x7406;</span>
+_user_profile_df3 = _user_profile_df2.withColumn(<span class="hljs-string">&quot;pvalue_level&quot;</span>, _user_profile_df2.pvalue_level.cast(StringType()))\
+    .withColumn(<span class="hljs-string">&quot;new_user_class_level&quot;</span>, _user_profile_df2.new_user_class_level.cast(StringType()))
+<span class="hljs-comment"># _user_profile_df3.printSchema()</span>
+
+<span class="hljs-comment"># &#x5BF9;pvalue_level&#x8FDB;&#x884C;&#x70ED;&#x7F16;&#x7801;&#xFF0C;&#x6C42;&#x503C;</span>
+<span class="hljs-comment"># &#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x662F;&#x5148;&#x5C06;pvalue_level&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x5217;&#x65B0;&#x7684;&#x7279;&#x5F81;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x8BE5;&#x7279;&#x5F81;&#x6570;&#x636E;&#x6C42;&#x51FA;&#x7684;&#x70ED;&#x7F16;&#x7801;&#x503C;&#xFF0C;&#x5B58;&#x5728;&#x4E86;&#x65B0;&#x7684;&#x4E00;&#x5217;&#x6570;&#x636E;&#x4E2D;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#x4E00;&#x4E2A;&#x7A00;&#x758F;&#x77E9;&#x9635;</span>
+stringindexer = StringIndexer(inputCol=<span class="hljs-string">&apos;pvalue_level&apos;</span>, outputCol=<span class="hljs-string">&apos;pl_onehot_feature&apos;</span>)
+encoder = OneHotEncoder(dropLast=<span class="hljs-keyword">False</span>, inputCol=<span class="hljs-string">&apos;pl_onehot_feature&apos;</span>, outputCol=<span class="hljs-string">&apos;pl_onehot_value&apos;</span>)
+pipeline = Pipeline(stages=[stringindexer, encoder])
+pipeline_fit = pipeline.fit(_user_profile_df3)
+_user_profile_df4 = pipeline_fit.transform(_user_profile_df3)
+<span class="hljs-comment"># pl_onehot_value&#x5217;&#x7684;&#x503C;&#x4E3A;&#x7A00;&#x758F;&#x77E9;&#x9635;&#xFF0C;&#x5B58;&#x50A8;&#x70ED;&#x7F16;&#x7801;&#x7684;&#x7ED3;&#x679C;</span>
+<span class="hljs-comment"># _user_profile_df4.printSchema()</span>
+<span class="hljs-comment"># _user_profile_df4.show()</span>
+
+<span class="hljs-comment"># &#x4F7F;&#x7528;&#x70ED;&#x7F16;&#x7801;&#x8F6C;&#x6362;new_user_class_level&#x7684;&#x4E00;&#x7EF4;&#x6570;&#x636E;&#x4E3A;&#x591A;&#x7EF4;</span>
+stringindexer = StringIndexer(inputCol=<span class="hljs-string">&apos;new_user_class_level&apos;</span>, outputCol=<span class="hljs-string">&apos;nucl_onehot_feature&apos;</span>)
+encoder = OneHotEncoder(dropLast=<span class="hljs-keyword">False</span>, inputCol=<span class="hljs-string">&apos;nucl_onehot_feature&apos;</span>, outputCol=<span class="hljs-string">&apos;nucl_onehot_value&apos;</span>)
+pipeline = Pipeline(stages=[stringindexer, encoder])
+pipeline_fit = pipeline.fit(_user_profile_df4)
+user_profile_df = pipeline_fit.transform(_user_profile_df4)
+user_profile_df.show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>+------+---------+------------+-----------------+---------+------------+--------------+----------+--------------------+-----------------+---------------+-------------------+-----------------+
+|userId|cms_segid|cms_group_id|final_gender_code|age_level|pvalue_level|shopping_level|occupation|new_user_class_level|pl_onehot_feature|pl_onehot_value|nucl_onehot_feature|nucl_onehot_value|
++------+---------+------------+-----------------+---------+------------+--------------+----------+--------------------+-----------------+---------------+-------------------+-----------------+
+|   234|        0|           5|                2|        5|          -1|             3|         0|                   3|              0.0|  (4,[0],[1.0])|                2.0|    (5,[2],[1.0])|
+|   523|        5|           2|                2|        2|           1|             3|         1|                   2|              2.0|  (4,[2],[1.0])|                1.0|    (5,[1],[1.0])|
+|   612|        0|           8|                1|        2|           2|             3|         0|                  -1|              1.0|  (4,[1],[1.0])|                0.0|    (5,[0],[1.0])|
+|  1670|        0|           4|                2|        4|          -1|             1|         0|                  -1|              0.0|  (4,[0],[1.0])|                0.0|    (5,[0],[1.0])|
+|  2545|        0|          10|                1|        4|          -1|             3|         0|                  -1|              0.0|  (4,[0],[1.0])|                0.0|    (5,[0],[1.0])|
+|  3644|       49|           6|                2|        6|           2|             3|         0|                   2|              1.0|  (4,[1],[1.0])|                1.0|    (5,[1],[1.0])|
+|  5777|       44|           5|                2|        5|           2|             3|         0|                   2|              1.0|  (4,[1],[1.0])|                1.0|    (5,[1],[1.0])|
+|  6211|        0|           9|                1|        3|          -1|             3|         0|                   2|              0.0|  (4,[0],[1.0])|                1.0|    (5,[1],[1.0])|
+|  6355|        2|           1|                2|        1|           1|             3|         0|                   4|              2.0|  (4,[2],[1.0])|                3.0|    (5,[3],[1.0])|
+|  6823|       43|           5|                2|        5|           2|             3|         0|                   1|              1.0|  (4,[1],[1.0])|                4.0|    (5,[4],[1.0])|
+|  6972|        5|           2|                2|        2|           2|             3|         1|                   2|              1.0|  (4,[1],[1.0])|                1.0|    (5,[1],[1.0])|
+|  9293|        0|           5|                2|        5|          -1|             3|         0|                   4|              0.0|  (4,[0],[1.0])|                3.0|    (5,[3],[1.0])|
+|  9510|       55|           8|                1|        2|           2|             2|         0|                   2|              1.0|  (4,[1],[1.0])|                1.0|    (5,[1],[1.0])|
+| 10122|       33|           4|                2|        4|           2|             3|         0|                   2|              1.0|  (4,[1],[1.0])|                1.0|    (5,[1],[1.0])|
+| 10549|        0|           4|                2|        4|           2|             3|         0|                  -1|              1.0|  (4,[1],[1.0])|                0.0|    (5,[0],[1.0])|
+| 10812|        0|           4|                2|        4|          -1|             2|         0|                  -1|              0.0|  (4,[0],[1.0])|                0.0|    (5,[0],[1.0])|
+| 10912|        0|           4|                2|        4|           2|             3|         0|                  -1|              1.0|  (4,[1],[1.0])|                0.0|    (5,[0],[1.0])|
+| 10996|        0|           5|                2|        5|          -1|             3|         0|                   4|              0.0|  (4,[0],[1.0])|                3.0|    (5,[3],[1.0])|
+| 11256|        8|           2|                2|        2|           1|             3|         0|                   3|              2.0|  (4,[2],[1.0])|                2.0|    (5,[2],[1.0])|
+| 11310|       31|           4|                2|        4|           1|             3|         0|                   4|              2.0|  (4,[2],[1.0])|                3.0|    (5,[3],[1.0])|
++------+---------+------------+-----------------+---------+------------+--------------+----------+--------------------+-----------------+---------------+-------------------+-----------------+
+only showing top 20 rows
+</code></pre><ul>
+<li>&#x70ED;&#x7F16;&#x7801;&#x4E2D;&#xFF1A;&quot;pvalue_level&quot;&#x7279;&#x5F81;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;:</li>
+</ul>
+<pre><code class="lang-shell">+------------+----------------------+
+|pvalue_level|pl_onehot_feature     |
++------------+----------------------+
+|          -1|                   0.0|
+|           3|                   3.0|
+|           1|                   2.0|
+|           2|                   1.0|
++------------+----------------------+
+</code></pre>
+<ul>
+<li>&#x201C;new_user_class_level&#x201D;&#x7684;&#x7279;&#x5F81;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;</li>
+</ul>
+<pre><code class="lang-shell">+--------------------+------------------------+
+|new_user_class_level|nucl_onehot_feature     |
++--------------------+------------------------+
+|                  -1|                     0.0|
+|                   3|                     2.0|
+|                   1|                     4.0|
+|                   4|                     3.0|
+|                   2|                     1.0|
++--------------------+------------------------+
+</code></pre>
+<pre><code class="lang-python">user_profile_df.groupBy(<span class="hljs-string">&quot;pvalue_level&quot;</span>).min(<span class="hljs-string">&quot;pl_onehot_feature&quot;</span>).show()
+user_profile_df.groupBy(<span class="hljs-string">&quot;new_user_class_level&quot;</span>).min(<span class="hljs-string">&quot;nucl_onehot_feature&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>+------------+----------------------+
+|pvalue_level|min(pl_onehot_feature)|
++------------+----------------------+
+|          -1|                   0.0|
+|           3|                   3.0|
+|           1|                   2.0|
+|           2|                   1.0|
++------------+----------------------+
+
++--------------------+------------------------+
+|new_user_class_level|min(nucl_onehot_feature)|
++--------------------+------------------------+
+|                  -1|                     0.0|
+|                   3|                     2.0|
+|                   1|                     4.0|
+|                   4|                     3.0|
+|                   2|                     1.0|
++--------------------+------------------------+
+</code></pre><ul>
+<li>Dataframe&#x6570;&#x636E;&#x5408;&#x5E76;&#xFF1A;<a href="https://spark.apache.org/docs/latest/api/python/pyspark.sql.html?highlight=join#pyspark.sql.DataFrame.join" target="_blank">pyspark.sql.DataFrame.join</a></li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># raw_sample_df&#x548C;ad_feature_df&#x5408;&#x5E76;&#x6761;&#x4EF6;</span>
+condition = [raw_sample_df.adgroupId==ad_feature_df.adgroupId]
+_ = raw_sample_df.join(ad_feature_df, condition, <span class="hljs-string">&apos;outer&apos;</span>)
+
+<span class="hljs-comment"># _&#x548C;user_profile_df&#x5408;&#x5E76;&#x6761;&#x4EF6;</span>
+condition2 = [_.userId==user_profile_df.userId]
+datasets = _.join(user_profile_df, condition2, <span class="hljs-string">&quot;outer&quot;</span>)
+<span class="hljs-comment"># &#x67E5;&#x770B;datasets&#x7684;&#x7ED3;&#x6784;</span>
+datasets.printSchema()
+<span class="hljs-comment"># &#x67E5;&#x770B;datasets&#x6761;&#x76EE;&#x6570;</span>
+print(datasets.count())
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code class="lang-shell">root
+ |-- userId: integer (nullable = true)
+ |-- timestamp: long (nullable = true)
+ |-- adgroupId: integer (nullable = true)
+ |-- pid: string (nullable = true)
+ |-- nonclk: integer (nullable = true)
+ |-- clk: integer (nullable = true)
+ |-- pid_feature: double (nullable = true)
+ |-- pid_value: vector (nullable = true)
+ |-- adgroupId: integer (nullable = true)
+ |-- cateId: integer (nullable = true)
+ |-- campaignId: integer (nullable = true)
+ |-- customerId: integer (nullable = true)
+ |-- brandId: integer (nullable = true)
+ |-- price: float (nullable = true)
+ |-- userId: integer (nullable = true)
+ |-- cms_segid: integer (nullable = true)
+ |-- cms_group_id: integer (nullable = true)
+ |-- final_gender_code: integer (nullable = true)
+ |-- age_level: integer (nullable = true)
+ |-- pvalue_level: string (nullable = true)
+ |-- shopping_level: integer (nullable = true)
+ |-- occupation: integer (nullable = true)
+ |-- new_user_class_level: string (nullable = true)
+ |-- pl_onehot_feature: double (nullable = true)
+ |-- pl_onehot_value: vector (nullable = true)
+ |-- nucl_onehot_feature: double (nullable = true)
+ |-- nucl_onehot_value: vector (nullable = true)
+
+26557961
+</code></pre>
+<ul>
+<li>&#x8BAD;&#x7EC3;CTRModel_Normal&#xFF1A;&#x76F4;&#x63A5;&#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x7279;&#x5F81;&#x7684;&#x7279;&#x5F81;&#x503C;&#x7EC4;&#x5408;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5254;&#x9664;&#x5197;&#x4F59;&#x3001;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x5B57;&#x6BB5;</span>
+useful_cols = [
+    <span class="hljs-comment"># </span>
+    <span class="hljs-comment"># &#x65F6;&#x95F4;&#x5B57;&#x6BB5;&#xFF0C;&#x5212;&#x5206;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x96C6;</span>
+    <span class="hljs-string">&quot;timestamp&quot;</span>,
+    <span class="hljs-comment"># label&#x76EE;&#x6807;&#x503C;&#x5B57;&#x6BB5;</span>
+    <span class="hljs-string">&quot;clk&quot;</span>,  
+    <span class="hljs-comment"># &#x7279;&#x5F81;&#x503C;&#x5B57;&#x6BB5;</span>
+    <span class="hljs-string">&quot;pid_value&quot;</span>,       <span class="hljs-comment"># &#x8D44;&#x6E90;&#x4F4D;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;</span>
+    <span class="hljs-string">&quot;price&quot;</span>,    <span class="hljs-comment"># &#x5E7F;&#x544A;&#x4EF7;&#x683C;</span>
+    <span class="hljs-string">&quot;cms_segid&quot;</span>,    <span class="hljs-comment"># &#x7528;&#x6237;&#x5FAE;&#x7FA4;ID</span>
+    <span class="hljs-string">&quot;cms_group_id&quot;</span>,    <span class="hljs-comment"># &#x7528;&#x6237;&#x7EC4;ID</span>
+    <span class="hljs-string">&quot;final_gender_code&quot;</span>,    <span class="hljs-comment"># &#x7528;&#x6237;&#x6027;&#x522B;&#x7279;&#x5F81;&#xFF0C;[1,2]</span>
+    <span class="hljs-string">&quot;age_level&quot;</span>,    <span class="hljs-comment"># &#x5E74;&#x9F84;&#x7B49;&#x7EA7;&#xFF0C;1-</span>
+    <span class="hljs-string">&quot;shopping_level&quot;</span>,
+    <span class="hljs-string">&quot;occupation&quot;</span>,
+    <span class="hljs-string">&quot;pl_onehot_value&quot;</span>,
+    <span class="hljs-string">&quot;nucl_onehot_value&quot;</span>
+]
+<span class="hljs-comment"># &#x7B5B;&#x9009;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x6570;&#x636E;&#xFF0C;&#x6784;&#x5EFA;&#x65B0;&#x7684;&#x6570;&#x636E;&#x96C6;</span>
+datasets_1 = datasets.select(*useful_cols)
+<span class="hljs-comment"># &#x7531;&#x4E8E;&#x524D;&#x9762;&#x4F7F;&#x7528;&#x7684;&#x662F;outer&#x65B9;&#x5F0F;&#x5408;&#x5E76;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4EA7;&#x751F;&#x4E86;&#x90E8;&#x5206;&#x7A7A;&#x503C;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x91CC;&#x5FC5;&#x987B;&#x5148;&#x5254;&#x9664;&#x6389;</span>
+datasets_1 = datasets_1.dropna()
+print(<span class="hljs-string">&quot;&#x5254;&#x9664;&#x7A7A;&#x503C;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x8FD8;&#x5269;&#xFF1A;&quot;</span>, datasets_1.count())
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>&#x5254;&#x9664;&#x7A7A;&#x503C;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x8FD8;&#x5269;&#xFF1A; 25029435
+</code></pre><ul>
+<li>&#x6839;&#x636E;&#x7279;&#x5F81;&#x5B57;&#x6BB5;&#x8BA1;&#x7B97;&#x51FA;&#x7279;&#x5F81;&#x5411;&#x91CF;&#xFF0C;&#x5E76;&#x5212;&#x5206;&#x51FA;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x96C6;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> VectorAssembler
+<span class="hljs-comment"># &#x6839;&#x636E;&#x7279;&#x5F81;&#x5B57;&#x6BB5;&#x8BA1;&#x7B97;&#x7279;&#x5F81;&#x5411;&#x91CF;</span>
+datasets_1 = VectorAssembler().setInputCols(useful_cols[<span class="hljs-number">2</span>:]).setOutputCol(<span class="hljs-string">&quot;features&quot;</span>).transform(datasets_1)
+<span class="hljs-comment"># &#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x96C6;: &#x7EA6;7&#x5929;&#x7684;&#x6570;&#x636E;</span>
+train_datasets_1 = datasets_1.filter(datasets_1.timestamp&lt;=(<span class="hljs-number">1494691186</span><span class="hljs-number">-24</span>*<span class="hljs-number">60</span>*<span class="hljs-number">60</span>))
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x96C6;&#xFF1A;&#x7EA6;1&#x5929;&#x7684;&#x6570;&#x636E;&#x91CF;</span>
+test_datasets_1 = datasets_1.filter(datasets_1.timestamp&gt;(<span class="hljs-number">1494691186</span><span class="hljs-number">-24</span>*<span class="hljs-number">60</span>*<span class="hljs-number">60</span>))
+<span class="hljs-comment"># &#x6240;&#x6709;&#x7684;&#x7279;&#x5F81;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x5DF2;&#x7ECF;&#x6C47;&#x603B;&#x5230;&#x5728;features&#x5B57;&#x6BB5;&#x4E2D;</span>
+train_datasets_1.show(<span class="hljs-number">5</span>)
+test_datasets_1.show(<span class="hljs-number">5</span>)
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>+----------+---+-------------+------+---------+------------+-----------------+---------+--------------+----------+---------------+-----------------+--------------------+
+| timestamp|clk|    pid_value| price|cms_segid|cms_group_id|final_gender_code|age_level|shopping_level|occupation|pl_onehot_value|nucl_onehot_value|            features|
++----------+---+-------------+------+---------+------------+-----------------+---------+--------------+----------+---------------+-----------------+--------------------+
+|1494261938|  0|(2,[1],[1.0])| 108.0|        0|          11|                1|        5|             3|         0|  (4,[0],[1.0])|    (5,[1],[1.0])|(18,[1,2,4,5,6,7,...|
+|1494261938|  0|(2,[1],[1.0])|1880.0|        0|          11|                1|        5|             3|         0|  (4,[0],[1.0])|    (5,[1],[1.0])|(18,[1,2,4,5,6,7,...|
+|1494553913|  0|(2,[1],[1.0])|2360.0|       19|           3|                2|        3|             3|         0|  (4,[1],[1.0])|    (5,[1],[1.0])|(18,[1,2,3,4,5,6,...|
+|1494553913|  0|(2,[1],[1.0])|2200.0|       19|           3|                2|        3|             3|         0|  (4,[1],[1.0])|    (5,[1],[1.0])|(18,[1,2,3,4,5,6,...|
+|1494436784|  0|(2,[1],[1.0])|5649.0|       19|           3|                2|        3|             3|         0|  (4,[1],[1.0])|    (5,[1],[1.0])|(18,[1,2,3,4,5,6,...|
++----------+---+-------------+------+---------+------------+-----------------+---------+--------------+----------+---------------+-----------------+--------------------+
+only showing top 5 rows
+
++----------+---+-------------+-----+---------+------------+-----------------+---------+--------------+----------+---------------+-----------------+--------------------+
+| timestamp|clk|    pid_value|price|cms_segid|cms_group_id|final_gender_code|age_level|shopping_level|occupation|pl_onehot_value|nucl_onehot_value|            features|
++----------+---+-------------+-----+---------+------------+-----------------+---------+--------------+----------+---------------+-----------------+--------------------+
+|1494677292|  0|(2,[1],[1.0])|176.0|       19|           3|                2|        3|             3|         0|  (4,[1],[1.0])|    (5,[1],[1.0])|(18,[1,2,3,4,5,6,...|
+|1494677292|  0|(2,[1],[1.0])|698.0|       19|           3|                2|        3|             3|         0|  (4,[1],[1.0])|    (5,[1],[1.0])|(18,[1,2,3,4,5,6,...|
+|1494677292|  0|(2,[1],[1.0])|697.0|       19|           3|                2|        3|             3|         0|  (4,[1],[1.0])|    (5,[1],[1.0])|(18,[1,2,3,4,5,6,...|
+|1494684007|  0|(2,[1],[1.0])|247.0|       18|           3|                2|        3|             3|         0|  (4,[1],[1.0])|    (5,[4],[1.0])|(18,[1,2,3,4,5,6,...|
+|1494684007|  0|(2,[1],[1.0])|109.0|       18|           3|                2|        3|             3|         0|  (4,[1],[1.0])|    (5,[4],[1.0])|(18,[1,2,3,4,5,6,...|
++----------+---+-------------+-----+---------+------------+-----------------+---------+--------------+----------+---------------+-----------------+--------------------+
+only showing top 5 rows
+</code></pre><ul>
+<li>&#x521B;&#x5EFA;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x8BAD;&#x7EC3;&#x5668;&#xFF0C;&#x5E76;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#xFF1A;<a href="https://spark.apache.org/docs/latest/api/python/pyspark.ml.html?highlight=logisticregression#pyspark.ml.classification.LogisticRegression" target="_blank">LogisticRegression</a>&#x3001; <a href="https://spark.apache.org/docs/latest/api/python/pyspark.ml.html?highlight=logisticregression#pyspark.ml.classification.LogisticRegressionModel" target="_blank">LogisticRegressionModel</a></li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.ml.classification <span class="hljs-keyword">import</span> LogisticRegression
+lr = LogisticRegression()
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x76EE;&#x6807;&#x5B57;&#x6BB5;&#x3001;&#x7279;&#x5F81;&#x503C;&#x5B57;&#x6BB5;&#x5E76;&#x8BAD;&#x7EC3;</span>
+model = lr.setLabelCol(<span class="hljs-string">&quot;clk&quot;</span>).setFeaturesCol(<span class="hljs-string">&quot;features&quot;</span>).fit(train_datasets_1)
+<span class="hljs-comment"># &#x5BF9;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x5B58;&#x50A8;</span>
+model.save(<span class="hljs-string">&quot;hdfs://localhost:8020/models/CTRModel_Normal.obj&quot;</span>)
+<span class="hljs-comment"># &#x8F7D;&#x5165;&#x8BAD;&#x7EC3;&#x597D;&#x7684;&#x6A21;&#x578B;</span>
+<span class="hljs-keyword">from</span> pyspark.ml.classification <span class="hljs-keyword">import</span> LogisticRegressionModel
+model = LogisticRegressionModel.load(<span class="hljs-string">&quot;hdfs://localhost:8020/models/CTRModel_Normal.obj&quot;</span>)
+<span class="hljs-comment"># &#x6839;&#x636E;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x9884;&#x6D4B;</span>
+result_1 = model.transform(test_datasets_1)
+<span class="hljs-comment"># &#x6309;probability&#x5347;&#x5E8F;&#x6392;&#x5217;&#x6570;&#x636E;&#xFF0C;probability&#x8868;&#x793A;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#x7684;&#x6982;&#x7387;</span>
+<span class="hljs-comment"># &#x5982;&#x679C;&#x9884;&#x6D4B;&#x503C;&#x662F;0&#xFF0C;&#x5176;&#x6982;&#x7387;&#x662F;0.9248&#xFF0C;&#x90A3;&#x4E48;&#x53CD;&#x4E4B;&#x53EF;&#x63A8;&#x51FA;1&#x7684;&#x53EF;&#x80FD;&#x6027;&#x5C31;&#x662F;1-0.9248=0.0752&#xFF0C;&#x5373;&#x70B9;&#x51FB;&#x6982;&#x7387;&#x7EA6;&#x4E3A;7.52%</span>
+<span class="hljs-comment"># &#x56E0;&#x4E3A;&#x524D;&#x9762;&#x63D0;&#x5230;&#x5E7F;&#x544A;&#x7684;&#x70B9;&#x51FB;&#x7387;&#x4E00;&#x822C;&#x90FD;&#x6BD4;&#x8F83;&#x4F4E;&#xFF0C;&#x6240;&#x4EE5;&#x9884;&#x6D4B;&#x503C;&#x901A;&#x5E38;&#x90FD;&#x662F;0&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x5E38;&#x9700;&#x8981;&#x53CD;&#x51CF;&#x5F97;&#x51FA;&#x70B9;&#x51FB;&#x7684;&#x6982;&#x7387;</span>
+result_1.select(<span class="hljs-string">&quot;clk&quot;</span>, <span class="hljs-string">&quot;price&quot;</span>, <span class="hljs-string">&quot;probability&quot;</span>, <span class="hljs-string">&quot;prediction&quot;</span>).sort(<span class="hljs-string">&quot;probability&quot;</span>).show(<span class="hljs-number">100</span>)
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code class="lang-shell">+---+-----------+--------------------+----------+
+|clk|      price|         probability|prediction|
++---+-----------+--------------------+----------+
+|  0|      1.0E8|[0.86822033939259...|       0.0|
+|  0|      1.0E8|[0.88410457194969...|       0.0|
+|  0|      1.0E8|[0.89175497837562...|       0.0|
+|  1|5.5555556E7|[0.92481456486873...|       0.0|
+|  0|      1.5E7|[0.93741450446939...|       0.0|
+|  0|      1.5E7|[0.93757135079959...|       0.0|
+|  0|      1.5E7|[0.93834723093801...|       0.0|
+|  0|     1099.0|[0.93972095713786...|       0.0|
+|  0|      338.0|[0.93972134993018...|       0.0|
+|  0|      311.0|[0.93972136386626...|       0.0|
+|  0|      300.0|[0.93972136954393...|       0.0|
+|  0|      278.0|[0.93972138089925...|       0.0|
+|  0|      188.0|[0.93972142735283...|       0.0|
+|  0|      176.0|[0.93972143354663...|       0.0|
+|  0|      168.0|[0.93972143767584...|       0.0|
+|  0|      158.0|[0.93972144283734...|       0.0|
+|  1|      138.0|[0.93972145316035...|       0.0|
+|  0|      125.0|[0.93972145987031...|       0.0|
+|  0|      119.0|[0.93972146296721...|       0.0|
+|  0|       78.0|[0.93972148412937...|       0.0|
+|  0|      59.98|[0.93972149343040...|       0.0|
+|  0|       58.0|[0.93972149445238...|       0.0|
+|  0|       56.0|[0.93972149548468...|       0.0|
+|  0|       38.0|[0.93972150477538...|       0.0|
+|  1|       35.0|[0.93972150632383...|       0.0|
+|  0|       33.0|[0.93972150735613...|       0.0|
+|  0|       30.0|[0.93972150890458...|       0.0|
+|  0|       27.6|[0.93972151014334...|       0.0|
+|  0|       18.0|[0.93972151509838...|       0.0|
+|  0|       30.0|[0.93980311191464...|       0.0|
+|  0|       28.0|[0.93980311294563...|       0.0|
+|  0|       25.0|[0.93980311449212...|       0.0|
+|  0|      688.0|[0.93999362023323...|       0.0|
+|  0|      339.0|[0.93999379960808...|       0.0|
+|  0|      335.0|[0.93999380166395...|       0.0|
+|  0|      220.0|[0.93999386077017...|       0.0|
+|  0|      176.0|[0.93999388338470...|       0.0|
+|  0|      158.0|[0.93999389263610...|       0.0|
+|  0|      158.0|[0.93999389263610...|       0.0|
+|  1|      149.0|[0.93999389726180...|       0.0|
+|  0|      122.5|[0.93999391088191...|       0.0|
+|  0|       99.0|[0.93999392296012...|       0.0|
+|  0|       88.0|[0.93999392861375...|       0.0|
+|  0|       79.0|[0.93999393323945...|       0.0|
+|  0|       75.0|[0.93999393529532...|       0.0|
+|  0|       68.0|[0.93999393889308...|       0.0|
+|  0|       68.0|[0.93999393889308...|       0.0|
+|  0|       59.9|[0.93999394305620...|       0.0|
+|  0|      44.98|[0.93999395072458...|       0.0|
+|  0|       35.5|[0.93999395559698...|       0.0|
+|  0|       33.0|[0.93999395688189...|       0.0|
+|  0|       32.8|[0.93999395698469...|       0.0|
+|  0|       30.0|[0.93999395842379...|       0.0|
+|  0|       28.0|[0.93999395945172...|       0.0|
+|  0|       19.9|[0.93999396361485...|       0.0|
+|  0|       19.8|[0.93999396366625...|       0.0|
+|  0|       19.8|[0.93999396366625...|       0.0|
+|  0|       12.0|[0.93999396767518...|       0.0|
+|  0|        6.7|[0.93999397039920...|       0.0|
+|  0|      568.0|[0.94000369247841...|       0.0|
+|  0|      398.0|[0.94000377983931...|       0.0|
+|  0|      158.0|[0.94000390317214...|       0.0|
+|  0|     5718.0|[0.94001886593718...|       0.0|
+|  0|     5718.0|[0.94001886593718...|       0.0|
+|  1|     5608.0|[0.94001892245145...|       0.0|
+|  0|     4120.0|[0.94001968693052...|       0.0|
+|  0|     1027.5|[0.94002127571285...|       0.0|
+|  0|     1027.5|[0.94002127571285...|       0.0|
+|  0|      989.0|[0.94002129549211...|       0.0|
+|  0|      672.0|[0.94002145834965...|       0.0|
+|  0|      660.0|[0.94002146451460...|       0.0|
+|  0|      598.0|[0.94002149636681...|       0.0|
+|  0|      598.0|[0.94002149636681...|       0.0|
+|  0|      563.0|[0.94002151434789...|       0.0|
+|  0|      509.0|[0.94002154209012...|       0.0|
+|  0|      509.0|[0.94002154209012...|       0.0|
+|  0|      500.0|[0.94002154671382...|       0.0|
+|  0|      498.0|[0.94002154774131...|       0.0|
+|  0|      440.0|[0.94002157753851...|       0.0|
+|  0|      430.0|[0.94002158267595...|       0.0|
+|  0|      388.0|[0.94002160425322...|       0.0|
+|  0|      369.0|[0.94002161401436...|       0.0|
+|  0|      368.0|[0.94002161452811...|       0.0|
+|  0|      368.0|[0.94002161452811...|       0.0|
+|  0|      368.0|[0.94002161452811...|       0.0|
+|  0|      368.0|[0.94002161452811...|       0.0|
+|  0|      366.0|[0.94002161555560...|       0.0|
+|  0|      366.0|[0.94002161555560...|       0.0|
+|  0|      348.0|[0.94002162480299...|       0.0|
+|  0|      299.0|[0.94002164997645...|       0.0|
+|  0|      299.0|[0.94002164997645...|       0.0|
+|  0|      299.0|[0.94002164997645...|       0.0|
+|  0|      298.0|[0.94002165049020...|       0.0|
+|  0|      297.0|[0.94002165100394...|       0.0|
+|  0|      278.0|[0.94002166076508...|       0.0|
+|  1|      275.0|[0.94002166230631...|       0.0|
+|  0|      275.0|[0.94002166230631...|       0.0|
+|  0|      273.0|[0.94002166333380...|       0.0|
+|  0|      258.0|[0.94002167103995...|       0.0|
+|  0|      256.0|[0.94002167206744...|       0.0|
++---+-----------+--------------------+----------+
+only showing top 100 rows
+</code></pre>
+<ul>
+<li>&#x67E5;&#x770B;&#x6837;&#x672C;&#x4E2D;&#x70B9;&#x51FB;&#x7684;&#x88AB;&#x5B9E;&#x9645;&#x70B9;&#x51FB;&#x7684;&#x6761;&#x76EE;&#x7684;&#x9884;&#x6D4B;&#x60C5;&#x51B5;</li>
+</ul>
+<pre><code class="lang-python">result_1.filter(result_1.clk==<span class="hljs-number">1</span>).select(<span class="hljs-string">&quot;clk&quot;</span>, <span class="hljs-string">&quot;price&quot;</span>, <span class="hljs-string">&quot;probability&quot;</span>, <span class="hljs-string">&quot;prediction&quot;</span>).sort(<span class="hljs-string">&quot;probability&quot;</span>).show(<span class="hljs-number">100</span>)
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>+---+-----------+--------------------+----------+
+|clk|      price|         probability|prediction|
++---+-----------+--------------------+----------+
+|  1|5.5555556E7|[0.92481456486873...|       0.0|
+|  1|      138.0|[0.93972145316035...|       0.0|
+|  1|       35.0|[0.93972150632383...|       0.0|
+|  1|      149.0|[0.93999389726180...|       0.0|
+|  1|     5608.0|[0.94001892245145...|       0.0|
+|  1|      275.0|[0.94002166230631...|       0.0|
+|  1|       35.0|[0.94002178560473...|       0.0|
+|  1|       49.0|[0.94004219516957...|       0.0|
+|  1|      915.0|[0.94021082858784...|       0.0|
+|  1|      598.0|[0.94021099096349...|       0.0|
+|  1|      568.0|[0.94021100633025...|       0.0|
+|  1|      398.0|[0.94021109340848...|       0.0|
+|  1|      368.0|[0.94021110877521...|       0.0|
+|  1|      299.0|[0.94021114411869...|       0.0|
+|  1|      278.0|[0.94021115487539...|       0.0|
+|  1|      259.0|[0.94021116460765...|       0.0|
+|  1|      258.0|[0.94021116511987...|       0.0|
+|  1|      258.0|[0.94021116511987...|       0.0|
+|  1|      258.0|[0.94021116511987...|       0.0|
+|  1|      195.0|[0.94021119738998...|       0.0|
+|  1|      188.0|[0.94021120097554...|       0.0|
+|  1|      178.0|[0.94021120609778...|       0.0|
+|  1|      159.0|[0.94021121583003...|       0.0|
+|  1|      149.0|[0.94021122095226...|       0.0|
+|  1|      138.0|[0.94021122658672...|       0.0|
+|  1|       58.0|[0.94021126756458...|       0.0|
+|  1|       49.0|[0.94021127217459...|       0.0|
+|  1|       35.0|[0.94021127934572...|       0.0|
+|  1|       25.0|[0.94021128446795...|       0.0|
+|  1|     2890.0|[0.94028789742257...|       0.0|
+|  1|      220.0|[0.94028926340218...|       0.0|
+|  1|      188.0|[0.94031410659516...|       0.0|
+|  1|       68.0|[0.94031416796289...|       0.0|
+|  1|       58.0|[0.94031417307687...|       0.0|
+|  1|      198.0|[0.94035413548387...|       0.0|
+|  1|      208.0|[0.94039204931181...|       0.0|
+|  1|     8888.0|[0.94045237642030...|       0.0|
+|  1|      519.0|[0.94045664687995...|       0.0|
+|  1|      478.0|[0.94045666780037...|       0.0|
+|  1|      349.0|[0.94045673362308...|       0.0|
+|  1|      348.0|[0.94045673413334...|       0.0|
+|  1|      316.0|[0.94045675046144...|       0.0|
+|  1|      298.0|[0.94045675964600...|       0.0|
+|  1|      298.0|[0.94045675964600...|       0.0|
+|  1|      199.0|[0.94045681016104...|       0.0|
+|  1|      199.0|[0.94045681016104...|       0.0|
+|  1|      198.0|[0.94045681067129...|       0.0|
+|  1|      187.1|[0.94045681623305...|       0.0|
+|  1|      176.0|[0.94045682189685...|       0.0|
+|  1|      168.0|[0.94045682597887...|       0.0|
+|  1|      160.0|[0.94045683006090...|       0.0|
+|  1|      158.0|[0.94045683108140...|       0.0|
+|  1|      158.0|[0.94045683108140...|       0.0|
+|  1|      135.0|[0.94045684281721...|       0.0|
+|  1|      129.0|[0.94045684587872...|       0.0|
+|  1|      127.0|[0.94045684689923...|       0.0|
+|  1|      125.0|[0.94045684791973...|       0.0|
+|  1|      124.0|[0.94045684842999...|       0.0|
+|  1|      118.0|[0.94045685149150...|       0.0|
+|  1|      109.0|[0.94045685608377...|       0.0|
+|  1|      108.0|[0.94045685659402...|       0.0|
+|  1|       99.0|[0.94045686118630...|       0.0|
+|  1|       98.0|[0.94045686169655...|       0.0|
+|  1|       79.8|[0.94045687098314...|       0.0|
+|  1|       79.0|[0.94045687139134...|       0.0|
+|  1|       77.0|[0.94045687241185...|       0.0|
+|  1|       72.5|[0.94045687470798...|       0.0|
+|  1|       69.0|[0.94045687649386...|       0.0|
+|  1|       68.0|[0.94045687700412...|       0.0|
+|  1|       60.0|[0.94045688108613...|       0.0|
+|  1|      43.98|[0.94045688926037...|       0.0|
+|  1|       40.0|[0.94045689129118...|       0.0|
+|  1|       39.9|[0.94045689134220...|       0.0|
+|  1|       39.6|[0.94045689149528...|       0.0|
+|  1|       32.0|[0.94045689537319...|       0.0|
+|  1|       31.0|[0.94045689588345...|       0.0|
+|  1|      25.98|[0.94045689844491...|       0.0|
+|  1|       23.0|[0.94045689996546...|       0.0|
+|  1|       19.0|[0.94045690200647...|       0.0|
+|  1|       16.9|[0.94045690307800...|       0.0|
+|  1|       10.0|[0.94045690659874...|       0.0|
+|  1|        3.5|[0.94045690991538...|       0.0|
+|  1|        3.5|[0.94045690991538...|       0.0|
+|  1|        0.4|[0.94045691149716...|       0.0|
+|  1|     3960.0|[0.94055740378069...|       0.0|
+|  1|     3088.0|[0.94055784801535...|       0.0|
+|  1|     1689.0|[0.94055856072019...|       0.0|
+|  1|      998.0|[0.94055891273943...|       0.0|
+|  1|      888.0|[0.94055896877705...|       0.0|
+|  1|      788.0|[0.94055901972029...|       0.0|
+|  1|      737.0|[0.94055904570133...|       0.0|
+|  1|      629.0|[0.94055910071996...|       0.0|
+|  1|      599.0|[0.94055911600291...|       0.0|
+|  1|      599.0|[0.94055911600291...|       0.0|
+|  1|      599.0|[0.94055911600291...|       0.0|
+|  1|      499.0|[0.94055916694603...|       0.0|
+|  1|      468.0|[0.94055918273839...|       0.0|
+|  1|      459.0|[0.94055918732327...|       0.0|
+|  1|      399.0|[0.94055921788912...|       0.0|
+|  1|      399.0|[0.94055921788912...|       0.0|
++---+-----------+--------------------+----------+
+only showing top 100 rows
+</code></pre><ul>
+<li><p>&#x8BAD;&#x7EC3;CTRModel_AllOneHot</p>
+<ul>
+<li>&quot;pid_value&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;&#x5DF2;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;&#x591A;&#x7EF4;&#x7279;&#x5F81;==&gt; 2&#x7EF4;</li>
+<li>&quot;price&quot;, &#x7EDF;&#x8BA1;&#x578B;&#x7279;&#x5F81; ===&gt; 1&#x7EF4;</li>
+<li>&quot;cms_segid&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;&#x7EA6;97&#x4E2A;&#x5206;&#x7C7B; ===&gt; 1&#x7EF4;</li>
+<li>&quot;cms_group_id&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;&#x7EA6;13&#x4E2A;&#x5206;&#x7C7B; ==&gt; 1&#x7EF4;</li>
+<li>&quot;final_gender_code&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;2&#x4E2A;&#x5206;&#x7C7B; ==&gt; 1&#x7EF4;</li>
+<li>&quot;age_level&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;7&#x4E2A;&#x5206;&#x7C7B; ==&gt; 1&#x7EF4;</li>
+<li>&quot;shopping_level&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;3&#x4E2A;&#x5206;&#x7C7B; ==&gt; 1&#x7EF4;</li>
+<li>&quot;occupation&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;2&#x4E2A;&#x5206;&#x7C7B; ==&gt; 1&#x7EF4;</li>
+<li>&quot;pl_onehot_value&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;&#x5DF2;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;&#x591A;&#x7EF4;&#x7279;&#x5F81; ==&gt; 4&#x7EF4;</li>
+<li>&quot;nucl_onehot_value&quot; &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;&#x5DF2;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;&#x591A;&#x7EF4;&#x7279;&#x5F81; ==&gt; 5&#x7EF4;</li>
+</ul>
+<p>&#x7C7B;&#x522B;&#x6027;&#x7279;&#x5F81;&#x90FD;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x8FDB;&#x884C;&#x70ED;&#x72EC;&#x7F16;&#x7801;&#xFF0C;&#x5C06;&#x5355;&#x4E00;&#x53D8;&#x91CF;&#x53D8;&#x4E3A;&#x591A;&#x53D8;&#x91CF;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x589E;&#x52A0;&#x4E86;&#x76F8;&#x5173;&#x7279;&#x5F81;&#x7684;&#x6570;&#x91CF;</p>
+<ul>
+<li>&quot;cms_segid&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;&#x7EA6;97&#x4E2A;&#x5206;&#x7C7B; ===&gt; 97&#x7EF4; &#x820D;&#x5F03;</li>
+<li>&quot;cms_group_id&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;&#x7EA6;13&#x4E2A;&#x5206;&#x7C7B; ==&gt; 13&#x7EF4;</li>
+<li>&quot;final_gender_code&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;2&#x4E2A;&#x5206;&#x7C7B; ==&gt; 2&#x7EF4;</li>
+<li>&quot;age_level&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;7&#x4E2A;&#x5206;&#x7C7B; ==&gt;7&#x7EF4;</li>
+<li>&quot;shopping_level&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;3&#x4E2A;&#x5206;&#x7C7B; ==&gt; 3&#x7EF4;</li>
+<li>&quot;occupation&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;2&#x4E2A;&#x5206;&#x7C7B; ==&gt; 2&#x7EF4;</li>
+</ul>
+<p>&#x4F46;&#x7531;&#x4E8E;cms_segid&#x5206;&#x7C7B;&#x8FC7;&#x591A;&#xFF0C;&#x8FD9;&#x91CC;&#x8003;&#x8651;&#x820D;&#x5F03;&#xFF0C;&#x907F;&#x514D;&#x6570;&#x636E;&#x8FC7;&#x4E8E;&#x7A00;&#x758F;</p>
+</li>
+</ul>
+<pre><code class="lang-python">datasets_1.first()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code class="lang-shell">datasets_1.first()
+datasets_1.first()
+Row(timestamp=1494261938, clk=0, pid_value=SparseVector(2, {1: 1.0}), price=1880.0, cms_segid=0, cms_group_id=11, final_gender_code=1, age_level=5, shopping_level=3, occupation=0, pl_onehot_value=SparseVector(4, {0: 1.0}), nucl_onehot_value=SparseVector(5, {1: 1.0}), features=SparseVector(18, {1: 1.0, 2: 1880.0, 4: 11.0, 5: 1.0, 6: 5.0, 7: 3.0, 9: 1.0, 14: 1.0}))
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5148;&#x5C06;&#x4E0B;&#x5217;&#x4E94;&#x5217;&#x6570;&#x636E;&#x8F6C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E8E;&#x8FDB;&#x884C;&#x70ED;&#x72EC;&#x7F16;&#x7801;</span>
+<span class="hljs-comment"># - &quot;cms_group_id&quot;,   &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;&#x7EA6;13&#x4E2A;&#x5206;&#x7C7B; ==&gt; 13</span>
+<span class="hljs-comment"># - &quot;final_gender_code&quot;, &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;2&#x4E2A;&#x5206;&#x7C7B; ==&gt; 2</span>
+<span class="hljs-comment"># - &quot;age_level&quot;,    &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;7&#x4E2A;&#x5206;&#x7C7B; ==&gt;7</span>
+<span class="hljs-comment"># - &quot;shopping_level&quot;,    &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;3&#x4E2A;&#x5206;&#x7C7B; ==&gt; 3</span>
+<span class="hljs-comment"># - &quot;occupation&quot;,    &#x7C7B;&#x522B;&#x578B;&#x7279;&#x5F81;&#xFF0C;2&#x4E2A;&#x5206;&#x7C7B; ==&gt; 2</span>
+
+datasets_2 = datasets.withColumn(<span class="hljs-string">&quot;cms_group_id&quot;</span>, datasets.cms_group_id.cast(StringType()))\
+    .withColumn(<span class="hljs-string">&quot;final_gender_code&quot;</span>, datasets.final_gender_code.cast(StringType()))\
+    .withColumn(<span class="hljs-string">&quot;age_level&quot;</span>, datasets.age_level.cast(StringType()))\
+    .withColumn(<span class="hljs-string">&quot;shopping_level&quot;</span>, datasets.shopping_level.cast(StringType()))\
+    .withColumn(<span class="hljs-string">&quot;occupation&quot;</span>, datasets.occupation.cast(StringType()))
+useful_cols_2 = [
+    <span class="hljs-comment"># &#x65F6;&#x95F4;&#x503C;&#xFF0C;&#x5212;&#x5206;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x96C6;</span>
+    <span class="hljs-string">&quot;timestamp&quot;</span>,
+    <span class="hljs-comment"># label&#x76EE;&#x6807;&#x503C;</span>
+    <span class="hljs-string">&quot;clk&quot;</span>,  
+    <span class="hljs-comment"># &#x7279;&#x5F81;&#x503C;</span>
+    <span class="hljs-string">&quot;price&quot;</span>,
+    <span class="hljs-string">&quot;cms_group_id&quot;</span>,
+    <span class="hljs-string">&quot;final_gender_code&quot;</span>,
+    <span class="hljs-string">&quot;age_level&quot;</span>,
+    <span class="hljs-string">&quot;shopping_level&quot;</span>,
+    <span class="hljs-string">&quot;occupation&quot;</span>,
+    <span class="hljs-string">&quot;pid_value&quot;</span>, 
+    <span class="hljs-string">&quot;pl_onehot_value&quot;</span>,
+    <span class="hljs-string">&quot;nucl_onehot_value&quot;</span>
+]
+<span class="hljs-comment"># &#x7B5B;&#x9009;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x6570;&#x636E;</span>
+datasets_2 = datasets_2.select(*useful_cols_2)
+<span class="hljs-comment"># &#x7531;&#x4E8E;&#x524D;&#x9762;&#x4F7F;&#x7528;&#x7684;&#x662F;outer&#x65B9;&#x5F0F;&#x5408;&#x5E76;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4EA7;&#x751F;&#x4E86;&#x90E8;&#x5206;&#x7A7A;&#x503C;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x91CC;&#x5FC5;&#x987B;&#x5148;&#x5254;&#x9664;&#x6389;</span>
+datasets_2 = datasets_2.dropna()
+
+
+<span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> OneHotEncoder
+<span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> StringIndexer
+<span class="hljs-keyword">from</span> pyspark.ml <span class="hljs-keyword">import</span> Pipeline
+<span class="hljs-comment"># &#x70ED;&#x7F16;&#x7801;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5C01;&#x88C5;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">oneHotEncoder</span><span class="hljs-params">(col1, col2, col3, data)</span>:</span>
+    stringindexer = StringIndexer(inputCol=col1, outputCol=col2)
+    encoder = OneHotEncoder(dropLast=<span class="hljs-keyword">False</span>, inputCol=col2, outputCol=col3)
+    pipeline = Pipeline(stages=[stringindexer, encoder])
+    pipeline_fit = pipeline.fit(data)
+    <span class="hljs-keyword">return</span> pipeline_fit.transform(data)
+
+<span class="hljs-comment"># &#x5BF9;&#x8FD9;&#x4E94;&#x4E2A;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x70ED;&#x72EC;&#x7F16;&#x7801;</span>
+<span class="hljs-comment">#     &quot;cms_group_id&quot;,</span>
+<span class="hljs-comment">#     &quot;final_gender_code&quot;,</span>
+<span class="hljs-comment">#     &quot;age_level&quot;,</span>
+<span class="hljs-comment">#     &quot;shopping_level&quot;,</span>
+<span class="hljs-comment">#     &quot;occupation&quot;,</span>
+datasets_2 = oneHotEncoder(<span class="hljs-string">&quot;cms_group_id&quot;</span>, <span class="hljs-string">&quot;cms_group_id_feature&quot;</span>, <span class="hljs-string">&quot;cms_group_id_value&quot;</span>, datasets_2)
+datasets_2 = oneHotEncoder(<span class="hljs-string">&quot;final_gender_code&quot;</span>, <span class="hljs-string">&quot;final_gender_code_feature&quot;</span>, <span class="hljs-string">&quot;final_gender_code_value&quot;</span>, datasets_2)
+datasets_2 = oneHotEncoder(<span class="hljs-string">&quot;age_level&quot;</span>, <span class="hljs-string">&quot;age_level_feature&quot;</span>, <span class="hljs-string">&quot;age_level_value&quot;</span>, datasets_2)
+datasets_2 = oneHotEncoder(<span class="hljs-string">&quot;shopping_level&quot;</span>, <span class="hljs-string">&quot;shopping_level_feature&quot;</span>, <span class="hljs-string">&quot;shopping_level_value&quot;</span>, datasets_2)
+datasets_2 = oneHotEncoder(<span class="hljs-string">&quot;occupation&quot;</span>, <span class="hljs-string">&quot;occupation_feature&quot;</span>, <span class="hljs-string">&quot;occupation_value&quot;</span>, datasets_2)
+</code></pre>
+<ul>
+<li>&quot;cms_group_id&quot;&#x7279;&#x5F81;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF1A;</li>
+</ul>
+<pre><code>+------------+-------------------------+
+|cms_group_id|min(cms_group_id_feature)|
++------------+-------------------------+
+|           7|                      9.0|
+|          11|                      6.0|
+|           3|                      0.0|
+|           8|                      8.0|
+|           0|                     12.0|
+|           5|                      3.0|
+|           6|                     10.0|
+|           9|                      5.0|
+|           1|                      7.0|
+|          10|                      4.0|
+|           4|                      1.0|
+|          12|                     11.0|
+|           2|                      2.0|
++------------+-------------------------+
+</code></pre><ul>
+<li>&quot;final_gender_code&quot;&#x7279;&#x5F81;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF1A;</li>
+</ul>
+<pre><code>+-----------------+------------------------------+
+|final_gender_code|min(final_gender_code_feature)|
++-----------------+------------------------------+
+|                1|                           1.0|
+|                2|                           0.0|
++-----------------+------------------------------+
+</code></pre><ul>
+<li>&quot;age_level&quot;&#x7279;&#x5F81;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF1A;</li>
+</ul>
+<pre><code>+---------+----------------------+
+|age_level|min(age_level_feature)|
++---------+----------------------+
+|        3|                   0.0|
+|        0|                   6.0|
+|        5|                   2.0|
+|        6|                   5.0|
+|        1|                   4.0|
+|        4|                   1.0|
+|        2|                   3.0|
++---------+----------------------+
+</code></pre><ul>
+<li>&quot;shopping_level&quot;&#x7279;&#x5F81;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF1A;</li>
+</ul>
+<pre><code>|shopping_level|min(shopping_level_feature)|
++--------------+---------------------------+
+|             3|                        0.0|
+|             1|                        2.0|
+|             2|                        1.0|
++--------------+---------------------------+
+</code></pre><ul>
+<li>&quot;occupation&quot;&#x7279;&#x5F81;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF1A;</li>
+</ul>
+<pre><code>+----------+-----------------------+
+|occupation|min(occupation_feature)|
++----------+-----------------------+
+|         0|                    0.0|
+|         1|                    1.0|
++----------+-----------------------+
+</code></pre><pre><code class="lang-python">datasets_2.groupBy(<span class="hljs-string">&quot;cms_group_id&quot;</span>).min(<span class="hljs-string">&quot;cms_group_id_feature&quot;</span>).show()
+datasets_2.groupBy(<span class="hljs-string">&quot;final_gender_code&quot;</span>).min(<span class="hljs-string">&quot;final_gender_code_feature&quot;</span>).show()
+datasets_2.groupBy(<span class="hljs-string">&quot;age_level&quot;</span>).min(<span class="hljs-string">&quot;age_level_feature&quot;</span>).show()
+datasets_2.groupBy(<span class="hljs-string">&quot;shopping_level&quot;</span>).min(<span class="hljs-string">&quot;shopping_level_feature&quot;</span>).show()
+datasets_2.groupBy(<span class="hljs-string">&quot;occupation&quot;</span>).min(<span class="hljs-string">&quot;occupation_feature&quot;</span>).show()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>+------------+-------------------------+
+|cms_group_id|min(cms_group_id_feature)|
++------------+-------------------------+
+|           7|                      9.0|
+|          11|                      6.0|
+|           3|                      0.0|
+|           8|                      8.0|
+|           0|                     12.0|
+|           5|                      3.0|
+|           6|                     10.0|
+|           9|                      5.0|
+|           1|                      7.0|
+|          10|                      4.0|
+|           4|                      1.0|
+|          12|                     11.0|
+|           2|                      2.0|
++------------+-------------------------+
+
++-----------------+------------------------------+
+|final_gender_code|min(final_gender_code_feature)|
++-----------------+------------------------------+
+|                1|                           1.0|
+|                2|                           0.0|
++-----------------+------------------------------+
+
++---------+----------------------+
+|age_level|min(age_level_feature)|
++---------+----------------------+
+|        3|                   0.0|
+|        0|                   6.0|
+|        5|                   2.0|
+|        6|                   5.0|
+|        1|                   4.0|
+|        4|                   1.0|
+|        2|                   3.0|
++---------+----------------------+
+
++--------------+---------------------------+
+|shopping_level|min(shopping_level_feature)|
++--------------+---------------------------+
+|             3|                        0.0|
+|             1|                        2.0|
+|             2|                        1.0|
++--------------+---------------------------+
+
++----------+-----------------------+
+|occupation|min(occupation_feature)|
++----------+-----------------------+
+|         0|                    0.0|
+|         1|                    1.0|
++----------+-----------------------+
+</code></pre><pre><code class="lang-python"><span class="hljs-comment"># &#x7531;&#x4E8E;&#x70ED;&#x72EC;&#x7F16;&#x7801;&#x540E;&#xFF0C;&#x7279;&#x5F81;&#x5B57;&#x6BB5;&#x4E0D;&#x518D;&#x662F;&#x4E4B;&#x524D;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x7279;&#x5F81;&#x503C;&#x5B57;&#x6BB5;</span>
+feature_cols = [
+    <span class="hljs-comment"># &#x7279;&#x5F81;&#x503C;</span>
+    <span class="hljs-string">&quot;price&quot;</span>,
+    <span class="hljs-string">&quot;cms_group_id_value&quot;</span>,
+    <span class="hljs-string">&quot;final_gender_code_value&quot;</span>,
+    <span class="hljs-string">&quot;age_level_value&quot;</span>,
+    <span class="hljs-string">&quot;shopping_level_value&quot;</span>,
+    <span class="hljs-string">&quot;occupation_value&quot;</span>,
+    <span class="hljs-string">&quot;pid_value&quot;</span>,
+    <span class="hljs-string">&quot;pl_onehot_value&quot;</span>,
+    <span class="hljs-string">&quot;nucl_onehot_value&quot;</span>
+]
+<span class="hljs-comment"># &#x6839;&#x636E;&#x7279;&#x5F81;&#x5B57;&#x6BB5;&#x8BA1;&#x7B97;&#x51FA;&#x7279;&#x5F81;&#x5411;&#x91CF;&#xFF0C;&#x5E76;&#x5212;&#x5206;&#x51FA;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x96C6;</span>
+<span class="hljs-keyword">from</span> pyspark.ml.feature <span class="hljs-keyword">import</span> VectorAssembler
+datasets_2 = VectorAssembler().setInputCols(feature_cols).setOutputCol(<span class="hljs-string">&quot;features&quot;</span>).transform(datasets_2)
+train_datasets_2 = datasets_2.filter(datasets_2.timestamp&lt;=(<span class="hljs-number">1494691186</span><span class="hljs-number">-24</span>*<span class="hljs-number">60</span>*<span class="hljs-number">60</span>))
+test_datasets_2 = datasets_2.filter(datasets_2.timestamp&gt;(<span class="hljs-number">1494691186</span><span class="hljs-number">-24</span>*<span class="hljs-number">60</span>*<span class="hljs-number">60</span>))
+train_datasets_2.printSchema()
+train_datasets_2.first()
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>root
+ |-- timestamp: long (nullable = true)
+ |-- clk: integer (nullable = true)
+ |-- price: float (nullable = true)
+ |-- cms_group_id: string (nullable = true)
+ |-- final_gender_code: string (nullable = true)
+ |-- age_level: string (nullable = true)
+ |-- shopping_level: string (nullable = true)
+ |-- occupation: string (nullable = true)
+ |-- pid_value: vector (nullable = true)
+ |-- pl_onehot_value: vector (nullable = true)
+ |-- nucl_onehot_value: vector (nullable = true)
+ |-- cms_group_id_feature: double (nullable = false)
+ |-- cms_group_id_value: vector (nullable = true)
+ |-- final_gender_code_feature: double (nullable = false)
+ |-- final_gender_code_value: vector (nullable = true)
+ |-- age_level_feature: double (nullable = false)
+ |-- age_level_value: vector (nullable = true)
+ |-- shopping_level_feature: double (nullable = false)
+ |-- shopping_level_value: vector (nullable = true)
+ |-- occupation_feature: double (nullable = false)
+ |-- occupation_value: vector (nullable = true)
+ |-- features: vector (nullable = true)
+
+Row(timestamp=1494261938, clk=0, price=108.0, cms_group_id=&apos;11&apos;, final_gender_code=&apos;1&apos;, age_level=&apos;5&apos;, shopping_level=&apos;3&apos;, occupation=&apos;0&apos;, pid_value=SparseVector(2, {1: 1.0}), pl_onehot_value=SparseVector(4, {0: 1.0}), nucl_onehot_value=SparseVector(5, {1: 1.0}), cms_group_id_feature=6.0, cms_group_id_value=SparseVector(13, {6: 1.0}), final_gender_code_feature=1.0, final_gender_code_value=SparseVector(2, {1: 1.0}), age_level_feature=2.0, age_level_value=SparseVector(7, {2: 1.0}), shopping_level_feature=0.0, shopping_level_value=SparseVector(3, {0: 1.0}), occupation_feature=0.0, occupation_value=SparseVector(2, {0: 1.0}), features=SparseVector(39, {0: 108.0, 7: 1.0, 15: 1.0, 18: 1.0, 23: 1.0, 26: 1.0, 29: 1.0, 30: 1.0, 35: 1.0}))
+</code></pre><ul>
+<li>&#x521B;&#x5EFA;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x8BAD;&#x7EC3;&#x5668;&#xFF0C;&#x5E76;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> pyspark.ml.classification <span class="hljs-keyword">import</span> LogisticRegression
+lr2 = LogisticRegression()
+<span class="hljs-comment">#&#x8BBE;&#x7F6E;&#x76EE;&#x6807;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x5217;   setFeaturesCol &#x8BBE;&#x7F6E;&#x7279;&#x5F81;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x5217;&#x540D;</span>
+model2 = lr2.setLabelCol(<span class="hljs-string">&quot;clk&quot;</span>).setFeaturesCol(<span class="hljs-string">&quot;features&quot;</span>).fit(train_datasets_2)
+<span class="hljs-comment"># &#x5B58;&#x50A8;&#x6A21;&#x578B;</span>
+model2.save(<span class="hljs-string">&quot;hdfs://localhost:9000/models/CTRModel_AllOneHot.obj&quot;</span>)
+<span class="hljs-keyword">from</span> pyspark.ml.classification <span class="hljs-keyword">import</span> LogisticRegressionModel
+<span class="hljs-comment"># &#x8F7D;&#x5165;&#x8BAD;&#x7EC3;&#x597D;&#x7684;&#x6A21;&#x578B;</span>
+model2 = LogisticRegressionModel.load(<span class="hljs-string">&quot;hdfs://localhost:9000/models/CTRModel_AllOneHot.obj&quot;</span>)
+result_2 = model2.transform(test_datasets_2)
+<span class="hljs-comment"># &#x6309;probability&#x5347;&#x5E8F;&#x6392;&#x5217;&#x6570;&#x636E;&#xFF0C;probability&#x8868;&#x793A;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#x7684;&#x6982;&#x7387;</span>
+result_2.select(<span class="hljs-string">&quot;clk&quot;</span>, <span class="hljs-string">&quot;price&quot;</span>, <span class="hljs-string">&quot;probability&quot;</span>, <span class="hljs-string">&quot;prediction&quot;</span>).sort(<span class="hljs-string">&quot;probability&quot;</span>).show(<span class="hljs-number">100</span>)
+
+<span class="hljs-comment"># &#x5BF9;&#x6BD4;&#x524D;&#x9762;&#x7684;result_1&#x7684;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#xFF0C;&#x80FD;&#x53D1;&#x73B0;&#x8FD9;&#x91CC;&#x7684;&#x9884;&#x6D4B;&#x7387;&#x7A0D;&#x5FAE;&#x51C6;&#x786E;&#x4E86;&#x4E00;&#x70B9;&#xFF0C;&#x8FD9;&#x91CC;top20&#x91CC;&#x51FA;&#x73B0;&#x4E86;3&#x4E2A;&#x70B9;&#x51FB;&#x7684;&#xFF0C;&#x4F46;&#x524D;&#x9762;&#x7684;&#x53EA;&#x51FA;&#x73B0;&#x4E86;1&#x4E2A;</span>
+<span class="hljs-comment"># &#x56E0;&#x6B64;&#x53EF;&#x89C1;&#x5BF9;&#x7279;&#x5F81;&#x7684;&#x7EC6;&#x5316;&#x5904;&#x7406;&#xFF0C;&#x5DF2;&#x7ECF;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x63D0;&#x9AD8;&#x6A21;&#x578B;&#x7684;&#x6548;&#x679C;&#x7684;</span>
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>+---+-----------+--------------------+----------+
+|clk|      price|         probability|prediction|
++---+-----------+--------------------+----------+
+|  0|      1.0E8|[0.85524418892857...|       0.0|
+|  0|      1.0E8|[0.88353143762124...|       0.0|
+|  0|      1.0E8|[0.89169808985616...|       0.0|
+|  1|5.5555556E7|[0.92511743960350...|       0.0|
+|  0|     179.01|[0.93239951738307...|       0.0|
+|  1|      159.0|[0.93239952905659...|       0.0|
+|  0|      118.0|[0.93239955297535...|       0.0|
+|  0|      688.0|[0.93451506165953...|       0.0|
+|  0|      339.0|[0.93451525933626...|       0.0|
+|  0|      335.0|[0.93451526160190...|       0.0|
+|  0|      220.0|[0.93451532673881...|       0.0|
+|  0|      176.0|[0.93451535166074...|       0.0|
+|  0|      158.0|[0.93451536185607...|       0.0|
+|  0|      158.0|[0.93451536185607...|       0.0|
+|  1|      149.0|[0.93451536695374...|       0.0|
+|  0|      122.5|[0.93451538196353...|       0.0|
+|  0|       99.0|[0.93451539527410...|       0.0|
+|  0|       88.0|[0.93451540150458...|       0.0|
+|  0|       79.0|[0.93451540660224...|       0.0|
+|  0|       75.0|[0.93451540886787...|       0.0|
+|  0|       68.0|[0.93451541283272...|       0.0|
+|  0|       68.0|[0.93451541283272...|       0.0|
+|  0|       59.9|[0.93451541742061...|       0.0|
+|  0|      44.98|[0.93451542587140...|       0.0|
+|  0|       35.5|[0.93451543124094...|       0.0|
+|  0|       33.0|[0.93451543265696...|       0.0|
+|  0|       32.8|[0.93451543277024...|       0.0|
+|  0|       30.0|[0.93451543435618...|       0.0|
+|  0|       28.0|[0.93451543548899...|       0.0|
+|  0|       19.9|[0.93451544007688...|       0.0|
+|  0|       19.8|[0.93451544013353...|       0.0|
+|  0|       19.8|[0.93451544013353...|       0.0|
+|  0|       12.0|[0.93451544455150...|       0.0|
+|  0|        6.7|[0.93451544755345...|       0.0|
+|  0|      568.0|[0.93458159339238...|       0.0|
+|  0|      398.0|[0.93458168959099...|       0.0|
+|  0|      158.0|[0.93458182540058...|       0.0|
+|  0|      245.0|[0.93471518526899...|       0.0|
+|  0|       99.0|[0.93471526772971...|       0.0|
+|  0|       88.0|[0.93471527394249...|       0.0|
+|  0|     1288.0|[0.93474589600376...|       0.0|
+|  0|      688.0|[0.93474623473450...|       0.0|
+|  0|      656.0|[0.93474625280009...|       0.0|
+|  0|      568.0|[0.93474630248045...|       0.0|
+|  0|      498.0|[0.93474634199889...|       0.0|
+|  0|      399.0|[0.93474639788922...|       0.0|
+|  0|      396.0|[0.93474639958287...|       0.0|
+|  0|      298.0|[0.93474645490860...|       0.0|
+|  0|      293.0|[0.93474645773134...|       0.0|
+|  0|      209.0|[0.93474650515337...|       0.0|
+|  0|      198.0|[0.93474651136339...|       0.0|
+|  0|      198.0|[0.93474651136339...|       0.0|
+|  0|      169.0|[0.93474652773527...|       0.0|
+|  0|      168.0|[0.93474652829982...|       0.0|
+|  0|      159.0|[0.93474653338074...|       0.0|
+|  0|      155.0|[0.93474653563893...|       0.0|
+|  0|      139.0|[0.93474654467169...|       0.0|
+|  0|      138.0|[0.93474654523624...|       0.0|
+|  0|      119.0|[0.93474655596264...|       0.0|
+|  0|       99.0|[0.93474656725358...|       0.0|
+|  0|       99.0|[0.93474656725358...|       0.0|
+|  0|       88.0|[0.93474657346360...|       0.0|
+|  0|       88.0|[0.93474657346360...|       0.0|
+|  0|       79.0|[0.93474657854453...|       0.0|
+|  0|       59.0|[0.93474658983547...|       0.0|
+|  0|       59.0|[0.93474658983547...|       0.0|
+|  0|       59.0|[0.93474658983547...|       0.0|
+|  0|       58.0|[0.93474659040002...|       0.0|
+|  0|       57.0|[0.93474659096456...|       0.0|
+|  0|       49.8|[0.93474659502930...|       0.0|
+|  0|      39.98|[0.93474660057315...|       0.0|
+|  0|       36.8|[0.93474660236841...|       0.0|
+|  0|       34.0|[0.93474660394914...|       0.0|
+|  0|     6520.0|[0.93480919087761...|       0.0|
+|  0|     3699.0|[0.93481078202537...|       0.0|
+|  0|     1980.0|[0.93481175158689...|       0.0|
+|  0|      660.0|[0.93481249609274...|       0.0|
+|  0|      660.0|[0.93481249609274...|       0.0|
+|  0|      398.0|[0.93481264386492...|       0.0|
+|  0|      369.0|[0.93481266022137...|       0.0|
+|  0|      299.0|[0.93481269970243...|       0.0|
+|  0|      295.0|[0.93481270195849...|       0.0|
+|  0|      278.0|[0.93481271154674...|       0.0|
+|  0|      270.0|[0.93481271605886...|       0.0|
+|  0|      228.0|[0.93481273974748...|       0.0|
+|  0|      228.0|[0.93481273974748...|       0.0|
+|  0|    11368.0|[0.93494253131370...|       0.0|
+|  0|     9999.0|[0.93494330201510...|       0.0|
+|  0|     1099.0|[0.93494360670448...|       0.0|
+|  1|     8888.0|[0.93494392746484...|       0.0|
+|  0|      338.0|[0.93494403511659...|       0.0|
+|  0|      311.0|[0.93494405031645...|       0.0|
+|  0|      300.0|[0.93494405650898...|       0.0|
+|  0|      278.0|[0.93494406889404...|       0.0|
+|  0|      188.0|[0.93494411956019...|       0.0|
+|  0|      176.0|[0.93494412631568...|       0.0|
+|  0|      168.0|[0.93494413081933...|       0.0|
+|  0|      158.0|[0.93494413644890...|       0.0|
+|  1|      138.0|[0.93494414770804...|       0.0|
+|  0|      125.0|[0.93494415502647...|       0.0|
++---+-----------+--------------------+----------+
+only showing top 100 rows
+</code></pre><pre><code class="lang-python">result_2.filter(result_2.clk==<span class="hljs-number">1</span>).select(<span class="hljs-string">&quot;clk&quot;</span>, <span class="hljs-string">&quot;price&quot;</span>, <span class="hljs-string">&quot;probability&quot;</span>, <span class="hljs-string">&quot;prediction&quot;</span>).sort(<span class="hljs-string">&quot;probability&quot;</span>).show(<span class="hljs-number">100</span>)
+<span class="hljs-comment"># &#x4ECE;&#x8BE5;&#x7ED3;&#x679C;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;result_2&#x7684;&#x70B9;&#x51FB;&#x7387;&#x9884;&#x6D4B;&#x7387;&#x666E;&#x904D;&#x8981;&#x6BD4;result_1&#x9AD8;&#x51FA;&#x4E00;&#x70B9;&#x70B9;</span>
+</code></pre>
+<p>&#x663E;&#x793A;&#x7ED3;&#x679C;:</p>
+<pre><code>+---+-----------+--------------------+----------+
+|clk|      price|         probability|prediction|
++---+-----------+--------------------+----------+
+|  1|5.5555556E7|[0.92511743960350...|       0.0|
+|  1|      159.0|[0.93239952905659...|       0.0|
+|  1|      149.0|[0.93451536695374...|       0.0|
+|  1|     8888.0|[0.93494392746484...|       0.0|
+|  1|      138.0|[0.93494414770804...|       0.0|
+|  1|       35.0|[0.93494420569256...|       0.0|
+|  1|      519.0|[0.93494863870621...|       0.0|
+|  1|      478.0|[0.93494866178596...|       0.0|
+|  1|      349.0|[0.93494873440265...|       0.0|
+|  1|      348.0|[0.93494873496557...|       0.0|
+|  1|      316.0|[0.93494875297901...|       0.0|
+|  1|      298.0|[0.93494876311156...|       0.0|
+|  1|      298.0|[0.93494876311156...|       0.0|
+|  1|      199.0|[0.93494881884058...|       0.0|
+|  1|      199.0|[0.93494881884058...|       0.0|
+|  1|      198.0|[0.93494881940350...|       0.0|
+|  1|      187.1|[0.93494882553931...|       0.0|
+|  1|      176.0|[0.93494883178772...|       0.0|
+|  1|      168.0|[0.93494883629107...|       0.0|
+|  1|      160.0|[0.93494884079442...|       0.0|
+|  1|      158.0|[0.93494884192026...|       0.0|
+|  1|      158.0|[0.93494884192026...|       0.0|
+|  1|      135.0|[0.93494885486740...|       0.0|
+|  1|      129.0|[0.93494885824491...|       0.0|
+|  1|      127.0|[0.93494885937075...|       0.0|
+|  1|      125.0|[0.93494886049659...|       0.0|
+|  1|      124.0|[0.93494886105951...|       0.0|
+|  1|      118.0|[0.93494886443702...|       0.0|
+|  1|      109.0|[0.93494886950329...|       0.0|
+|  1|      108.0|[0.93494887006621...|       0.0|
+|  1|       99.0|[0.93494887513247...|       0.0|
+|  1|       98.0|[0.93494887569539...|       0.0|
+|  1|       79.8|[0.93494888594051...|       0.0|
+|  1|       79.0|[0.93494888639085...|       0.0|
+|  1|       77.0|[0.93494888751668...|       0.0|
+|  1|       72.5|[0.93494889004982...|       0.0|
+|  1|       69.0|[0.93494889202003...|       0.0|
+|  1|       68.0|[0.93494889258295...|       0.0|
+|  1|       60.0|[0.93494889708630...|       0.0|
+|  1|      43.98|[0.93494890610426...|       0.0|
+|  1|       40.0|[0.93494890834467...|       0.0|
+|  1|       39.9|[0.93494890840096...|       0.0|
+|  1|       39.6|[0.93494890856984...|       0.0|
+|  1|       32.0|[0.93494891284802...|       0.0|
+|  1|       31.0|[0.93494891341094...|       0.0|
+|  1|      25.98|[0.93494891623679...|       0.0|
+|  1|       23.0|[0.93494891791428...|       0.0|
+|  1|       19.0|[0.93494892016596...|       0.0|
+|  1|       16.9|[0.93494892134809...|       0.0|
+|  1|       10.0|[0.93494892523222...|       0.0|
+|  1|        3.5|[0.93494892889119...|       0.0|
+|  1|        3.5|[0.93494892889119...|       0.0|
+|  1|        0.4|[0.93494893063624...|       0.0|
+|  1|     1288.0|[0.93501426059874...|       0.0|
+|  1|      980.0|[0.93501443381533...|       0.0|
+|  1|      788.0|[0.93501454179429...|       0.0|
+|  1|      698.0|[0.93501459240937...|       0.0|
+|  1|      695.0|[0.93501459409654...|       0.0|
+|  1|      688.0|[0.93501459803326...|       0.0|
+|  1|      599.0|[0.93501464808591...|       0.0|
+|  1|      588.0|[0.93501465427219...|       0.0|
+|  1|      516.0|[0.93501469476419...|       0.0|
+|  1|      495.0|[0.93501470657436...|       0.0|
+|  1|      398.0|[0.93501476112603...|       0.0|
+|  1|      368.0|[0.93501477799768...|       0.0|
+|  1|      339.0|[0.93501479430693...|       0.0|
+|  1|      335.0|[0.93501479655648...|       0.0|
+|  1|      324.0|[0.93501480274275...|       0.0|
+|  1|      316.0|[0.93501480724185...|       0.0|
+|  1|      299.0|[0.93501481680244...|       0.0|
+|  1|      295.0|[0.93501481905199...|       0.0|
+|  1|      279.0|[0.93501482805020...|       0.0|
+|  1|      268.0|[0.93501483423646...|       0.0|
+|  1|      259.0|[0.93501483929795...|       0.0|
+|  1|      259.0|[0.93501483929795...|       0.0|
+|  1|      249.0|[0.93501484492182...|       0.0|
+|  1|      238.0|[0.93501485110809...|       0.0|
+|  1|      199.0|[0.93501487304119...|       0.0|
+|  1|      198.0|[0.93501487360358...|       0.0|
+|  1|      179.0|[0.93501488428894...|       0.0|
+|  1|      175.0|[0.93501488653849...|       0.0|
+|  1|      129.0|[0.93501491240829...|       0.0|
+|  1|      128.0|[0.93501491297068...|       0.0|
+|  1|      118.0|[0.93501491859455...|       0.0|
+|  1|      109.0|[0.93501492365603...|       0.0|
+|  1|       98.0|[0.93501492984229...|       0.0|
+|  1|       89.0|[0.93501493490377...|       0.0|
+|  1|       79.0|[0.93501494052764...|       0.0|
+|  1|       75.0|[0.93501494277718...|       0.0|
+|  1|       69.8|[0.93501494570159...|       0.0|
+|  1|       30.0|[0.93501496808458...|       0.0|
+|  1|       15.0|[0.93501497652038...|       0.0|
+|  1|      368.0|[0.93665387743951...|       0.0|
+|  1|      198.0|[0.93665397079735...|       0.0|
+|  1|      178.0|[0.93665398178062...|       0.0|
+|  1|      158.0|[0.93665399276388...|       0.0|
+|  1|      158.0|[0.93665399276388...|       0.0|
+|  1|      149.0|[0.93665399770635...|       0.0|
+|  1|       68.0|[0.93665404218855...|       0.0|
+|  1|       36.0|[0.93665405976176...|       0.0|
++---+-----------+--------------------+----------+
+only showing top 100 rows
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03_CTR预估数据准备.html" class="navigation navigation-prev " aria-label="Previous page: CTR预估数据准备">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="05_离线推荐处理.html" class="navigation navigation-next " aria-label="Next page: 离线推荐缓存处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"逻辑回归实现CTR预估","level":"1.6.4","depth":2,"next":{"title":"离线推荐缓存处理","level":"1.6.5","depth":2,"path":"推荐系统实战1/05_离线推荐处理.md","ref":"推荐系统实战1/05_离线推荐处理.md","articles":[]},"previous":{"title":"CTR预估数据准备","level":"1.6.3","depth":2,"path":"推荐系统实战1/03_CTR预估数据准备.md","ref":"推荐系统实战1/03_CTR预估数据准备.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐系统实战1/04_逻辑回归实现CTR预估.md","mtime":"2019-04-02T02:32:50.316Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

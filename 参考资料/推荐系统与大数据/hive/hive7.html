@@ -1,0 +1,1600 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>hive综合案例 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="hive8.html" />
+    
+    
+    <link rel="prev" href="hive6.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../推荐介绍/01_推荐系统简介.html">
+            
+                <a href="../推荐介绍/01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../推荐介绍/02_推荐系统架构设计.html">
+            
+                <a href="../推荐介绍/02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../推荐介绍/03_推荐算法.html">
+            
+                <a href="../推荐介绍/03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../推荐介绍/04_ 推荐系统评估.html">
+            
+                <a href="../推荐介绍/04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                <a href="../推荐介绍/05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="../推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="../推荐介绍/06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../推荐系统实战1/README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                <a href="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                <a href="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../推荐系统实战1/05_离线推荐处理.html">
+            
+                <a href="../推荐系统实战1/05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../推荐系统实战1/06_实时推荐.html">
+            
+                <a href="../推荐系统实战1/06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="hive1.html">
+            
+                <a href="hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="hive2.html">
+            
+                <a href="hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="hive3.html">
+            
+                <a href="hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="hive4.html">
+            
+                <a href="hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="hive5.html">
+            
+                <a href="hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="hive6.html">
+            
+                <a href="hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.7" data-path="hive7.html">
+            
+                <a href="hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="hive8.html">
+            
+                <a href="hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../推荐系统实战2/chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../推荐系统实战2/chapter1.html">
+            
+                <a href="../推荐系统实战2/chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../推荐系统实战2/chapter2.html">
+            
+                <a href="../推荐系统实战2/chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../推荐系统实战2/chapter3.html">
+            
+                <a href="../推荐系统实战2/chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../推荐系统实战2/chapter4.html">
+            
+                <a href="../推荐系统实战2/chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../推荐系统实战2/chapter5.html">
+            
+                <a href="../推荐系统实战2/chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../推荐系统实战2/chapter6.html">
+            
+                <a href="../推荐系统实战2/chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../推荐系统实战2/chapter7.html">
+            
+                <a href="../推荐系统实战2/chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../推荐系统实战2/chapter8.html">
+            
+                <a href="../推荐系统实战2/chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../推荐系统实战2/chapter9.html">
+            
+                <a href="../推荐系统实战2/chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../推荐系统实战2/chapter10.html">
+            
+                <a href="../推荐系统实战2/chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../推荐系统实战2/chapter11.html">
+            
+                <a href="../推荐系统实战2/chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >hive综合案例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x56DB;-hive&#x7EFC;&#x5408;&#x6848;&#x4F8B;">&#x56DB; hive&#x7EFC;&#x5408;&#x6848;&#x4F8B;</h2>
+<ul>
+<li><p>&#x5185;&#x5BB9;&#x63A8;&#x8350;&#x6570;&#x636E;&#x5904;&#x7406;</p>
+<p><img src="img/hive3.png" alt=""></p>
+<ul>
+<li>&#x9700;&#x6C42;<ul>
+<li>&#x6839;&#x636E;&#x7528;&#x6237;&#x884C;&#x4E3A;&#x4EE5;&#x53CA;&#x6587;&#x7AE0;&#x6807;&#x7B7E;&#x7B5B;&#x9009;&#x51FA;&#x7528;&#x6237;&#x6700;&#x611F;&#x5174;&#x8DA3;(&#x9605;&#x8BFB;&#x6700;&#x591A;)&#x7684;&#x6807;&#x7B7E;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x76F8;&#x5173;&#x6570;&#x636E;</p>
+<pre><code>11,101,2018-12-01 06:01:10
+22,102,2018-12-01 07:28:12
+33,103,2018-12-01 07:50:14
+11,104,2018-12-01 09:08:12
+22,103,2018-12-01 13:37:12
+33,102,2018-12-02 07:09:12
+11,101,2018-12-02 18:42:12
+35,105,2018-12-03 09:21:12
+22,104,2018-12-03 16:42:12
+77,103,2018-12-03 18:31:12
+99,102,2018-12-04 00:04:12
+33,101,2018-12-04 19:10:12
+11,101,2018-12-05 09:07:12
+35,102,2018-12-05 11:00:12
+22,103,2018-12-05 12:11:12
+77,104,2018-12-05 18:02:02
+99,105,2018-12-05 20:09:11
+</code></pre><ul>
+<li>&#x6587;&#x7AE0;&#x6570;&#x636E;</li>
+</ul>
+<pre><code>101,http://www.itcast.cn/1.html,kw8|kw1
+102,http://www.itcast.cn/2.html,kw6|kw3
+103,http://www.itcast.cn/3.html,kw7
+104,http://www.itcast.cn/4.html,kw5|kw1|kw4|kw9
+105,http://www.itcast.cn/5.html,
+</code></pre></li>
+<li><p>&#x6570;&#x636E;&#x4E0A;&#x4F20;hdfs</p>
+<pre><code class="lang-shell">hadoop fs -mkdir /tmp/demo
+hadoop fs -mkdir /tmp/demo/action
+</code></pre>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;</p>
+<ul>
+<li>&#x7528;&#x6237;&#x884C;&#x4E3A;&#x8868;</li>
+</ul>
+<pre><code class="lang-sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> actions;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">EXTERNAL</span> <span class="hljs-keyword">TABLE</span> actions(
+    user_id <span class="hljs-keyword">STRING</span>,
+    article_id <span class="hljs-keyword">STRING</span>,
+    ts <span class="hljs-keyword">STRING</span>
+)
+<span class="hljs-keyword">ROW</span> <span class="hljs-keyword">FORMAT</span> <span class="hljs-keyword">delimited</span> <span class="hljs-keyword">fields</span> <span class="hljs-keyword">terminated</span> <span class="hljs-keyword">by</span> <span class="hljs-string">&apos;,&apos;</span>
+LOCATION <span class="hljs-string">&apos;/tmp/demo/action&apos;</span>;
+</code></pre>
+<ul>
+<li>&#x6587;&#x7AE0;&#x8868;</li>
+</ul>
+<pre><code class="lang-sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> articles;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">EXTERNAL</span> <span class="hljs-keyword">TABLE</span> articles(
+    article_id <span class="hljs-keyword">STRING</span>,
+    <span class="hljs-keyword">url</span> <span class="hljs-keyword">STRING</span>,
+    kws <span class="hljs-built_in">array</span>&lt;<span class="hljs-keyword">STRING</span>&gt;
+)
+<span class="hljs-keyword">ROW</span> <span class="hljs-keyword">FORMAT</span> <span class="hljs-keyword">delimited</span> <span class="hljs-keyword">fields</span> <span class="hljs-keyword">terminated</span> <span class="hljs-keyword">by</span> <span class="hljs-string">&apos;,&apos;</span> 
+COLLECTION ITEMS <span class="hljs-keyword">terminated</span> <span class="hljs-keyword">BY</span> <span class="hljs-string">&apos;|&apos;</span> 
+LOCATION <span class="hljs-string">&apos;/tmp/demo/article/&apos;</span>;
+<span class="hljs-comment">/*
+kws array&lt;STRING&gt;  &#x6570;&#x7EC4;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;
+COLLECTION ITEMS terminated BY &apos;|&apos;  &#x6570;&#x7EC4;&#x7684;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#x7528;&apos;|&apos;&#x5206;&#x5272;
+*/</span>
+</code></pre>
+<ul>
+<li>&#x67E5;&#x770B;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> actions;
+<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> articles;
+</code></pre>
+<ul>
+<li><p>&#x5206;&#x7EC4;&#x67E5;&#x8BE2;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x6D4F;&#x89C8;&#x8BB0;&#x5F55;</p>
+<ul>
+<li>collect_set/collect_list&#x4F5C;&#x7528;:<ul>
+<li>&#x5C06;group by&#x4E2D;&#x7684;&#x67D0;&#x5217;&#x8F6C;&#x4E3A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x8FD4;&#x56DE;</li>
+<li>collect_list<strong>&#x4E0D;&#x53BB;&#x91CD;</strong>&#x800C;collect_set<strong>&#x53BB;&#x91CD;</strong></li>
+</ul>
+</li>
+<li>collect_set</li>
+</ul>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> user_id,collect_set(article_id) <span class="hljs-keyword">from</span> actions <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> user_id;
+</code></pre>
+<pre><code class="lang-shell">11      [&quot;101&quot;,&quot;104&quot;]
+22      [&quot;102&quot;,&quot;103&quot;,&quot;104&quot;]
+33      [&quot;103&quot;,&quot;102&quot;,&quot;101&quot;]
+35      [&quot;105&quot;,&quot;102&quot;]
+77      [&quot;103&quot;,&quot;104&quot;]
+99      [&quot;102&quot;,&quot;105&quot;]
+</code></pre>
+<ul>
+<li>collect_list</li>
+</ul>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> user_id,collect_list(article_id) <span class="hljs-keyword">from</span> actions <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> user_id;
+</code></pre>
+<pre><code class="lang-shell">11      [&quot;101&quot;,&quot;104&quot;,&quot;101&quot;,&quot;101&quot;]
+22      [&quot;102&quot;,&quot;103&quot;,&quot;104&quot;,&quot;103&quot;]
+33      [&quot;103&quot;,&quot;102&quot;,&quot;101&quot;]
+35      [&quot;105&quot;,&quot;102&quot;]
+77      [&quot;103&quot;,&quot;104&quot;]
+99      [&quot;102&quot;,&quot;105&quot;]
+</code></pre>
+<pre><code>- sort_array: &#x5BF9;&#x6570;&#x7EC4;&#x6392;&#x5E8F;
+
+&#x200B;```sql
+
+select user_id,sort_array(collect_list(article_id)) as contents from actions group by user_id;
+
+&#x200B;
+</code></pre><p>&#x200B;<code>shell
+11      [&quot;101&quot;,&quot;104&quot;,&quot;101&quot;,&quot;101&quot;]
+22      [&quot;102&quot;,&quot;103&quot;,&quot;104&quot;,&quot;103&quot;]
+33      [&quot;103&quot;,&quot;102&quot;,&quot;101&quot;]
+35      [&quot;105&quot;,&quot;102&quot;]
+77      [&quot;103&quot;,&quot;104&quot;]
+99      [&quot;102&quot;,&quot;105&quot;]
+&#x200B;</code>
+```</p>
+</li>
+</ul>
+</li>
+<li><p>&#x67E5;&#x770B;&#x6BCF;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x5173;&#x952E;&#x5B57; lateral view explode</p>
+<ul>
+<li>&#x5C06;&#x4E00;&#x884C;&#x6570;&#x636E;&#x62C6;&#x5206;&#x6210;&#x591A;&#x884C;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;&#x53EF;&#x4EE5;&#x5BF9;&#x62C6;&#x5206;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x805A;&#x5408;</li>
+</ul>
+<pre><code class="lang-sql">#lateral view:&#x5EFA;&#x7ACB;&#x4FA7;&#x89C6;&#x56FE;
+#explode&#xFF1A;hive&#x5185;&#x7F6E;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x5C06;&#x6570;&#x7EC4;&#x5185;&#x5BB9;&#x5206;&#x89E3;&#x5F00;
+#t:&#x4FA7;&#x89C6;&#x56FE;&#x7684;&#x540D;&#x79F0;
+<span class="hljs-keyword">select</span> article_id,kw <span class="hljs-keyword">from</span> articles lateral <span class="hljs-keyword">view</span> explode(kws) t <span class="hljs-keyword">as</span> kw;#&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x9ED8;&#x8BA4;&#x4F1A;&#x5254;&#x9664;&#x7A7A;&#x503C; &apos;105 NULL&apos;
+<span class="hljs-keyword">select</span> article_id,kw <span class="hljs-keyword">from</span> articles lateral <span class="hljs-keyword">view</span> <span class="hljs-keyword">outer</span> explode(kws) t <span class="hljs-keyword">as</span> kw;
+</code></pre>
+<pre><code class="lang-shell">101     kw8
+101     kw1
+102     kw6
+102     kw3
+103     kw7
+104     kw5
+104     kw1
+104     kw4
+104     kw9
+</code></pre>
+<pre><code class="lang-shell">101     kw8
+101     kw1
+102     kw6
+102     kw3
+103     kw7
+104     kw5
+104     kw1
+104     kw4
+104     kw9
+105     NULL
+#&#x542B;&#x6709;outer
+</code></pre>
+</li>
+<li><p>&#x6839;&#x636E;&#x6587;&#x7AE0;id&#x627E;&#x5230;&#x7528;&#x6237;&#x67E5;&#x770B;&#x6587;&#x7AE0;&#x7684;&#x5173;&#x952E;&#x5B57;</p>
+<ul>
+<li>&#x539F;&#x59CB;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-shell">101     http://www.itcast.cn/1.html     [&quot;kw8&quot;,&quot;kw1&quot;]
+102     http://www.itcast.cn/2.html     [&quot;kw6&quot;,&quot;kw3&quot;]
+103     http://www.itcast.cn/3.html     [&quot;kw7&quot;]
+104     http://www.itcast.cn/4.html     [&quot;kw5&quot;,&quot;kw1&quot;,&quot;kw4&quot;,&quot;kw9&quot;]
+105     http://www.itcast.cn/5.html     []
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> a.user_id, b.kw <span class="hljs-keyword">from</span> actions <span class="hljs-keyword">as</span> a <span class="hljs-keyword">left</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">JOIN</span> 
+(<span class="hljs-keyword">select</span> article_id,kw <span class="hljs-keyword">from</span> articles lateral <span class="hljs-keyword">view</span> <span class="hljs-keyword">outer</span> explode(kws) t <span class="hljs-keyword">as</span> kw) 
+b <span class="hljs-keyword">on</span> (a.article_id = b.article_id) <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> a.user_id;
+</code></pre>
+<pre><code class="lang-shell">11      kw1
+11      kw8
+11      kw5
+11      kw1
+11      kw4
+11      kw1
+11      kw9
+11      kw8
+11      kw1
+11      kw8
+22      kw1
+22      kw7
+22      kw9
+22      kw4
+22      kw5
+22      kw7
+22      kw3
+22      kw6
+33      kw8
+33      kw1
+33      kw3
+33      kw6
+33      kw7
+35      NULL
+35      kw6
+35      kw3
+77      kw9
+77      kw1
+77      kw7
+77      kw4
+77      kw5
+99      kw3
+99      kw6
+99      NULL
+</code></pre>
+</li>
+<li><p>&#x6839;&#x636E;&#x6587;&#x7AE0;id&#x627E;&#x5230;&#x7528;&#x6237;&#x67E5;&#x770B;&#x6587;&#x7AE0;&#x7684;&#x5173;&#x952E;&#x5B57;&#x5E76;&#x7EDF;&#x8BA1;&#x9891;&#x7387;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> a.user_id, b.kw,<span class="hljs-keyword">count</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">as</span> weight <span class="hljs-keyword">from</span> actions <span class="hljs-keyword">as</span> a <span class="hljs-keyword">left</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">JOIN</span> 
+(<span class="hljs-keyword">select</span> article_id,kw <span class="hljs-keyword">from</span> articles lateral <span class="hljs-keyword">view</span> <span class="hljs-keyword">outer</span> explode(kws) t <span class="hljs-keyword">as</span> kw) 
+b <span class="hljs-keyword">on</span> (a.article_id = b.article_id) <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> a.user_id,b.kw <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> a.user_id,weight <span class="hljs-keyword">desc</span>;
+</code></pre>
+<pre><code class="lang-shell">11      kw1     4
+11      kw8     3
+11      kw5     1
+11      kw9     1
+11      kw4     1
+22      kw7     2
+22      kw9     1
+22      kw1     1
+22      kw3     1
+22      kw4     1
+22      kw5     1
+22      kw6     1
+33      kw3     1
+33      kw8     1
+33      kw7     1
+33      kw6     1
+33      kw1     1
+35      NULL    1
+35      kw3     1
+35      kw6     1
+77      kw1     1
+77      kw4     1
+77      kw5     1
+77      kw7     1
+77      kw9     1
+99      NULL    1
+99      kw3     1
+99      kw6     1
+</code></pre>
+</li>
+<li><p>&#x5C06;&#x7528;&#x6237;&#x67E5;&#x770B;&#x7684;&#x5173;&#x952E;&#x5B57;&#x548C;&#x9891;&#x7387;&#x5408;&#x5E76;&#x6210; key:value&#x5F62;&#x5F0F;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> a.user_id, <span class="hljs-keyword">concat_ws</span>(<span class="hljs-string">&apos;:&apos;</span>,b.kw,<span class="hljs-keyword">cast</span> (<span class="hljs-keyword">count</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">as</span> <span class="hljs-keyword">string</span>)) <span class="hljs-keyword">as</span> kw_w <span class="hljs-keyword">from</span> actions <span class="hljs-keyword">as</span> a <span class="hljs-keyword">left</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">JOIN</span> 
+(<span class="hljs-keyword">select</span> article_id,kw <span class="hljs-keyword">from</span> articles lateral <span class="hljs-keyword">view</span> <span class="hljs-keyword">outer</span> explode(kws) t <span class="hljs-keyword">as</span> kw) 
+b <span class="hljs-keyword">on</span> (a.article_id = b.article_id) <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> a.user_id,b.kw;
+</code></pre>
+<pre><code class="lang-shell">11      kw1:4
+11      kw4:1
+11      kw5:1
+11      kw8:3
+11      kw9:1
+22      kw1:1
+22      kw3:1
+22      kw4:1
+22      kw5:1
+22      kw6:1
+22      kw7:2
+22      kw9:1
+33      kw1:1
+33      kw3:1
+33      kw6:1
+33      kw7:1
+33      kw8:1
+35      1
+35      kw3:1
+35      kw6:1
+77      kw1:1
+77      kw4:1
+77      kw5:1
+77      kw7:1
+77      kw9:1
+99      1
+99      kw3:1
+99      kw6:1
+</code></pre>
+</li>
+<li><p>&#x5C06;&#x7528;&#x6237;&#x67E5;&#x770B;&#x7684;&#x5173;&#x952E;&#x5B57;&#x548C;&#x9891;&#x7387;&#x5408;&#x5E76;&#x6210; key:value&#x5F62;&#x5F0F;&#x5E76;&#x6309;&#x7528;&#x6237;&#x805A;&#x5408;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> cc.user_id,<span class="hljs-keyword">concat_ws</span>(<span class="hljs-string">&apos;,&apos;</span>,collect_set(cc.kw_w)) <span class="hljs-keyword">from</span> (<span class="hljs-keyword">select</span> a.user_id, <span class="hljs-keyword">concat_ws</span>(<span class="hljs-string">&apos;:&apos;</span>,b.kw,<span class="hljs-keyword">cast</span> (<span class="hljs-keyword">count</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">as</span> <span class="hljs-keyword">string</span>)) <span class="hljs-keyword">as</span> kw_w <span class="hljs-keyword">from</span> actions <span class="hljs-keyword">as</span> a <span class="hljs-keyword">left</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">JOIN</span> 
+(<span class="hljs-keyword">select</span> article_id,kw <span class="hljs-keyword">from</span> articles lateral <span class="hljs-keyword">view</span> <span class="hljs-keyword">outer</span> explode(kws) t <span class="hljs-keyword">as</span> kw) 
+b <span class="hljs-keyword">on</span> (a.article_id = b.article_id) <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> a.user_id,b.kw) <span class="hljs-keyword">as</span> cc <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> cc.user_id;
+</code></pre>
+<pre><code class="lang-shell">11      kw1:4,kw4:1,kw5:1,kw8:3,kw9:1
+22      kw1:1,kw3:1,kw4:1,kw5:1,kw6:1,kw7:2,kw9:1
+33      kw1:1,kw3:1,kw6:1,kw7:1,kw8:1
+35      1,kw3:1,kw6:1
+77      kw1:1,kw4:1,kw5:1,kw7:1,kw9:1
+99      1,kw3:1,kw6:1
+</code></pre>
+</li>
+<li><p>&#x5C06;&#x4E0A;&#x9762;&#x805A;&#x5408;&#x7ED3;&#x679C;&#x8F6C;&#x6362;&#x6210;map</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> cc.user_id,str_to_map(<span class="hljs-keyword">concat_ws</span>(<span class="hljs-string">&apos;,&apos;</span>,collect_set(cc.kw_w))) <span class="hljs-keyword">as</span> wm <span class="hljs-keyword">from</span>
+(<span class="hljs-keyword">select</span> a.user_id, <span class="hljs-keyword">concat_ws</span>(<span class="hljs-string">&apos;:&apos;</span>,b.kw,<span class="hljs-keyword">cast</span> (<span class="hljs-keyword">count</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">as</span> <span class="hljs-keyword">string</span>)) <span class="hljs-keyword">as</span> kw_w <span class="hljs-keyword">from</span> actions <span class="hljs-keyword">as</span> a <span class="hljs-keyword">left</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">JOIN</span> (<span class="hljs-keyword">select</span> article_id,kw <span class="hljs-keyword">from</span> articles lateral <span class="hljs-keyword">view</span> <span class="hljs-keyword">outer</span> explode(kws) t <span class="hljs-keyword">as</span> kw) b <span class="hljs-keyword">on</span> (a.article_id = b.article_id) <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> a.user_id,b.kw
+) <span class="hljs-keyword">as</span> cc <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> cc.user_id;
+</code></pre>
+<pre><code class="lang-shell">11      {&quot;kw1&quot;:&quot;4&quot;,&quot;kw4&quot;:&quot;1&quot;,&quot;kw5&quot;:&quot;1&quot;,&quot;kw8&quot;:&quot;3&quot;,&quot;kw9&quot;:&quot;1&quot;}
+22      {&quot;kw1&quot;:&quot;1&quot;,&quot;kw3&quot;:&quot;1&quot;,&quot;kw4&quot;:&quot;1&quot;,&quot;kw5&quot;:&quot;1&quot;,&quot;kw6&quot;:&quot;1&quot;,&quot;kw7&quot;:&quot;2&quot;,&quot;kw9&quot;:&quot;1&quot;}
+33      {&quot;kw1&quot;:&quot;1&quot;,&quot;kw3&quot;:&quot;1&quot;,&quot;kw6&quot;:&quot;1&quot;,&quot;kw7&quot;:&quot;1&quot;,&quot;kw8&quot;:&quot;1&quot;}
+35      {&quot;1&quot;:null,&quot;kw3&quot;:&quot;1&quot;,&quot;kw6&quot;:&quot;1&quot;}
+77      {&quot;kw1&quot;:&quot;1&quot;,&quot;kw4&quot;:&quot;1&quot;,&quot;kw5&quot;:&quot;1&quot;,&quot;kw7&quot;:&quot;1&quot;,&quot;kw9&quot;:&quot;1&quot;}
+99      {&quot;1&quot;:null,&quot;kw3&quot;:&quot;1&quot;,&quot;kw6&quot;:&quot;1&quot;}
+</code></pre>
+</li>
+<li><p>&#x5C06;&#x7528;&#x6237;&#x7684;&#x9605;&#x8BFB;&#x504F;&#x597D;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5230;&#x8868;&#x4E2D;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> user_kws <span class="hljs-keyword">as</span> 
+<span class="hljs-keyword">select</span> cc.user_id,str_to_map(<span class="hljs-keyword">concat_ws</span>(<span class="hljs-string">&apos;,&apos;</span>,collect_set(cc.kw_w))) <span class="hljs-keyword">as</span> wm
+<span class="hljs-keyword">from</span>(
+<span class="hljs-keyword">select</span> a.user_id, <span class="hljs-keyword">concat_ws</span>(<span class="hljs-string">&apos;:&apos;</span>,b.kw,<span class="hljs-keyword">cast</span> (<span class="hljs-keyword">count</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">as</span> <span class="hljs-keyword">string</span>)) <span class="hljs-keyword">as</span> kw_w 
+<span class="hljs-keyword">from</span> actions <span class="hljs-keyword">as</span> a 
+<span class="hljs-keyword">left</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">JOIN</span> (<span class="hljs-keyword">select</span> article_id,kw <span class="hljs-keyword">from</span> articles
+lateral <span class="hljs-keyword">view</span> <span class="hljs-keyword">outer</span> explode(kws) t <span class="hljs-keyword">as</span> kw) b
+<span class="hljs-keyword">on</span> (a.article_id = b.article_id)
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> a.user_id,b.kw
+) <span class="hljs-keyword">as</span> cc 
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> cc.user_id;
+</code></pre>
+</li>
+<li><p>&#x4ECE;&#x8868;&#x4E2D;&#x901A;&#x8FC7;key&#x67E5;&#x8BE2;map&#x4E2D;&#x7684;&#x503C;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> user_id, wm[<span class="hljs-string">&apos;kw1&apos;</span>] <span class="hljs-keyword">from</span> user_kws;
+</code></pre>
+<pre><code class="lang-shell">11      4
+22      1
+33      1
+35      NULL
+77      1
+99      NULL
+</code></pre>
+</li>
+<li><p>&#x4ECE;&#x8868;&#x4E2D;&#x83B7;&#x53D6;map&#x4E2D;&#x6240;&#x6709;&#x7684;key &#x548C; &#x6240;&#x6709;&#x7684;value</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> user_id,map_keys(wm),map_values(wm) <span class="hljs-keyword">from</span> user_kws;
+</code></pre>
+<pre><code class="lang-shell">11      [&quot;kw1&quot;,&quot;kw4&quot;,&quot;kw5&quot;,&quot;kw8&quot;,&quot;kw9&quot;] [&quot;4&quot;,&quot;1&quot;,&quot;1&quot;,&quot;3&quot;,&quot;1&quot;]
+22      [&quot;kw1&quot;,&quot;kw3&quot;,&quot;kw4&quot;,&quot;kw5&quot;,&quot;kw6&quot;,&quot;kw7&quot;,&quot;kw9&quot;]     [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;2&quot;,&quot;1&quot;]
+33      [&quot;kw1&quot;,&quot;kw3&quot;,&quot;kw6&quot;,&quot;kw7&quot;,&quot;kw8&quot;] [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;]
+35      [&quot;1&quot;,&quot;kw3&quot;,&quot;kw6&quot;]       [null,&quot;1&quot;,&quot;1&quot;]
+77      [&quot;kw1&quot;,&quot;kw4&quot;,&quot;kw5&quot;,&quot;kw7&quot;,&quot;kw9&quot;] [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;]
+99      [&quot;1&quot;,&quot;kw3&quot;,&quot;kw6&quot;]       [null,&quot;1&quot;,&quot;1&quot;]
+</code></pre>
+</li>
+<li><p>&#x7528;lateral view explode&#x628A;map&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;&#x591A;&#x5217;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> user_id,keyword,weight <span class="hljs-keyword">from</span> user_kws lateral <span class="hljs-keyword">view</span> explode(wm) t <span class="hljs-keyword">as</span> keyword,weight;
+</code></pre>
+<pre><code class="lang-shell">11      kw1     4
+11      kw4     1
+11      kw5     1
+11      kw8     3
+11      kw9     1
+22      kw1     1
+22      kw3     1
+22      kw4     1
+22      kw5     1
+22      kw6     1
+22      kw7     2
+22      kw9     1
+33      kw1     1
+33      kw3     1
+33      kw6     1
+33      kw7     1
+33      kw8     1
+35      1       NULL
+35      kw3     1
+35      kw6     1
+77      kw1     1
+77      kw4     1
+77      kw5     1
+77      kw7     1
+77      kw9     1
+99      1       NULL
+99      kw3     1
+99      kw6     1
+</code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="hive6.html" class="navigation navigation-prev " aria-label="Previous page: Hive 函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="hive8.html" class="navigation navigation-next " aria-label="Next page: Sqoop">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"hive综合案例","level":"1.7.7","depth":2,"next":{"title":"Sqoop","level":"1.7.8","depth":2,"path":"hive/hive8.md","ref":"hive/hive8.md","articles":[]},"previous":{"title":"Hive 函数","level":"1.7.6","depth":2,"path":"hive/hive6.md","ref":"hive/hive6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hive/hive7.md","mtime":"2019-02-17T09:11:07.963Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1395 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>算法实现-User-Based CF · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06.2_算法实现：Item-Based CF 预测评分.html" />
+    
+    
+    <link rel="prev" href="06.0_ 案例--基于协同过滤的电影推荐.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    推荐系统项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../推荐系统/README.md">
+            
+                <span>
+            
+                    
+                    推荐介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01_推荐系统简介.html">
+            
+                <a href="01_推荐系统简介.html">
+            
+                    
+                    推荐系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02_推荐系统架构设计.html">
+            
+                <a href="02_推荐系统架构设计.html">
+            
+                    
+                    推荐系统架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="03_推荐算法.html">
+            
+                <a href="03_推荐算法.html">
+            
+                    
+                    推荐算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="04_ 推荐系统评估.html">
+            
+                <a href="04_ 推荐系统评估.html">
+            
+                    
+                    推荐系统评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="05_ 推荐系统冷启动问题.html">
+            
+                <a href="05_ 推荐系统冷启动问题.html">
+            
+                    
+                    推荐系统冷启动问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                <a href="06.0_ 案例--基于协同过滤的电影推荐.html">
+            
+                    
+                    基于电影的协同过滤推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="06.1_算法实现：User-Based CF 预测评分.html">
+            
+                <a href="06.1_算法实现：User-Based CF 预测评分.html">
+            
+                    
+                    算法实现-User-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                <a href="06.2_算法实现：Item-Based CF 预测评分.html">
+            
+                    
+                    算法实现-Item-Based CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../hadoop优化/README.md">
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../hadoop优化/ha1.0.html">
+            
+                <a href="../hadoop优化/ha1.0.html">
+            
+                    
+                    第一部分 Hadoop概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../hadoop优化/ha1.1.html">
+            
+                <a href="../hadoop优化/ha1.1.html">
+            
+                    
+                    hadoop简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../hadoop优化/ha1.2.html">
+            
+                <a href="../hadoop优化/ha1.2.html">
+            
+                    
+                    hadoop核心组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../hadoop优化/ha1.3.html">
+            
+                <a href="../hadoop优化/ha1.3.html">
+            
+                    
+                    hadoop优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../hadoop优化/ha2.0.html">
+            
+                <a href="../hadoop优化/ha2.0.html">
+            
+                    
+                    第二部分 分布式文件系统HDFS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../hadoop优化/ha2.1.html">
+            
+                <a href="../hadoop优化/ha2.1.html">
+            
+                    
+                    HDFS的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../hadoop优化/ha2.2.html">
+            
+                <a href="../hadoop优化/ha2.2.html">
+            
+                    
+                    HDFS的Shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../hadoop优化/ha2.3.html">
+            
+                <a href="../hadoop优化/ha2.3.html">
+            
+                    
+                    HDFS的设计思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../hadoop优化/ha2.4.html">
+            
+                <a href="../hadoop优化/ha2.4.html">
+            
+                    
+                    HDFS的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../hadoop优化/ha2.5.html">
+            
+                <a href="../hadoop优化/ha2.5.html">
+            
+                    
+                    HDFS环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../hadoop优化/ha3.0.html">
+            
+                <a href="../hadoop优化/ha3.0.html">
+            
+                    
+                    第三部分 YARN和MapReduce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../hadoop优化/ha3.1.html">
+            
+                <a href="../hadoop优化/ha3.1.html">
+            
+                    
+                    资源调度框架YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../hadoop优化/ha3.2.html">
+            
+                <a href="../hadoop优化/ha3.2.html">
+            
+                    
+                    MapReduce简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../hadoop优化/ha3.3.html">
+            
+                <a href="../hadoop优化/ha3.3.html">
+            
+                    
+                    MapReduce实战（MR_JOB）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../hadoop优化/ha3.4.html">
+            
+                <a href="../hadoop优化/ha3.4.html">
+            
+                    
+                    MapReduce实战_文件合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../hadoop优化/ha3.5.html">
+            
+                <a href="../hadoop优化/ha3.5.html">
+            
+                    
+                    MapReduce原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../hadoop优化/ha4.0.html">
+            
+                <a href="../hadoop优化/ha4.0.html">
+            
+                    
+                    第四部分 Hadoop概念扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../hadoop优化/ha4.1.html">
+            
+                <a href="../hadoop优化/ha4.1.html">
+            
+                    
+                    hadoop生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../hadoop优化/ha4.2.html">
+            
+                <a href="../hadoop优化/ha4.2.html">
+            
+                    
+                    HDFS读写流程和高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../hadoop优化/ha4.3.html">
+            
+                <a href="../hadoop优化/ha4.3.html">
+            
+                    
+                    hadoop发行版的选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../spark_core/README.md">
+            
+                <span>
+            
+                    
+                    Spark Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../spark_core/spark_core_1.html">
+            
+                <a href="../spark_core/spark_core_1.html">
+            
+                    
+                    spark入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../spark_core/spark_core_2.html">
+            
+                <a href="../spark_core/spark_core_2.html">
+            
+                    
+                    spark-core概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../spark_core/spark_core_3.html">
+            
+                <a href="../spark_core/spark_core_3.html">
+            
+                    
+                    RDD常用算子练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../spark_core/spark_core_4.html">
+            
+                <a href="../spark_core/spark_core_4.html">
+            
+                    
+                    spark-core实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../spark_core/spark_core_5.html">
+            
+                <a href="../spark_core/spark_core_5.html">
+            
+                    
+                    spark-core实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../spark_core/spark_core_6.html">
+            
+                <a href="../spark_core/spark_core_6.html">
+            
+                    
+                    spark相关概念补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../spark_sql/s1.0.html">
+            
+                <a href="../spark_sql/s1.0.html">
+            
+                    
+                    Spark SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../spark_sql/s1.1.html">
+            
+                <a href="../spark_sql/s1.1.html">
+            
+                    
+                    spark sql概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../spark_sql/s1.2.html">
+            
+                <a href="../spark_sql/s1.2.html">
+            
+                    
+                    DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../spark_sql/s1.3.html">
+            
+                <a href="../spark_sql/s1.3.html">
+            
+                    
+                    JSON数据的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../spark_sql/s1.4.html">
+            
+                <a href="../spark_sql/s1.4.html">
+            
+                    
+                    物联网项目实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../spark_sql/s1.5.html">
+            
+                <a href="../spark_sql/s1.5.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../推荐系统实战1/README.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                <a href="../推荐系统实战1/01_个性化电商广告推荐系统介绍.html">
+            
+                    
+                    电商广告推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                <a href="../推荐系统实战1/02_根据用户行为数据创建ALS模型并召回商品.html">
+            
+                    
+                    商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                <a href="../推荐系统实战1/03_CTR预估数据准备.html">
+            
+                    
+                    CTR预估数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                <a href="../推荐系统实战1/04_逻辑回归实现CTR预估.html">
+            
+                    
+                    逻辑回归实现CTR预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../推荐系统实战1/05_离线推荐处理.html">
+            
+                <a href="../推荐系统实战1/05_离线推荐处理.html">
+            
+                    
+                    离线推荐缓存处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../推荐系统实战1/06_实时推荐.html">
+            
+                <a href="../推荐系统实战1/06_实时推荐.html">
+            
+                    
+                    推荐业务完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../hive/README.md">
+            
+                <span>
+            
+                    
+                    hive
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../hive/hive1.html">
+            
+                <a href="../hive/hive1.html">
+            
+                    
+                    Hive概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../hive/hive2.html">
+            
+                <a href="../hive/hive2.html">
+            
+                    
+                    Hive 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../hive/hive3.html">
+            
+                <a href="../hive/hive3.html">
+            
+                    
+                    Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../hive/hive4.html">
+            
+                <a href="../hive/hive4.html">
+            
+                    
+                    Hive的内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../hive/hive5.html">
+            
+                <a href="../hive/hive5.html">
+            
+                    
+                    分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../hive/hive6.html">
+            
+                <a href="../hive/hive6.html">
+            
+                    
+                    Hive 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../hive/hive7.html">
+            
+                <a href="../hive/hive7.html">
+            
+                    
+                    hive综合案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../hive/hive8.html">
+            
+                <a href="../hive/hive8.html">
+            
+                    
+                    Sqoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../推荐系统实战2/chapter0.md">
+            
+                <span>
+            
+                    
+                    推荐系统实战2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../推荐系统实战2/chapter1.html">
+            
+                <a href="../推荐系统实战2/chapter1.html">
+            
+                    
+                    美多商城推荐系统介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../推荐系统实战2/chapter2.html">
+            
+                <a href="../推荐系统实战2/chapter2.html">
+            
+                    
+                    美多业务数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../推荐系统实战2/chapter3.html">
+            
+                <a href="../推荐系统实战2/chapter3.html">
+            
+                    
+                    商品数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../推荐系统实战2/chapter4.html">
+            
+                <a href="../推荐系统实战2/chapter4.html">
+            
+                    
+                    商品关键词提取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../推荐系统实战2/chapter5.html">
+            
+                <a href="../推荐系统实战2/chapter5.html">
+            
+                    
+                    商品关键词权重选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../推荐系统实战2/chapter6.html">
+            
+                <a href="../推荐系统实战2/chapter6.html">
+            
+                    
+                    商品关键词词向量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../推荐系统实战2/chapter7.html">
+            
+                <a href="../推荐系统实战2/chapter7.html">
+            
+                    
+                    商品相似度计算与商品召回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../推荐系统实战2/chapter8.html">
+            
+                <a href="../推荐系统实战2/chapter8.html">
+            
+                    
+                    埋点日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../推荐系统实战2/chapter9.html">
+            
+                <a href="../推荐系统实战2/chapter9.html">
+            
+                    
+                    Spark Streaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../推荐系统实战2/chapter10.html">
+            
+                <a href="../推荐系统实战2/chapter10.html">
+            
+                    
+                    实时推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../推荐系统实战2/chapter11.html">
+            
+                <a href="../推荐系统实战2/chapter11.html">
+            
+                    
+                    美多项目埋点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >算法实现-User-Based CF</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x6848;&#x4F8B;--&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;&#xFF1A;user-based-cf-&#x9884;&#x6D4B;&#x8BC4;&#x5206;">&#x6848;&#x4F8B;--&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;&#xFF1A;User-Based CF &#x9884;&#x6D4B;&#x8BC4;&#x5206;</h2>
+<p><strong>&#x8BC4;&#x5206;&#x9884;&#x6D4B;&#x516C;&#x5F0F;&#xFF1A;</strong></p>
+<p><img src="img/sim6.1.png" alt=""></p>
+<h4 id="&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;">&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;</h4>
+<ul>
+<li><p>&#x5B9E;&#x73B0;&#x8BC4;&#x5206;&#x9884;&#x6D4B;&#x65B9;&#x6CD5;&#xFF1A;<code>predict</code></p>
+<pre><code class="lang-python"><span class="hljs-comment"># ......</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict</span><span class="hljs-params">(uid, iid, ratings_matrix, user_similar)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x9884;&#x6D4B;&#x7ED9;&#x5B9A;&#x7528;&#x6237;&#x5BF9;&#x7ED9;&#x5B9A;&#x7269;&#x54C1;&#x7684;&#x8BC4;&#x5206;&#x503C;
+    :param uid: &#x7528;&#x6237;ID
+    :param iid: &#x7269;&#x54C1;ID
+    :param ratings_matrix: &#x7528;&#x6237;-&#x7269;&#x54C1;&#x8BC4;&#x5206;&#x77E9;&#x9635;
+    :param user_similar: &#x7528;&#x6237;&#x4E24;&#x4E24;&#x76F8;&#x4F3C;&#x5EA6;&#x77E9;&#x9635;
+    :return: &#x9884;&#x6D4B;&#x7684;&#x8BC4;&#x5206;&#x503C;
+    &apos;&apos;&apos;</span>
+    print(<span class="hljs-string">&quot;&#x5F00;&#x59CB;&#x9884;&#x6D4B;&#x7528;&#x6237;&lt;%d&gt;&#x5BF9;&#x7535;&#x5F71;&lt;%d&gt;&#x7684;&#x8BC4;&#x5206;...&quot;</span>%(uid, iid))
+    <span class="hljs-comment"># 1. &#x627E;&#x51FA;uid&#x7528;&#x6237;&#x7684;&#x76F8;&#x4F3C;&#x7528;&#x6237;</span>
+    similar_users = user_similar[uid].drop([uid]).dropna()
+    <span class="hljs-comment"># &#x76F8;&#x4F3C;&#x7528;&#x6237;&#x7B5B;&#x9009;&#x89C4;&#x5219;&#xFF1A;&#x6B63;&#x76F8;&#x5173;&#x7684;&#x7528;&#x6237;</span>
+    similar_users = similar_users.where(similar_users&gt;<span class="hljs-number">0</span>).dropna()
+    <span class="hljs-keyword">if</span> similar_users.empty <span class="hljs-keyword">is</span> <span class="hljs-keyword">True</span>:
+        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;&#x7528;&#x6237;&lt;%d&gt;&#x6CA1;&#x6709;&#x76F8;&#x4F3C;&#x7684;&#x7528;&#x6237;&quot;</span> % uid)
+
+    <span class="hljs-comment"># 2. &#x4ECE;uid&#x7528;&#x6237;&#x7684;&#x8FD1;&#x90BB;&#x76F8;&#x4F3C;&#x7528;&#x6237;&#x4E2D;&#x7B5B;&#x9009;&#x51FA;&#x5BF9;iid&#x7269;&#x54C1;&#x6709;&#x8BC4;&#x5206;&#x8BB0;&#x5F55;&#x7684;&#x8FD1;&#x90BB;&#x7528;&#x6237;</span>
+
+    <span class="hljs-comment">#&amp;:&#x8868;&#x793A;&#x53D6;&#x4EA4;&#x96C6;</span>
+    ids = set(ratings_matrix[iid].dropna().index)&amp;set(similar_users.index)
+    finally_similar_users = similar_users.ix[list(ids)]
+
+    <span class="hljs-comment"># 3. &#x7ED3;&#x5408;uid&#x7528;&#x6237;&#x4E0E;&#x5176;&#x8FD1;&#x90BB;&#x7528;&#x6237;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x9884;&#x6D4B;uid&#x7528;&#x6237;&#x5BF9;iid&#x7269;&#x54C1;&#x7684;&#x8BC4;&#x5206;</span>
+    sum_up = <span class="hljs-number">0</span>    <span class="hljs-comment"># &#x8BC4;&#x5206;&#x9884;&#x6D4B;&#x516C;&#x5F0F;&#x7684;&#x5206;&#x5B50;&#x90E8;&#x5206;&#x7684;&#x503C;</span>
+    sum_down = <span class="hljs-number">0</span>    <span class="hljs-comment"># &#x8BC4;&#x5206;&#x9884;&#x6D4B;&#x516C;&#x5F0F;&#x7684;&#x5206;&#x6BCD;&#x90E8;&#x5206;&#x7684;&#x503C;</span>
+    <span class="hljs-keyword">for</span> sim_uid, similarity <span class="hljs-keyword">in</span> finally_similar_users.iteritems():
+        <span class="hljs-comment"># &#x8FD1;&#x90BB;&#x7528;&#x6237;&#x7684;&#x8BC4;&#x5206;&#x6570;&#x636E;</span>
+        sim_user_rated_movies = ratings_matrix.ix[sim_uid].dropna()
+        <span class="hljs-comment"># &#x8FD1;&#x90BB;&#x7528;&#x6237;&#x5BF9;iid&#x7269;&#x54C1;&#x7684;&#x8BC4;&#x5206;</span>
+        sim_user_rating_for_item = sim_user_rated_movies[iid]
+        <span class="hljs-comment"># &#x8BA1;&#x7B97;&#x5206;&#x5B50;&#x7684;&#x503C;</span>
+        sum_up += similarity * sim_user_rating_for_item
+        <span class="hljs-comment"># &#x8BA1;&#x7B97;&#x5206;&#x6BCD;&#x7684;&#x503C;</span>
+        sum_down += similarity
+
+    <span class="hljs-comment"># &#x8BA1;&#x7B97;&#x9884;&#x6D4B;&#x7684;&#x8BC4;&#x5206;&#x503C;&#x5E76;&#x8FD4;&#x56DE;</span>
+    predict_rating = sum_up/sum_down
+    print(<span class="hljs-string">&quot;&#x9884;&#x6D4B;&#x51FA;&#x7528;&#x6237;&lt;%d&gt;&#x5BF9;&#x7535;&#x5F71;&lt;%d&gt;&#x7684;&#x8BC4;&#x5206;&#xFF1A;%0.2f&quot;</span> % (uid, iid, predict_rating))
+    <span class="hljs-keyword">return</span> round(predict_rating, <span class="hljs-number">2</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    ratings_matrix = load_data(DATA_PATH)
+
+    user_similar = compute_pearson_similarity(ratings_matrix, based=<span class="hljs-string">&quot;user&quot;</span>)
+    <span class="hljs-comment"># &#x9884;&#x6D4B;&#x7528;&#x6237;1&#x5BF9;&#x7269;&#x54C1;1&#x7684;&#x8BC4;&#x5206;</span>
+    predict(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, ratings_matrix, user_similar)
+    <span class="hljs-comment"># &#x9884;&#x6D4B;&#x7528;&#x6237;1&#x5BF9;&#x7269;&#x54C1;2&#x7684;&#x8BC4;&#x5206;</span>
+    predict(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, ratings_matrix, user_similar)
+</code></pre>
+</li>
+<li><p>&#x5B9E;&#x73B0;&#x9884;&#x6D4B;&#x5168;&#x90E8;&#x8BC4;&#x5206;&#x65B9;&#x6CD5;&#xFF1A;<code>predict_all</code></p>
+<pre><code class="lang-python"><span class="hljs-comment"># ......</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict_all</span><span class="hljs-params">(uid, ratings_matrix, user_similar)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x9884;&#x6D4B;&#x5168;&#x90E8;&#x8BC4;&#x5206;
+    :param uid: &#x7528;&#x6237;id
+    :param ratings_matrix: &#x7528;&#x6237;-&#x7269;&#x54C1;&#x6253;&#x5206;&#x77E9;&#x9635;
+    :param user_similar: &#x7528;&#x6237;&#x4E24;&#x4E24;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;
+    :return: &#x751F;&#x6210;&#x5668;&#xFF0C;&#x9010;&#x4E2A;&#x8FD4;&#x56DE;&#x9884;&#x6D4B;&#x8BC4;&#x5206;
+    &apos;&apos;&apos;</span>
+    <span class="hljs-comment"># &#x51C6;&#x5907;&#x8981;&#x9884;&#x6D4B;&#x7684;&#x7269;&#x54C1;&#x7684;id&#x5217;&#x8868;</span>
+    item_ids = ratings_matrix.columns
+    <span class="hljs-comment"># &#x9010;&#x4E2A;&#x9884;&#x6D4B;</span>
+    <span class="hljs-keyword">for</span> iid <span class="hljs-keyword">in</span> item_ids:
+        <span class="hljs-keyword">try</span>:
+            rating = predict(uid, iid, ratings_matrix, user_similar)
+        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+            print(e)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">yield</span> uid, iid, rating
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    ratings_matrix = load_data(DATA_PATH)
+
+    user_similar = compute_pearson_similarity(ratings_matrix, based=<span class="hljs-string">&quot;user&quot;</span>)
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> predict_all(<span class="hljs-number">1</span>, ratings_matrix, user_similar):
+        <span class="hljs-keyword">pass</span>
+</code></pre>
+</li>
+<li><p>&#x6DFB;&#x52A0;&#x8FC7;&#x6EE4;&#x89C4;&#x5219;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_predict_all</span><span class="hljs-params">(uid, item_ids, ratings_matrix, user_similar)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x9884;&#x6D4B;&#x5168;&#x90E8;&#x8BC4;&#x5206;
+    :param uid: &#x7528;&#x6237;id
+    :param item_ids: &#x8981;&#x9884;&#x6D4B;&#x7684;&#x7269;&#x54C1;id&#x5217;&#x8868;
+    :param ratings_matrix: &#x7528;&#x6237;-&#x7269;&#x54C1;&#x6253;&#x5206;&#x77E9;&#x9635;
+    :param user_similar: &#x7528;&#x6237;&#x4E24;&#x4E24;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;
+    :return: &#x751F;&#x6210;&#x5668;&#xFF0C;&#x9010;&#x4E2A;&#x8FD4;&#x56DE;&#x9884;&#x6D4B;&#x8BC4;&#x5206;
+    &apos;&apos;&apos;</span>
+    <span class="hljs-comment"># &#x9010;&#x4E2A;&#x9884;&#x6D4B;</span>
+    <span class="hljs-keyword">for</span> iid <span class="hljs-keyword">in</span> item_ids:
+        <span class="hljs-keyword">try</span>:
+            rating = predict(uid, iid, ratings_matrix, user_similar)
+        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+            print(e)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">yield</span> uid, iid, rating
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict_all</span><span class="hljs-params">(uid, ratings_matrix, user_similar, filter_rule=None)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x9884;&#x6D4B;&#x5168;&#x90E8;&#x8BC4;&#x5206;&#xFF0C;&#x5E76;&#x53EF;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x8FDB;&#x884C;&#x524D;&#x7F6E;&#x8FC7;&#x6EE4;
+    :param uid: &#x7528;&#x6237;ID
+    :param ratings_matrix: &#x7528;&#x6237;-&#x7269;&#x54C1;&#x6253;&#x5206;&#x77E9;&#x9635;
+    :param user_similar: &#x7528;&#x6237;&#x4E24;&#x4E24;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;
+    :param filter_rule: &#x8FC7;&#x6EE4;&#x89C4;&#x5219;&#xFF0C;&#x53EA;&#x80FD;&#x662F;&#x56DB;&#x9009;&#x4E00;&#xFF0C;&#x5426;&#x5219;&#x5C06;&#x629B;&#x5F02;&#x5E38;&#xFF1A;&quot;unhot&quot;,&quot;rated&quot;,[&quot;unhot&quot;,&quot;rated&quot;],None
+    :return: &#x751F;&#x6210;&#x5668;&#xFF0C;&#x9010;&#x4E2A;&#x8FD4;&#x56DE;&#x9884;&#x6D4B;&#x8BC4;&#x5206;
+    &apos;&apos;&apos;</span>
+
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> filter_rule:
+        item_ids = ratings_matrix.columns
+    <span class="hljs-keyword">elif</span> isinstance(filter_rule, str) <span class="hljs-keyword">and</span> filter_rule == <span class="hljs-string">&quot;unhot&quot;</span>:
+        <span class="hljs-string">&apos;&apos;&apos;&#x8FC7;&#x6EE4;&#x975E;&#x70ED;&#x95E8;&#x7535;&#x5F71;&apos;&apos;&apos;</span>
+        <span class="hljs-comment"># &#x7EDF;&#x8BA1;&#x6BCF;&#x90E8;&#x7535;&#x5F71;&#x7684;&#x8BC4;&#x5206;&#x6570;</span>
+        count = ratings_matrix.count()
+        <span class="hljs-comment"># &#x8FC7;&#x6EE4;&#x51FA;&#x8BC4;&#x5206;&#x6570;&#x9AD8;&#x4E8E;10&#x7684;&#x7535;&#x5F71;&#xFF0C;&#x4F5C;&#x4E3A;&#x70ED;&#x95E8;&#x7535;&#x5F71;</span>
+        item_ids = count.where(count&gt;<span class="hljs-number">10</span>).dropna().index
+    <span class="hljs-keyword">elif</span> isinstance(filter_rule, str) <span class="hljs-keyword">and</span> filter_rule == <span class="hljs-string">&quot;rated&quot;</span>:
+        <span class="hljs-string">&apos;&apos;&apos;&#x8FC7;&#x6EE4;&#x7528;&#x6237;&#x8BC4;&#x5206;&#x8FC7;&#x7684;&#x7535;&#x5F71;&apos;&apos;&apos;</span>
+        <span class="hljs-comment"># &#x83B7;&#x53D6;&#x7528;&#x6237;&#x5BF9;&#x6240;&#x6709;&#x7535;&#x5F71;&#x7684;&#x8BC4;&#x5206;&#x8BB0;&#x5F55;</span>
+        user_ratings = ratings_matrix.ix[uid]
+        <span class="hljs-comment"># &#x8BC4;&#x5206;&#x8303;&#x56F4;&#x662F;1-5&#xFF0C;&#x5C0F;&#x4E8E;6&#x7684;&#x90FD;&#x662F;&#x8BC4;&#x5206;&#x8FC7;&#x7684;&#xFF0C;&#x9664;&#x6B64;&#x4EE5;&#x5916;&#x7684;&#x90FD;&#x662F;&#x6CA1;&#x6709;&#x8BC4;&#x5206;&#x7684;</span>
+        _ = user_ratings&lt;<span class="hljs-number">6</span>
+        item_ids = _.where(_==<span class="hljs-keyword">False</span>).dropna().index
+    <span class="hljs-keyword">elif</span> isinstance(filter_rule, list) <span class="hljs-keyword">and</span> set(filter_rule) == set([<span class="hljs-string">&quot;unhot&quot;</span>, <span class="hljs-string">&quot;rated&quot;</span>]):
+        <span class="hljs-string">&apos;&apos;&apos;&#x8FC7;&#x6EE4;&#x975E;&#x70ED;&#x95E8;&#x548C;&#x7528;&#x6237;&#x5DF2;&#x7ECF;&#x8BC4;&#x5206;&#x8FC7;&#x7684;&#x7535;&#x5F71;&apos;&apos;&apos;</span>
+        count = ratings_matrix.count()
+        ids1 = count.where(count &gt; <span class="hljs-number">10</span>).dropna().index
+
+        user_ratings = ratings_matrix.ix[uid]
+        _ = user_ratings &lt; <span class="hljs-number">6</span>
+        ids2 = _.where(_ == <span class="hljs-keyword">False</span>).dropna().index
+        <span class="hljs-comment"># &#x53D6;&#x4E8C;&#x8005;&#x4EA4;&#x96C6;</span>
+        item_ids = set(ids1)&amp;set(ids2)
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;&#x65E0;&#x6548;&#x7684;&#x8FC7;&#x6EE4;&#x53C2;&#x6570;&quot;</span>)
+
+    <span class="hljs-keyword">yield</span> <span class="hljs-keyword">from</span> _predict_all(uid, item_ids, ratings_matrix, user_similar)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    ratings_matrix = load_data(DATA_PATH)
+
+    user_similar = compute_pearson_similarity(ratings_matrix, based=<span class="hljs-string">&quot;user&quot;</span>)
+
+    <span class="hljs-keyword">for</span> result <span class="hljs-keyword">in</span> predict_all(<span class="hljs-number">1</span>, ratings_matrix, user_similar, filter_rule=[<span class="hljs-string">&quot;unhot&quot;</span>, <span class="hljs-string">&quot;rated&quot;</span>]):
+        print(result)
+</code></pre>
+</li>
+<li><p>&#x6839;&#x636E;&#x9884;&#x6D4B;&#x8BC4;&#x5206;&#x4E3A;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x8FDB;&#x884C;TOP-N&#x63A8;&#x8350;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># ......</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">top_k_rs_result</span><span class="hljs-params">(k)</span>:</span>
+    ratings_matrix = load_data(DATA_PATH)
+    user_similar = compute_pearson_similarity(ratings_matrix, based=<span class="hljs-string">&quot;user&quot;</span>)
+    results = predict_all(<span class="hljs-number">1</span>, ratings_matrix, user_similar, filter_rule=[<span class="hljs-string">&quot;unhot&quot;</span>, <span class="hljs-string">&quot;rated&quot;</span>])
+    <span class="hljs-keyword">return</span> sorted(results, key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">2</span>], reverse=<span class="hljs-keyword">True</span>)[:k]
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">from</span> pprint <span class="hljs-keyword">import</span> pprint
+    result = top_k_rs_result(<span class="hljs-number">20</span>)
+    pprint(result)
+</code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="06.0_ 案例--基于协同过滤的电影推荐.html" class="navigation navigation-prev " aria-label="Previous page: 基于电影的协同过滤推荐">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06.2_算法实现：Item-Based CF 预测评分.html" class="navigation navigation-next " aria-label="Next page: 算法实现-Item-Based CF">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"算法实现-User-Based CF","level":"1.2.7","depth":2,"next":{"title":"算法实现-Item-Based CF","level":"1.2.8","depth":2,"path":"推荐介绍/06.2_算法实现：Item-Based CF 预测评分.md","ref":"推荐介绍/06.2_算法实现：Item-Based CF 预测评分.md","articles":[]},"previous":{"title":"基于电影的协同过滤推荐","level":"1.2.6","depth":2,"path":"推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.md","ref":"推荐介绍/06.0_ 案例--基于协同过滤的电影推荐.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"推荐介绍/06.1_算法实现：User-Based CF 预测评分.md","mtime":"2019-04-24T13:22:06.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T13:41:26.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
